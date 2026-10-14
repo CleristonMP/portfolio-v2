@@ -15,22 +15,24 @@ Atualização: 14/10/2026. Repositório: `CleristonMP/portfolio-v2`.
 - Entrada de M2-05 observada localmente: branch `chore/m2-technical-foundation`, HEAD `d59b827eb7ec8242527c603e3d6f1e0a61d386d6`, árvore limpa e staging vazio.
 - M2-05: **validada e aprovada pelo Work**, commitada em `7af9622e1bc7cd134731a972db3a1ea604ad70f4` — `feat(i18n): localize interface and persist language with synchronized metadata`. Parecer e operação posteriores ao handoff original estão registrados nesta conversa.
 - Entrada de M2-06 observada localmente: branch `chore/m2-technical-foundation`, HEAD `7af9622e1bc7cd134731a972db3a1ea604ad70f4`; árvore limpa e staging vazio, remote correto. Sem consulta remota adicional.
-- M2-06: implementada; **aguardando revisão própria do Work; smoke de teclado desktop/mobile PT/EN executado; zoom real 200% validado manualmente e aprovado pelo responsável nesta conversa**. Evidências em `docs/M2_06_HANDOFF.md`. Sem aprovação, staging, commit ou push.
+- M2-06: **validada, aprovada pelo Work e commitada** em `b71c5dd84aa81b674a5c47ed4e1ec2eea5d98917` — `feat(a11y): add skip link and accessible responsive navigation`. Aprovação verificável e push com retorno 0 registrados nesta conversa; handoff original preservado como histórico.
+- Entrada M2-07: mesma branch, HEAD `b71c5dd84aa81b674a5c47ed4e1ec2eea5d98917`, árvore limpa e staging vazio, observados localmente; sem consulta remota adicional.
+- M2-07: implementada e validada localmente, **aguardando revisão própria do Work**; CI remota pendente até aprovação e push autorizado. Evidências em `docs/M2_07_HANDOFF.md`.
 
 ## Sequência oficial do M2
 
-| Tarefa                            | Estado                                | Evidência / dependência                                            |
-| --------------------------------- | ------------------------------------- | ------------------------------------------------------------------ |
-| M2-01 — Higiene e baseline        | Validada e aprovada; commitada        | Revisão Work, baseline inicial e `docs/M2_01_02_HANDOFF.md`.       |
-| M2-02 — Ferramentas reproduzíveis | Validada e aprovada; commitada        | Checks da implementação e revisão registrados no handoff anterior. |
-| M2-03 — Estrutura e contratos     | Validada e aprovada; commitada        | Commit `73e5f7d`; revisão Work posterior ao handoff original.      |
-| M2-04 — Tokens canônicos          | Validada e aprovada; commitada        | Commit `d59b827`; parecer Work posterior ao handoff original.      |
-| M2-05 — Fundação i18n             | Validada e aprovada; commitada        | Commit `7af9622`; parecer Work posterior ao handoff original.      |
-| M2-06 — Shell acessível           | Implementada; aguardando revisão Work | Depende de M2-04 e M2-05; `docs/M2_06_HANDOFF.md`.                 |
-| M2-07 — Testes e CI sem deploy    | Pendente                              | Depende de M2-02 a M2-06.                                          |
-| M2-08 — Preview e handoff         | Pendente                              | Depende de M2-07.                                                  |
+| Tarefa                            | Estado                          | Evidência / dependência                                            |
+| --------------------------------- | ------------------------------- | ------------------------------------------------------------------ |
+| M2-01 — Higiene e baseline        | Validada e aprovada; commitada  | Revisão Work, baseline inicial e `docs/M2_01_02_HANDOFF.md`.       |
+| M2-02 — Ferramentas reproduzíveis | Validada e aprovada; commitada  | Checks da implementação e revisão registrados no handoff anterior. |
+| M2-03 — Estrutura e contratos     | Validada e aprovada; commitada  | Commit `73e5f7d`; revisão Work posterior ao handoff original.      |
+| M2-04 — Tokens canônicos          | Validada e aprovada; commitada  | Commit `d59b827`; parecer Work posterior ao handoff original.      |
+| M2-05 — Fundação i18n             | Validada e aprovada; commitada  | Commit `7af9622`; parecer Work posterior ao handoff original.      |
+| M2-06 — Shell acessível           | Validada e aprovada; commitada  | Commit `b71c5dd`; parecer Work posterior ao handoff.               |
+| M2-07 — Testes e CI sem deploy    | Em execução; aguardando revisão | CI remota pendente; `docs/M2_07_HANDOFF.md`.                       |
+| M2-08 — Preview e handoff         | Pendente                        | Depende de M2-07.                                                  |
 
-A próxima ação é submeter M2-06 à revisão do Work, sem avanço para M2-07. Os critérios, a ordem e as dependências continuam em `docs/MILESTONE_2_PLAN.md`; seus registros de tarefas pendentes antecedem as implementações registradas aqui. O estado corrente está neste documento. O M2 permanece aberto.
+A próxima ação é revisar M2-07 pelo Work; CI remota somente após aprovação/push autorizado, sem avanço para M2-08. Os critérios, a ordem e as dependências continuam em `docs/MILESTONE_2_PLAN.md`; seus registros de tarefas pendentes antecedem as implementações registradas aqui. O estado corrente está neste documento. O M2 permanece aberto.
 
 ## Fontes e fatos observados
 
@@ -83,3 +85,11 @@ Override de viewport restaurado antes da segunda tentativa de zoom. O controle n
 O responsável informou nesta conversa: “fiz manualmente o zoom real de 200%. está aprovado”. O critério de zoom fica registrado como validado manualmente e aprovado pelo responsável, posteriormente às tentativas automatizadas impedidas. Codex não executou nem observou essa validação manual; navegador, idiomas, capturas e procedimentos específicos não foram detalhados pelo responsável, portanto não são inferidos. Os registros de pendência acima permanecem históricos.
 
 M2-06 continua aguardando revisão própria do Work sobre a árvore/snapshot atuais. Esta confirmação do critério de zoom não foi convertida em registro de aprovação integral da implementação nem em autorização de commit/push. Sem avanço de milestone ou para M2-07/M2-08.
+
+## Registro M2-07
+
+Vitest/Testing Library/jsdom adicionados somente como devDependencies. Testes de integração DOM montam App real e verificam idioma, persistência/falhas de storage, metadados, skip/menu/foco e eventos de breakpoint. Fronteiras de links privados/opcionais e contatos incompletos exercitadas com fixtures restauradas. Scripts de invariantes/paridade históricos preservados e executados no pipeline. Código, dados, traduções, tokens, design, assets e base path de produção permanecem intactos.
+
+Workflow push/pull_request de qualidade, somente leitura, sem deploy/publicação. Instalação pelo lockfile e checks locais não equivalem a CI remota aprovada. Resultados/limitações no handoff; exige nova revisão e snapshot, sem reutilizar aprovações. M2 permanece aberto; M2-08 não implementada. Registros anteriores de pendência M2-06 antecedem sua aprovação posterior.
+
+Validação local M2-07: npm ci concluído com lockfile final; typecheck, lint, format:check, 48 testes em três arquivos, verify:content, verify:i18n, build e git diff --check passaram. YAML parseado e conferido localmente; CI GitHub não executada. Sete advisories herdados permanecem (duas moderadas/cinco altas), sem críticos na instalação final. Nenhuma versão de pacote já presente no lockfile anterior mudou. A normalização CRLF→LF do lockfile explica parte substancial de seu diff. Snapshot/diff novos para revisão própria; sem staging, commit ou push.
