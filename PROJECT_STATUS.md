@@ -13,32 +13,34 @@ Atualização: 14/10/2026. Repositório: `CleristonMP/portfolio-v2`.
 - Entrada de M2-04 observada localmente: mesma branch, HEAD `73e5f7d3d76f26d28597bc7f1e73e1190ae8f78f`, árvore limpa.
 - M2-04: **validada e aprovada pelo Work**, posteriormente commitada em `d59b827eb7ec8242527c603e3d6f1e0a61d386d6` — `refactor(styles): centralize canonical color and font tokens`. O handoff original preserva o estado anterior ao parecer; aprovação/commit registrados nesta conversa.
 - Entrada de M2-05 observada localmente: branch `chore/m2-technical-foundation`, HEAD `d59b827eb7ec8242527c603e3d6f1e0a61d386d6`, árvore limpa e staging vazio.
-- M2-05: implementada e verificada localmente, **aguardando revisão própria do Work**, estado operacional **em execução**; sem aprovação ou commit. Evidências em `docs/M2_05_HANDOFF.md`.
+- M2-05: **validada e aprovada pelo Work**, commitada em `7af9622e1bc7cd134731a972db3a1ea604ad70f4` — `feat(i18n): localize interface and persist language with synchronized metadata`. Parecer e operação posteriores ao handoff original estão registrados nesta conversa.
+- Entrada de M2-06 observada localmente: branch `chore/m2-technical-foundation`, HEAD `7af9622e1bc7cd134731a972db3a1ea604ad70f4`; árvore limpa e staging vazio, remote correto. Sem consulta remota adicional.
+- M2-06: implementada; **aguardando revisão própria do Work; smoke de teclado desktop/mobile PT/EN executado; zoom real 200% validado manualmente e aprovado pelo responsável nesta conversa**. Evidências em `docs/M2_06_HANDOFF.md`. Sem aprovação, staging, commit ou push.
 
 ## Sequência oficial do M2
 
-| Tarefa                            | Estado                          | Evidência / dependência                                                  |
-| --------------------------------- | ------------------------------- | ------------------------------------------------------------------------ |
-| M2-01 — Higiene e baseline        | Validada e aprovada; commitada  | Revisão Work, baseline inicial e `docs/M2_01_02_HANDOFF.md`.             |
-| M2-02 — Ferramentas reproduzíveis | Validada e aprovada; commitada  | Checks da implementação e revisão registrados no handoff anterior.       |
-| M2-03 — Estrutura e contratos     | Validada e aprovada; commitada  | Commit `73e5f7d`; revisão Work posterior ao handoff original.            |
-| M2-04 — Tokens canônicos          | Validada e aprovada; commitada  | Commit `d59b827`; parecer Work posterior ao handoff original.            |
-| M2-05 — Fundação i18n             | Em execução; aguardando revisão | Depende de M2-03; implementação e validações em `docs/M2_05_HANDOFF.md`. |
-| M2-06 — Shell acessível           | Pendente                        | Depende de M2-04 e M2-05.                                                |
-| M2-07 — Testes e CI sem deploy    | Pendente                        | Depende de M2-02 a M2-06.                                                |
-| M2-08 — Preview e handoff         | Pendente                        | Depende de M2-07.                                                        |
+| Tarefa                            | Estado                                | Evidência / dependência                                            |
+| --------------------------------- | ------------------------------------- | ------------------------------------------------------------------ |
+| M2-01 — Higiene e baseline        | Validada e aprovada; commitada        | Revisão Work, baseline inicial e `docs/M2_01_02_HANDOFF.md`.       |
+| M2-02 — Ferramentas reproduzíveis | Validada e aprovada; commitada        | Checks da implementação e revisão registrados no handoff anterior. |
+| M2-03 — Estrutura e contratos     | Validada e aprovada; commitada        | Commit `73e5f7d`; revisão Work posterior ao handoff original.      |
+| M2-04 — Tokens canônicos          | Validada e aprovada; commitada        | Commit `d59b827`; parecer Work posterior ao handoff original.      |
+| M2-05 — Fundação i18n             | Validada e aprovada; commitada        | Commit `7af9622`; parecer Work posterior ao handoff original.      |
+| M2-06 — Shell acessível           | Implementada; aguardando revisão Work | Depende de M2-04 e M2-05; `docs/M2_06_HANDOFF.md`.                 |
+| M2-07 — Testes e CI sem deploy    | Pendente                              | Depende de M2-02 a M2-06.                                          |
+| M2-08 — Preview e handoff         | Pendente                              | Depende de M2-07.                                                  |
 
-A próxima ação é a revisão de M2-05 pelo Work, sem avanço automático para M2-06. Os critérios, a ordem e as dependências continuam em `docs/MILESTONE_2_PLAN.md`; seus registros de tarefas pendentes antecedem as implementações registradas aqui. O estado corrente está neste documento. O M2 permanece aberto.
+A próxima ação é submeter M2-06 à revisão do Work, sem avanço para M2-07. Os critérios, a ordem e as dependências continuam em `docs/MILESTONE_2_PLAN.md`; seus registros de tarefas pendentes antecedem as implementações registradas aqui. O estado corrente está neste documento. O M2 permanece aberto.
 
 ## Fontes e fatos observados
 
 Fontes: DEVELOPMENT_WORKFLOW.md, docs/MILESTONE_2_PLAN.md, docs/M2_01_02_HANDOFF.md e PRD vigente docs/PRD_Portfolio_Cleriston_v2.3.md. Exports web/mobile do Stitch (DESIGN.md, code.html e screen.png) consultados sem alteração.
 
-`git status --short --branch`, `git log -2 --oneline` e `git remote -v` confirmaram localmente branch, histórico e origin configurado para https://github.com/CleristonMP/portfolio-v2.git. As aprovações anteriores são fatos do fluxo Work registrado nesta conversa e não autorizam M2-05. Não houve consulta remota ou alegação de novo push nesta entrega.
+`git status --short --branch`, `git log -2 --oneline` e `git remote -v` confirmaram localmente branch, histórico e origin configurado para https://github.com/CleristonMP/portfolio-v2.git. As aprovações anteriores são fatos do fluxo Work registrado nesta conversa e não autorizam M2-06. Não houve consulta remota ou alegação de novo push nesta entrega.
 
 Na regularização documental anterior, PROJECT_STATUS.md e alterações em workflow, README, plano e handoff já existiam na árvore durante a sessão; o trabalho foi preservado e depois revisado/commitado. Esse histórico é distinto da entrada limpa de M2-03.
 
-## Evidências e pendências
+## Evidências e pendências históricas (registros preservados)
 
 M2-03: typecheck, lint, formatação, build e verificação de conteúdo passaram; smoke em Edge em 1280×900 e 390×844 registrou as seis seções, alternância existente PT/EN e comportamento atual do menu. Nenhuma infraestrutura Vitest/Testing Library foi instalada. O script de invariantes usa TypeScript e React já existentes. Não houve auditoria completa de acessibilidade, fidelidade Stitch ou performance.
 
@@ -61,3 +63,23 @@ Dicionário tipado completo para os textos atuais, incluindo labels acessíveis 
 Verificações com Node/TypeScript/React existentes passaram para paridade/chaves não vazias, preferências, falhas de armazenamento, metadados, labels/alt e invariantes anteriores. Smoke Edge em 390×844 e 1280×900 nos dois idiomas, sem overflow horizontal; PT → EN → PT, reload com valores válidos, preferência inválida e falhas de acesso/leitura/escrita exercitados. O build passou fora da restrição de filesystem conhecida após EPERM. Capturas e evidências em docs/M2_05_HANDOFF.md.
 
 Sem alterações de tokens/design/base path, dependências, conteúdo editorial, mídia ou permissões; sem aria-expanded, Escape ou gerenciamento de foco de M2-06. Revisão própria do Work e novo snapshot verificável obrigatórios; nenhuma aprovação anterior reutilizada. M2-06 e demais tarefas permanecem pendentes.
+
+## Registro de M2-06
+
+Skip link PT/EN antes do header, com foco programático no main. As seis seções mantêm seus IDs e recebem tabindex -1, sem entrar na sequência de Tab. Menu não modal com expanded/controls, foco no primeiro link ao abrir, Escape com retorno ao botão quando o foco pertence ao header e navegação com foco no destino antes de ocultar os links. Breakpoint de 700px encerra estado mobile e encaminha foco somente quando o elemento ficará oculto; registra o último focusin porque o navegador pode desfocar elementos antes do evento de media query. Sem router, trap, overlay ou alteração de histórico.
+
+Smoke Edge parcial em PT/EN, 390×844 e 1280×900; skip, Space/Enter, Escape, links ocultos, destinos, Voltar, persistência/metadados EN e cruzamento de breakpoint exercitados. Zoom real 200% não executado: Computer Use interrompido por não conseguir confirmar a URL ativa no Windows. Não declarar aceite completo; sequência desktop PT/EN e demais cenários detalhados no handoff ainda precisam ser completados. Override de viewport ficou em 1280×900 quando a automação foi interrompida.
+
+O estado anterior de M2-05 nos parágrafos históricos acima e no handoff original antecede sua revisão/commit. A aprovação e push de M2-05 ocorreram posteriormente conforme esta conversa; Git local confirma o commit, sem consulta remota nesta entrega. M2-06 exige novo parecer e snapshot; nenhum registro anterior autoriza esta implementação. Pendências editoriais, segurança, mídias, contatos e publicação continuam abertas. M2-07/M2-08 não iniciados; milestone não concluído.
+
+## Retomada de validação M2-06
+
+A pedido do responsável, smoke repetido e ampliado no Edge em 390×844/1280×900, PT/EN: skip primeiro/ativação, Tab/Shift+Tab, Space/Enter, Escape e retorno ao botão, links ocultos fora de Tab, cada destino mobile com fechamento/foco, seis âncoras e Voltar, transições de largura com nav/botão/CTA focados, alternância e persistência/metadados. Resultados incrementais em `.m2-review/m2-06/retry-smoke.json`, capturas e critérios individuais em docs/M2_06_HANDOFF.md. Nenhum código alterado nesta retomada.
+
+Override de viewport restaurado antes da segunda tentativa de zoom. O controle nativo encontrou a janela correta do Edge, mas voltou a interromper a sessão ao tentar confirmar a URL ativa no Windows. Nenhuma tecla de zoom enviada; **zoom real 200% continua pendente**. Esta atualização substitui o estado corrente de smoke parcial dos registros históricos, mas não fecha o critério de zoom nem aprova M2-06. Sem staging, commit ou push; revisão própria Work obrigatória.
+
+## Validação manual de zoom M2-06
+
+O responsável informou nesta conversa: “fiz manualmente o zoom real de 200%. está aprovado”. O critério de zoom fica registrado como validado manualmente e aprovado pelo responsável, posteriormente às tentativas automatizadas impedidas. Codex não executou nem observou essa validação manual; navegador, idiomas, capturas e procedimentos específicos não foram detalhados pelo responsável, portanto não são inferidos. Os registros de pendência acima permanecem históricos.
+
+M2-06 continua aguardando revisão própria do Work sobre a árvore/snapshot atuais. Esta confirmação do critério de zoom não foi convertida em registro de aprovação integral da implementação nem em autorização de commit/push. Sem avanço de milestone ou para M2-07/M2-08.

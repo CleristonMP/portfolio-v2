@@ -5,7 +5,7 @@ import { SectionHeading } from '../components/SectionHeading';
 
 export function LearningSection({ text }: SectionProps) {
   return (
-    <section id="learning" className="section learning-section">
+    <section id="learning" tabIndex={-1} className="section learning-section">
       <div className="container">
         <SectionHeading
           kicker={text.kickers.learning}

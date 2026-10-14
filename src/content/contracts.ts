@@ -111,6 +111,7 @@ export interface Translation {
   readonly backToTop: string;
   readonly accessibility: {
     readonly navigation: string;
+    readonly skipToContent: string;
     readonly changeLanguage: string;
     readonly openMenu: string;
     readonly closeMenu: string;

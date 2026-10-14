@@ -147,9 +147,14 @@ assert.equal((markup.match(/class="skill"/g) ?? []).length, skills.length);
 for (const [, href] of markup.matchAll(/<a\b[^>]*href="([^"]*)"/g)) {
   assert(
     sectionIds.some((id) => href === `#${id}`) ||
-      href === 'https://github.com/CleristonMP',
+      href === 'https://github.com/CleristonMP' ||
+      href === '#main-content',
   );
 }
+assert(markup.includes('<main id="main-content" tabindex="-1">'));
+assert(markup.indexOf('class="skip-link"') < markup.indexOf('<header'));
+for (const id of sectionIds)
+  assert(markup.includes(`<section id="${id}" tabindex="-1"`));
 const { ContactSection } = await load('src/sections/ContactSection.tsx');
 // Deliberately incomplete fixtures verify the rendered link boundary, then restore data.
 const contacts = profile.contacts;
@@ -199,13 +204,18 @@ if (baseline) {
     (block) => (++stackBlocks <= 2 ? '<div class="tags"></div>' : block),
   );
   assert.equal(stackBlocks, 3);
-  // M2-05 intentionally localizes text and accessible names; keep structural parity.
+  // M2-05 localizes text; M2-06 adds only shell focus targets and the skip link.
   const structure = (html) =>
     html
+      .replace(/<a class="skip-link"[^>]*>[^<]*<\/a>/g, '')
+      .replace(/<main id="main-content" tabindex="-1">/g, '<main>')
+      .replace(/ tabindex="-1"/g, '')
+      .replace(/ id="primary-navigation"/g, '')
+      .replace(/ aria-expanded="false" aria-controls="primary-navigation"/g, '')
       .replace(/\b(alt|aria-label)="[^"]*"/g, '$1="localized"')
       .replace(/>[^<]*</g, '><');
   assert.equal(structure(markup), structure(baselineMarkup));
   stdout.write(
-    'PASS: markup structure equals baseline apart from the two unverified project stacks; localized text/accessible names excluded.\n',
+    'PASS: markup structure equals baseline apart from the two unverified project stacks; localized text/accessible names and M2-06 shell additions excluded.\n',
   );
 }

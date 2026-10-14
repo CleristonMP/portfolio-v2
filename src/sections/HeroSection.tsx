@@ -3,7 +3,7 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 export function HeroSection({ text }: SectionProps) {
   return (
-    <section id="home" className="hero container">
+    <section id="home" tabIndex={-1} className="hero container">
       <div className="ambient"></div>
       <div className="eyebrow">
         <span className="pulse"></span>

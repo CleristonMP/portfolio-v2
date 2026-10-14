@@ -148,6 +148,7 @@ assert(html.includes(translations.pt.metadata.title.replace('&', '&amp;')));
 assert(html.includes(translations.pt.metadata.description));
 
 const { Header } = await load('src/components/layout/Header.tsx');
+const { default: App } = await load('src/App.tsx');
 const { Footer } = await load('src/components/layout/Footer.tsx');
 const names = [
   'HeroSection',
@@ -159,6 +160,9 @@ const names = [
 ];
 for (const language of ['pt', 'en']) {
   const text = translations[language];
+  const appMarkup = renderToStaticMarkup(createElement(App));
+  assert(appMarkup.includes(translations.pt.accessibility.skipToContent));
+  assert(text.accessibility.skipToContent.trim());
   const sections = await Promise.all(
     names.map(async (name) => (await load(`src/sections/${name}.tsx`))[name]),
   );
@@ -204,7 +208,7 @@ for (const language of ['pt', 'en']) {
         menuOpen,
         onToggleLanguage() {},
         onToggleMenu() {},
-        onNavigate() {},
+        onCloseMenu() {},
       }),
     );
     for (const label of [
@@ -213,7 +217,9 @@ for (const language of ['pt', 'en']) {
       menuOpen ? text.accessibility.closeMenu : text.accessibility.openMenu,
     ])
       assert(header.includes(`aria-label="${label}"`));
-    assert(!header.includes('aria-expanded'));
+    assert(header.includes(`aria-expanded="${menuOpen}"`));
+    assert(header.includes('aria-controls="primary-navigation"'));
+    assert(header.includes('id="primary-navigation"'));
   }
 }
 stdout.write(

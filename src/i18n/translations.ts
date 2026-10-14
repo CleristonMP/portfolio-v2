@@ -50,6 +50,7 @@ export const translations: Translations = {
     backToTop: '↑ INÍCIO',
     accessibility: {
       navigation: 'Navegação principal',
+      skipToContent: 'Pular para o conteúdo principal',
       changeLanguage: 'Mudar idioma para inglês',
       openMenu: 'Abrir menu',
       closeMenu: 'Fechar menu',
@@ -118,6 +119,7 @@ export const translations: Translations = {
     backToTop: '↑ TOP',
     accessibility: {
       navigation: 'Main navigation',
+      skipToContent: 'Skip to main content',
       changeLanguage: 'Switch language to Portuguese',
       openMenu: 'Open menu',
       closeMenu: 'Close menu',

@@ -2,7 +2,7 @@ import type { SectionProps } from '../content/contracts';
 
 export function AboutSection({ text }: SectionProps) {
   return (
-    <section id="about" className="section about-section">
+    <section id="about" tabIndex={-1} className="section about-section">
       <div className="container about-grid">
         <div>
           <p className="kicker">{text.kickers.about}</p>

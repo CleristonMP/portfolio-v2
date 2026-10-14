@@ -22,7 +22,7 @@ const skillIcons: Record<SkillIcon, LucideIcon> = {
 
 export function SkillsSection({ text }: SectionProps) {
   return (
-    <section id="skills" className="section">
+    <section id="skills" tabIndex={-1} className="section">
       <div className="container">
         <div className="center-heading">
           <p className="kicker">{text.kickers.skills}</p>

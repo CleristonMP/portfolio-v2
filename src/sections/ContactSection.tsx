@@ -7,7 +7,7 @@ export function ContactSection({ text }: SectionProps) {
   const github = profile.contacts.find((contact) => contact.kind === 'github');
   const githubUrl = getVerifiedUrl(github?.link);
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" tabIndex={-1} className="section contact-section">
       <div className="container contact-layout">
         <div>
           <p className="kicker">{text.kickers.contact}</p>
