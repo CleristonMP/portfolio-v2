@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+.m2-review/
+design/
+docs/
+DEVELOPMENT_WORKFLOW.md
+package-lock.json
+*.tsbuildinfo
