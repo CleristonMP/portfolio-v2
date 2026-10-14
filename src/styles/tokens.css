@@ -1,0 +1,45 @@
+/* Color channels allow CSS and Tailwind opacity modifiers to share one value. */
+:root {
+  /* Canonical PRD v2.3, section 16.2. */
+  --color-background: 11 14 20; /* #0b0e14 */
+  --color-primary: 105 218 255; /* #69daff */
+  --color-secondary: 172 137 255; /* #ac89ff */
+  --color-primary-container: 0 207 252; /* #00cffc */
+  --color-surface-low: 16 19 26; /* #10131a */
+  --color-surface-highest: 34 38 47; /* #22262f */
+  --color-text-primary: 236 237 246; /* #ecedf6 */
+
+  /* Supporting export surface and retained starter roles; see docs/DESIGN_TOKENS.md. */
+  --color-surface-container: 22 26 33;
+  --color-text-navigation: 196 198 208;
+  --color-border-control: 52 56 66;
+  --color-text-control: 211 216 226;
+  --color-text-hero: 171 176 191;
+  --color-text-on-cta: 4 42 52;
+  --color-text-ghost-button: 217 220 228;
+  --color-text-scroll-cue: 104 113 127;
+  --color-text-section-lead: 164 169 183;
+  --color-surface-card-hover: 27 32 41;
+  --color-surface-image: 37 41 52;
+  --color-text-project: 173 178 190;
+  --color-text-tag: 179 184 194;
+  --color-text-hint: 119 126 143;
+  --color-text-skills-lead: 165 170 187;
+  --color-text-skill: 220 224 232;
+  --color-surface-about: 13 17 24;
+  --color-text-about: 216 220 230;
+  --color-text-method: 182 190 201;
+  --color-surface-course: 26 30 38;
+  --color-text-course: 163 170 184;
+  --color-icon-course: 118 127 142;
+  --color-text-contact-lead: 178 182 194;
+  --color-text-contact-panel: 191 196 208;
+  --color-surface-footer: 9 12 17;
+  --color-text-footer: 115 121 134;
+  --color-neutral-white: 255 255 255;
+  --color-ambient-hero: 61 118 181;
+  --color-ambient-contact: 42 79 112;
+
+  --font-display: Manrope, sans-serif;
+  --font-body: Inter, sans-serif;
+}
