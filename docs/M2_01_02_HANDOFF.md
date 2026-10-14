@@ -1,6 +1,6 @@
 # Handoff — M2-01 e M2-02
 
-Data: 14/10/2026. Estado: **validadas localmente, aguardando revisão do Work**. O milestone permanece aberto; nenhuma tarefa posterior foi executada. Nenhum commit, push ou deploy.
+Data: 14/10/2026. Estado atual: **validadas, aprovadas pelo Work e commitadas**. O milestone permanece aberto; M2-03 é a próxima tarefa pendente. O corpo de evidências abaixo descreve a entrega anterior à revisão; o desfecho está no registro posterior ao final.
 
 ## Estado inicial e preservação
 
@@ -39,8 +39,24 @@ Os comandos de validação usaram `$env:PATH = 'C:\Program Files\nodejs;' + $env
 
 O npm reportou **7 vulnerabilidades (2 moderadas, 5 altas)** e aviso de fim de suporte do ESLint 9.39.5. Não foi realizada triagem de advisories nem aplicado `npm audit fix`; essa avaliação fica registrada como limitação para revisão, sem alegar auditoria de segurança concluída. ESLint 9 foi usado com a linha de plugins configurada para este runtime. O build mantém o aviso preexistente de ausência de classes utilitárias Tailwind; a aplicação usa CSS próprio. Os checks solicitados passam com esses avisos.
 
-O reparo global do Volta permanece fora do escopo. Conteúdo editorial, autorização de mídias, destino de publicação, testes e CI continuam nos gates posteriores. Work deve revisar este lote antes de avanço.
+O reparo global do Volta permanece fora do escopo. Conteúdo editorial, autorização de mídias, destino de publicação, testes e CI continuam nos gates posteriores. Na entrega original, a revisão do Work ainda era necessária; ela foi realizada conforme registro posterior abaixo.
 
 ## Conventional Commit sugerido
 
 `chore(tooling): prepare repository hygiene and reproducible quality checks`
+
+## Registro posterior — revisão e commit
+
+Conforme o contexto confirmado pelo Work e os registros da revisão anterior nesta conversa, M2-01/M2-02 receberam parecer **APROVADO**, após typecheck, lint, verificação de formato e build passarem. Esses checks não foram repetidos nesta regularização documental. O build passou fora do ambiente restrito após falha EPERM. A comparação confirmou somente formatação em oito arquivos de aplicação/configuração e preservação dos sete documentos/exports comparados. A triagem de segurança permaneceu pendente.
+
+A aprovação original cobriu 25 arquivos do commit inicial, com assinatura SHA-256 `6500c359ea85bb921216016f65ffc885c5f93750c4639913b0411e03e7dd5a67`, e foi registrada em `.workflow/review-approval.json` como evidência local transitória, excluída do versionamento. Na atualização documental atual, esse JSON já não está presente; este registro histórico não o recria nem autoriza novas alterações.
+
+Commit observado: `e3fb2bebaba97462e039290083699de2b16e3e89`, mensagem efetiva `chore(tooling): establish portfolio baseline and reproducible quality checks`, branch `chore/m2-technical-foundation`. A referência local `origin/chore/m2-technical-foundation` aponta para o mesmo commit; não houve consulta remota adicional nesta atualização, nem afirmação independente de sucesso do push.
+
+O estado corrente está em `PROJECT_STATUS.md`. Nenhuma implementação de M2-03 foi realizada nesta atualização; a correção documental requer revisão própria antes de commit/push.
+
+## Conferência documental local — 14/10/2026
+
+`git log -1` e `git show-ref` confirmaram localmente o commit completo e as referências acima. A árvore limpa após o lote é informação histórica confirmada pelo Work; na entrada desta sessão já havia alterações documentais não commitadas e PROJECT_STATUS.md já existia como não rastreado. Essas alterações foram preservadas. A ausência desse arquivo mencionada na revisão original descreve aquele momento, não o estado observado agora.
+
+Somente PROJECT_STATUS.md, docs/MILESTONE_2_PLAN.md e este handoff receberam ajustes nesta sessão. Não houve consulta remota, nova evidência de push, commit, merge, deploy ou implementação de M2-03. As evidências originais e as pendências de segurança, conteúdo e publicação permanecem válidas como registro histórico.

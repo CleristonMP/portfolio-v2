@@ -43,7 +43,7 @@ Adapte o caminho se sua instalação direta estiver em outro diretório. Invocar
 
 ## Estado e escopo
 
-Na entrada deste lote (14/10/2026), `origin` era `https://github.com/CleristonMP/portfolio-v2.git`, a branch era `main` sem commit inicial e todos os arquivos eram não rastreados, incluindo `node_modules/`, `dist/` e `tsconfig.tsbuildinfo`. Foi preparada a branch `chore/m2-technical-foundation`, ainda sem commits. O `.gitignore` exclui dependências, builds, caches, configurações locais e segredos, permitindo `.env.example` e `.env.*.example` sem credenciais. Lockfile, documentos e ZIPs do Stitch permanecem candidatos ao versionamento.
+Na entrada deste lote (14/10/2026), `origin` era `https://github.com/CleristonMP/portfolio-v2.git`, a branch era `main` sem commit inicial e todos os arquivos eram não rastreados, incluindo `node_modules/`, `dist/` e `tsconfig.tsbuildinfo`. Foi preparada a branch `chore/m2-technical-foundation`, inicialmente sem commits. M2-01/M2-02 foram posteriormente aprovadas pelo Work e registradas no commit `e3fb2be`; o acompanhamento atual está em `PROJECT_STATUS.md`. O `.gitignore` exclui dependências, builds, caches, configurações locais e segredos, permitindo `.env.example` e `.env.*.example` sem credenciais. Lockfile, documentos e ZIPs do Stitch foram preservados no versionamento.
 
 Este lote cobre apenas M2-01 e M2-02. A aplicação mantém seis seções e alternância PT/EN, com imagens temporariamente vinculadas ao repositório público anterior. A extração de componentes pertence a M2-03.
 
@@ -55,4 +55,4 @@ Este lote cobre apenas M2-01 e M2-02. A aplicação mantém seis seções e alte
 - Implementar testes e CI no lote previsto.
 - Decidir destino e base path na etapa de publicação; `/portfolio/` permanece como configuração herdada, sem representar decisão de destino.
 
-Consulte `DEVELOPMENT_WORKFLOW.md`, `docs/MILESTONE_2_PLAN.md` e `docs/PRD_Portfolio_Cleriston_v2.3.md`. O portfólio antigo permanece intacto. Não houve commit, push ou deploy.
+Consulte `PROJECT_STATUS.md`, `DEVELOPMENT_WORKFLOW.md`, `docs/MILESTONE_2_PLAN.md` e `docs/PRD_Portfolio_Cleriston_v2.3.md`. O portfólio antigo permanece intacto. A próxima tarefa oficial é M2-03; não houve merge ou deploy no fluxo revisado.

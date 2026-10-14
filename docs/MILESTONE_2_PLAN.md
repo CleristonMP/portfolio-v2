@@ -1,6 +1,6 @@
 # Milestone 2 — Technical Foundation
 
-Data: 14/10/2026. Estado: M2 iniciado pela auditoria e pelo planejamento; tarefas de implementação e aceite pendentes. Alinhado ao PRD v2.3 corrigido (errata da seção 17).
+Data: 14/10/2026. Estado: M2 em andamento; M2-01 e M2-02 validadas, aprovadas pelo Work e commitadas em `e3fb2be`. M2-03 a M2-08 pendentes. Estado corrente em `PROJECT_STATUS.md`. Alinhado ao PRD v2.3 corrigido (errata da seção 17).
 
 ## Fontes e precedência
 
@@ -10,6 +10,8 @@ Data: 14/10/2026. Estado: M2 iniciado pela auditoria e pelo planejamento; tarefa
 - O PRD corrigido consolida M1 de especificação e handoff técnico como concluído. Validação de dados, mídias, links, contatos e permissões permanece obrigatória antes da publicação, sem bloquear o início do M2. Preservar o PRD como fonte de requisitos.
 
 ## Auditoria do starter
+
+Registro histórico anterior à implementação de M2-01/M2-02. As lacunas abaixo descrevem o starter na entrada do milestone; para o estado posterior, consultar `PROJECT_STATUS.md` e `docs/M2_01_02_HANDOFF.md`.
 
 | Área | Evidência local | Avaliação |
 |---|---|---|
@@ -70,12 +72,20 @@ Todas as tarefas de implementação devem seguir as regras de `DEVELOPMENT_WORKF
 
 Testes automatizados focam comportamento: idioma, menu, metadados e renderização segura de dados incompletos. Não testar implementação privada nem exigir cobertura percentual arbitrária.
 
+## Acompanhamento corrente
+
+M2-01/M2-02: **validadas e aprovadas** conforme revisão anterior confirmada pelo Work. Nesta sessão, Git local confirmou a branch `chore/m2-technical-foundation`, HEAD `e3fb2bebaba97462e039290083699de2b16e3e89` e a referência local `origin/chore/m2-technical-foundation` no mesmo commit. Não houve consulta remota nem repetição dos checks da implementação. As alterações documentais pendentes na entrada foram preservadas; o estado limpo após o lote é informação histórica confirmada pelo Work.
+
+Próxima tarefa oficial: **M2-03 — Estrutura e contratos**, ainda **pendente**, sem implementação nesta entrega. Esta atualização não altera a sequência, as dependências ou os critérios da tabela acima. Evidências e pendências permanecem no handoff; acompanhamento consolidado em `PROJECT_STATUS.md`.
+
 ## Gate de conclusão
 
-Cada tarefa deve informar estado `pendente`, `em execução`, `validada` ou `bloqueada`, comandos/checks executados, resultado e evidência visual quando aplicável. Todos os critérios acima precisam passar; CI remota não deve ser declarada validada por execução local. Work revisa diff e evidências antes do fechamento do milestone. Neste momento todas as tarefas estão **pendentes**.
+Cada tarefa deve informar estado `pendente`, `em execução`, `validada` ou `bloqueada`, comandos/checks executados, resultado e evidência visual quando aplicável. Todos os critérios acima precisam passar; CI remota não deve ser declarada validada por execução local. Work revisa diff e evidências antes do fechamento do milestone. M2-01 e M2-02 estão **validadas e aprovadas**, com commit `e3fb2bebaba97462e039290083699de2b16e3e89`; M2-03 a M2-08 estão **pendentes**. O milestone permanece aberto.
 
 Contatos, credenciais, stacks não comprovadas, autorização de capturas e domínio final não bloqueiam a fundação: devem permanecer explicitamente pendentes e não virar alegações ou integrações fictícias. Formulário real, otimização definitiva de mídia, cases completos, Lighthouse e aceite WCAG completo pertencem aos gates posteriores.
 
-## Primeiro pedido de implementação após revisão
+## Primeiro pedido de implementação — registro histórico
 
 Executar somente M2-01 e M2-02 conforme este plano e DEVELOPMENT_WORKFLOW.md. Preservar PRD/ZIPs e código funcional existente. Entregar diff, comandos/resultados, pendências e Conventional Commit derivado. Não publicar, enviar ao remoto ou modificar o repositório antigo.
+
+Esse primeiro pedido já foi implementado e aprovado; a autorização posterior do Work liberou o lote revisado para commit/push. O commit está registrado acima. A próxima tarefa oficial é M2-03 — Estrutura e contratos, sem antecipar as tarefas seguintes. Esta atualização documental não inicia sua implementação.

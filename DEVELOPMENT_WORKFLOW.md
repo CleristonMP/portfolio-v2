@@ -24,7 +24,7 @@ Cada pedido contém: objetivo, IDs de tarefas, requisitos/fontes, arquivos ou á
 ## 2. Codex — implementar e validar
 
 1. Ler instruções locais, pedido, plano e fontes relevantes. Conferir branch, remote e estado do trabalho sem sobrescrever alterações existentes.
-2. Usar branch dedicada. Como o starter ainda não tem commit inicial, preparar baseline com exclusões antes de versionar; nunca adicionar `node_modules`, build ou segredos.
+2. Usar branch dedicada. Caso ainda não exista commit inicial, preparar baseline com exclusões antes de versionar; nunca adicionar `node_modules`, build ou segredos. Consultar `PROJECT_STATUS.md` para o acompanhamento atual; a baseline de M2-01/M2-02 já foi registrada em `e3fb2be`.
 3. Implementar apenas tarefas atribuídas, preservando identidade Stitch, dados únicos desktop/mobile, PT/EN e acessibilidade. Evitar dependências e abstrações sem necessidade.
 4. Executar checks apropriados: typecheck, lint, formato, testes de comportamento e build; smoke de navegador quando a tarefa afetar interação/layout. Scripts ainda ausentes são pendências, não checks aprovados.
 5. Revisar o próprio diff. Reportar arquivos, motivo, critérios atendidos, checks/resultados, riscos e pendências. Se uma verificação não puder ser executada, registrar o impedimento e não declarar sucesso.
@@ -62,7 +62,7 @@ Se a mensagem não for fornecida, Codex **deve gerá-la automaticamente a partir
 
 Exemplos: `docs(workflow): define milestone 2 plan and review flow`; `chore(tooling): configure lint and formatting checks`; `fix(i18n): update document language when switching locale`.
 
-Commits e pushes aprovados não autorizam automaticamente merge na `main`, criação de release ou deploy em produção. No primeiro lote M2-01/M2-02, permanece válida a instrução de entregar para revisão sem commit ou push.
+Commits e pushes aprovados não autorizam automaticamente merge na `main`, criação de release ou deploy em produção. M2-01/M2-02 foram entregues inicialmente sem commit/push e depois liberadas pelo parecer do Work registrado na conversa. Cada nova entrega deve seguir o mesmo fluxo de implementação sem commit/push até aprovação verificável própria.
 
 ## Formato do handoff
 

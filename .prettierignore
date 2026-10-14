@@ -7,3 +7,4 @@ docs/
 DEVELOPMENT_WORKFLOW.md
 package-lock.json
 *.tsbuildinfo
+.workflow/
