@@ -1,7 +1,7 @@
 import type { SectionProps } from '../content/contracts';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
-export function HeroSection({ language: lang, text }: SectionProps) {
+export function HeroSection({ text }: SectionProps) {
   return (
     <section id="home" className="hero container">
       <div className="ambient"></div>
@@ -10,11 +10,9 @@ export function HeroSection({ language: lang, text }: SectionProps) {
         {text.tag}
       </div>
       <h1>
-        <span>{lang === 'pt' ? 'Criando' : 'Building'}</span>
+        <span>{text.heroIntro}</span>
         <br />
-        <span className="gradient-text">
-          {lang === 'pt' ? 'soluções digitais.' : 'digital solutions.'}
-        </span>
+        <span className="gradient-text">{text.heroAccent}</span>
       </h1>
       <p className="hero-lead">{text.hero}</p>
       <div className="hero-actions">
@@ -28,8 +26,8 @@ export function HeroSection({ language: lang, text }: SectionProps) {
         </a>
       </div>
       <div className="hero-bottom">
-        <span>WEB / MOBILE / BACKEND</span>
-        <span>SCROLL TO EXPLORE ↓</span>
+        <span>{text.heroDomains}</span>
+        <span>{text.scrollHint}</span>
       </div>
     </section>
   );

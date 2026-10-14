@@ -12,7 +12,7 @@ export function Footer({ text }: { readonly text: Translation }) {
         <span>
           © {new Date().getFullYear()} · {text.footer}
         </span>
-        <a href="#home">↑ TOP</a>
+        <a href="#home">{text.backToTop}</a>
       </div>
     </footer>
   );

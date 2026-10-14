@@ -1,51 +1,15 @@
 import assert from 'node:assert/strict';
-import { Buffer } from 'node:buffer';
-import fs from 'node:fs';
 import path from 'node:path';
 import { argv, stdout } from 'node:process';
 import { execFileSync } from 'node:child_process';
-import ts from 'typescript';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-// Execute the actual TS modules with the compiler already used by the project.
-// Relative imports become in-memory modules; no generated files or test runner.
-const modules = new Map();
-function moduleUrl(relativePath, overrides = new Map(), cache = modules) {
-  const filename = path.resolve(relativePath);
-  if (cache.has(filename)) return cache.get(filename);
-  const source = overrides.get(filename) ?? fs.readFileSync(filename, 'utf8');
-  let javascript = ts.transpileModule(source, {
-    compilerOptions: {
-      module: ts.ModuleKind.ESNext,
-      target: ts.ScriptTarget.ES2022,
-      jsx: ts.JsxEmit.ReactJSX,
-    },
-  }).outputText;
-  javascript = javascript.replace(
-    /from (["'])([^"']+)\1/g,
-    (_, quote, specifier) => {
-      let url;
-      if (specifier.startsWith('.')) {
-        const base = path.resolve(path.dirname(filename), specifier);
-        const dependency = [base, `${base}.ts`, `${base}.tsx`].find(
-          (candidate) =>
-            overrides.has(candidate) ||
-            (fs.existsSync(candidate) && fs.statSync(candidate).isFile()),
-        );
-        assert(dependency, `Missing module: ${specifier}`);
-        url = moduleUrl(dependency, overrides, cache);
-      } else {
-        url = import.meta.resolve(specifier);
-      }
-      return `from ${quote}${url}${quote}`;
-    },
-  );
-  const url = `data:text/javascript;base64,${Buffer.from(javascript).toString('base64')}`;
-  cache.set(filename, url);
-  return url;
-}
-const load = (filename) => import(moduleUrl(filename));
+import {
+  loadProjectModule as load,
+  moduleUrl,
+} from './lib/load-project-module.mjs';
+
 const { projects } = await load('src/content/projects.ts');
 const { courses } = await load('src/content/courses.ts');
 const { skills } = await load('src/content/skills.ts');
@@ -235,8 +199,13 @@ if (baseline) {
     (block) => (++stackBlocks <= 2 ? '<div class="tags"></div>' : block),
   );
   assert.equal(stackBlocks, 3);
-  assert.equal(markup, baselineMarkup);
+  // M2-05 intentionally localizes text and accessible names; keep structural parity.
+  const structure = (html) =>
+    html
+      .replace(/\b(alt|aria-label)="[^"]*"/g, '$1="localized"')
+      .replace(/>[^<]*</g, '><');
+  assert.equal(structure(markup), structure(baselineMarkup));
   stdout.write(
-    'PASS: full PT markup equals baseline apart from the two unverified project stacks.\n',
+    'PASS: markup structure equals baseline apart from the two unverified project stacks; localized text/accessible names excluded.\n',
   );
 }

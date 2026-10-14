@@ -8,7 +8,7 @@ export function LearningSection({ text }: SectionProps) {
     <section id="learning" className="section learning-section">
       <div className="container">
         <SectionHeading
-          kicker="04 / EDUCATION"
+          kicker={text.kickers.learning}
           title={text.learning}
           lead={text.learningLead}
         />

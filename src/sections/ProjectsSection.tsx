@@ -8,7 +8,7 @@ export function ProjectsSection({ language: lang, text }: SectionProps) {
     <section id="projects" className="section projects-section">
       <div className="container">
         <SectionHeading
-          kicker="01 / PORTFOLIO"
+          kicker={text.kickers.projects}
           title={text.selected}
           lead={text.selectedLead}
         />
@@ -18,7 +18,7 @@ export function ProjectsSection({ language: lang, text }: SectionProps) {
               <div className="project-image">
                 <img
                   src={project.image}
-                  alt={`${project.title} interface`}
+                  alt={text.projectImageAlt.replace('{project}', project.title)}
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
                 <span className="project-number">0{index + 1}</span>

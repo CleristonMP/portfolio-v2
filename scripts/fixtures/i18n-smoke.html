@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description" content="i18n local verification fixture" />
+    <title>Verificação local de i18n</title>
+  </head>
+  <body>
+    <form id="fixture-controls">
+      <label for="scenario">Cenário de armazenamento</label>
+      <select id="scenario">
+        <option value="absent">Preferência ausente</option>
+        <option value="en">Preferência EN válida</option>
+        <option value="invalid">Preferência inválida</option>
+        <option value="read-failure">Falha na leitura</option>
+        <option value="write-failure">Falha na escrita</option>
+        <option value="access-failure">Falha no acesso ao storage</option>
+      </select>
+      <button type="button" id="prepare">Preparar e abrir aplicação</button>
+      <button type="button" id="mount">
+        Montar aplicação com falha simulada
+      </button>
+    </form>
+    <output id="fixture-report" hidden></output>
+    <div id="root"></div>
+    <script type="module">
+      const key = 'portfolio-v2.language';
+      const realStorage = window.localStorage;
+      const report = document.getElementById('fixture-report');
+      function seed(scenario) {
+        realStorage.removeItem(key);
+        if (scenario === 'en') realStorage.setItem(key, 'en');
+        if (scenario === 'invalid') realStorage.setItem(key, 'fr');
+      }
+      document.getElementById('prepare').addEventListener('click', () => {
+        seed(document.getElementById('scenario').value);
+        window.location.assign('/portfolio/');
+      });
+      document.getElementById('mount').addEventListener('click', async () => {
+        const scenario = document.getElementById('scenario').value;
+        seed(scenario);
+        const counts = {
+          scenario,
+          readErrors: 0,
+          writeErrors: 0,
+          accessErrors: 0,
+        };
+        const update = () => {
+          report.textContent = JSON.stringify({
+            ...counts,
+            persisted: realStorage.getItem(key),
+          });
+        };
+        if (scenario === 'access-failure') {
+          Object.defineProperty(window, 'localStorage', {
+            configurable: true,
+            get() {
+              counts.accessErrors++;
+              update();
+              throw new DOMException(
+                'Fixture: access blocked',
+                'SecurityError',
+              );
+            },
+          });
+        } else if (
+          scenario === 'read-failure' ||
+          scenario === 'write-failure'
+        ) {
+          Object.defineProperty(window, 'localStorage', {
+            configurable: true,
+            get() {
+              return {
+                getItem(name) {
+                  if (scenario === 'read-failure') {
+                    counts.readErrors++;
+                    update();
+                    throw new DOMException(
+                      'Fixture: read blocked',
+                      'SecurityError',
+                    );
+                  }
+                  return realStorage.getItem(name);
+                },
+                setItem(name, value) {
+                  if (scenario === 'write-failure') {
+                    counts.writeErrors++;
+                    update();
+                    throw new DOMException(
+                      'Fixture: write blocked',
+                      'QuotaExceededError',
+                    );
+                  }
+                  realStorage.setItem(name, value);
+                  update();
+                },
+              };
+            },
+          });
+        }
+        update();
+        document.getElementById('fixture-controls').hidden = true;
+        await import('/portfolio/src/main.tsx');
+      });
+    </script>
+  </body>
+</html>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import type { Language } from './content/contracts';
-import { translations } from './i18n/translations';
+import { useLanguage } from './i18n/useLanguage';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './sections/HeroSection';
@@ -10,16 +9,15 @@ import { AboutSection } from './sections/AboutSection';
 import { LearningSection } from './sections/LearningSection';
 import { ContactSection } from './sections/ContactSection';
 export default function App() {
-  const [language, setLanguage] = useState<Language>('pt');
+  const { language, text, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
-  const text = translations[language];
   return (
     <>
       <Header
         language={language}
         menuOpen={menuOpen}
         text={text}
-        onToggleLanguage={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
+        onToggleLanguage={toggleLanguage}
         onToggleMenu={() => setMenuOpen(!menuOpen)}
         onNavigate={() => setMenuOpen(false)}
       />

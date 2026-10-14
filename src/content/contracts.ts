@@ -38,8 +38,15 @@ export interface Course {
 }
 export type SkillIcon =
   'server' | 'code' | 'smartphone' | 'layers' | 'database' | 'book';
+export type SkillId =
+  | 'java-spring'
+  | 'react-typescript'
+  | 'android-mobile'
+  | 'javascript-node'
+  | 'sql-data'
+  | 'software-architecture';
 export interface Skill {
-  readonly id: string;
+  readonly id: SkillId;
   readonly name: string;
   readonly icon: SkillIcon;
   readonly editorial: EditorialReview;
@@ -89,6 +96,28 @@ export interface Translation {
   readonly more: string;
   readonly footer: string;
   readonly soon: string;
+  readonly languageSwitchCode: string;
+  readonly heroIntro: string;
+  readonly heroAccent: string;
+  readonly heroDomains: string;
+  readonly scrollHint: string;
+  readonly kickers: Readonly<Record<Exclude<SectionId, 'home'>, string>>;
+  readonly aboutAccent: string;
+  readonly methodLabel: string;
+  readonly methodText: string;
+  readonly conversationLabel: string;
+  readonly contactNotice: string;
+  readonly contactStatus: string;
+  readonly backToTop: string;
+  readonly accessibility: {
+    readonly navigation: string;
+    readonly changeLanguage: string;
+    readonly openMenu: string;
+    readonly closeMenu: string;
+  };
+  readonly projectImageAlt: string;
+  readonly skillLabels: Readonly<Record<SkillId, string>>;
+  readonly metadata: { readonly title: string; readonly description: string };
 }
 export type Translations = Readonly<Record<Language, Translation>>;
 export interface SectionProps {

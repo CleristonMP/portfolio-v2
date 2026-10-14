@@ -25,7 +25,7 @@ export function SkillsSection({ text }: SectionProps) {
     <section id="skills" className="section">
       <div className="container">
         <div className="center-heading">
-          <p className="kicker">02 / EXPERTISE</p>
+          <p className="kicker">{text.kickers.skills}</p>
           <h2>
             {text.skills}
             <span className="dot">.</span>
@@ -33,12 +33,12 @@ export function SkillsSection({ text }: SectionProps) {
           <p>{text.skillsLead}</p>
         </div>
         <div className="skills-grid">
-          {skills.map(({ id, name, icon }) => {
+          {skills.map(({ id, icon }) => {
             const Icon = skillIcons[icon];
             return (
               <div className="skill" key={id}>
                 <Icon size={27} strokeWidth={1.5} />
-                <span>{name}</span>
+                <span>{text.skillLabels[id]}</span>
               </div>
             );
           })}

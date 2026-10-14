@@ -11,7 +11,6 @@ interface HeaderProps {
   readonly onNavigate: () => void;
 }
 export function Header({
-  language: lang,
   menuOpen: menu,
   text,
   onToggleLanguage,
@@ -28,7 +27,7 @@ export function Header({
         </a>
         <nav
           className={menu ? 'nav-links open' : 'nav-links'}
-          aria-label="Navigation"
+          aria-label={text.accessibility.navigation}
         >
           {navigation.map(({ id, labelIndex }) => (
             <a key={id} href={'#' + id} onClick={onNavigate}>
@@ -40,15 +39,17 @@ export function Header({
           <button
             className="language"
             onClick={onToggleLanguage}
-            aria-label="Change language"
+            aria-label={text.accessibility.changeLanguage}
           >
-            {lang === 'pt' ? 'EN' : 'PT'}
+            {text.languageSwitchCode}
           </button>
           <a className="contact-button" href="#contact">
             {text.navigation[4]} <ArrowUpRight size={14} />
           </a>
           <button
-            aria-label="Open menu"
+            aria-label={
+              menu ? text.accessibility.closeMenu : text.accessibility.openMenu
+            }
             className="menu-btn"
             onClick={onToggleMenu}
           >
