@@ -17,22 +17,24 @@ Atualização: 14/10/2026. Repositório: `CleristonMP/portfolio-v2`.
 - Entrada de M2-06 observada localmente: branch `chore/m2-technical-foundation`, HEAD `7af9622e1bc7cd134731a972db3a1ea604ad70f4`; árvore limpa e staging vazio, remote correto. Sem consulta remota adicional.
 - M2-06: **validada, aprovada pelo Work e commitada** em `b71c5dd84aa81b674a5c47ed4e1ec2eea5d98917` — `feat(a11y): add skip link and accessible responsive navigation`. Aprovação verificável e push com retorno 0 registrados nesta conversa; handoff original preservado como histórico.
 - Entrada M2-07: mesma branch, HEAD `b71c5dd84aa81b674a5c47ed4e1ec2eea5d98917`, árvore limpa e staging vazio, observados localmente; sem consulta remota adicional.
-- M2-07: implementada e validada localmente, **aguardando revisão própria do Work**; CI remota pendente até aprovação e push autorizado. Evidências em `docs/M2_07_HANDOFF.md`.
+- M2-07: **validada, aprovada pelo Work e commitada** em `201f0e7a01bb0e2fd074675fd67c23899e200db2` — `test(foundation): add behavioral tests and read-only quality CI`. Aprovação/push posteriores ao handoff original registrados nesta conversa. [CI concluída com sucesso](https://github.com/CleristonMP/portfolio-v2/actions/runs/38643035949), confirmada via gh run view (status completed, conclusion success, headSha exato) nesta entrega.
+- Entrada M2-08 observada localmente: mesma branch, HEAD `201f0e7a01bb0e2fd074675fd67c23899e200db2`, árvore limpa/staging vazio, origin correto.
+- M2-08: implementada, correção de overflow validada localmente, **aguardando revisão própria do Work**. Carregamento dos previews passou; overflow de 15 px em 320 px posteriormente corrigido com autorização explícita, matriz final 20/20 sem excesso; zoom real 200% e reduced motion posteriormente validados manualmente no Google Chrome e aprovados pelo responsável em 15/10/2026. M2 não concluído. Evidências em `docs/M2_08_HANDOFF.md`.
 
 ## Sequência oficial do M2
 
-| Tarefa                            | Estado                          | Evidência / dependência                                            |
-| --------------------------------- | ------------------------------- | ------------------------------------------------------------------ |
-| M2-01 — Higiene e baseline        | Validada e aprovada; commitada  | Revisão Work, baseline inicial e `docs/M2_01_02_HANDOFF.md`.       |
-| M2-02 — Ferramentas reproduzíveis | Validada e aprovada; commitada  | Checks da implementação e revisão registrados no handoff anterior. |
-| M2-03 — Estrutura e contratos     | Validada e aprovada; commitada  | Commit `73e5f7d`; revisão Work posterior ao handoff original.      |
-| M2-04 — Tokens canônicos          | Validada e aprovada; commitada  | Commit `d59b827`; parecer Work posterior ao handoff original.      |
-| M2-05 — Fundação i18n             | Validada e aprovada; commitada  | Commit `7af9622`; parecer Work posterior ao handoff original.      |
-| M2-06 — Shell acessível           | Validada e aprovada; commitada  | Commit `b71c5dd`; parecer Work posterior ao handoff.               |
-| M2-07 — Testes e CI sem deploy    | Em execução; aguardando revisão | CI remota pendente; `docs/M2_07_HANDOFF.md`.                       |
-| M2-08 — Preview e handoff         | Pendente                        | Depende de M2-07.                                                  |
+| Tarefa                            | Estado                                                | Evidência / dependência                                                                                      |
+| --------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| M2-01 — Higiene e baseline        | Validada e aprovada; commitada                        | Revisão Work, baseline inicial e `docs/M2_01_02_HANDOFF.md`.                                                 |
+| M2-02 — Ferramentas reproduzíveis | Validada e aprovada; commitada                        | Checks da implementação e revisão registrados no handoff anterior.                                           |
+| M2-03 — Estrutura e contratos     | Validada e aprovada; commitada                        | Commit `73e5f7d`; revisão Work posterior ao handoff original.                                                |
+| M2-04 — Tokens canônicos          | Validada e aprovada; commitada                        | Commit `d59b827`; parecer Work posterior ao handoff original.                                                |
+| M2-05 — Fundação i18n             | Validada e aprovada; commitada                        | Commit `7af9622`; parecer Work posterior ao handoff original.                                                |
+| M2-06 — Shell acessível           | Validada e aprovada; commitada                        | Commit `b71c5dd`; parecer Work posterior ao handoff.                                                         |
+| M2-07 — Testes e CI sem deploy    | Validada/aprovada; commitada; CI passou               | Commit `201f0e7`; run 38643035949.                                                                           |
+| M2-08 — Preview e handoff         | Correção validada localmente; aguardando nova revisão | `docs/M2_08_HANDOFF.md`; overflow corrigido; nova revisão Work obrigatória; zoom/reduce com registro manual. |
 
-A próxima ação é revisar M2-07 pelo Work; CI remota somente após aprovação/push autorizado, sem avanço para M2-08. Os critérios, a ordem e as dependências continuam em `docs/MILESTONE_2_PLAN.md`; seus registros de tarefas pendentes antecedem as implementações registradas aqui. O estado corrente está neste documento. O M2 permanece aberto.
+A próxima ação é completar as validações pendentes de M2-08 e obter revisão própria do Work, sem iniciar M3 ou encerrar M2. Os critérios, a ordem e as dependências continuam em `docs/MILESTONE_2_PLAN.md`; seus registros de tarefas pendentes antecedem as implementações registradas aqui. O estado corrente está neste documento. O M2 permanece aberto.
 
 ## Fontes e fatos observados
 
@@ -93,3 +95,31 @@ Vitest/Testing Library/jsdom adicionados somente como devDependencies. Testes de
 Workflow push/pull_request de qualidade, somente leitura, sem deploy/publicação. Instalação pelo lockfile e checks locais não equivalem a CI remota aprovada. Resultados/limitações no handoff; exige nova revisão e snapshot, sem reutilizar aprovações. M2 permanece aberto; M2-08 não implementada. Registros anteriores de pendência M2-06 antecedem sua aprovação posterior.
 
 Validação local M2-07: npm ci concluído com lockfile final; typecheck, lint, format:check, 48 testes em três arquivos, verify:content, verify:i18n, build e git diff --check passaram. YAML parseado e conferido localmente; CI GitHub não executada. Sete advisories herdados permanecem (duas moderadas/cinco altas), sem críticos na instalação final. Nenhuma versão de pacote já presente no lockfile anterior mudou. A normalização CRLF→LF do lockfile explica parte substancial de seu diff. Snapshot/diff novos para revisão própria; sem staging, commit ou push.
+
+## Registro M2-08
+
+Base local padrão /, builds/previews independentes para / e /portfolio-v2/, fixture ativa com caminhos relativos e verify agregado. Sem dependências, conteúdo, tokens, traduções, navegação, imagens ou contratos alterados. Relatos /portfolio/ anteriores preservados como históricos. Fontes/imagens externas continuam pendentes de migração/validação futura.
+
+Matriz de 20 combinações no navegador integrado: 320/390/768/1280/1920 × PT/EN × dois caminhos, com overflow de 15 px em 320 px (quatro cenários) e sem overflow de 390 a 1920 px, seis seções, quatro projetos/cursos, seis skills, quatro imagens carregadas e fontes computadas Inter/Manrope. Teclado/menu/foco/breakpoint/âncoras/Voltar/metadados/persistência exercitados nos builds; fixture testada em dev nos dois caminhos. CSS/JS/HTML locais retornaram HTTP 200. JSONs/capturas em .m2-review/m2-08, procedimento no handoff.
+
+A sessão disponibiliza somente navegador integrado com viewport, sem zoom real ou emulação de media preference. Observado prefers-reduced-motion:reduce false; regra CSS intacta não é validação com preferência ativada. Zoom manual aceito em M2-06 é histórico, em outro contexto, sem captura/procedimento detalhado; não fecha automaticamente o critério M2-08. Ambos critérios continuam pendentes, sem autoaprovação. Viewport temporário restaurado.
+
+CI M2-07 verificada via consulta read-only, sem disparar workflows. Isso atualiza os relatos históricos de CI pendente, sem alegar CI de M2-08. Nenhum staging/commit/push/merge/deploy. Revisão e snapshot novos obrigatórios. M2 permanece aberto; M3 não iniciado.
+
+Correção da avaliação de overflow M2-08: medição inicial contra innerWidth não descontava scrollbar e foi superada pela medição final contra clientWidth. Em 320 px, bodyWidth/scrollWidth=320 e clientWidth=305. Regra min-width:320px preexistente é a causa provável; caso reproduzível registrado para Work, sem alterar CSS. Critério 320 permanece pendente. Evidência final em .m2-review/m2-08/overflow-details.json; checker local mantém a asserção e falha nos quatro casos, sem esconder o defeito.
+
+## Confirmação manual posterior M2-08 — 15/10/2026
+
+Responsável confirmou Google Chrome, todos os testes propostos executados e resultado aprovado, incluindo zoom real 200% e reduced motion. Captura em .m2-review/m2-08/manual-chrome-reduced-motion.png mostra localhost:5173/#learning, EN, emulação reduce ativa, matchMedia true e scrollBehavior auto. Demais cenários são relato do responsável, sem observação independente de Codex; limites e origem documentados no handoff. Registros anteriores de pendência de zoom/reduce são históricos e superados pela confirmação manual, sem alterar evidências brutas.
+
+Overflow de 15 px em 320 px permanece pendente; não houve correção CSS ou aprovação integral da implementação pelo Work. M2-08 e milestone seguem abertos para revisão própria, sem staging/commit/push ou avanço para M3.
+
+## Correção autorizada de overflow M2-08 — 15/10/2026
+
+Removida apenas a linha body min-width:320px em src/styles.css. Causa confirmada: scrollbar vertical deixava 305px disponíveis e a restrição forçava 320. Após remoção, body/scrollWidth/clientWidth=305; html/body overflow-x permanece visible, sem clipping global. Vinte combinações dos dois builds × PT/EN × 320/390/768/1280/1920 passaram com scrollWidth=clientWidth (305/375/753/1265/1905). Larguras maiores preservam medidas anteriores; fonte/controles/textos amostrados sem excesso horizontal. Smoke adicional de foco/menu/CTAs 320 PT/EN nos dois caminhos passou.
+
+Typecheck, lint, format, 48 testes, verificadores, builds das duas bases e git diff --check passaram. Evidências finais em .m2-review/m2-08/overflow-fix, diagnóstico original preservado em overflow-details.json e seções históricas do handoff. Lazy images foram carregadas explicitamente nas combinações em que a primeira leitura antecedeu o carregamento; checker final passou sem reduzir asserções.
+
+O estado anterior de overflow pendente é histórico, superado por esta correção validada localmente. M2-08 **aguarda nova revisão obrigatória do Work** e snapshot atualizado; M2 não concluído. Confirmações manuais anteriores de zoom/reduce mantidas com limites, sem alegar nova automação. Sem staging, commit, push ou avanço M3.
+
+Reconferência em 15/10/2026: ajuste já presente na árvore compartilhada preservado; os checks completos e os dois builds passaram novamente. Nova medição no navegador confirmou as 20 combinações com scrollWidth = clientWidth e overflow-x visible, além de abertura/Escape/retorno de foco do menu em 320 PT no subpath. Detalhes no adendo do handoff; estado permanece aguardando nova revisão.

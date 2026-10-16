@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --host=127.0.0.1 --port=4180 --strictPort",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings 0",
     "format:check": "prettier . --check",
@@ -14,7 +14,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "verify:content": "node scripts/verify-content.mjs",
-    "verify:i18n": "node scripts/verify-i18n.mjs"
+    "verify:i18n": "node scripts/verify-i18n.mjs",
+    "verify": "npm run verify:content && npm run verify:i18n",
+    "build:subpath": "tsc -b && vite build --base=/portfolio-v2/ --outDir=.m2-review/m2-08/dist-subpath",
+    "preview:subpath": "vite preview --base=/portfolio-v2/ --outDir=.m2-review/m2-08/dist-subpath --host=127.0.0.1 --port=4181 --strictPort"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

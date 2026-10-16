@@ -35,7 +35,7 @@
       }
       document.getElementById('prepare').addEventListener('click', () => {
         seed(document.getElementById('scenario').value);
-        window.location.assign('/portfolio/');
+        window.location.assign(new URL('../../', window.location.href));
       });
       document.getElementById('mount').addEventListener('click', async () => {
         const scenario = document.getElementById('scenario').value;
@@ -101,7 +101,7 @@
         }
         update();
         document.getElementById('fixture-controls').hidden = true;
-        await import('/portfolio/src/main.tsx');
+        await import('../../src/main.tsx');
       });
     </script>
   </body>
