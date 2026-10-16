@@ -1,5 +1,13 @@
 # Milestone 2 — Technical Foundation
 
+## Fechamento técnico — 15/10/2026
+
+Work avaliou M2-01 a M2-08 como tecnicamente concluídas, com critérios validados nas revisões de cada lote. Commit final de implementação: `c337da4ff5c27817ccb42d9001853397b82b1163`, branch `chore/m2-technical-foundation`; árvore limpa antes desta formalização. [CI final concluída com sucesso](https://github.com/CleristonMP/portfolio-v2/actions/runs/38830919198), consultada para esse SHA exato.
+
+As referências posteriores no corpo deste plano a tarefas pendentes e próximos pedidos são registros históricos anteriores ao fechamento. A sequência e os critérios originais abaixo permanecem preservados. Evidências por tarefa nos handoffs M2-01/02 a M2-08; síntese e limites em `PROJECT_STATUS.md`.
+
+Esta formalização documental ainda requer revisão própria e aprovação verificável antes de commit/push. Não inicia M3, não autoriza merge/release/deploy e não resolve as pendências editoriais, de segurança ou qualidade final destinadas aos milestones seguintes. Próximo milestone previsto: M3 — Interface; detalhamento pelo Work ainda necessário.
+
 Data: 14/10/2026. Estado: M2 em andamento; M2-01 e M2-02 validadas, aprovadas pelo Work e commitadas em `e3fb2be`. M2-03 a M2-08 pendentes. Estado corrente em `PROJECT_STATUS.md`. Alinhado ao PRD v2.3 corrigido (errata da seção 17).
 
 ## Fontes e precedência

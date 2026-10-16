@@ -1,5 +1,19 @@
 # Estado do projeto — Portfolio v2
 
+## Fechamento técnico do M2 — avaliação Work em 15/10/2026
+
+M2 — Technical Foundation **tecnicamente concluído**: M2-01 a M2-08 implementadas, validadas e aprovadas pelo Work em suas revisões próprias. M2-08, incluindo a correção autorizada de overflow, foi registrada no commit `c337da4ff5c27817ccb42d9001853397b82b1163`. A árvore estava limpa na avaliação posterior; a referência local da branch remota de desenvolvimento aponta para esse commit.
+
+Branch avaliada: `chore/m2-technical-foundation`. [CI do commit final concluída com sucesso](https://github.com/CleristonMP/portfolio-v2/actions/runs/38830919198), confirmada por consulta somente de leitura ao GitHub em 15/10/2026. Nenhuma implementação ou aprovação técnica de M2 permanece aguardando commit/push. A aprovação final de M2-08 cobriu sete arquivos; este registro posterior não está incluído naquela aprovação.
+
+Aceite consolidado: higiene/runtime/qualidade, contratos/componentes, tokens, PT/EN/persistência/metadados, shell acessível, 48 testes/CI e previews `/` e `/portfolio-v2/`. Matriz final de 20 combinações sem overflow, inclusive 320 px; evidências de teclado revisadas. Zoom real e interações de reduced motion têm validação manual registrada com os limites do handoff; captura de preferência ativa foi conferida. Isso não equivale ao aceite visual final, auditoria WCAG completa ou liberação de segurança/publicação.
+
+**Formalização documental aguardando revisão própria:** esta atualização, a do plano M2 e a do README permanecem não commitadas, sem autorização operacional derivada das aprovações anteriores. Submeter o diff documental ao fluxo Work → revisão → aprovação verificável → Codex commit/push antes de iniciar nova implementação.
+
+Próximo milestone: **M3 — Interface**, conforme PRD §10. Ainda não iniciado e sem plano detalhado aprovado no repositório. Após formalizar este fechamento, Work deverá planejar M3 antes de encaminhar código. Pendências de dados/contatos/credenciais/permissões/mídias, sete advisories herdados e avaliações finais de qualidade permanecem abertas nos gates posteriores; não são declaradas resolvidas.
+
+Os registros abaixo, incluindo estados de espera e tabela de tarefas, descrevem as entregas antes de seus pareceres posteriores. Para o estado corrente, prevalece esta seção de fechamento; evidências originais são preservadas.
+
 Atualização: 14/10/2026. Repositório: `CleristonMP/portfolio-v2`.
 
 ## Estado atual

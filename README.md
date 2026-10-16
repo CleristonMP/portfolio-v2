@@ -1,5 +1,7 @@
 # Cleriston Pereira — Full Stack & Mobile Developer
 
+Estado avaliado pelo Work em 15/10/2026: **M2 tecnicamente concluído**, com implementação até `c337da4` e [CI final bem-sucedida](https://github.com/CleristonMP/portfolio-v2/actions/runs/38830919198). A formalização documental de fechamento aguarda revisão própria; os estados de espera descritos nas entregas abaixo são históricos. Próximo milestone: M3 — Interface, ainda sem implementação iniciada ou plano detalhado aprovado. O site continua sem liberação para publicação. Estado consolidado e limitações em `PROJECT_STATUS.md`.
+
 Portfólio v2 em React 19, TypeScript 5.7, Vite 6 e Tailwind CSS 3.4, baseado nos exports do Stitch. A fundação técnica está em revisão; o site ainda não está pronto para publicação.
 
 ## Runtime e instalação
