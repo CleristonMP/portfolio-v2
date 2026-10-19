@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — plano M3 aprovado em 19/10/2026
+## Estado corrente — M3-01 aguardando revisão em 19/10/2026
+
+Plano M3 aprovado pelo responsável e registrado no commit `6f7a8bc82437835f4ffb1df4410a763ebec348cc`, observado localmente na branch `docs/m3-interface-plan`. Entrada limpa, origin `https://github.com/CleristonMP/portfolio-v2.git`; sem consulta remota adicional. A seção anterior ao início da implementação permanece abaixo como histórico.
+
+Criada a branch dedicada `feat/m3-01-header` a partir desse HEAD. **M3-01 — Header implementada, aguardando revisão própria do Work**, sem staging, commit ou push. Refinamento restrito ao CSS do header: composição, glass, alinhamento e controles; lógica aprovada de M2 preservada. Evidências e critérios individuais em `docs/M3_01_HANDOFF.md`.
+
+Matriz de navegador 320/390/768/1280/1920 px em PT/EN sem overflow ou controles cortados; capturas antes/depois em 390/1280 px. Checks locais e 48 testes passaram. **Zoom real de 200% e reduced motion com preferência ativa foram realizados manualmente e aprovados pelo responsável para M3-01**, conforme declaração direta nesta conversa em 19/10/2026. Essa confirmação supera a pendência da tentativa automatizada impedida no Edge, preservada no handoff como histórico. Codex não observou a execução manual; navegador, larguras, idiomas e procedimento não foram detalhados, portanto não são inferidos. Não se trata de reutilização da aprovação de M2 nem de aprovação integral da entrega pelo Work.
+
+Correção posterior da transição responsiva: overflow reproduzido em 701×844 PT-BR (clientWidth 686, scrollWidth 701), não coberto pela matriz inicial. Ajustados somente padding/gaps do header entre 701 e 767 px, sem alterar fontes, controles, breakpoint de 700 px ou lógica de foco. Nova matriz de 16 combinações (320/390/700/701/720/768/1280/1920 px, PT/EN) passou sem overflow, sobreposição ou cortes; smoke de teclado e transições 700↔701/720/768 nos dois idiomas passou. Evidências posteriores em `.m2-review/m3-01/transition/`; diagnóstico anterior preservado no handoff. Entrega continua aguardando nova revisão obrigatória do Work.
+
+M2 continua fechado; M3-02 a M3-08 permanecem pendentes, sem autorização para avançar antes da revisão desta entrega. M3 não concluído. Pendências editoriais, mídias/permissões, contatos, segurança e publicação preservadas. Nova aprovação verificável e snapshot próprio serão necessários antes de qualquer commit/push.
+
+## Histórico — plano M3 aprovado em 19/10/2026
 
 M2 **fechado tecnicamente e com formalização documental aprovada/commitada**, esta última em `669f7bc5b7f56d0fd46003a4de90630963ea5522`, já confirmado no remoto pelo Work. Os registros de formalização aguardando revisão abaixo descrevem o momento anterior à aprovação posterior.
 
