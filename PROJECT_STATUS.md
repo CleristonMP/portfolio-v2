@@ -1,5 +1,17 @@
 # Estado do projeto — Portfolio v2
 
+## Estado corrente — plano M3 aprovado em 19/10/2026
+
+M2 **fechado tecnicamente e com formalização documental aprovada/commitada**, esta última em `669f7bc5b7f56d0fd46003a4de90630963ea5522`, já confirmado no remoto pelo Work. Os registros de formalização aguardando revisão abaixo descrevem o momento anterior à aprovação posterior.
+
+M3 — Interface: **plano aprovado pelo responsável em 19/10/2026**, por declaração direta nesta conversa. Plano único: `docs/MILESTONE_3_PLAN.md`; sequência editorial e critérios aprovados, decisões abertas preservadas. M3-01 a M3-08 continuam pendentes de implementação e aceite; nenhuma tarefa foi implementada ou aceita por essa aprovação do planejamento.
+
+Entrada local desta proposta: árvore limpa em main no commit `669f7bc`. Criada a branch documental `docs/m3-interface-plan` antes de editar; main e código preservados. Apenas este status e o novo plano são alterados, sem staging, commit ou push. Esta entrega requer revisão documental própria antes de qualquer autorização operacional.
+
+Próxima ação: revisar o diff documental que registra a aprovação e formalizá-lo conforme o workflow; depois encaminhar somente **M3-01 — Header**, primeira tarefa da sequência aprovada. Não iniciar implementação por inferência desta atualização. A aprovação do plano não autoriza commit/push deste diff nem resolve decisões editoriais abertas. Conteúdo, mídias/permissões, contatos, segurança e qualidade final permanecem pendentes conforme os gates registrados. Sem publicação, merge ou deploy.
+
+Para o estado corrente, prevalece esta seção; as seções seguintes são histórico preservado das entregas anteriores.
+
 ## Fechamento técnico do M2 — avaliação Work em 15/10/2026
 
 M2 — Technical Foundation **tecnicamente concluído**: M2-01 a M2-08 implementadas, validadas e aprovadas pelo Work em suas revisões próprias. M2-08, incluindo a correção autorizada de overflow, foi registrada no commit `c337da4ff5c27817ccb42d9001853397b82b1163`. A árvore estava limpa na avaliação posterior; a referência local da branch remota de desenvolvimento aponta para esse commit.
