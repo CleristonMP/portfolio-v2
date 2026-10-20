@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-05 aguardando revisão em 20/10/2026
+## Estado corrente — M3-06 aguardando revisão em 20/10/2026
+
+M3-05 — Perfil aceita pelo Work e commitada em `f2ea78f917021d46fa15aaa750c130911dad2e1c` — `style(profile): refine textual layout and method presentation`. Aprovação verificável dos três arquivos e push bem-sucedido para origin/feat/m3-05-profile registrados nesta conversa; estados anteriores preservados como histórico.
+
+Entrada M3-06 observada localmente: branch `feat/m3-05-profile`, mesmo HEAD, coincidente com referência local origin/feat/m3-05-profile; nenhum diff versionável/staging. README sinalizado apenas por finais de linha, diff vazio. Origin correto; sem consulta remota adicional. Criada branch dedicada `feat/m3-06-learning`, sem alterar main ou realizar merge.
+
+**M3-06 — Aprendizado implementada, aguardando revisão própria do Work.** Refinados hierarquia, cards informativos, ícones e espaços somente da seção. Fonte única, quatro formações/instituições, ordem, copy PT/EN, contratos e #learning entre perfil/contato preservados. Lista ordenada nomeada, números e ícones decorativos fora da árvore acessível; sem links, imagens, datas ou credenciais novas. Adaptação derivada da linguagem Stitch: a seção não existe nos exports.
+
+Typecheck, lint, formato, 54 testes, verify, build e diff check passaram. Matriz de navegador 26/26 sem excesso contra clientWidth, cortes ou sobreposição medida nos cards; capturas antes/depois 390/1280 PT/EN e smoke próprio em `docs/M3_06_HANDOFF.md`. Zoom real 200% e reduced motion com preferência ativa realizados manualmente e aprovados pelo responsável para M3-06, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou a execução; navegador, larguras, idiomas, procedimento e capturas adicionais não foram informados e não são inferidos. A confirmação supera a pendência inicial preservada no handoff, sem reutilizar aprovações anteriores nem substituir a revisão integral do Work. Sem staging, commit ou push; nova revisão e snapshot próprios obrigatórios.
+
+M3 não concluído; M3-07 e posteriores não iniciadas. Pendências editoriais M4 de títulos oficiais, datas e credenciais permanecem, assim como mídia/permissões, contatos, segurança e publicação.
+
+## Histórico — M3-05 aguardando revisão em 20/10/2026
 
 M3-04 — Competências aceita pelo Work e commitada em `2cb21a48b05cf0f66dd10456594136110fe6b881` — `style(skills): refine responsive informational skill cards`. Aprovação verificável dos cinco arquivos e push bem-sucedido para origin/feat/m3-04-skills registrados nesta conversa; registros anteriores de espera preservados como histórico.
 
