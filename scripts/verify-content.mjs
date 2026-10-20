@@ -148,9 +148,11 @@ for (const [, href] of markup.matchAll(/<a\b[^>]*href="([^"]*)"/g)) {
   assert(
     sectionIds.some((id) => href === `#${id}`) ||
       href === 'https://github.com/CleristonMP' ||
-      href === '#main-content',
+      href === '#main-content' ||
+      href === '#reports-registry-case',
   );
 }
+assert(markup.includes('id="reports-registry-case" tabindex="-1"'));
 assert(markup.includes('<main id="main-content" tabindex="-1">'));
 assert(markup.indexOf('class="skip-link"') < markup.indexOf('<header'));
 for (const id of sectionIds)

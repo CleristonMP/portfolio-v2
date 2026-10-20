@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-02 aguardando revisão em 19/10/2026
+## Estado corrente — M3-03 aguardando revisão em 20/10/2026
+
+M3-02 — Hero revisada/aprovada pelo Work e commitada em `5908473c238019b1e599fbae982f68c7fe14c49b` — `style(hero): refine responsive typography and ambient composition`. Aprovação verificável, commit e push bem-sucedido para origin/feat/m3-02-hero registrados nesta conversa. Handoff e estados anteriores preservados como histórico anterior ao parecer.
+
+Entrada local de M3-03: branch `feat/m3-02-hero`, mesmo HEAD, nenhum diff versionável ou staging; README sinalizado somente por finais de linha, com diff vazio. Criada branch dedicada `feat/m3-03-projects`, sem alterar main/merge. Origin permanece `https://github.com/CleristonMP/portfolio-v2.git`; sem verificação remota adicional.
+
+Decisões explicitamente aprovadas pelo responsável: três prioritários Reports Registry → Audience-Counter → Web Matrículas; DS Commerce secundário educacional; case textual mínimo na mesma página por âncora; copy PT/EN fornecida; cards temporariamente sem imagens; sem links externos novos. Registradas no plano M3, preservando decisões originais como histórico. Imagens, autorização específica e migração/otimização continuam M4; caminhos públicos não equivalem a permissão.
+
+**M3-03 implementada, aguardando revisão própria do Work**, sem staging/commit/push. Dataset e contratos preservados; grupos derivados dos registros existentes e case localizado tipado. Cards sem áreas vazias de imagem, CTA nativo #reports-registry-case, destino focalizável; header/hero/tokens preservados. Matriz de 26 combinações PT/EN sem excesso contra clientWidth; 50 testes e checks passaram. Critérios/evidências/limitações em `docs/M3_03_HANDOFF.md`. **Zoom real 200% e preferência reduced motion ativa realizados manualmente e aprovados pelo responsável para M3-03**, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou a execução; navegador, larguras, idiomas e passos não foram detalhados e não são inferidos. A confirmação supera a pendência anterior, preservada no handoff como histórico, sem reutilizar aprovações de outras tarefas nem substituir a revisão integral do Work.
+
+M3 não concluído. M3-04 e posteriores não iniciadas. Gates de conteúdo final/cases completos, mídias/permissões, contato, segurança e publicação continuam pendentes. Nova revisão e snapshot próprios obrigatórios antes de qualquer commit/push.
+
+## Histórico — M3-02 aguardando revisão em 19/10/2026
 
 M3-01 — Header **revisada, aprovada pelo Work e commitada** em `34743627415ffa4476de92cc64fba59bb9200df6` — `style(header): refine responsive glass navigation`. Aprovação verificável dos três arquivos, commit e push bem-sucedido para origin/feat/m3-01-header registrados nesta conversa; registro transitório consumido/removido. O handoff original e os estados anteriores abaixo permanecem como histórico anterior ao parecer.
 

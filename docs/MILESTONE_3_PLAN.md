@@ -2,6 +2,16 @@
 
 Proposta criada em 15/10/2026. **PLANO APROVADO PELO RESPONSÁVEL EM 19/10/2026**, por declaração direta nesta conversa. Escopo, sequência e critérios passam a orientar M3; nenhuma implementação foi iniciada. A aprovação do planejamento não equivale ao aceite de tarefas executadas nem à autorização de commit/push deste diff documental.
 
+## Decisões posteriores aprovadas — M3-03 (20/10/2026)
+
+Responsável aprovou explicitamente nesta conversa: vitrine Reports Registry → Audience-Counter → Web Matrículas; DS Commerce em bloco secundário identificado como educacional; mesma ordem e dados desktop/mobile, sem filtros/novas páginas. Case textual mínimo de Reports Registry na mesma página por âncora, com os três textos PT/EN fornecidos integralmente pelo responsável (categoria, contexto e restrição de divulgação), registrados em `src/content/projects.ts` e no handoff M3-03.
+
+**Adaptação temporária autorizada:** cards sem imagens ou espaços reservados. Capturas atuais deixam somente a apresentação; arquivos de origem não são apagados. Critério de raio/corte/alt de imagem interna fica não aplicável à apresentação textual desta entrega por essa decisão; migração, otimização, seleção e autorização específica de capturas permanecem em M4, sem declarar o requisito futuro executado. Raios externos aproximadamente 1,5rem e linguagem de superfícies Stitch continuam aplicáveis.
+
+Sem links externos novos; URLs não verificadas ausentes e Reports Registry sem GitHub. Origem informada para mídias futuras: `https://github.com/CleristonMP/portfolio/tree/main/public/assets`, apenas proveniência, não autorização automática; não modificar o repositório anterior. Case completo continua M4, mas acesso funcional ao case textual mínimo é critério de M3-03. Não há aprovação de stack, métricas ou identificação de terceiros.
+
+M3-01/M3-02 aprovadas e commitadas em `3474362`/`5908473`; M3-03 em implementação para revisão própria. Não altera sequência, dependências ou critérios originais da tabela abaixo, preservada como histórico do planejamento. O estado executado corrente está em PROJECT_STATUS.md; decisões abertas originais de curadoria/case abaixo são superadas somente no recorte explícito desta atualização. M3-04 e posteriores continuam pendentes.
+
 ## Entrada e fontes
 
 M2 tecnicamente concluído e revisado; implementação final `c337da4`, formalização documental aprovada e commitada em `669f7bc5b7f56d0fd46003a4de90630963ea5522`. Esse fechamento já foi confirmado no remoto pelo Work. Entrada local limpa em main; proposta preparada na branch `docs/m3-interface-plan`, sem editar main ou executar commit/push.

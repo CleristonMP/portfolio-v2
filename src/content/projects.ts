@@ -1,4 +1,4 @@
-import type { Project } from './contracts';
+import type { LocalizedText, Project } from './contracts';
 
 // Only confirmed technologies are published; unresolved stacks stay absent.
 export const projects: readonly Project[] = [
@@ -89,3 +89,29 @@ export const projects: readonly Project[] = [
     stack: ['React', 'Spring Boot'],
   },
 ];
+
+// Explicit editorial grouping; both viewports consume these same records.
+export const featuredProjects = projects.filter((project) =>
+  ['reports-registry', 'audience-counter', 'webmatriculas'].includes(
+    project.slug,
+  ),
+);
+export const secondaryProjects = projects.filter(
+  (project) => project.slug === 'dscommerce',
+);
+
+export const reportsRegistryCase = {
+  id: 'reports-registry-case',
+  category: {
+    pt: 'Projeto comercial · Código privado',
+    en: 'Commercial project · Private source code',
+  } satisfies LocalizedText,
+  context: {
+    pt: 'Sistema desenvolvido para uma empresa de engenharia elétrica, destinado ao registro de laudos de equipamentos e à consulta de informações pelos clientes, incluindo validade e data de inspeção.',
+    en: 'A system developed for an electrical engineering company to register equipment inspection reports and let clients consult relevant information, including validity and inspection dates.',
+  } satisfies LocalizedText,
+  disclosure: {
+    pt: 'O case apresenta o contexto funcional da solução. Código-fonte, identificação da empresa, dados de clientes e documentos não são disponibilizados.',
+    en: 'This case presents the solution’s functional context. Source code, company identity, client data and documents are not disclosed.',
+  } satisfies LocalizedText,
+} as const;
