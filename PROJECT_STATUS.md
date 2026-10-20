@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-03 aguardando revisão em 20/10/2026
+## Estado corrente — M3-04 aguardando revisão em 20/10/2026
+
+M3-03 — Projetos aceita pelo Work e commitada em `5afdf3f205f9575176daa0fd7409359477c5ab0a` — `feat(projects): add curated text cards and inline private case study`. Aprovação verificável dos dez arquivos e push bem-sucedido registrados nesta conversa; registros anteriores de espera permanecem históricos.
+
+Entrada M3-04 observada localmente: branch `feat/m3-03-projects`, mesmo HEAD e referência local origin/feat/m3-03-projects coincidente, nenhum diff versionável/staging; README apenas sinalizado por finais de linha com diff vazio. Origin correto `https://github.com/CleristonMP/portfolio-v2.git`, sem consulta remota adicional. Criada branch dedicada `feat/m3-04-skills`, sem alterar main/merge.
+
+**M3-04 — Competências implementada, aguardando revisão própria do Work.** Refinados grade, hierarquia, ícones, espaços e superfícies, com seis itens informativos em lista nomeada pelo título; ícones decorativos ocultos da árvore acessível. Sem novos dados, agrupamentos, tecnologias, percentuais ou alegações. Inventário, ordem, rótulos PT/EN, contratos e pendências editoriais preservados. Estilos delimitados à seção; header, hero e projetos mantidos.
+
+Evidências, comandos, critérios individuais e limitações em `docs/M3_04_HANDOFF.md`. Matriz de 26 larguras/idiomas sem overflow/cortes; capturas antes/depois em 390/1280 PT/EN. **Zoom real 200% e preferência reduced motion ativa realizados manualmente e aprovados pelo responsável para M3-04**, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou essa execução; navegador, larguras, idiomas, passos e capturas adicionais não foram informados e não são inferidos. A confirmação supera a pendência anterior preservada no handoff, sem reutilizar aprovações de outras tarefas ou substituir a revisão integral do Work. Sem staging, commit ou push; nova aprovação e snapshot próprios necessários após revisão do Work.
+
+M3 não concluído; M3-05 e posteriores não iniciadas. As seis competências continuam com revisão de evidências de proficiência pendente para M4; não declaradas resolvidas por refinamento visual. Demais gates editoriais, mídia, contatos, segurança e publicação preservados.
+
+## Histórico — M3-03 aguardando revisão em 20/10/2026
 
 M3-02 — Hero revisada/aprovada pelo Work e commitada em `5908473c238019b1e599fbae982f68c7fe14c49b` — `style(hero): refine responsive typography and ambient composition`. Aprovação verificável, commit e push bem-sucedido para origin/feat/m3-02-hero registrados nesta conversa. Handoff e estados anteriores preservados como histórico anterior ao parecer.
 

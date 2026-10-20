@@ -406,39 +406,58 @@ button {
   color: rgb(var(--color-text-hint));
   margin-top: 24px;
 }
-.center-heading {
+.skills-section .center-heading {
+  max-width: 680px;
   text-align: center;
-  margin-bottom: 55px;
+  margin: 0 auto 48px;
 }
-.center-heading > p:last-child {
+.skills-section .center-heading h2 {
+  font-size: clamp(32px, 4.5vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 12px 0 20px;
+}
+.skills-section .center-heading > p:last-child {
   color: rgb(var(--color-text-skills-lead));
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 60ch;
+  margin: 0 auto;
 }
-.skills-grid {
+.skills-section .skills-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.skill {
-  min-height: 138px;
+.skills-section .skill {
+  min-width: 0;
+  min-height: 164px;
+  padding: 24px 16px;
   background: rgb(var(--color-surface-container));
-  border-radius: 18px;
+  border: 1px solid rgb(var(--color-neutral-white) / 0.05);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 19px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
   color: rgb(var(--color-primary));
-  transition: background 0.2s;
+  cursor: default;
 }
-.skill:hover {
-  background: rgb(var(--color-surface-highest));
+.skills-section .skill svg {
+  display: block;
+  flex-shrink: 0;
 }
-.skill span {
+.skills-section .skill span {
   color: rgb(var(--color-text-skill));
   text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 0 7px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+  max-width: 100%;
 }
 .about-section {
   background: rgb(var(--color-surface-about));
@@ -596,8 +615,8 @@ section:focus-visible {
   .projects-section .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .skills-section .skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .header .nav {
     gap: 16px;
@@ -721,11 +740,21 @@ section:focus-visible {
   .project-info p {
     min-height: 0;
   }
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .skills-section .center-heading {
+    text-align: left;
+    margin-bottom: 32px;
   }
-  .skill {
-    min-height: 116px;
+  .skills-section .center-heading > p:last-child {
+    margin: 0;
+  }
+  .skills-section .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .skills-section .skill {
+    min-height: 152px;
+    padding: 24px 12px;
+    gap: 16px;
   }
   .about-grid,
   .contact-layout,
