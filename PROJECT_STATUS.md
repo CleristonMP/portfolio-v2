@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-01 aguardando revisão em 19/10/2026
+## Estado corrente — M3-02 aguardando revisão em 19/10/2026
+
+M3-01 — Header **revisada, aprovada pelo Work e commitada** em `34743627415ffa4476de92cc64fba59bb9200df6` — `style(header): refine responsive glass navigation`. Aprovação verificável dos três arquivos, commit e push bem-sucedido para origin/feat/m3-01-header registrados nesta conversa; registro transitório consumido/removido. O handoff original e os estados anteriores abaixo permanecem como histórico anterior ao parecer.
+
+Entrada M3-02 observada localmente: branch `feat/m3-01-header`, mesmo HEAD, origin `https://github.com/CleristonMP/portfolio-v2.git`, nenhum diff versionável ou staging; README sinalizado apenas por finais de linha, com diff vazio. Criada branch dedicada `feat/m3-02-hero` a partir desse estado, sem modificar main ou realizar merge. Plano aprovado vigente: `docs/MILESTONE_3_PLAN.md`, commit `6f7a8bc`.
+
+**M3-02 — Hero implementada e aguardando revisão própria do Work.** Alterações de composição restritas ao hero; copy, componente, header aprovado, tokens, fontes, dados e navegação preservados. Evidências e critérios em `docs/M3_02_HANDOFF.md`. Matriz real de navegador de 24 combinações PT/EN sem overflow/cortes/sobreposições, incluindo limites de breakpoint e header 700–768 px. CTAs por teclado, foco, idioma/reload/metadados conferidos. Typecheck, lint, formato, 48 testes, verify, build e diff check passaram.
+
+**Zoom real de 200% e reduced motion com preferência ativa realizados manualmente e aprovados pelo responsável para M3-02**, conforme declaração direta nesta conversa em 20/10/2026. A confirmação supera a pendência da tentativa automatizada impedida, preservada como histórico no handoff. Codex não observou a execução manual; navegador, larguras, idiomas, passos e capturas adicionais não foram informados, portanto não são inferidos. Nova revisão do Work e snapshot próprio continuam obrigatórios; a confirmação desses critérios não equivale à aprovação integral da entrega nem autoriza staging, commit ou push.
+
+M2 fechado; M3 em andamento, não concluído. M3-03 e posteriores continuam pendentes e não iniciadas. Pendências editoriais, cases, contatos, mídias/permissões, segurança e publicação permanecem nos gates previstos.
+
+## Histórico — M3-01 aguardando revisão em 19/10/2026
 
 Plano M3 aprovado pelo responsável e registrado no commit `6f7a8bc82437835f4ffb1df4410a763ebec348cc`, observado localmente na branch `docs/m3-interface-plan`. Entrada limpa, origin `https://github.com/CleristonMP/portfolio-v2.git`; sem consulta remota adicional. A seção anterior ao início da implementação permanece abaixo como histórico.
 

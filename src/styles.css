@@ -143,27 +143,30 @@ button {
 }
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: 760px;
+  padding-top: 112px;
+  padding-bottom: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
 }
-.ambient {
+.hero .ambient {
   pointer-events: none;
   position: absolute;
-  width: 590px;
-  height: 450px;
-  top: 45px;
-  right: 10%;
-  background: radial-gradient(
-    ellipse,
-    rgb(var(--color-ambient-hero) / 0.13),
-    transparent 67%
-  );
-  filter: blur(35px);
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at 65% 35%,
+      rgb(var(--color-ambient-hero) / 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 30% 55%,
+      rgb(var(--color-secondary) / 0.04),
+      transparent 55%
+    );
 }
 .eyebrow,
 .kicker,
@@ -173,86 +176,113 @@ button {
   letter-spacing: 0.23em;
   color: rgb(var(--color-primary));
 }
-.eyebrow {
+.hero .eyebrow {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  max-width: 100%;
+  gap: 8px;
   border: 1px solid rgb(var(--color-primary) / 0.16);
-  background: rgb(var(--color-primary) / 0.05);
-  padding: 10px 17px;
+  background: rgb(var(--color-surface-container) / 0.6);
+  padding: 8px 14px;
   border-radius: 50px;
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
 }
-.pulse {
-  width: 7px;
-  height: 7px;
+.hero .pulse {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgb(var(--color-primary));
-  box-shadow: 0 0 10px rgb(var(--color-primary));
+  box-shadow: 0 0 10px rgb(var(--color-primary) / 0.4);
 }
 .hero h1 {
   position: relative;
-  font: 800 clamp(54px, 7vw, 100px)/1.07 var(--font-display);
-  letter-spacing: -0.07em;
-  margin: 34px 0 26px;
+  max-width: 100%;
+  font: 800 clamp(52px, 7.5vw, 96px)/1.06 var(--font-display);
+  letter-spacing: -0.035em;
+  margin: 32px 0 28px;
+  text-wrap: balance;
 }
 .hero h1 > span:first-child {
   color: rgb(var(--color-text-primary));
 }
-.gradient-text {
-  background: linear-gradient(
-    115deg,
-    rgb(var(--color-primary)) 12%,
-    rgb(var(--color-secondary)) 93%
-  );
-  color: transparent;
-  background-clip: text;
+.hero .gradient-text {
+  color: rgb(var(--color-primary));
 }
-.hero-lead {
+@supports (background-clip: text) {
+  .hero .gradient-text {
+    background: linear-gradient(
+      115deg,
+      rgb(var(--color-primary)) 12%,
+      rgb(var(--color-secondary)) 93%
+    );
+    color: transparent;
+    background-clip: text;
+  }
+}
+.hero .hero-lead {
+  position: relative;
   color: rgb(var(--color-text-hero));
-  line-height: 1.85;
-  max-width: 670px;
-  font-size: 17px;
+  line-height: 1.75;
+  max-width: 640px;
+  font-size: 18px;
   margin: 0;
+  text-wrap: pretty;
 }
-.hero-actions {
+.hero .hero-actions {
+  position: relative;
   display: flex;
-  gap: 14px;
-  margin-top: 35px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+  max-width: 100%;
 }
-.btn-primary,
-.btn-ghost {
+.hero .btn-primary,
+.hero .btn-ghost {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 56px;
+  gap: 16px;
   border-radius: 50px;
-  padding: 17px 26px;
+  padding: 16px 28px;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
 }
-.btn-primary {
+.hero .hero-actions svg {
+  flex-shrink: 0;
+}
+.hero .btn-primary {
   background: linear-gradient(
     135deg,
     rgb(var(--color-primary)),
     rgb(var(--color-primary-container))
   );
   color: rgb(var(--color-text-on-cta));
-  box-shadow: 0 14px 42px rgb(var(--color-primary) / 0.09);
+  box-shadow: 0 0 40px rgb(var(--color-primary) / 0.04);
 }
-.btn-ghost {
+.hero .btn-ghost {
   border: 1px solid rgb(var(--color-neutral-white) / 0.15);
+  background: rgb(var(--color-surface-container) / 0.4);
   color: rgb(var(--color-text-ghost-button));
 }
-.hero-bottom {
-  position: absolute;
-  bottom: 42px;
-  left: 30px;
-  right: 30px;
+.hero .hero-bottom {
+  position: relative;
+  align-self: stretch;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 16px;
+  margin-top: 96px;
   color: rgb(var(--color-text-scroll-cue));
   font-size: 10px;
-  letter-spacing: 0.18em;
+  line-height: 1.6;
+  letter-spacing: 0.16em;
 }
 .section {
   padding: 120px 0;
@@ -638,27 +668,35 @@ section:focus-visible {
   }
   .hero {
     min-height: 690px;
+    padding-top: 88px;
+    padding-bottom: 32px;
     align-items: start;
     text-align: left;
   }
   .hero h1 {
-    font-size: clamp(43px, 10vw, 70px);
-    margin: 28px 0;
+    font-size: clamp(40px, 10vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin: 28px 0 24px;
   }
-  .hero-lead {
-    font-size: 15px;
+  .hero .hero-lead {
+    font-size: 16px;
   }
-  .eyebrow {
+  .hero .eyebrow {
     font-size: 9px;
+    letter-spacing: 0.12em;
+    padding: 7px 12px;
   }
-  .hero-actions {
+  .hero .hero-actions {
     flex-direction: column;
     align-items: start;
+    gap: 12px;
+    margin-top: 32px;
   }
-  .hero-bottom {
-    left: 24px;
-    right: 24px;
-    font-size: 8px;
+  .hero .hero-bottom {
+    margin-top: 64px;
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
   .section {
     padding: 90px 0;
