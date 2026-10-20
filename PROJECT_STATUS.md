@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-04 aguardando revisão em 20/10/2026
+## Estado corrente — M3-05 aguardando revisão em 20/10/2026
+
+M3-04 — Competências aceita pelo Work e commitada em `2cb21a48b05cf0f66dd10456594136110fe6b881` — `style(skills): refine responsive informational skill cards`. Aprovação verificável dos cinco arquivos e push bem-sucedido para origin/feat/m3-04-skills registrados nesta conversa; registros anteriores de espera preservados como histórico.
+
+Entrada M3-05 observada localmente: branch `feat/m3-04-skills`, mesmo HEAD, coincidente com referência local origin/feat/m3-04-skills; nenhum diff versionável ou staging. README apenas sinalizado por finais de linha, com diff vazio. Origin `https://github.com/CleristonMP/portfolio-v2.git`, sem consulta remota adicional. Criada branch dedicada `feat/m3-05-profile`, sem alterar main ou realizar merge.
+
+**M3-05 — Perfil implementada, aguardando revisão própria do Work.** Ajustes somente no CSS delimitado a AboutSection: hierarquia, leitura, composição textual e superfície do método. Componente, copy PT/EN, contratos, tokens, #about e foco original preservados. Sem imagem, espaço reservado, importação de mídia, anos de experiência, disponibilidade ou alegações novas. Nenhuma pendência editorial declarada resolvida.
+
+Matriz real de navegador de 26 combinações sem overflow/cortes/sobreposição; copy integral e dimensões das demais seções preservadas nos pontos comparados. Capturas antes/depois 390/1280 PT/EN, comandos, critérios e limites em `docs/M3_05_HANDOFF.md`. Zoom real 200% e preferência reduced motion ativa realizados manualmente e aprovados pelo responsável para M3-05, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou a execução; navegador, larguras, idiomas, procedimento e capturas adicionais não foram informados e não são inferidos. Essa confirmação supera a pendência anterior preservada no handoff, sem reutilizar aprovações de outras tarefas nem substituir a revisão integral do Work. Sem staging, commit ou push; nova revisão e aprovação verificável próprias obrigatórias.
+
+M3 em andamento, não concluído; M3-06 e posteriores não iniciadas. Gates editoriais de M4 (biografia final, experiência demonstrável, foto/permissões), mídias, contato, segurança e publicação preservados.
+
+## Histórico — M3-04 aguardando revisão em 20/10/2026
 
 M3-03 — Projetos aceita pelo Work e commitada em `5afdf3f205f9575176daa0fd7409359477c5ab0a` — `feat(projects): add curated text cards and inline private case study`. Aprovação verificável dos dez arquivos e push bem-sucedido registrados nesta conversa; registros anteriores de espera permanecem históricos.
 
