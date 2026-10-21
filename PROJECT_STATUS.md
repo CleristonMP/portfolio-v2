@@ -1,6 +1,16 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-06 aguardando revisão em 20/10/2026
+## Estado corrente — M3-07 aguardando revisão em 20/10/2026
+
+M3-06 — Aprendizado aceita pelo Work e commitada em `c61a2359b66cd42bd5bf7226e4f3d36d74286306` — `style(learning): refine responsive formation cards and hierarchy`. Aprovação verificável dos cinco arquivos e push bem-sucedido para origin/feat/m3-06-learning registrados nesta conversa; estado anterior preservado como histórico.
+
+Entrada local M3-07: branch `feat/m3-06-learning`, mesmo HEAD; README sinalizado apenas por finais de linha com diff vazio, staging vazio. Origin `https://github.com/CleristonMP/portfolio-v2.git`; sem consulta remota adicional. Criada branch dedicada `feat/m3-07-contact`, sem alterar main ou sobrescrever arquivos.
+
+**M3-07 — Contato implementada, aguardando revisão própria do Work.** Decisões aprovadas registradas no plano único: três campos PT/EN, Formspree, GitHub como perfil, destinatário privado reservado ao serviço em M4 e nunca gravado nesta entrega. Interface responsiva, labels, erros associados e validação local; aviso anterior ao preenchimento, envio desabilitado e cancelamento de submissão implícita. Nenhuma conta, endpoint, transporte, sucesso fictício, antispam ou recebimento configurados. Aviso futuro de finalidade/processamento proposto no handoff, pendente de aprovação editorial.
+
+Typecheck, lint, formato, 59 testes, verify, build e diff check passaram; 52 cenários de navegador (vazio/erros, PT/EN) sem overflow medido. Evidências e critérios em `docs/M3_07_HANDOFF.md`. Zoom real 200% e reduced motion com preferência ativa realizados manualmente e aprovados pelo responsável para M3-07, conforme declaração direta nesta conversa em 21/10/2026. Codex não observou a execução; navegador, larguras, idiomas, procedimento e capturas adicionais não foram informados e não são inferidos. A confirmação supera a pendência inicial preservada no handoff, sem reutilizar aprovações anteriores nem substituir a revisão integral do Work. Nova revisão/snapshot próprios necessários. Sem staging, commit ou push. M3 não concluído, M3-08 não iniciada. Integração real de contato e demais gates editoriais/mídias/permissões/segurança/publicação permanecem M4/M5.
+
+## Histórico — M3-06 aguardando revisão em 20/10/2026
 
 M3-05 — Perfil aceita pelo Work e commitada em `f2ea78f917021d46fa15aaa750c130911dad2e1c` — `style(profile): refine textual layout and method presentation`. Aprovação verificável dos três arquivos e push bem-sucedido para origin/feat/m3-05-profile registrados nesta conversa; estados anteriores preservados como histórico.
 

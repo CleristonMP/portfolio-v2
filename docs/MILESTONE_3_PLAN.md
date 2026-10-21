@@ -12,6 +12,14 @@ Sem links externos novos; URLs não verificadas ausentes e Reports Registry sem 
 
 M3-01/M3-02 aprovadas e commitadas em `3474362`/`5908473`; M3-03 em implementação para revisão própria. Não altera sequência, dependências ou critérios originais da tabela abaixo, preservada como histórico do planejamento. O estado executado corrente está em PROJECT_STATUS.md; decisões abertas originais de curadoria/case abaixo são superadas somente no recorte explícito desta atualização. M3-04 e posteriores continuam pendentes.
 
+## Decisões posteriores aprovadas — M3-07 (20/10/2026)
+
+Responsável aprovou explicitamente: formulário PT/EN com nome, email e mensagem, sem campos adicionais; Formspree como provedor; GitHub https://github.com/CleristonMP como acesso ao perfil, sem promessa de mensagens privadas. Destinatário privado informado diretamente ao responsável técnico, a configurar somente no serviço em M4; seu endereço não deve constar de interface, código cliente, arquivos versionados ou evidências públicas e não é reproduzido neste plano.
+
+M3-07 entrega composição e validação local, com aviso de indisponibilidade antes dos campos e submissão impedida, sem requisição externa ou sucesso fictício. M4 configura conta/endpoint, destinatário, envio real e antispam. Estados futuros não precisam de controles de demonstração na interface. Proposta concisa de aviso de finalidade/processamento PT/EN fica no handoff, pendente de aprovação editorial, sem garantias não confirmadas. A decisão resolve o fluxo/canal/provedor para esta implementação, sem declarar integração ou recebimento concluídos. Email público, LinkedIn, credenciais, permissões e demais gates não são confirmados por inferência.
+
+Preservadas sequência, dependências e critérios originais abaixo como histórico; a apresentação indisponível de M3-07 é o recorte explicitamente autorizado, não encerramento antecipado da integração de M4. M3-06 aceita/commitada em `c61a235`; M3-07 aguardará revisão própria e novo snapshot. M3-08 não iniciada.
+
 ## Entrada e fontes
 
 M2 tecnicamente concluído e revisado; implementação final `c337da4`, formalização documental aprovada e commitada em `669f7bc5b7f56d0fd46003a4de90630963ea5522`. Esse fechamento já foi confirmado no remoto pelo Work. Entrada local limpa em main; proposta preparada na branch `docs/m3-interface-plan`, sem editar main ou executar commit/push.

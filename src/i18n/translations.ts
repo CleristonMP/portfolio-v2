@@ -45,8 +45,18 @@ export const translations: Translations = {
       'Entender o contexto. Projetar com clareza. Construir com cuidado.',
     conversationLabel: 'INICIE UMA CONVERSA',
     contactNotice:
-      'Para falar sobre um projeto, utilize o canal profissional de contato que será confirmado antes da publicação.',
-    contactStatus: 'Contato direto em configuração',
+      'O envio pelo formulário está indisponível. Os campos permitem apenas validação local; nenhuma mensagem será enviada.',
+    contactStatus: 'Envio indisponível',
+    contactForm: {
+      labels: { name: 'Nome', email: 'Email', message: 'Mensagem' },
+      required: {
+        name: 'Informe seu nome.',
+        email: 'Informe seu email.',
+        message: 'Escreva uma mensagem.',
+      },
+      invalidEmail: 'Informe um email válido.',
+      profileLink: 'Acessar perfil no GitHub',
+    },
     backToTop: '↑ INÍCIO',
     accessibility: {
       navigation: 'Navegação principal',
@@ -114,8 +124,18 @@ export const translations: Translations = {
     methodText: 'Understand the context. Design with clarity. Build with care.',
     conversationLabel: 'START A CONVERSATION',
     contactNotice:
-      'For project inquiries, the verified professional contact channel will be added before launch.',
-    contactStatus: 'Direct contact being configured',
+      'Form submission is unavailable. These fields only provide local validation; no message will be sent.',
+    contactStatus: 'Sending unavailable',
+    contactForm: {
+      labels: { name: 'Name', email: 'Email', message: 'Message' },
+      required: {
+        name: 'Enter your name.',
+        email: 'Enter your email.',
+        message: 'Write a message.',
+      },
+      invalidEmail: 'Enter a valid email address.',
+      profileLink: 'View GitHub profile',
+    },
     backToTop: '↑ TOP',
     accessibility: {
       navigation: 'Main navigation',
