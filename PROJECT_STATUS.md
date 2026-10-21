@@ -1,6 +1,18 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-07 aguardando revisão em 20/10/2026
+## Estado corrente — M3-08 aguardando revisão em 21/10/2026
+
+M3-07 — Contato aceita pelo Work e commitada em `6c5f6069e59dc76ff221d9e0d3617836adf0cd3c` — `feat(contact): add localized unavailable form with local validation`. Aprovação verificável dos nove arquivos e push bem-sucedido para origin/feat/m3-07-contact registrados nesta conversa; estado anterior preservado abaixo como histórico.
+
+Entrada local M3-08: branch `feat/m3-07-contact`, mesmo HEAD, coincidente com referência local origin/feat/m3-07-contact. Staging vazio e nenhum diff versionável; README sinalizado somente por finais de linha, diff vazio. Origin correto `https://github.com/CleristonMP/portfolio-v2.git`, sem fetch ou consulta remota de refs/CI. Criada `feat/m3-08-footer`, sem alterar main ou sobrescrever arquivos.
+
+**M3-08 — Footer implementada e composição completa em revisão, aguardando parecer próprio do Work.** Marca/ano automático e texto localizado preservados; navegação essencial de projetos, contato, perfil GitHub verificado e retorno nativo #home. Sem email privado, LinkedIn/currículo desconhecidos ou âncoras vazias. Estilos delimitados ao rodapé, sem refatoração das seções aprovadas. Critérios/evidências e distinção entre verificações repetidas e reaproveitadas em `docs/M3_08_HANDOFF.md`.
+
+Typecheck, lint, formato, 64 testes, verify e builds/previews de / e /portfolio-v2/ passaram. Matriz atual 52/52 sem overflow/cortes medidos, seis IDs e datasets preservados; oito capturas de footer e quatro panoramas completos, teclado/foco/idioma/metadados/histórico verificados com limites no handoff. Zoom real 200% e reduced motion ativo aprovados manualmente pelo responsável para M3-08 em 21/10/2026, conforme declaração nesta conversa, sem observação independente pelo Codex. Método, navegador, larguras, idiomas e capturas não foram informados nesta confirmação; não são presumidos. Registro inicial de pendência preservado no handoff como histórico; aprovações anteriores não reutilizadas. M3 **não concluído**: depende de revisão própria, snapshot verificável, commit/push autorizado e CI correspondente. Nenhuma CI remota executada nesta entrega. Sem staging, commit, push, merge ou deploy; M4 não iniciada.
+
+Integração Formspree, antispam, recebimento, aviso futuro de finalidade/processamento, conteúdo editorial final, mídias/permissões e demais gates de M4/M5 permanecem pendentes. GitHub é acesso ao perfil, sem promessa de mensagens privadas ou inbox para orçamento/recrutamento.
+
+## Histórico — M3-07 aguardando revisão em 20/10/2026
 
 M3-06 — Aprendizado aceita pelo Work e commitada em `c61a2359b66cd42bd5bf7226e4f3d36d74286306` — `style(learning): refine responsive formation cards and hierarchy`. Aprovação verificável dos cinco arquivos e push bem-sucedido para origin/feat/m3-06-learning registrados nesta conversa; estado anterior preservado como histórico.
 

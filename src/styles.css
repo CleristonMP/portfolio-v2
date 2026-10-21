@@ -690,22 +690,51 @@ button {
 }
 .footer {
   background: rgb(var(--color-surface-footer));
-  padding: 37px 0;
+  padding: 48px 0;
 }
-.footer-inner {
+.footer .footer-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 32px 48px;
 }
-.footer-inner > span:nth-child(2) {
-  color: rgb(var(--color-text-footer));
-  font-size: 12px;
+.footer .footer-identity {
+  min-width: 0;
+}
+.footer .brand {
+  font-size: 16px;
+  letter-spacing: -0.025em;
+}
+.footer .footer-identity p {
+  max-width: 38ch;
+  margin: 12px 0 0;
+  color: rgb(var(--color-text-contact-panel));
+  font-size: 14px;
+  line-height: 1.7;
+}
+.footer .footer-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
 }
 .footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: rgb(var(--color-text-navigation));
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-underline-offset: 5px;
+}
+.footer a:hover {
   color: rgb(var(--color-primary));
-  font-size: 12px;
-  font-weight: 700;
+  text-decoration: underline;
+}
+.footer .footer-top {
+  color: rgb(var(--color-primary));
 }
 a:focus-visible,
 button:focus-visible,
@@ -913,12 +942,13 @@ section:focus-visible {
   .learning-section .course h3 {
     font-size: 17px;
   }
-  .footer-inner {
+  .footer .footer-inner {
     align-items: start;
     flex-direction: column;
+    gap: 24px;
   }
   .footer {
-    padding: 30px 0;
+    padding: 32px 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
