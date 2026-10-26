@@ -1,5 +1,30 @@
 # M3 — Interface — plano aprovado
 
+## Fechamento de M3 — 21/10/2026
+
+**M3 — Interface fechado no escopo aprovado.** Work confirmou nesta solicitação que M3-01 a M3-08 foram revisadas e aprovadas e que a CI [39650878951](https://github.com/CleristonMP/portfolio-v2/actions/runs/39650878951) concluiu com sucesso para `bdc62e0bfa5045db02db12a1efa98f01eb01062b`. Aceite e CI são evidências fornecidas pelo Work; não houve nova consulta remota nesta formalização. O push final bem-sucedido foi registrado nesta conversa. Conferência local: HEAD e referência origin/feat/m3-08-footer coincidem com esse commit; nenhum diff versionável/staging na entrada, README apenas sinalizado por finais de linha. Branch documental dedicada: `docs/m3-interface-closure`.
+
+| Tarefa aceita pelo Work | Entrega registrada | Commit de implementação | Evidência detalhada |
+| --- | --- | --- | --- |
+| M3-01 — Header | Composição responsiva e correção da transição 700–768 px, preservando shell acessível | `34743627415ffa4476de92cc64fba59bb9200df6` | [Handoff M3-01](M3_01_HANDOFF.md) |
+| M3-02 — Hero | Hierarquia, tipografia, luz e CTAs com copy existente | `5908473c238019b1e599fbae982f68c7fe14c49b` | [Handoff M3-02](M3_02_HANDOFF.md) |
+| M3-03 — Projetos | Vitrine na ordem aprovada, DS Commerce secundário e case textual privado na mesma página, sem imagens | `5afdf3f205f9575176daa0fd7409359477c5ab0a` | [Handoff M3-03](M3_03_HANDOFF.md) |
+| M3-04 — Competências | Seis registros preservados em cards informativos responsivos | `2cb21a48b05cf0f66dd10456594136110fe6b881` | [Handoff M3-04](M3_04_HANDOFF.md) |
+| M3-05 — Perfil | Apresentação textual e método, sem foto ou alegações novas | `f2ea78f917021d46fa15aaa750c130911dad2e1c` | [Handoff M3-05](M3_05_HANDOFF.md) |
+| M3-06 — Aprendizado | Quatro formações na ordem original, sem credenciais inventadas | `c61a2359b66cd42bd5bf7226e4f3d36d74286306` | [Handoff M3-06](M3_06_HANDOFF.md) |
+| M3-07 — Contato | Formulário PT/EN e validação local, indisponibilidade explícita e envio impedido; GitHub como perfil público | `6c5f6069e59dc76ff221d9e0d3617836adf0cd3c` | [Handoff M3-07](M3_07_HANDOFF.md) |
+| M3-08 — Footer | Marca/ano automático, navegação verificada e revisão da composição completa nos dois caminhos base | `bdc62e0bfa5045db02db12a1efa98f01eb01062b` | [Handoff M3-08](M3_08_HANDOFF.md) |
+
+O plano aprovado foi commitado em `6f7a8bc82437835f4ffb1df4410a763ebec348cc`. Os commits acima foram conferidos no histórico local; os aceites são os confirmados pelo Work. Evidências e decisões ficam nos handoffs, sem duplicar seus relatórios: M3-08 consolida 64 testes, checks, builds/previews de `/` e `/portfolio-v2/`, 52 casos de largura/idioma/caminho, capturas do footer/página completa e smoke de navegação/foco/persistência/metadados. Nada disso foi reexecutado nesta atualização documental. Evidências locais em .m2-review e registros transitórios em .workflow não são publicação ou material a incluir no commit.
+
+Zoom real 200% e reduced motion ativo foram aprovados manualmente pelo responsável, conforme registros específicos de cada tarefa. Codex não observou independentemente a execução; detalhes não informados de navegador, largura, idioma, método e capturas não são inferidos. Diagnósticos iniciais e limites de automação permanecem históricos. Testes DOM não comprovam layout/zoom/histórico nativo e a revisão de composição não equivale à auditoria final de M5.
+
+**Próximo milestone: M4 — Conteúdo e integração, não iniciado e sem plano detalhado aprovado.** Permanecem conteúdo final/cases completos e tradução editorial final, mídias e permissões, títulos/datas/credenciais e fatos pendentes; conta/endpoint Formspree, destinatário privado reservado ao serviço, transporte real, antispam e recebimento comprovado; aprovação editorial do aviso de finalidade/processamento. M5 mantém auditorias finais, segurança, performance, SEO e publicação controlada. Não há autorização de publicação ou de iniciar M4 nesta formalização.
+
+Este fechamento não altera sequência, dependências ou critérios: aplica as decisões explícitas M3-03/M3-07 preservadas abaixo. Trechos que ainda descrevem tarefas pendentes ou M3 não concluído refletem o momento histórico do planejamento/encaminhamento e são superados pelo estado corrente desta seção. Handoffs originais permanecem intactos. **O diff desta formalização documental aguarda revisão própria do Work, sem staging, commit, push, merge ou deploy.** A aprovação das implementações não é aprovação automática deste diff.
+
+## Histórico do planejamento e das decisões aprovadas
+
 Proposta criada em 15/10/2026. **PLANO APROVADO PELO RESPONSÁVEL EM 19/10/2026**, por declaração direta nesta conversa. Escopo, sequência e critérios passam a orientar M3; nenhuma implementação foi iniciada. A aprovação do planejamento não equivale ao aceite de tarefas executadas nem à autorização de commit/push deste diff documental.
 
 ## Decisões posteriores aprovadas — M3-03 (20/10/2026)
@@ -47,7 +72,7 @@ M3 cuida da interface e das interações necessárias à apresentação. M4 cuid
 | M3-07 — Contato | PRD §§4.7, 8; composição e interface do fluxo | 06; decisão de fluxo/provedor abaixo | Desktop/mobile apresentam o mesmo fluxo. Se formulário aprovado, nome/email/mensagem com labels, validação e estados visualmente definidos; assunto só se aprovado. Selecionar provedor estático antes da UI de integração (§8). Sem endpoint ou canal confirmado, não simular envio/sucesso nem oferecer submit aparentemente funcional. Entrega da integração e anti-spam reais permanece M4. Alternativa de contato só com canal verdadeiro verificado. Critério não pode ser encerrado apenas por painel de pendência sem decisão explícita sobre o fluxo. |
 | M3-08 — Footer | PRD §4.8; composição final do rodapé | 07 | Marca nominal, ano automático, navegação essencial e retorno ao início funcionais PT/EN; links sociais/email somente verificados. Ausência de contato ainda não confirmado não gera âncora vazia. Revisão da composição completa e de todas as evidências transversais abaixo, sem antecipar auditoria final M5. |
 
-Todos os itens estão **planejados/pendentes de implementação e aceite**. No caso de impedimento editorial, parar na tarefa afetada e registrar o motivo; não pular etapas ou reduzir critérios para declarar sucesso.
+Estado no planejamento original (histórico): todos os itens estavam **planejados/pendentes de implementação e aceite**; o estado executado é o da seção de fechamento acima. No caso de impedimento editorial, parar na tarefa afetada e registrar o motivo; não pular etapas ou reduzir critérios para declarar sucesso.
 
 ## Aceite transversal e comparação visual
 
@@ -68,7 +93,7 @@ Aplicar em cada tarefa afetada, reaproveitando evidências válidas sem repetir 
 4. **Contato (07):** confirmar canal público, fluxo e provedor compatível com SPA estática, privacidade e estados da UI antes de integração. A falta de provedor não bloqueia planejamento/header/hero, mas impede declarar completo o fluxo ainda indefinido. Não resolver agora via serviço/dependência escolhido unilateralmente.
 5. **Copy (02 e demais):** rascunhos do PRD e textos atuais precisam de aprovação editorial se forem alterados. PT/EN equivalentes, sem promessas novas. A validação editorial definitiva é gate de M4/publicação.
 
-## Revisão, fechamento e próximo passo
+## Histórico — revisão, fechamento e próximo passo
 
 Com o plano aprovado pelo responsável, Work resolve decisões da tarefa a encaminhar. Codex implementa/testa apenas o lote autorizado, sem commit/push; Work revisa árvore completa e evidências; aprovação operacional exige snapshot canônico próprio em .workflow/, fora do versionamento. Só então Codex pode commitar/enviar o conjunto aprovado conforme o workflow. Nenhuma aprovação M2 é reutilizada.
 

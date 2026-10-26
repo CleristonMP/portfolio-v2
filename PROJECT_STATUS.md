@@ -1,6 +1,20 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3-08 aguardando revisão em 21/10/2026
+## Estado corrente — M3 fechado; formalização documental aguardando revisão
+
+Em 21/10/2026, M3 — Interface está fechado no escopo aprovado: M3-01 a M3-08 revisadas e aprovadas pelo Work, implementações commitadas e enviadas. O responsável informou nesta solicitação que o Work verificou a CI **39650878951 concluída com sucesso** para `bdc62e0bfa5045db02db12a1efa98f01eb01062b`. [Execução de CI](https://github.com/CleristonMP/portfolio-v2/actions/runs/39650878951). Esse resultado remoto é evidência fornecida pelo Work, sem nova consulta remota pelo Codex nesta formalização.
+
+Conferido localmente: origin `https://github.com/CleristonMP/portfolio-v2.git`; entrada na branch `feat/m3-08-footer`, HEAD e referência local `origin/feat/m3-08-footer` iguais ao commit final acima; staging vazio e nenhum diff versionável. README apenas sinalizado por finais de linha, com diff vazio, preservado sem edição. Criada branch documental `docs/m3-interface-closure` a partir desse estado, sem alterar main. A coincidência da referência local não equivale a nova consulta ao remoto. O push bem-sucedido do commit final já está registrado nesta conversa.
+
+Entregas, aceites e commits das oito tarefas estão consolidados em [MILESTONE_3_PLAN.md](docs/MILESTONE_3_PLAN.md#fechamento-de-m3--21102026), com referência aos handoffs originais, preservados sem edição. A consolidação final registra 64 testes, checks de qualidade, builds/previews em `/` e `/portfolio-v2/`, 52 combinações de largura/idioma/caminho e evidências visuais/funcionais de M3-08. São resultados históricos da implementação, não uma nova execução nesta entrega exclusivamente documental nem auditoria final de M5.
+
+Zoom real 200% e reduced motion ativo constam como aprovados manualmente pelo responsável em cada handoff. Codex não executou nem observou independentemente essas validações; navegador, larguras, idiomas, passos e capturas adicionais não informados não são presumidos. Limites e diagnósticos anteriores permanecem no histórico. O aceite integral de M3 foi informado pelo Work; não é autoaprovação desta formalização.
+
+**M4 — Conteúdo e integração é o próximo milestone, não iniciado e sem plano detalhado aprovado.** Permanecem pendentes conteúdo final e cases completos; tradução editorial final; mídias, otimização e permissões; títulos oficiais, datas e credenciais; biografia/foto e demais fatos não confirmados; integração real Formspree, destinatário privado configurado somente no serviço, antispam, erros/sucesso reais e comprovação de recebimento; aprovação editorial do aviso de finalidade/processamento. O formulário segue indisponível para envio e GitHub é somente acesso ao perfil. M5 mantém auditorias finais de acessibilidade, performance, SEO, segurança, links/fluxos e publicação controlada. Fechar M3 não autoriza lançamento nem resolve esses gates.
+
+**Esta formalização documental aguarda revisão própria do Work.** Somente PROJECT_STATUS.md e docs/MILESTONE_3_PLAN.md alterados; sem staging, commit, push, merge ou deploy, sem início de M4. Aprovações das implementações não autorizam automaticamente o commit deste diff documental. Os registros abaixo refletem os estados de cada entrega à época e são superados somente quanto ao estado corrente pelo fechamento acima.
+
+## Histórico — M3-08 aguardando revisão em 21/10/2026
 
 M3-07 — Contato aceita pelo Work e commitada em `6c5f6069e59dc76ff221d9e0d3617836adf0cd3c` — `feat(contact): add localized unavailable form with local validation`. Aprovação verificável dos nove arquivos e push bem-sucedido para origin/feat/m3-07-contact registrados nesta conversa; estado anterior preservado abaixo como histórico.
 
