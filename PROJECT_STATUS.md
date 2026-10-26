@@ -1,6 +1,14 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M3 fechado; formalização documental aguardando revisão
+## Estado corrente — M4 em planejamento, proposta aguardando aprovação do Work — 26/10/2026
+
+Formalização documental do fechamento de M3 aprovada pelo Work, commitada em `913efd8bea1462b8ecf8bb5225d86bf403b86d28` — `docs(milestone): formalize approved milestone 3 closure` — e enviada com sucesso para origin/docs/m3-interface-closure, conforme operação registrada nesta conversa. Conferido localmente nesta entrada: branch docs/m3-interface-closure, HEAD coincidente com a referência local de mesmo nome; origin correto, staging vazio e nenhum diff versionável. README apenas sinalizado por finais de linha, com diff vazio, preservado sem edição. Sem nova consulta remota de refs/CI; não se presume resultado de CI do commit documental. Evidência anterior de CI da implementação final e limites das validações manuais preservados abaixo.
+
+Proposta única em [MILESTONE_4_PLAN.md](docs/MILESTONE_4_PLAN.md), preparada na branch documental `docs/m4-content-integration-plan`. **M4 em planejamento, sem implementação autorizada ou iniciada; plano detalhado ainda não aprovado.** Tarefas, sequência, dependências, decisões pendentes, responsáveis e gates são propostas para o Work, não entregas aceitas. Curadoria, confidencialidade, Formspree como provedor e GitHub como perfil público permanecem decisões herdadas; não há nova autorização de mídia, conteúdo, conta ou envio. Pendências de conteúdo final/cases, mídias/permissões, credenciais, tradução editorial e integração/antispam/recebimento/aviso continuam no plano proposto; auditorias finais e publicação permanecem M5.
+
+Somente PROJECT_STATUS.md e docs/MILESTONE_4_PLAN.md alterados nesta entrega. Plano histórico M3, handoffs, PRD, README, código e exports preservados. Proposta exige aprovação de planejamento e revisão própria deste diff antes de qualquer commit/push. Sem staging, commit, push, merge, deploy, alteração de main/portfólio antigo ou configuração de serviços. Registros anteriores preservados como histórico.
+
+## Histórico — M3 fechado; formalização documental aguardando revisão
 
 Em 21/10/2026, M3 — Interface está fechado no escopo aprovado: M3-01 a M3-08 revisadas e aprovadas pelo Work, implementações commitadas e enviadas. O responsável informou nesta solicitação que o Work verificou a CI **39650878951 concluída com sucesso** para `bdc62e0bfa5045db02db12a1efa98f01eb01062b`. [Execução de CI](https://github.com/CleristonMP/portfolio-v2/actions/runs/39650878951). Esse resultado remoto é evidência fornecida pelo Work, sem nova consulta remota pelo Codex nesta formalização.
 
