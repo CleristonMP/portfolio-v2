@@ -194,7 +194,13 @@ for (const language of ['pt', 'en']) {
     !projectMarkup.includes('<img'),
     'Project presentation must not render unapproved media',
   );
-  for (const field of ['category', 'context', 'disclosure'])
+  for (const field of [
+    'category',
+    'context',
+    'technologies',
+    'implementation',
+    'disclosure',
+  ])
     assert(markup.includes(reportsRegistryCase[field][language]));
   assert(markup.includes('href="#reports-registry-case"'));
   assert(markup.includes('id="reports-registry-case" tabindex="-1"'));
@@ -202,7 +208,13 @@ for (const language of ['pt', 'en']) {
     assert(markup.includes(project.title));
     assert(markup.includes(project.description[language]));
   }
-  for (const field of ['category', 'context', 'disclosure']) {
+  for (const field of [
+    'category',
+    'context',
+    'technologies',
+    'implementation',
+    'disclosure',
+  ]) {
     assertTranslationParity(
       reportsRegistryCase[field].pt,
       reportsRegistryCase[field].en,
@@ -211,6 +223,22 @@ for (const language of ['pt', 'en']) {
   for (const course of courses) {
     assert(markup.includes(course.title));
     assert(markup.includes(course.institution));
+    assertTranslationParity(
+      course.completionLabel.pt,
+      course.completionLabel.en,
+    );
+    assert.equal(
+      course.completionLabel[language].match(/\{year\}/g)?.length,
+      1,
+    );
+    assert(
+      markup.includes(
+        course.completionLabel[language].replace(
+          '{year}',
+          String(course.completedYear),
+        ),
+      ),
+    );
   }
   for (const label of Object.values(text.skillLabels))
     assert(markup.includes(label.replaceAll('&', '&amp;')));

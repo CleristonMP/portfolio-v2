@@ -68,12 +68,31 @@ for (const item of navigation) {
   assert(translations.pt.navigation[item.labelIndex]);
   assert(translations.en.navigation[item.labelIndex]);
 }
-assert.equal(profile.availability, undefined);
+assert.deepEqual(profile.availability, {
+  pt: 'Disponível para freelance; trabalho remoto somente em meio período.',
+  en: 'Available for freelance projects; remote work on a part-time basis only.',
+});
 assert.equal(profile.experienceYears, undefined);
-for (const project of projects.slice(0, 3))
-  assert.equal(project.stack, undefined);
+assert.deepEqual(
+  projects.map((project) => project.stack),
+  [
+    ['Java', 'Spring Boot', 'React', 'JavaScript', 'Apache POI', 'Heroku'],
+    ['Kotlin'],
+    ['Java', 'Spring Boot', 'React', 'JavaScript', 'TypeScript', 'PostgreSQL'],
+    ['Java', 'Spring Boot', 'React', 'JavaScript', 'TypeScript', 'PostgreSQL'],
+  ],
+);
+for (const project of projects) {
+  assert.equal(project.editorial.state, 'pending');
+  assert(project.editorial.pendingFields.includes('mediaVersion'));
+}
+assert.deepEqual(
+  courses.map((course) => course.completedYear),
+  [2023, 2022, 2021, 2023],
+);
 for (const course of courses) {
-  assert.equal(course.completedYear, undefined);
+  assert.equal(course.editorial.state, 'pending');
+  assert(course.editorial.pendingFields.includes('credential'));
   assert.equal(getVerifiedUrl(course.credential), undefined);
 }
 
@@ -127,10 +146,33 @@ assert.equal(
   getProjectUrl({ ...withLinks, nature: 'own-product' }, 'store'),
   'https://example.com/store',
 );
-for (const project of projects) {
-  for (const kind of ['repository', 'demo', 'store', 'caseStudy'])
-    assert.equal(getProjectUrl(project, kind), undefined);
+const approvedLinks = [
+  {},
+  {
+    repository: 'https://github.com/CleristonMP/audience-counter',
+    store:
+      'https://play.google.com/store/apps/details?id=com.cmp.audiencecounter',
+  },
+  { repository: 'https://github.com/CleristonMP/web-matriculas-api' },
+  {
+    backendRepository: 'https://github.com/CleristonMP/dscommerce',
+    frontendRepository: 'https://github.com/CleristonMP/dscommerce-frontend',
+  },
+];
+for (const [index, project] of projects.entries()) {
+  for (const kind of [
+    'repository',
+    'backendRepository',
+    'frontendRepository',
+    'demo',
+    'store',
+    'caseStudy',
+  ])
+    assert.equal(getProjectUrl(project, kind), approvedLinks[index][kind]);
 }
+const approvedDestinations = Object.values(approvedLinks).flatMap((links) =>
+  Object.values(links),
+);
 
 const { default: App } = await load('src/App.tsx');
 const markup = renderToStaticMarkup(createElement(App));
@@ -148,6 +190,7 @@ for (const [, href] of markup.matchAll(/<a\b[^>]*href="([^"]*)"/g)) {
   assert(
     sectionIds.some((id) => href === `#${id}`) ||
       href === 'https://github.com/CleristonMP' ||
+      approvedDestinations.includes(href.replaceAll('&amp;', '&')) ||
       href === '#main-content' ||
       href === '#reports-registry-case',
   );
@@ -178,7 +221,7 @@ try {
   profile.contacts = contacts;
 }
 stdout.write(
-  'PASS: stable/unique IDs, absent editorial facts, optional/private links, six sections and safe rendering of incomplete contacts.\n',
+  'PASS: stable/unique IDs, approved stacks/years/availability, pending media/credentials, optional/private links, six sections and safe rendering of incomplete contacts.\n',
 );
 
 // Optional comparison with the reviewed pre-extraction commit, without checkout changes.

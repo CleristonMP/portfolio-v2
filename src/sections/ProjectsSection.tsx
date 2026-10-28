@@ -5,6 +5,7 @@ import {
   secondaryProjects,
   reportsRegistryCase,
 } from '../content/projects';
+import { getProjectUrl } from '../content/links';
 import { SectionHeading } from '../components/SectionHeading';
 
 interface ProjectCardProps extends SectionProps {
@@ -25,6 +26,29 @@ function ProjectCard({ project, language, text }: ProjectCardProps) {
           ))}
         </div>
       )}
+      <div className="project-links">
+        {(
+          [
+            'repository',
+            'backendRepository',
+            'frontendRepository',
+            'store',
+          ] as const
+        ).map((kind) => {
+          const url = getProjectUrl(project, kind);
+          return url ? (
+            <a
+              key={kind}
+              className="project-case-link"
+              href={url}
+              aria-label={`${text.projectLinks[kind]} — ${project.title}`}
+            >
+              {text.projectLinks[kind]}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          ) : null;
+        })}
+      </div>
       {project.slug === 'reports-registry' && (
         <a className="project-case-link" href={`#${reportsRegistryCase.id}`}>
           {text.private}
@@ -65,6 +89,8 @@ export function ProjectsSection({ language, text }: SectionProps) {
           </span>
           <h3 id="reports-registry-case-title">Reports Registry</h3>
           <p>{reportsRegistryCase.context[language]}</p>
+          <p>{reportsRegistryCase.technologies[language]}</p>
+          <p>{reportsRegistryCase.implementation[language]}</p>
           <p>{reportsRegistryCase.disclosure[language]}</p>
         </article>
         <div className="projects-secondary">

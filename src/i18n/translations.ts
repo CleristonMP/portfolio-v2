@@ -14,7 +14,7 @@ export const translations: Translations = {
     skillsLead: 'Tecnologias que utilizo para construir produtos digitais.',
     about: 'Sobre e método de trabalho',
     aboutText:
-      'Acredito que software de qualidade nasce de uma boa compreensão do problema. Meu trabalho combina desenvolvimento web e mobile, atenção à manutenção e decisões técnicas orientadas às necessidades de cada projeto.',
+      'Sou desenvolvedor autodidata. Estudo e desenvolvo aplicativos e sistemas desde 2019, pesquisando e aprendendo continuamente para ampliar meus conhecimentos e me manter atualizado.',
     learning: 'Aprendizado contínuo',
     learningLead:
       'Formações que sustentam e ampliam minha prática profissional.',
@@ -23,6 +23,12 @@ export const translations: Translations = {
       'Tem um projeto web ou mobile em mente? Entre em contato para conversarmos sobre o objetivo e o escopo.',
     email: 'Contato por e-mail',
     source: 'GitHub',
+    projectLinks: {
+      repository: 'GitHub',
+      backendRepository: 'Backend',
+      frontendRepository: 'Frontend',
+      store: 'Google Play',
+    },
     private: 'Estudo de caso • código privado',
     more: 'Ver detalhes',
     footer: 'Desenvolvido com atenção aos detalhes.',
@@ -42,7 +48,7 @@ export const translations: Translations = {
     aboutAccent: 'Engenharia com propósito.',
     methodLabel: 'MÉTODO / 01',
     methodText:
-      'Entender o contexto. Projetar com clareza. Construir com cuidado.',
+      'Entender o contexto, estruturar a solução e então desenvolver. Em Reports Registry e Web Matrículas, realizei a análise do sistema e elaborei diagramas UML antes da codificação.',
     conversationLabel: 'INICIE UMA CONVERSA',
     contactNotice:
       'O envio pelo formulário está indisponível. Os campos permitem apenas validação local; nenhuma mensagem será enviada.',
@@ -95,7 +101,7 @@ export const translations: Translations = {
     skillsLead: 'Technologies I use to build digital products.',
     about: 'About & approach',
     aboutText:
-      'I believe great software starts with understanding the problem. My approach brings together web and mobile development, maintainability and technical decisions driven by each project’s needs.',
+      'I am a self-taught developer. I have been studying and developing applications and systems since 2019, continually researching and learning to expand my knowledge and stay up to date.',
     learning: 'Continuous learning',
     learningLead:
       'Education and training that reinforce my engineering practice.',
@@ -104,6 +110,12 @@ export const translations: Translations = {
       'Have a web or mobile project? Get in touch and tell me about your goals.',
     email: 'Contact by email',
     source: 'GitHub',
+    projectLinks: {
+      repository: 'GitHub',
+      backendRepository: 'Backend',
+      frontendRepository: 'Frontend',
+      store: 'Google Play',
+    },
     private: 'Case study • private code',
     more: 'View details',
     footer: 'Crafted with attention to detail.',
@@ -122,7 +134,8 @@ export const translations: Translations = {
     },
     aboutAccent: 'Engineering with purpose.',
     methodLabel: 'METHOD / 01',
-    methodText: 'Understand the context. Design with clarity. Build with care.',
+    methodText:
+      'Understand the context, structure the solution, then develop it. For Reports Registry and Web Matrículas, I analyzed the systems and created UML diagrams before coding.',
     conversationLabel: 'START A CONVERSATION',
     contactNotice:
       'Form submission is unavailable. These fields only provide local validation; no message will be sent.',

@@ -4,6 +4,10 @@ export const profile: Profile = {
   name: 'Cleriston Pereira',
   brand: { firstName: 'CLERISTON', lastName: 'PEREIRA' },
   role: 'Full Stack & Mobile Developer',
+  availability: {
+    pt: 'Disponível para freelance; trabalho remoto somente em meio período.',
+    en: 'Available for freelance projects; remote work on a part-time basis only.',
+  },
   contacts: [
     {
       id: 'github',
@@ -20,13 +24,6 @@ export const profile: Profile = {
   ],
   editorial: {
     state: 'pending',
-    pendingFields: [
-      'biography',
-      'availability',
-      'experienceYears',
-      'email',
-      'linkedin',
-      'resume',
-    ],
+    pendingFields: ['email', 'linkedin', 'resume'],
   },
 };

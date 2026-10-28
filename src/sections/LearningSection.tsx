@@ -3,7 +3,7 @@ import { BookOpen } from 'lucide-react';
 import { courses } from '../content/courses';
 import { SectionHeading } from '../components/SectionHeading';
 
-export function LearningSection({ text }: SectionProps) {
+export function LearningSection({ language, text }: SectionProps) {
   return (
     <section id="learning" tabIndex={-1} className="section learning-section">
       <div className="container">
@@ -21,6 +21,14 @@ export function LearningSection({ text }: SectionProps) {
               <div>
                 <h3>{course.title}</h3>
                 <p>{course.institution}</p>
+                {course.completedYear && course.completionLabel && (
+                  <p>
+                    {course.completionLabel[language].replace(
+                      '{year}',
+                      String(course.completedYear),
+                    )}
+                  </p>
+                )}
               </div>
               <BookOpen size={22} aria-hidden="true" focusable="false" />
             </li>

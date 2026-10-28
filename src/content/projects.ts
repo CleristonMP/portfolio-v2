@@ -20,8 +20,16 @@ export const projects: readonly Project[] = [
     codeVisibility: 'private',
     editorial: {
       state: 'pending',
-      pendingFields: ['stack', 'mediaPermission', 'demo', 'caseStudy'],
+      pendingFields: ['mediaVersion', 'finalEditorialReview'],
     },
+    stack: [
+      'Java',
+      'Spring Boot',
+      'React',
+      'JavaScript',
+      'Apache POI',
+      'Heroku',
+    ],
   },
   {
     slug: 'audience-counter',
@@ -31,19 +39,30 @@ export const projects: readonly Project[] = [
       en: 'Published Android app',
     },
     description: {
-      pt: 'Aplicativo de contagem de público disponível na Google Play, com modos de contagem adaptados a diferentes necessidades.',
-      en: 'Audience counting Android app published on Google Play, supporting different counting workflows.',
+      pt: 'Aplicativo Android para contagem de público, com modos de contagem direta e por fileiras, disponível na Google Play. Desenvolvi o aplicativo individualmente em Kotlin, com assistência parcial do Gemini. Foi uma experiência de aprendizado em desenvolvimento Android nativo.',
+      en: 'An Android audience-counting app with direct and row-based counting modes, available on Google Play. I developed the app individually in Kotlin, with partial assistance from Gemini. It was a learning experience in native Android development.',
     },
     image:
       'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/audience-counter/1-direct-count-view.jpg',
     nature: 'own-product',
     functionalStatus: 'published',
-    codeVisibility: 'unknown',
+    codeVisibility: 'public',
     editorial: {
       state: 'pending',
-      pendingFields: ['stack', 'mediaPermission', 'storeUrl'],
+      pendingFields: ['mediaVersion', 'finalEditorialReview'],
     },
+    stack: ['Kotlin'],
     platforms: ['Android'],
+    links: {
+      repository: {
+        url: 'https://github.com/CleristonMP/audience-counter',
+        verification: 'confirmed',
+      },
+      store: {
+        url: 'https://play.google.com/store/apps/details?id=com.cmp.audiencecounter',
+        verification: 'confirmed',
+      },
+    },
   },
   {
     slug: 'webmatriculas',
@@ -53,17 +72,31 @@ export const projects: readonly Project[] = [
       en: 'Independent project • not deployed',
     },
     description: {
-      pt: 'Sistema desenvolvido para gerenciar matrículas, alunos, classes e turmas de uma escola. O produto foi implementado, mas não entrou em operação.',
-      en: 'School enrollment management system for students, classes and groups. The application was built but was not deployed.',
+      pt: 'Sistema de gestão de matrículas, alunos, classes e turmas escolares, desenvolvido individualmente, sem assistência de IA. Realizei a análise do sistema e elaborei diagramas UML antes da codificação. O sistema foi implementado, mas não entrou em operação na escola.',
+      en: 'A school enrollment management system for students, classes and groups, developed individually without AI assistance. I analyzed the system and created UML diagrams before coding. The system was implemented but was not put into operation at the school.',
     },
     image:
       'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/webmatriculas/frontend-react-admin-page.png',
     nature: 'independent',
     functionalStatus: 'not-deployed',
-    codeVisibility: 'unknown',
+    codeVisibility: 'public',
     editorial: {
       state: 'pending',
-      pendingFields: ['stack', 'mediaPermission', 'repository', 'demo'],
+      pendingFields: ['mediaVersion', 'finalEditorialReview'],
+    },
+    stack: [
+      'Java',
+      'Spring Boot',
+      'React',
+      'JavaScript',
+      'TypeScript',
+      'PostgreSQL',
+    ],
+    links: {
+      repository: {
+        url: 'https://github.com/CleristonMP/web-matriculas-api',
+        verification: 'confirmed',
+      },
     },
   },
   {
@@ -74,19 +107,36 @@ export const projects: readonly Project[] = [
       en: 'Educational project',
     },
     description: {
-      pt: 'Aplicação de comércio eletrônico desenvolvida na Formação Desenvolvedor Moderno da DevSuperior. Integração de pagamentos não implementada.',
-      en: 'E-commerce application built during DevSuperior’s Modern Developer program. Payment integration was not implemented.',
+      pt: 'Projeto educacional de comércio eletrônico desenvolvido seguindo integralmente a Formação Desenvolvedor Moderno, da DevSuperior, sem adaptações próprias. A execução do projeto proporcionou aprendizado na construção de um sistema do início ao fim. Integração de pagamentos não implementada.',
+      en: 'An educational e-commerce project developed by following DevSuperior’s Formação Desenvolvedor Moderno in full, without my own adaptations. Working through the project provided experience in building a system from start to finish. Payment integration was not implemented.',
     },
     image:
       'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/dscommerce/1-frontend-react-home-page.png',
     nature: 'educational',
     functionalStatus: 'implemented',
-    codeVisibility: 'unknown',
+    codeVisibility: 'public',
     editorial: {
       state: 'pending',
-      pendingFields: ['mediaPermission', 'repository', 'demo'],
+      pendingFields: ['mediaVersion', 'finalEditorialReview'],
     },
-    stack: ['React', 'Spring Boot'],
+    stack: [
+      'Java',
+      'Spring Boot',
+      'React',
+      'JavaScript',
+      'TypeScript',
+      'PostgreSQL',
+    ],
+    links: {
+      backendRepository: {
+        url: 'https://github.com/CleristonMP/dscommerce',
+        verification: 'confirmed',
+      },
+      frontendRepository: {
+        url: 'https://github.com/CleristonMP/dscommerce-frontend',
+        verification: 'confirmed',
+      },
+    },
   },
 ];
 
@@ -107,11 +157,19 @@ export const reportsRegistryCase = {
     en: 'Commercial project · Private source code',
   } satisfies LocalizedText,
   context: {
-    pt: 'Sistema desenvolvido para uma empresa de engenharia elétrica, destinado ao registro de laudos de equipamentos e à consulta de informações pelos clientes, incluindo validade e data de inspeção.',
-    en: 'A system developed for an electrical engineering company to register equipment inspection reports and let clients consult relevant information, including validity and inspection dates.',
+    pt: 'Desenvolvi individualmente um sistema para registrar laudos de equipamentos e permitir a consulta de validade e datas de inspeção.',
+    en: 'I independently developed a system for recording equipment inspection reports and checking validity and inspection dates.',
+  } satisfies LocalizedText,
+  technologies: {
+    pt: 'Java, Spring Boot, React, JavaScript, Apache POI e Heroku.',
+    en: 'Java, Spring Boot, React, JavaScript, Apache POI and Heroku.',
+  } satisfies LocalizedText,
+  implementation: {
+    pt: 'Utilizei Apache POI para ler planilhas Excel e importar registros de laudos. O projeto também envolveu corrigir erros na atualização de usuários e tratar casos de borda nas buscas, incluindo buscas vazias. Essas experiências ampliaram meu aprendizado em importação de dados e tratamento de erros.',
+    en: 'I used Apache POI to read Excel spreadsheets and import inspection report records. The project also involved fixing user update errors and handling search edge cases, including empty searches. These experiences strengthened my understanding of data imports and error handling.',
   } satisfies LocalizedText,
   disclosure: {
-    pt: 'O case apresenta o contexto funcional da solução. Código-fonte, identificação da empresa, dados de clientes e documentos não são disponibilizados.',
-    en: 'This case presents the solution’s functional context. Source code, company identity, client data and documents are not disclosed.',
+    pt: 'Projeto comercial com código privado. Código-fonte, trechos de código, identificação da empresa, dados de clientes e documentos não são disponibilizados.',
+    en: 'Commercial project with private source code. Source code, code excerpts, company identity, client data and documents are not disclosed.',
   } satisfies LocalizedText,
 } as const;

@@ -367,6 +367,11 @@ button {
   border-radius: 20px;
   padding: 7px 10px;
 }
+.projects-section .project-links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+}
 .projects-section .project-case-link {
   display: inline-flex;
   align-items: center;
@@ -490,6 +495,9 @@ button {
   font-size: 18px;
   line-height: 1.8;
   color: rgb(var(--color-text-about));
+}
+.about-section .about-copy > p + p {
+  margin-top: 20px;
 }
 .about-section .about-note {
   margin-top: 32px;

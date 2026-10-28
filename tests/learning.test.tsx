@@ -28,6 +28,12 @@ describe.each(['pt', 'en'] as const)('learning %s', (language) => {
       expect(
         within(item).getByText(institution, { exact: true }),
       ).toBeVisible();
+      const year = [2023, 2022, 2021, 2023][index];
+      const completion =
+        language === 'en'
+          ? `Completed in ${year}.`
+          : `${index === 0 ? 'Concluída' : 'Concluído'} em ${year}.`;
+      expect(within(item).getByText(completion, { exact: true })).toBeVisible();
       expect(item).not.toHaveAttribute('tabindex');
       expect(item.querySelector('svg')).toHaveAttribute('aria-hidden', 'true');
       expect(item.querySelector('svg')).toHaveAttribute('focusable', 'false');

@@ -13,7 +13,13 @@ export type ProjectNature =
   'commercial' | 'own-product' | 'independent' | 'educational';
 export type FunctionalStatus =
   'implemented' | 'published' | 'not-deployed' | 'discontinued';
-export type ProjectLinkKind = 'repository' | 'demo' | 'store' | 'caseStudy';
+export type ProjectLinkKind =
+  | 'repository'
+  | 'backendRepository'
+  | 'frontendRepository'
+  | 'demo'
+  | 'store'
+  | 'caseStudy';
 export interface Project {
   readonly slug: string;
   readonly title: string;
@@ -33,6 +39,7 @@ export interface Course {
   readonly title: string;
   readonly institution: string;
   readonly completedYear?: number;
+  readonly completionLabel?: LocalizedText;
   readonly credential?: OptionalLink;
   readonly editorial: EditorialReview;
 }
@@ -92,6 +99,12 @@ export interface Translation {
   readonly contactLead: string;
   readonly email: string;
   readonly source: string;
+  readonly projectLinks: Readonly<
+    Record<
+      'repository' | 'backendRepository' | 'frontendRepository' | 'store',
+      string
+    >
+  >;
   readonly private: string;
   readonly more: string;
   readonly footer: string;
