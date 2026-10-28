@@ -1,5 +1,90 @@
 # M4-03 — Mídias locais: preparação e integração
 
+## Currículos públicos PT-BR/EN — implementação aguardando revisão do Work — 28/10/2026
+
+### Correção das evidências mobile — 390 px, PT/EN, raiz e subpath
+
+Refeitas somente as evidências mobile solicitadas, sem modificar PDFs, código ou builds. Branch `feat/m4-03-public-resumes`, HEAD `7f150829af8c12c3c2c300dea310a5f5e6793c91`; alterações anteriores preservadas. As capturas mobile antigas `footer-390-pt.png` e `footer-390-en.png` ficam como histórico e **não são usadas para demonstrar o enquadramento integral do download/foco**. As capturas desktop e as medições anteriores permanecem evidências distintas, sem estender sua cobertura.
+
+Novas capturas de viewport **390×844**, navegador embutido, com scrollbar vertical e largura útil de **375 px**. A ferramenta retornou quatro JPEGs de **375×812 pixels**; essa é a resolução dos arquivos salvos, distinta do viewport medido, sem redimensionamento adicional pelo Codex. Cada imagem abaixo foi salva e reaberta para inspeção visual: marca/rodapé, texto completo do download, contorno ciano de foco e retorno ao início estão visíveis integralmente. Não foi necessário corrigir CSS ou comportamento da aplicação.
+
+| Caminho base / URL da aplicação                          | Idioma | Arquivo salvo e inspecionado                                                                                           |
+| -------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `/` — `http://127.0.0.1:4196/`                           | PT-BR  | [footer-mobile-root-390-pt.jpg](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/footer-mobile-root-390-pt.jpg)       |
+| `/` — `http://127.0.0.1:4196/`                           | EN     | [footer-mobile-root-390-en.jpg](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/footer-mobile-root-390-en.jpg)       |
+| `/portfolio-v2/` — `http://127.0.0.1:4197/portfolio-v2/` | PT-BR  | [footer-mobile-subpath-390-pt.jpg](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/footer-mobile-subpath-390-pt.jpg) |
+| `/portfolio-v2/` — `http://127.0.0.1:4197/portfolio-v2/` | EN     | [footer-mobile-subpath-390-en.jpg](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/footer-mobile-subpath-390-en.jpg) |
+
+Procedimento: abrir o preview, selecionar idioma, trazer as nove imagens à vista para completar lazy loading e confirmar `document.fonts.status === 'loaded'`; no rodapé, pressionar **Tab a partir do link GitHub**, alcançando o download sem ativá-lo. Ajustar a rolagem por teclado com **Ctrl+End** quando necessário, mantendo o foco. Aguardar a conclusão da rolagem e comparar observações consecutivas de scrollY/retângulo do link antes de salvar, em vez de capturar imediatamente após a interação. Na tentativa EN inicial, o link terminava em y≈839 e o contorno extrapolava o viewport; após posicionar o fim da página, link e contorno ficaram completos. No subpath PT, uma observação intermediária ainda mostrava rolagem em curso; não foi usada como captura final. Nenhuma preferência de movimento/zoom foi alterada.
+
+Nas quatro capturas finais: `scrollWidth === clientWidth === 375`, nove imagens completas com dimensões naturais e fontes carregadas; download é `activeElement`, altura 44 px, y≈768,3 até 812,3, contorno sólido 3 px com offset 4 px, inteiramente dentro de 844 px. Destinos absolutos conferidos conforme o caminho base e idioma. Retângulos e contexto em `.m2-review/m4-03/resumes/mobile-evidence.json`; sem novo download ou revalidação dos PDFs nesta rodada. Override temporário de viewport restaurado ao terminar.
+
+Cobertura desta correção: **quatro capturas em uma única largura/altura, dois idiomas e dois caminhos**, com foco por teclado e inspeção visual dos arquivos salvos. Não representa repetição da matriz inteira, dos testes, dos builds, de zoom real/reduced motion ou auditoria completa de acessibilidade. Evidências anteriores continuam identificadas separadamente. Somente status/handoff alterados nesta rodada; formatação documental e `git diff --check` repetidos. M4-03 continua aguardando nova revisão do Work; sem staging, commit, push, merge ou deploy.
+
+### Aprovação, entrada e rastreabilidade
+
+Após a proposta editorial exata apresentada nesta conversa, o responsável declarou: **“Pontos 1 e 2 aprovados. Concordo com a recomendação do ponto 3”**. A aprovação abrange os textos PT/EN, as omissões propostas e dois PDFs públicos separados, com somente GitHub/LinkedIn como contatos. O encaminhamento seguinte autorizou a produção e integração local; não aprovou tecnicamente os arquivos finais nem autorizou commit/push. Texto aprovado transcrito integralmente, sem reescrita, em `scripts/resume-content.json`, fonte legível/revisável dos PDFs. Assim o Work pode revisar os textos no mesmo diff, sem depender apenas do histórico do chat. A seção anterior de proposta de currículo permanece abaixo como histórico superado somente quanto à aprovação editorial e produção aqui registrada.
+
+Entrada: `feat/m4-03-local-media`, HEAD `7f150829af8c12c3c2c300dea310a5f5e6793c91`, coincidente com referência local origin; integração das nove mídias aceita/commitada/enviada na operação anterior. Staging vazio e nenhum diff versionável, README somente sinalizado por finais de linha; sem aprovação transitória pendente. Criada branch `feat/m4-03-public-resumes`. Workflow, plano M4, PRD v2.3, proposta de saneamento e fatos/textos M4-01/02 relidos; nenhum AGENTS.md encontrado no projeto fora de dependências. Sem consulta remota nova de refs/CI.
+
+### Arquivos e decisões
+
+| Versão | Arquivo local versionável                             | Páginas / bytes | SHA-256                                                            |
+| ------ | ----------------------------------------------------- | --------------- | ------------------------------------------------------------------ |
+| PT-BR  | `public/assets/documents/cleriston-pereira-pt-br.pdf` | 2 / 49726       | `46ee64effd2227db4a545bfdff7637f27cb685f142455ca2efb347f42c199863` |
+| EN     | `public/assets/documents/cleriston-pereira-en.pdf`    | 2 / 48809       | `340d888d98353744c3696fbb585bf003db763afc3825c7b3e61c164654f8e797` |
+
+PDFs construídos do zero com `scripts/generate-resumes.py`, ReportLab/pypdf já disponíveis no runtime documental; nenhuma dependência da aplicação instalada ou alterada. Formato A4, uma coluna, texto de corpo 10,3 pt/entrelinha 15 pt, títulos claros, margens e paginação; fontes Bitstream Vera regular/negrito incorporadas com mapa Unicode. Papel branco para leitura/impressão, acento ciano discreto; tokens/CSS da aplicação intactos. Página 1: apresentação, competências e Reports Registry; página 2: demais projetos e formações, mantendo ordem aprovada. Paginação e nome repetido no rodapé são os únicos elementos editoriais de apoio, além do texto aprovado. Nomes oficiais de cursos preservados também em EN.
+
+Original privado não foi usado como matriz, nem teve páginas, fontes, contatos, anotações ou metadados importados. Cópia de referência permanece fora da aplicação, SHA-256 `0a1e6985c2451c6a0548172c2ba391f40df661c6b60bdb47ce5e2a037a1bb62b` inalterado. Nenhum arquivo do repositório antigo foi escrito. O novo PDF tem somente Title público e Lang; sem Author, datas, Creator, Producer pessoal, XMP, anexos, campos, ações automáticas ou camadas herdadas. As únicas anotações são dois links URI recém-criados para GitHub/LinkedIn autorizados. Sem email, telefone, localização/nascimento/nacionalidade, código privado ou identificação de terceiros. Omissões da outra atividade/cronologias não reconfirmadas/níveis de idioma/alegações não verificadas são o recorte expressamente aprovado, não declaração de falsidade do original.
+
+Download inserido na navegação já existente do Footer, antes do retorno ao início. PT seleciona PT-BR; EN seleciona EN. Link nativo com download, type application/pdf e hreflang, nome localizado contendo formato/idioma. Caminhos relativos tipados `assets/documents/...` resolvem na raiz ou subpath sem alterar base path e sem enfraquecer getVerifiedUrl. App repassa idioma ao Footer. Profile recebe campo opcional específico de versões localizadas, mantendo contatos desconhecidos e estado editorial pending; substituído somente gate resume por resumeTechnicalReview. Nenhum destino LinkedIn foi habilitado na interface como promessa de contato funcional. Label operacional nova no dicionário; demais copy e mídias inalteradas. Nenhum modal, rota, seletor de arquivos ou serviço novo.
+
+### Critérios e evidências reais
+
+| Critério desta unidade                       | Resultado                                                                                                                                                                                                                                                                                                       |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Texto exato aprovado PT/EN e disponibilidade | Passa: extração integral comparada à fonte aprovada, normalizando somente espaços/quebras; preserva autoria comercial/assistida/educacional, não implantação, ausência de pagamentos e remoto em meio período sem restringir freelance.                                                                         |
+| Texto selecionável/fontes incorporadas       | Passa: extração pypdf/pdfplumber, mapas Unicode e FontFile2/3 em todos os recursos de fonte; quatro páginas renderizadas e inspecionadas.                                                                                                                                                                       |
+| Saneamento e links                           | Passa: dois links URI autorizados, sem anexos/campos/ações/XMP/dados pessoais; texto integral é exatamente o aprovado. Original preservado por hash.                                                                                                                                                            |
+| Legibilidade visual                          | Quatro PNGs finais, 1400 px no lado maior, inspecionados sem corte, sobreposição ou glifo ausente. Corpo/hierarquia e ordem de leitura em coluna única preservados. Não é declaração de conformidade PDF/UA.                                                                                                    |
+| Downloads e caminhos                         | Quatro downloads reais por Enter (PT/EN × raiz/subpath), SHA-256 idêntico ao arquivo local. Evidência browser-downloads.json.                                                                                                                                                                                   |
+| Teclado, nome e foco                         | Tab/Shift+Tab percorrem download e retorno ao início; contorno sólido visível. Nome, download, hrefLang e destino testados nos dois idiomas; ausência de arquivo opcional não produz link vazio.                                                                                                                |
+| Layout da integração                         | 44 medições: PT/EN × dois caminhos × 320/390/700/701/767/768/769/1000/1001/1280/1920 px, altura 900; scrollWidth === clientWidth e link sem extrapolar borda. Oito registros adicionais de Tab/Shift+Tab, total 52 em browser-layout.json. Quatro capturas footer-390/1280-pt/en.png. CSS/tokens não alterados. |
+| Qualidade/builds                             | Typecheck, lint, formato, 74 testes em 10 arquivos, verify content/i18n e builds raiz/subpath passam; diff check repetido após documentos.                                                                                                                                                                      |
+| Revisão e gates                              | PDFs e integração aguardam revisão técnica própria do Work e novo snapshot. M4-03 não declarada concluída; M4-04 não iniciada, foto ausente e contato real/antispam/recebimento/publicação continuam pendentes.                                                                                                 |
+
+Evidências locais ignoradas em `.m2-review/m4-03/resumes/`: `pdf-validation.json`, `extracted-pt-br.txt`, `extracted-en.txt`, `pt-1.png`, `pt-2.png`, `en-1.png`, `en-2.png`, `browser-layout.json`, `browser-downloads.json` e quatro capturas do rodapé. [Página PT 1](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/pt-1.png), [PT 2](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/pt-2.png), [EN 1](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/en-1.png), [EN 2](C:/Projects/portfolio-v2/.m2-review/m4-03/resumes/en-2.png).
+
+### Comandos, resultados e limites
+
+```powershell
+$env:Path = 'C:/Program Files/nodejs;' + $env:Path
+$pythonRuntime = 'C:/Users/cmelo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe'
+& $pythonRuntime scripts/generate-resumes.py
+& $pythonRuntime scripts/verify-resumes.py
+pdftoppm -scale-to 1400 -png public/assets/documents/cleriston-pereira-pt-br.pdf .m2-review/m4-03/resumes/pt
+pdftoppm -scale-to 1400 -png public/assets/documents/cleriston-pereira-en.pdf .m2-review/m4-03/resumes/en
+npm run format
+npm run typecheck
+npm run lint
+npm test
+npm run verify
+npm run build
+npm run build:subpath
+git diff --check
+```
+
+Todos os checks finais acima passam. `verify-resumes.py` verifica texto integral, ordem, links, idioma, fontes e estrutura limpa; deve rodar no runtime documental com ReportLab/pypdf/pdfplumber disponíveis. Não é requisito do navegador/servidor nem foi instalada dependência Python no projeto. O workflow existente continua usando npm e verifica presença/destinos dos dois PDFs pelo verificador de conteúdo. Testes do Footer mantêm navegação/ano/marca/contatos incompletos e acrescentam download localizado/ausência opcional. CI remota não executada desta árvore.
+
+Uma repetição direta simultânea de Vitest teve timeout de 5000 ms em teste existente de alternância de idioma: 73 passaram/1 timeout. A execução padrão npm test passou 74/74; repetição posterior `node node_modules/vitest/vitest.mjs run --maxWorkers=1` passou 74/74, sem alterar timeout ou asserções. Cadeia npm/Node mostrou lentidão; Node direto v22.16.0/PATH somente no processo também executou typecheck/lint/verify/builds com sucesso. Sem correção global do Volta. `pdffonts` não estava disponível no PATH; inspeção das fontes foi feita pela estrutura PDF com pypdf. Recurso inicial Helvetica não incorporado foi corrigido no gerador e todas as páginas finais rerenderizadas sem erros de fontes. Primeiro preview recusou conexão antes de o servidor subir; aba limpa com preview ativo funcionou. Downloads demoraram, mas os quatro eventos terminaram com hashes corretos.
+
+Previews somente locais: Vite preview em 4196 raiz; em 4197 com `--base=/portfolio-v2/ --outDir=.m2-review/m2-08/dist-subpath`; usados os mesmos comandos anteriores deste handoff. Sem revalidação independente de zoom real/reduced motion nesta unidade; não se reutiliza aceite manual das nove mídias como prova dos PDFs. Não houve auditoria completa de leitor de tela, PDF/UA, sistemas ATS ou links externos em sessão autenticada. LinkedIn continua perfil autorizado com authwall historicamente observado, sem promessa de mensagens abertas. Viewport temporário restaurado.
+
+Arquivos: dois PDFs em public/assets/documents; scripts/generate-resumes.py, scripts/verify-resumes.py, scripts/resume-content.json; App, Footer, contratos/profile, traduções, testes Footer, verify-content e os dois documentos de acompanhamento. README, plano, PRD, exports, nove rasters e demais seções preservados. Sem staging, commit, push, merge ou deploy.
+
+Conventional Commit sugerido: `feat(resume): add approved bilingual PDFs and localized downloads`.
+
 ## Retomada dos testes de navegador — 28/10/2026
 
 Nova tentativa solicitada pelo responsável concluída no navegador embutido, com os builds finais servidos em `http://127.0.0.1:4196/` e `http://127.0.0.1:4197/portfolio-v2/`. Sem alteração adicional de código ou dos nove rasters nesta retomada. Os registros de interrupção e pendências da tentativa anterior abaixo permanecem históricos; os resultados desta seção os atualizam.

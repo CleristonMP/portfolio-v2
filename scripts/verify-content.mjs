@@ -21,6 +21,21 @@ const { sectionIds, navigation } = await load('src/content/navigation.ts');
 const { translations } = await load('src/i18n/translations.ts');
 const { getVerifiedUrl, getProjectUrl } = await load('src/content/links.ts');
 
+for (const [language, suffix] of [
+  ['pt', 'pt-br'],
+  ['en', 'en'],
+]) {
+  const resume = profile.resume?.[language];
+  assert.equal(resume?.src, `assets/documents/cleriston-pereira-${suffix}.pdf`);
+  assert.equal(resume.language, language === 'pt' ? 'pt-BR' : 'en');
+  const bytes = fs.readFileSync(path.join('public', resume.src));
+  assert.equal(bytes.subarray(0, 5).toString(), '%PDF-');
+}
+assert.deepEqual(fs.readdirSync('public/assets/documents').sort(), [
+  'cleriston-pereira-en.pdf',
+  'cleriston-pereira-pt-br.pdf',
+]);
+
 function assertIds(actual, expected) {
   assert.deepEqual(actual, expected);
   assert.equal(new Set(actual).size, actual.length);
@@ -276,6 +291,9 @@ for (const [, href] of markup.matchAll(/<a\b[^>]*href="([^"]*)"/g)) {
       approvedDestinations.includes(href.replaceAll('&amp;', '&')) ||
       href === '#main-content' ||
       href === '#reports-registry-case' ||
+      Object.values(profile.resume ?? {}).some(
+        (resume) => resume.src === href,
+      ) ||
       originalImageLinks.includes(href),
   );
 }

@@ -79,6 +79,15 @@ export interface Profile {
   readonly availability?: LocalizedText;
   readonly experienceYears?: number;
   readonly contacts: readonly Contact[];
+  readonly resume?: Readonly<
+    Record<
+      Language,
+      {
+        readonly src: `assets/documents/${string}.pdf`;
+        readonly language: 'pt-BR' | 'en';
+      }
+    >
+  >;
   readonly editorial: EditorialReview;
 }
 export type SectionId =
@@ -135,6 +144,7 @@ export interface Translation {
     readonly profileLink: string;
   };
   readonly backToTop: string;
+  readonly downloadResume: string;
   readonly accessibility: {
     readonly navigation: string;
     readonly footerNavigation: string;

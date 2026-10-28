@@ -5,12 +5,31 @@ import { Footer } from '../src/components/layout/Footer';
 import { profile } from '../src/content/profile';
 import { translations } from '../src/i18n/translations';
 
+it('omits the download when no public resume is provided', () => {
+  const original = profile.resume;
+  Object.defineProperty(profile, 'resume', {
+    configurable: true,
+    value: undefined,
+  });
+  try {
+    render(<Footer language="pt" text={translations.pt} />);
+    expect(
+      screen.queryByRole('link', { name: translations.pt.downloadResume }),
+    ).not.toBeInTheDocument();
+  } finally {
+    Object.defineProperty(profile, 'resume', {
+      configurable: true,
+      value: original,
+    });
+  }
+});
+
 describe.each(['pt', 'en'] as const)('footer %s', (language) => {
   it('shows the professional brand, runtime year and localized navigation', async () => {
     vi.spyOn(Date.prototype, 'getFullYear').mockReturnValue(2032);
     const user = userEvent.setup();
     const text = translations[language];
-    render(<Footer text={text} />);
+    render(<Footer language={language} text={text} />);
     const footer = screen.getByRole('contentinfo');
     expect(footer).toHaveTextContent('CLERISTON_PEREIRA');
     expect(footer).toHaveTextContent(`© 2032 · ${text.footer}`);
@@ -22,15 +41,23 @@ describe.each(['pt', 'en'] as const)('footer %s', (language) => {
       '#projects',
       '#contact',
       'https://github.com/CleristonMP',
+      profile.resume![language].src,
       '#home',
     ]);
     expect(links.map((link) => link.textContent)).toEqual([
       text.navigation[0],
       text.navigation[4],
       text.contactForm.profileLink,
+      text.downloadResume,
       text.backToTop,
     ]);
     expect(links[2]).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(links[3]).toHaveAttribute('download');
+    expect(links[3]).toHaveAttribute(
+      'hreflang',
+      profile.resume![language].language,
+    );
+    expect(links[3]).toHaveAttribute('type', 'application/pdf');
     for (const link of links) {
       await user.tab();
       expect(link).toHaveFocus();
@@ -67,10 +94,10 @@ it.each(['missing', 'pending', 'unsafe'] as const)(
       ],
     });
     try {
-      render(<Footer text={translations.pt} />);
+      render(<Footer language="pt" text={translations.pt} />);
       expect(
         screen.getAllByRole('link').map((link) => link.getAttribute('href')),
-      ).toEqual(['#projects', '#contact', '#home']);
+      ).toEqual(['#projects', '#contact', profile.resume!.pt.src, '#home']);
       expect(
         screen.queryByRole('link', {
           name: translations.pt.contactForm.profileLink,

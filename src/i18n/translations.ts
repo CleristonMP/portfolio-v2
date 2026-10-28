@@ -1,6 +1,7 @@
 import type { Translations } from '../content/contracts';
 export const translations: Translations = {
   pt: {
+    downloadResume: 'Baixar currículo (PDF, PT-BR)',
     navigation: ['Projetos', 'Tecnologias', 'Sobre', 'Formação', 'Contato'],
     tag: 'DESENVOLVEDOR FULL STACK & MOBILE',
     heading: 'Soluções digitais para problemas reais.',
@@ -89,6 +90,7 @@ export const translations: Translations = {
     },
   },
   en: {
+    downloadResume: 'Download résumé (PDF, EN)',
     navigation: ['Projects', 'Skills', 'About', 'Learning', 'Contact'],
     tag: 'FULL STACK & MOBILE DEVELOPER',
     heading: 'Digital solutions for real problems.',

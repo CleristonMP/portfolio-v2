@@ -8,6 +8,13 @@ export const profile: Profile = {
     pt: 'Disponível para freelance; trabalho remoto somente em meio período.',
     en: 'Available for freelance projects; remote work on a part-time basis only.',
   },
+  resume: {
+    pt: {
+      src: 'assets/documents/cleriston-pereira-pt-br.pdf',
+      language: 'pt-BR',
+    },
+    en: { src: 'assets/documents/cleriston-pereira-en.pdf', language: 'en' },
+  },
   contacts: [
     {
       id: 'github',
@@ -24,6 +31,6 @@ export const profile: Profile = {
   ],
   editorial: {
     state: 'pending',
-    pendingFields: ['email', 'linkedin', 'resume'],
+    pendingFields: ['email', 'linkedin', 'resumeTechnicalReview'],
   },
 };
