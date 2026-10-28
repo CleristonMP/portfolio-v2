@@ -1,4 +1,145 @@
-# M4-03 — Preparação de versões seguras para revisão
+# M4-03 — Mídias locais: preparação e integração
+
+## Retomada dos testes de navegador — 28/10/2026
+
+Nova tentativa solicitada pelo responsável concluída no navegador embutido, com os builds finais servidos em `http://127.0.0.1:4196/` e `http://127.0.0.1:4197/portfolio-v2/`. Sem alteração adicional de código ou dos nove rasters nesta retomada. Os registros de interrupção e pendências da tentativa anterior abaixo permanecem históricos; os resultados desta seção os atualizam.
+
+- **Matriz: passa.** 52 combinações: PT/EN × dois caminhos × 320, 390, 699, 700, 701, 767, 768, 769, 999, 1000, 1001, 1280 e 1920 px (altura 900). `scrollWidth === clientWidth` em todas, inclusive 305 px úteis no viewport 320 com scrollbar. Nenhum elemento inspecionado ultrapassou as bordas e nenhuma interseção entre cards foi detectada. Seis seções, nove imagens completas/decodificadas, dimensões naturais corretas, capas contain e figuras com proporção natural. Mídias lazy foram trazidas à vista por interação antes das medições; isso não mede performance de carregamento.
+- **Capturas depois: executadas.** Oito páginas completas em 390×844 e 1280×900, PT/EN, nos dois caminhos: `after-{root,subpath}-{390,1280}-{pt,en}.png` em `.m2-review/m4-03/integration/`. Quatro capturas antes preservadas; conferência visual adicional de cards e certificados em `after-projects-1280-pt.png` e `after-learning-1280-pt.png`. As capas mantêm todos os controles; panorama e certificados têm acesso à resolução original para leitura detalhada.
+- **Teclado/foco: passa nos cenários executados.** Skip por Enter foca main-content; menu abre por Space/Enter e foca primeiro link; Tab/Shift+Tab percorrem links, Escape fecha e retorna ao botão; navegação fecha e foca projects; CTA foca reports-registry-case. Transição 390→768 mantém link visível e fecha estado mobile; 768→390 recupera foco no botão. Menu fechado: Tab vai ao CTA do hero, sem percorrer links ocultos. Contornos de foco sólidos observados. Smoke localizado de skip/menu/Tab/Shift+Tab/Escape e navegação desktop repetido PT/EN nos dois caminhos.
+- **Arquivos e histórico: passa.** Os cinco links de imagem original foram ativados por Enter na raiz, com dimensões naturais corretas; Voltar retorna à aplicação e ao hash anterior. Certificado repetido PT/EN nos dois caminhos. O navegador não restaurou foco ao link ao voltar do documento de imagem (activeElement body); comportamento nativo registrado, sem promessa de restauração específica ou manipulação do histórico. Nenhuma rota da aplicação criada.
+- **Idioma/metadados: passa.** Alternância PT/EN, reload com preferência válida, html lang, title e description conferidos nos dois caminhos. Console da sessão: zero avisos/erros. Imagens renderizadas apontam somente para os nove assets locais; os 18 GETs e hashes já registrados complementam a inspeção, sem alegar captura completa do painel Network.
+- **Zoom real 200% e reduced motion ativo:** mantida a aprovação manual específica do responsável, sem execução ou observação independente pelo Codex. Nenhuma aprovação anterior reutilizada. Override temporário de viewport restaurado ao terminar.
+
+Evidências locais ignoradas: `layout-root.json`, `layout-subpath.json`, `browser-smoke.json` (51 registros) e `console-retry.json`, além das capturas. Para reproduzir: servir os dois builds pelos comandos abaixo, alternar o idioma pelo controle, visitar cada imagem para disparar lazy loading, aplicar cada viewport e comparar document.documentElement.scrollWidth/clientWidth e os retângulos de cards/imagens; executar as interações descritas. Medições DOM e jsdom não comprovam zoom real nem preferência do sistema.
+
+**Integração permanece aguardando revisão própria do Work e novo snapshot verificável.** Checks de código anteriores continuam válidos porque nenhum código foi alterado nesta retomada: 73 testes/10 arquivos, typecheck, lint, formato, verify e builds raiz/subpath. Formatação documental e diff check repetidos após este registro. Não há CI remota desta árvore. M4-03 não se autoaprova; M4-04 não iniciada. Sem staging, commit, push, merge ou deploy.
+
+## Histórico da primeira tentativa — aprovação visual manual recebida; revisão própria pendente — 28/10/2026
+
+**Preparação aprovada e commitada; integração desta árvore ainda não aprovada. M4-03 não concluída.** A preparação documental foi aceita pelo Work e commitada em `d2a21d6d70fbd72b803893f8f47abdf1cd960e10`, com push bem-sucedido registrado nesta conversa. Conferidos localmente branch de entrada `chore/m4-03-safe-media-preparation`, HEAD e referência local origin de mesmo nome iguais a esse commit, remote correto, staging vazio e somente README sinalizado por finais de linha sem diff versionável. Criada `feat/m4-03-local-media`, sem alterar main ou sobrescrever alterações. Nenhum fetch ou consulta de CI; não se presume resultado remoto.
+
+O encaminhamento atual do responsável identifica explicitamente as **nove versões tecnicamente aceitas pelo Work**, com os usos abaixo. Antes de copiar, SHA-256 do manifesto conferido com `42a9f1f0c14c4c15d313c06731dbf956cd792249ff1be5ca2cb664eca6e07f9c`; cada candidate_sha256 conferido também com o recibo local da aprovação anterior. Todas as nove verificações passaram antes de criar destinos. Os candidatos não foram regenerados. Demais alternativas continuam fora da integração; a aceitação das nove não é aceite desta implementação nem liberação das outras.
+
+### Destinos e identidade dos bytes
+
+Copiados somente os nove WebP abaixo, **sem recompressão, corte, edição de pixels ou reintrodução de metadados**, total 532120 bytes. As dimensões/bytes e SHA-256 são os mesmos das candidatas aceitas. Matrizes, originais, ferramentas, pacote de revisão, laudo bloqueado, currículo e alternativas não entraram nos assets versionáveis. A proveniência detalhada e medidas de otimização da preparação estão preservadas no histórico abaixo e no manifesto local original; não se atribui nova economia de bytes a esta cópia.
+
+| ID aceito    | Destino versionável                                      | Pixels / bytes    | SHA-256 dos bytes copiados                                         |
+| ------------ | -------------------------------------------------------- | ----------------- | ------------------------------------------------------------------ |
+| rr-search    | `public/assets/media/reports-registry/rr-search.webp`    | 840×525 / 14222   | `45f49435c739313a194eee70cb1cf8f98aa1258c7844002d8cf232f9ae6601c2` |
+| rr-import    | `public/assets/media/reports-registry/rr-import.webp`    | 1440×159 / 31902  | `d3809295dfc387004f8bc45c7694640b3c3fa05b9f24c42787fa1d4fece18e3a` |
+| ac-landscape | `public/assets/media/audience-counter/ac-landscape.webp` | 1440×563 / 33490  | `33f2349ad13f2b4200c878f8c7e4686494ce43d261f3844d87bb178f9aa3b202` |
+| wm-classes   | `public/assets/media/webmatriculas/wm-classes.webp`      | 1440×810 / 22540  | `aa0d40054ab6f08cdc0046e8ab483e3d415b14ae109a0e2e244a5ebaf58f3293` |
+| ds-catalog   | `public/assets/media/dscommerce/ds-catalog.webp`         | 992×620 / 87470   | `2693887e33dfc3ce56537f6509b6228f992b9cb82adc7f9dbc3e6782901da5c7` |
+| cert-modern  | `public/assets/media/certificates/cert-modern.webp`      | 2339×1653 / 96344 | `b31d84cb2ebd9cc229176f435b42fe9cd982616b3071147ce49162c177eb0ba4` |
+| cert-react   | `public/assets/media/certificates/cert-react.webp`       | 2339×1653 / 88842 | `9ee404f262032d38b9edc11a31d759eaa5a4378ef87e3f53bf35fdae28b1f362` |
+| cert-spring  | `public/assets/media/certificates/cert-spring.webp`      | 2339×1653 / 90996 | `28e4d933b7076a250c66f54d7efee48e4676dd199b50dfcd58ff5a1a6f77994a` |
+| cert-native  | `public/assets/media/certificates/cert-native.webp`      | 1600×1190 / 66314 | `6654381a23441ecb7cd7341da4f83cc07e1c6598acea2b03c4a100bbb827f466` |
+
+### Integração e decisões
+
+- Quatro capas nos cards existentes, mesma ordem/curadoria/dados. `rr-import` inserida após os quatro parágrafos do case Reports Registry na própria âncora. Quatro certificados complementam as formações, mantendo título, instituição e ano textuais. Currículo/foto não produzidos ou disponibilizados.
+- `LocalMedia` tipa caminho local, largura, altura e alt PT/EN. `media.ts` concentra as nove referências e descrições; `Project.image` passa de URL legada a objeto local opcional; `Course.image` é opcional. Nenhuma URL antiga permanece no código de produção. Os caminhos públicos relativos `assets/media/...` são intencionais: a SPA permanece no diretório base e só navega por hash, resolvendo em `/` ou `/portfolio-v2/` sem mudar Vite/base path ou adicionar dependência.
+- `ContentImage` reúne atributos comuns: width/height reais, alt localizado, lazy e decoding async. Todas as imagens ficam abaixo do hero; não foram antecipados downloads eager nem feitas promessas de performance. Capas têm quadro 16:9 reservado, fundo com token existente, raio 12 px e `object-fit:contain`, sem deformar os rasters ou cortar controles. O filho posicionado dentro do quadro evita que a proporção intrínseca altere sua altura antes/depois do carregamento. DS Commerce secundário limita o quadro a 640 px, mantendo o card e conteúdo existentes.
+- Case e certificados usam largura responsiva/altura automática, proporção natural e links nativos localizados **“Abrir imagem em tamanho original” / “Open image at original size”** para os próprios arquivos locais. O PRD §15 prevê link para credencial/imagem local. Acesso à resolução original resolve a limitação de leitura de um panorama ou certificado reduzido sem galeria, modal, nova página da aplicação ou rota. Não são links de validação no emissor, não substituem `credential` e não alegam autenticidade adicional. Sem target novo ou controles de demonstração.
+- Learning mantém a grade responsiva existente; apenas o interior de cada card usa grid para pôr a figura abaixo do índice/texto/ícone. Superfícies, raios e hierarquia reconsultados no HTML/DESIGN.md/screen.png Stitch, com as adaptações de contain/proporção natural aprovadas. Sem recolorir capturas, alterar tokens, header, hero, perfil, competências, footer ou formulário. Exportações originais preservadas.
+- Removido somente `mediaVersion` dos campos sustentados pelas versões aceitas e copiadas. Projetos continuam `pending` por `finalEditorialReview`; cursos continuam `pending` por `credential` e `finalEditorialReview`. Aceite da integração continua gate desta tarefa. Nenhum registro inteiro foi confirmado por receber uma imagem; M4-04, currículo e contato real permanecem pendentes.
+
+### Checks e evidências executados nesta integração
+
+Node direto v22.16.0, PATH ajustado somente no processo; nenhuma configuração global/dependência alterada. Resultados reais em `.m2-review/m4-03/integration/checks.log`:
+
+```powershell
+$env:Path = 'C:\Program Files\nodejs;' + $env:Path
+npm run typecheck
+npm run lint
+npm run format
+npm test
+npm run verify
+npm run build
+npm run build:subpath
+npm run build
+git diff --check
+```
+
+**Passaram:** typecheck; lint sem warnings; formato; **73 testes em 10 arquivos**; verificadores de conteúdo/i18n; build raiz, build subpath e repetição do build raiz solicitada; diff check. O handoff também é formatado explicitamente com Prettier, por docs/ estar no ignore geral. Artefatos finais: CSS `index-C57GpDaX.css` e JS `index-Ba0Oyn64.js` nos dois builds. Não há CI remota executada desta árvore não commitada.
+
+As expectativas históricas de ausência de imagens foram substituídas por quantidade e destinos exatos: cinco imagens de projetos/case e quatro certificados; atributos, alt PT/EN, dimensões, carregamento, link nativo para o raster e ausência de imagem opcional sem placeholder. Testes de ordem editorial/Tab, código privado, contatos incompletos, estados do formulário indisponível, armazenamento/idioma/metadados, menu/foco e demais proteções permanecem. `verify-content` verifica os nove hashes aceitos, dimensões binárias WebP, ausência de chunks de metadados/animação e inventário local exato; whitelist de links continua restrita aos destinos autorizados e cinco arquivos originais locais usados pelos links. Não se liberaram URLs arbitrárias. jsdom/SSR não comprovam layout, carregamento lazy, histórico nativo ou zoom.
+
+Verificações adicionais reproduzíveis, locais e ignoradas:
+
+```powershell
+node .m2-review/m4-03/integration/check-copy.mjs
+& 'C:/Users/cmelo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' .m2-review/m4-03/integration/check-artifacts.py
+& 'C:/Users/cmelo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe' .m2-review/m4-03/integration/check-http.py
+```
+
+Comparação com o baseline `d2a21d6` passou: fatos/textos de projetos e cursos e todas as chaves anteriores PT/EN preservados, excluindo somente referências/gates de mídia e a nova label operacional. Validação dos artefatos passou: manifesto original íntegro, nove hashes origem/destino idênticos, dimensões/frames/metadados inalterados; README e arquivos alheios preservados byte a byte. Resultados em `artifact-validation.json`; destinos/proveniência em `copied-media.json` no mesmo diretório ignorado.
+
+Previews de produção servidos somente localmente:
+
+```powershell
+node node_modules/vite/bin/vite.js preview --host=127.0.0.1 --port=4196 --strictPort
+node node_modules/vite/bin/vite.js preview --base=/portfolio-v2/ --outDir=.m2-review/m2-08/dist-subpath --host=127.0.0.1 --port=4197 --strictPort
+```
+
+HTTP local executado nos **dois caminhos**: aplicação e quatro bundles JS/CSS com status 200; **18 GETs das nove mídias**, todos 200, `image/webp`, bytes/SHA-256 iguais aos aceitos. Código src e bundles não contêm `raw.githubusercontent.com` antigo ou host de amostras Stitch. Evidências em `.m2-review/m4-03/integration/http-results.json`. Isso comprova o serviço local dos arquivos, não observação completa de rede/layout/decodificação lazy pelo navegador. Google Fonts existente não é mídia migrada e não foi modificado.
+
+### Evidências de interface e impedimento concreto
+
+Antes das edições, capturadas quatro páginas completas em Vite dev `127.0.0.1:4195`, baseline da preparação aprovada: `before-390-pt.png`, `before-390-en.png`, `before-1280-pt.png`, `before-1280-en.png` em `.m2-review/m4-03/integration/`. Dimensões 390×844 e 1280×900. Há inspeção DOM inicial da integração em 390 px/EN, sem excesso de scrollWidth contra clientWidth naquele ponto, mas anterior ao último ajuste do quadro das capas; imagens abaixo da dobra ainda não haviam todas carregado. **Esse resultado intermediário não fecha a responsividade final.**
+
+Ao tentar revalidar zoom real no Chrome nativo, Computer Use informou que não conseguia determinar a URL atual no Windows com confiança suficiente para aplicar a política e **interrompeu o uso de interface para o turno**. Não foram enviadas teclas de zoom, alteradas preferências ou iniciada a janela dedicada. Após a interrupção, nenhuma nova ação de interface, captura ou automação alternativa de navegador foi usada; concluíram-se apenas checks de código/artefatos e HTTP independentes da UI.
+
+Histórico da execução automatizada anterior à confirmação manual abaixo: **não há capturas depois, matriz final desktop/mobile PT/EN, conferência visual final dentro dos componentes, smoke nativo completo ou validação própria de zoom 200%/reduced motion ativo desta integração**. Preferência reduce observada na sessão inicial: false, não ativa. Presença da regra CSS e testes DOM não suprem esses critérios. Aprovações manuais anteriores, inclusive de M4-02, não foram reutilizadas. Viewport do navegador embutido ficou em 390×844 na interrupção; não foi possível restaurá-lo por nova ação de UI neste turno. Isso deve ser retomado em nova sessão/turno, sem inferir resultados.
+
+Matriz final a executar, **ainda pendente**, nos dois idiomas e caminhos: 320/390/768/1280/1920 e limites 699/700/701, 767/768/769, 999/1000/1001. Comparar scrollWidth/clientWidth, enquadramento contain, proporção natural, cortes, sobreposição, leitura e acesso à resolução original. Repetir captura depois 390/1280 PT/EN, teclado/foco/skip/menu/Escape, mudanças de largura, hash/Voltar, persistência e metadados. Não reaproveitar a matriz da versão sem mídias como prova desta integração. A prancha das candidatas aprovada anteriormente comprova apenas os rasters isolados, não sua apresentação atual.
+
+### Confirmação visual manual posterior — 28/10/2026
+
+O responsável declarou nesta conversa: “Eu fiz a validação visual e está aprovada.” A aprovação visual manual desta integração está recebida. Codex não executou nem observou independentemente essa validação. Não foram informados navegador, larguras, idiomas, caminhos, procedimento, medidas ou capturas adicionais; esses detalhes não são inferidos.
+
+A declaração supera a pendência de aprovação visual geral da apresentação das mídias, sem criar capturas depois ou transformar a matriz planejada em medições executadas. Smoke funcional completo, cobertura discriminada por largura/idioma/caminho, zoom real 200% e reduced motion ativo não foram confirmados especificamente nessa declaração e permanecem como gates de evidência. A interrupção do Computer Use e seus resultados brutos acima permanecem históricos, não são apagados nem descritos como execução bem-sucedida.
+
+Isso não constitui revisão técnica integral do Work nem autorização de staging, commit/push ou início de M4-04. A árvore documental atualizada exige nova revisão e snapshot próprio.
+
+### Confirmação manual posterior de zoom e redução de movimento — 28/10/2026
+
+O responsável declarou nesta conversa: “considere zoom real 200% e reduced motion ativo como aprovados, feitos manualmente”. Registro específico desta integração de M4-03: os dois critérios passam a constar como validados manualmente e aprovados pelo responsável. Codex não executou nem observou independentemente a validação. Navegador, larguras, idiomas, caminhos, procedimento e capturas adicionais não foram informados e não são inferidos.
+
+A declaração supera as duas pendências iniciais e complementa a aprovação visual geral anterior. Os registros de impedimento automatizado e de ausência de confirmação específica naquela etapa permanecem históricos. A observação anterior de preferência false é da sessão automatizada, não da execução manual posterior. Não foram reutilizadas aprovações de outras entregas, viewport menor ou presença da regra CSS como substitutos.
+
+Capturas depois, cobertura discriminada da matriz e smoke funcional completo continuam sem evidência específica. Revisão própria do Work e snapshot atualizado permanecem necessários; esta confirmação não autoriza staging, commit/push nem encerra M4-03 ou inicia M4-04.
+
+### Situação individual histórica anterior à retomada
+
+| Critério                                                  | Situação desta integração                                                                                                                                 |
+| --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Manifesto e hashes das nove versões antes da cópia        | Passa; manifesto pinado e hashes aceitos conferidos, nenhum arquivo regenerado.                                                                           |
+| Somente nove rasters locais, pixels/metadados preservados | Passa nos checks de artefatos; 532120 bytes, inventário exato, sem originais/matrizes/currículo/alternativas.                                             |
+| Capas, case e certificados na estrutura existente         | Implementado/testado; apresentação visual validada manualmente e aprovada pelo responsável, sem observação independente pelo Codex.                       |
+| Textos, curadoria, IDs, proporções, dimensões/alt/loading | Dados/textos/atributos verificados; contain e dimensões reservadas implementados; aprovação visual manual recebida, sem medidas adicionais informadas.    |
+| Credenciais e demais gates editoriais                     | Permanecem pendentes conforme dados; apenas versões de mídia aceitas deixam `mediaVersion`.                                                               |
+| Ausência de dependência de mídia legada/Stitch            | Src/bundles e inventário renderizado só referenciam mídias locais; inspeção final de requisições do navegador ainda pendente.                             |
+| HTTP em / e /portfolio-v2/                                | Passa para app/bundles e 18 GETs de mídia com MIME/hash exatos. Não substitui smoke no navegador.                                                         |
+| Matriz final de larguras/idiomas e capturas depois        | Aprovação visual geral manual recebida; cobertura detalhada da matriz não informada, sem capturas depois novas. Quatro capturas antes disponíveis.        |
+| Teclado/foco/idioma/metadados/menu/hash/Voltar            | Proteções de código e testes existentes passam; revalidação completa no navegador desta versão **pendente**.                                              |
+| Zoom real 200% e reduced motion ativo                     | Validados manualmente e aprovados pelo responsável em 28/10/2026 para esta integração; sem observação independente pelo Codex. Limites registrados acima. |
+| Checks de código/testes/verificadores/builds/diff         | Passam; 73 testes, builds dos dois caminhos e repetição raiz registrados acima. CI remota não executada.                                                  |
+| Currículo/foto/serviços/escopo                            | Preservados: currículo editorial não aprovado, sem PDF público ou foto; formulário indisponível, serviços não configurados, M4-04 não iniciada.           |
+
+Arquivos: nove `public/assets/media/**/*.webp`; novos `src/content/media.ts`, `src/components/ContentImage.tsx` e `tests/media.test.tsx`; ajustes mínimos em contratos, dados projects/courses, duas seções, estilos, dicionário (label de imagem original), testes projects/learning e verificadores content/i18n; status e este handoff. PRD, plano, exports, dependências, tokens, base path e demais seções permanecem intactos.
+
+**Não aprovar/encerrar M4-03 apenas pelos checks locais.** A árvore fica para revisão do Work com os impedimentos explícitos; completar os critérios remanescentes de navegador/capturas e considerar as confirmações manuais próprias de visual/zoom/reduce, com seus limites, antes de qualquer aceite integral. Sem staging, commit, push, merge ou deploy. Aprovação das candidatas/preparação não autoriza commit desta integração.
+
+Conventional Commit sugerido para este diff efetivo: `feat(media): integrate accepted project and certificate rasters`.
+
+---
+
+## Histórico — preparação aprovada e commitada em d2a21d6
+
+O registro original abaixo permanece histórico. As pendências de aceite das versões foram superadas somente para as nove explicitamente identificadas no encaminhamento de integração, sem liberar as demais alternativas ou o currículo. A integração e seus critérios atuais são os da seção acima.
 
 28/10/2026. **M4-03 em andamento. Esta unidade prepara candidatas locais; não conclui migração, integração ou aceite das versões.** Revisão própria do Work necessária antes de copiar qualquer arquivo para assets versionáveis. Sem staging, commit, push, merge ou deploy.
 

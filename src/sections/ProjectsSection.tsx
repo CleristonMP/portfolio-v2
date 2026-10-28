@@ -7,6 +7,7 @@ import {
 } from '../content/projects';
 import { getProjectUrl } from '../content/links';
 import { SectionHeading } from '../components/SectionHeading';
+import { ContentImage, MediaFigure } from '../components/ContentImage';
 
 interface ProjectCardProps extends SectionProps {
   readonly project: Project;
@@ -16,6 +17,11 @@ function ProjectCard({ project, language, text }: ProjectCardProps) {
   const technologies = [...(project.stack ?? []), ...(project.platforms ?? [])];
   return (
     <article className="project-card" aria-labelledby={`${project.slug}-title`}>
+      {project.image && (
+        <div className="project-cover">
+          <ContentImage image={project.image} language={language} />
+        </div>
+      )}
       <span className="project-kind">{project.category[language]}</span>
       <h3 id={`${project.slug}-title`}>{project.title}</h3>
       <p>{project.description[language]}</p>
@@ -92,6 +98,11 @@ export function ProjectsSection({ language, text }: SectionProps) {
           <p>{reportsRegistryCase.technologies[language]}</p>
           <p>{reportsRegistryCase.implementation[language]}</p>
           <p>{reportsRegistryCase.disclosure[language]}</p>
+          <MediaFigure
+            image={reportsRegistryCase.image}
+            language={language}
+            originalLabel={text.openOriginalImage}
+          />
         </article>
         <div className="projects-secondary">
           {secondaryProjects.map((project) => (

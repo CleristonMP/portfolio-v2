@@ -3,11 +3,12 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 import { ProjectsSection } from '../src/sections/ProjectsSection';
 import { translations } from '../src/i18n/translations';
+import { media } from '../src/content/media';
 
 describe.each(['pt', 'en'] as const)(
   'approved project presentation %s',
   (language) => {
-    it('keeps the editorial order, private case and authorized public destinations without images', async () => {
+    it('keeps editorial order and private-code boundaries with accepted local images', async () => {
       const { container } = render(
         <ProjectsSection language={language} text={translations[language]} />,
       );
@@ -35,7 +36,22 @@ describe.each(['pt', 'en'] as const)(
             : 'Independent project • not deployed',
         ),
       ).toBeVisible();
-      expect(screen.queryByRole('img')).not.toBeInTheDocument();
+      expect(screen.getAllByRole('img')).toHaveLength(5);
+      for (const [index, image] of [
+        media.reportsCover,
+        media.audienceCover,
+        media.enrollmentCover,
+        media.reportsImport,
+        media.commerceCover,
+      ].entries()) {
+        const rendered = within(cards[index]).getByRole('img', {
+          name: image.alt[language],
+        });
+        expect(rendered).toHaveAttribute('src', image.src);
+        expect(rendered).toHaveAttribute('width', String(image.width));
+        expect(rendered).toHaveAttribute('height', String(image.height));
+        expect(rendered).toHaveAttribute('loading', 'lazy');
+      }
       expect(within(cards[1]).getByText(/Gemini/)).toBeVisible();
       expect(
         within(cards[2]).getByText(
@@ -61,7 +77,7 @@ describe.each(['pt', 'en'] as const)(
       const link = screen.getByRole('link', {
         name: translations[language].private,
       });
-      expect(screen.getAllByRole('link')).toHaveLength(6);
+      expect(screen.getAllByRole('link')).toHaveLength(7);
       for (const [name, href] of [
         [
           'GitHub — Audience-Counter',
@@ -86,7 +102,11 @@ describe.each(['pt', 'en'] as const)(
           href,
         );
       }
-      expect(within(cards[3]).queryByRole('link')).not.toBeInTheDocument();
+      const originalImageName = `${translations[language].openOriginalImage}: ${media.reportsImport.alt[language]}`;
+      expect(within(cards[3]).getAllByRole('link')).toHaveLength(1);
+      expect(
+        within(cards[3]).getByRole('link', { name: originalImageName }),
+      ).toHaveAttribute('href', media.reportsImport.src);
       expect(link).toHaveAttribute('href', '#reports-registry-case');
       const destination = container.querySelector('#reports-registry-case');
       expect(destination).toHaveAttribute('tabindex', '-1');
@@ -112,6 +132,7 @@ describe.each(['pt', 'en'] as const)(
         'GitHub — Audience-Counter',
         'Google Play — Audience-Counter',
         'GitHub — Web Matrículas',
+        originalImageName,
         'Backend — DS Commerce',
         'Frontend — DS Commerce',
       ]) {

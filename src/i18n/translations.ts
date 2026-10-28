@@ -73,6 +73,7 @@ export const translations: Translations = {
       closeMenu: 'Fechar menu',
     },
     projectImageAlt: 'Interface do projeto {project}',
+    openOriginalImage: 'Abrir imagem em tamanho original',
     skillLabels: {
       'java-spring': 'Java & Spring Boot',
       'react-typescript': 'React & TypeScript',
@@ -160,6 +161,7 @@ export const translations: Translations = {
       closeMenu: 'Close menu',
     },
     projectImageAlt: '{project} interface',
+    openOriginalImage: 'Open image at original size',
     skillLabels: {
       'java-spring': 'Java & Spring Boot',
       'react-typescript': 'React & TypeScript',

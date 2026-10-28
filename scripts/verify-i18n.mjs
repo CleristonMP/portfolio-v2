@@ -16,6 +16,9 @@ const {
 const { projects, reportsRegistryCase } = await load('src/content/projects.ts');
 const { skills } = await load('src/content/skills.ts');
 const { courses } = await load('src/content/courses.ts');
+const { media } = await load('src/content/media.ts');
+for (const image of Object.values(media))
+  assertTranslationParity(image.alt.pt, image.alt.en);
 
 function assertTranslationParity(left, right, location = 'translations') {
   assert.equal(typeof left, typeof right, location);
@@ -190,10 +193,22 @@ for (const language of ['pt', 'en']) {
       text,
     }),
   );
-  assert(
-    !projectMarkup.includes('<img'),
-    'Project presentation must not render unapproved media',
+  assert.equal((projectMarkup.match(/<img\b/g) ?? []).length, 5);
+  for (const image of [
+    ...projects.map((project) => project.image),
+    reportsRegistryCase.image,
+  ]) {
+    assert(projectMarkup.includes(`src="${image.src}"`));
+    assert(projectMarkup.includes(`alt="${image.alt[language]}"`));
+  }
+  for (const image of Object.values(media))
+    assert(markup.includes(`alt="${image.alt[language]}"`));
+  assert.equal((markup.match(/<img\b/g) ?? []).length, 9);
+  assert.equal(
+    (markup.match(/loading="lazy" decoding="async"/g) ?? []).length,
+    9,
   );
+  assert(markup.includes(text.openOriginalImage));
   for (const field of [
     'category',
     'context',
@@ -267,5 +282,5 @@ for (const language of ['pt', 'en']) {
   }
 }
 stdout.write(
-  'PASS: PT/EN parity/nonempty, localized sections/labels and image-free project presentation, official names, valid/invalid preference, storage getter/read/write failures, metadata PT/EN/PT and static fallback.\n',
+  'PASS: PT/EN parity/nonempty, localized sections/labels and reviewed local media/alternatives, official names, valid/invalid preference, storage getter/read/write failures, metadata PT/EN/PT and static fallback.\n',
 );

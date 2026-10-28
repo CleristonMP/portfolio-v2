@@ -1,3 +1,4 @@
+import { media } from './media';
 import type { LocalizedText, Project } from './contracts';
 
 // Only confirmed technologies are published; unresolved stacks stay absent.
@@ -13,14 +14,13 @@ export const projects: readonly Project[] = [
       pt: 'Sistema desenvolvido para uma empresa de engenharia elétrica gerenciar registros de inspeções e permitir a consulta de informações de equipamentos pelos clientes.',
       en: 'Custom software for an electrical engineering business to manage inspection records and let clients access relevant equipment information.',
     },
-    image:
-      'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/reports-registry/frontend-react-public-tracking.png',
+    image: media.reportsCover,
     nature: 'commercial',
     functionalStatus: 'implemented',
     codeVisibility: 'private',
     editorial: {
       state: 'pending',
-      pendingFields: ['mediaVersion', 'finalEditorialReview'],
+      pendingFields: ['finalEditorialReview'],
     },
     stack: [
       'Java',
@@ -42,14 +42,13 @@ export const projects: readonly Project[] = [
       pt: 'Aplicativo Android para contagem de público, com modos de contagem direta e por fileiras, disponível na Google Play. Desenvolvi o aplicativo individualmente em Kotlin, com assistência parcial do Gemini. Foi uma experiência de aprendizado em desenvolvimento Android nativo.',
       en: 'An Android audience-counting app with direct and row-based counting modes, available on Google Play. I developed the app individually in Kotlin, with partial assistance from Gemini. It was a learning experience in native Android development.',
     },
-    image:
-      'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/audience-counter/1-direct-count-view.jpg',
+    image: media.audienceCover,
     nature: 'own-product',
     functionalStatus: 'published',
     codeVisibility: 'public',
     editorial: {
       state: 'pending',
-      pendingFields: ['mediaVersion', 'finalEditorialReview'],
+      pendingFields: ['finalEditorialReview'],
     },
     stack: ['Kotlin'],
     platforms: ['Android'],
@@ -75,14 +74,13 @@ export const projects: readonly Project[] = [
       pt: 'Sistema de gestão de matrículas, alunos, classes e turmas escolares, desenvolvido individualmente, sem assistência de IA. Realizei a análise do sistema e elaborei diagramas UML antes da codificação. O sistema foi implementado, mas não entrou em operação na escola.',
       en: 'A school enrollment management system for students, classes and groups, developed individually without AI assistance. I analyzed the system and created UML diagrams before coding. The system was implemented but was not put into operation at the school.',
     },
-    image:
-      'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/webmatriculas/frontend-react-admin-page.png',
+    image: media.enrollmentCover,
     nature: 'independent',
     functionalStatus: 'not-deployed',
     codeVisibility: 'public',
     editorial: {
       state: 'pending',
-      pendingFields: ['mediaVersion', 'finalEditorialReview'],
+      pendingFields: ['finalEditorialReview'],
     },
     stack: [
       'Java',
@@ -110,14 +108,13 @@ export const projects: readonly Project[] = [
       pt: 'Projeto educacional de comércio eletrônico desenvolvido seguindo integralmente a Formação Desenvolvedor Moderno, da DevSuperior, sem adaptações próprias. A execução do projeto proporcionou aprendizado na construção de um sistema do início ao fim. Integração de pagamentos não implementada.',
       en: 'An educational e-commerce project developed by following DevSuperior’s Formação Desenvolvedor Moderno in full, without my own adaptations. Working through the project provided experience in building a system from start to finish. Payment integration was not implemented.',
     },
-    image:
-      'https://raw.githubusercontent.com/CleristonMP/portfolio/main/public/assets/medias/projects/dscommerce/1-frontend-react-home-page.png',
+    image: media.commerceCover,
     nature: 'educational',
     functionalStatus: 'implemented',
     codeVisibility: 'public',
     editorial: {
       state: 'pending',
-      pendingFields: ['mediaVersion', 'finalEditorialReview'],
+      pendingFields: ['finalEditorialReview'],
     },
     stack: [
       'Java',
@@ -152,6 +149,7 @@ export const secondaryProjects = projects.filter(
 
 export const reportsRegistryCase = {
   id: 'reports-registry-case',
+  image: media.reportsImport,
   category: {
     pt: 'Projeto comercial · Código privado',
     en: 'Commercial project · Private source code',

@@ -9,6 +9,12 @@ export interface OptionalLink {
   readonly url?: string;
   readonly verification: VerificationState;
 }
+export interface LocalMedia {
+  readonly src: `assets/media/${string}.webp`;
+  readonly width: number;
+  readonly height: number;
+  readonly alt: LocalizedText;
+}
 export type ProjectNature =
   'commercial' | 'own-product' | 'independent' | 'educational';
 export type FunctionalStatus =
@@ -31,7 +37,7 @@ export interface Project {
   readonly description: LocalizedText;
   readonly stack?: readonly string[];
   readonly platforms?: readonly string[];
-  readonly image: string;
+  readonly image?: LocalMedia;
   readonly links?: Partial<Readonly<Record<ProjectLinkKind, OptionalLink>>>;
 }
 export interface Course {
@@ -41,6 +47,7 @@ export interface Course {
   readonly completedYear?: number;
   readonly completionLabel?: LocalizedText;
   readonly credential?: OptionalLink;
+  readonly image?: LocalMedia;
   readonly editorial: EditorialReview;
 }
 export type SkillIcon =
@@ -137,6 +144,7 @@ export interface Translation {
     readonly closeMenu: string;
   };
   readonly projectImageAlt: string;
+  readonly openOriginalImage: string;
   readonly skillLabels: Readonly<Record<SkillId, string>>;
   readonly metadata: { readonly title: string; readonly description: string };
 }

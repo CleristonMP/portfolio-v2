@@ -2,6 +2,7 @@ import type { SectionProps } from '../content/contracts';
 import { BookOpen } from 'lucide-react';
 import { courses } from '../content/courses';
 import { SectionHeading } from '../components/SectionHeading';
+import { MediaFigure } from '../components/ContentImage';
 
 export function LearningSection({ language, text }: SectionProps) {
   return (
@@ -31,6 +32,13 @@ export function LearningSection({ language, text }: SectionProps) {
                 )}
               </div>
               <BookOpen size={22} aria-hidden="true" focusable="false" />
+              {course.image && (
+                <MediaFigure
+                  image={course.image}
+                  language={language}
+                  originalLabel={text.openOriginalImage}
+                />
+              )}
             </li>
           ))}
         </ol>
