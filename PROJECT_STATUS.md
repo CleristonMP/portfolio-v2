@@ -1,6 +1,16 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-03 currículos PT-BR/EN integrados, aguardando revisão do Work — 28/10/2026
+## Estado corrente — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
+
+Aceite técnico de M4-03 confirmado no encaminhamento do Work: nove mídias em `7f150829af8c12c3c2c300dea310a5f5e6793c91` e dois currículos/downloads em `731ba237e52a7239a8d397bee501580f329b5fd6`, ambos commitados/enviados conforme operações nesta conversa. Foto opcional ausente não bloqueia M4-04. Histórico e limites de validações manuais preservados; sem consulta nova de CI.
+
+Revisão integral PT-BR/EN e três correções aprovadas expressamente pelo responsável (“Aprovado”) nesta conversa. Implementadas somente contactLead EN com goals and scope, remoção do ponto adicional no título de contato e chave soon inativa/declaração tipada. PT, títulos, demais copy/fatos/URLs/IDs preservados. Removido somente resumeTechnicalReview pelo aceite já atendido; profile continua pending por email/linkedin e todos os outros gates editoriais individuais permanecem. Contato indisponível/aviso futuro e integração real não foram alterados.
+
+Entrada local em feat/m4-03-public-resumes, HEAD/ref origin `731ba237e52a7239a8d397bee501580f329b5fd6`, sem diff versionável/staging/aprovação pendente; README sinalizado somente por finais de linha e preservado. Criada `fix/m4-04-editorial-equivalence`. Passam typecheck, lint, formato, 74 testes/10 arquivos, verificadores, builds raiz/subpath e diff check. Testes/verificador reaproveitados cobrem storage ausente/inválido e falhas de getter/leitura/escrita, paridade e metadados. Smoke PT→EN→PT/reload/metadados nos dois caminhos e 20 medições 320/390/768/1280/1920 PT/EN sem overflow da copy; oito capturas 390/1280 salvas/reabertas. Auditoria confirma PDFs, mídias e fontes de currículo inalterados byte a byte e dicionário com somente o delta aprovado. Resultados, correção inicial da consulta de teste, arquivos, evidências e limites no [plano único M4](docs/MILESTONE_4_PLAN.md), sem handoff paralelo.
+
+**M4-04 aguardando revisão técnica própria do Work e novo snapshot verificável.** Aprovação editorial não é aceite técnico desta implementação nem autorização de commit/push. Não iniciadas M4-05/06; não encerrado o milestone. Sem staging, commit, push, merge ou deploy.
+
+## Histórico — M4-03 currículos PT-BR/EN integrados, aguardando revisão do Work — 28/10/2026
 
 Integração das nove mídias aceita pelo Work e registrada/enviada em `7f150829af8c12c3c2c300dea310a5f5e6793c91`, feat/m4-03-local-media, conforme operação nesta conversa. Entrada confirmada nesse HEAD, referência local origin coincidente, sem diff versionável/staging/aprovação pendente; README somente sinalizado por finais de linha e preservado. Branch dedicada `feat/m4-03-public-resumes`, sem alterar main ou consultar CI remota.
 

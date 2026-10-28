@@ -12,10 +12,7 @@ export function ContactSection({ text }: SectionProps) {
       <div className="container contact-layout">
         <div>
           <p className="kicker">{text.kickers.contact}</p>
-          <h2>
-            {text.contact}
-            <span className="dot">.</span>
-          </h2>
+          <h2>{text.contact}</h2>
           <p>{text.contactLead}</p>
           <div className="contact-cta">
             {githubUrl && (

@@ -33,7 +33,6 @@ export const translations: Translations = {
     private: 'Estudo de caso • código privado',
     more: 'Ver detalhes',
     footer: 'Desenvolvido com atenção aos detalhes.',
-    soon: 'Links de demonstração e estudos de caso completos serão adicionados após validação.',
     languageSwitchCode: 'EN',
     heroIntro: 'Criando',
     heroAccent: 'soluções digitais.',
@@ -110,7 +109,7 @@ export const translations: Translations = {
       'Education and training that reinforce my engineering practice.',
     contact: 'Let’s build something together?',
     contactLead:
-      'Have a web or mobile project? Get in touch and tell me about your goals.',
+      'Have a web or mobile project in mind? Get in touch so we can discuss your goals and scope.',
     email: 'Contact by email',
     source: 'GitHub',
     projectLinks: {
@@ -122,7 +121,6 @@ export const translations: Translations = {
     private: 'Case study • private code',
     more: 'View details',
     footer: 'Crafted with attention to detail.',
-    soon: 'Demo links and complete case studies will be added after verification.',
     languageSwitchCode: 'PT',
     heroIntro: 'Building',
     heroAccent: 'digital solutions.',

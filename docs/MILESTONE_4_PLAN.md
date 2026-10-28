@@ -1,8 +1,66 @@
 # M4 — Conteúdo e integração — plano aprovado
 
+## Estado corrente — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
+
+O encaminhamento do Work confirma o aceite técnico de M4-03 para as nove mídias e os dois currículos: `7f150829af8c12c3c2c300dea310a5f5e6793c91` (mídias) e `731ba237e52a7239a8d397bee501580f329b5fd6` (currículos/downloads), com pushes bem-sucedidos registrados nesta conversa. Foto real permanece opcional e ausente, sem bloquear a dependência de M4-04. Não se presume CI nova nem fechamento do milestone. Preparação em `d2a21d6` e registros anteriores de espera ficam históricos.
+
+A comparação integral PT-BR/EN foi apresentada nesta conversa, abrangendo navegação, hero, projetos/case, competências, perfil, formações, contato indisponível, footer/downloads, nove alt e metadados, incluindo coerência com os currículos. O responsável respondeu **“Aprovado”** à revisão e às três correções propostas. Isso registra aprovação editorial integral dos conteúdos atuais, sem antecipar os textos operacionais/aviso de contato de M4-05/06 nem o aceite técnico desta implementação.
+
+Entrada conferida em feat/m4-03-public-resumes, HEAD/ref local origin `731ba237e52a7239a8d397bee501580f329b5fd6`, origin correto, sem diff versionável/staging/registro de aprovação pendente. README somente sinalizado por finais de linha e preservado. Criada `fix/m4-04-editorial-equivalence`; nenhum AGENTS.md local encontrado fora das dependências. Workflow, PRD v2.3 e handoffs pertinentes relidos; a coleta/reconciliação M4-01 permanece neste plano único, sem handoff paralelo. Nenhum fetch ou consulta adicional de CI.
+
+### Entrega e critérios individuais de M4-04
+
+| Critério                                      | Resultado e limite                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Contato EN equivalente ao PT                  | Aplicado exatamente: “Have a web or mobile project in mind? Get in touch so we can discuss your goals and scope.” PT intacto.                                                                                                                                                                                                                                               |
+| Títulos aprovados sem pontuação duplicada     | ContactSection deixa de acrescentar ponto após a interrogação; títulos PT/EN do dicionário preservados. Teste acessível verifica nome exato nos dois idiomas. Nenhuma alteração CSS/tokens.                                                                                                                                                                                 |
+| Chave soon sem consumidores                   | Busca prévia em src/tests/scripts encontrou apenas declaração tipada e entradas PT/EN; sem consumidor. Removidas somente essas três ocorrências. Busca posterior sem correspondências no código ativo.                                                                                                                                                                      |
+| Aprovação integral/equivalência e preservação | Aprovação expressa do responsável registrada acima. Auditoria compara todo o dicionário com HEAD, permitindo somente remoção de soon e contactLead EN; demais valores idênticos. Nomes, URLs, IDs, fatos, autoria, código privado, Gemini parcial, ausência de implantação/pagamentos preservados.                                                                          |
+| Estados editoriais                            | Removido somente resumeTechnicalReview pelo aceite técnico já recebido. Profile continua pending por email/linkedin. Projetos continuam com finalEditorialReview; cursos com credential/finalEditorialReview; seis competências com proficiencyEvidence. Nenhuma confirmação em bloco ou resolução implícita de contato funcional/credenciais.                              |
+| Tipos/lint/formato/testes/verificadores       | Passam: typecheck; lint sem warnings; formato; 74 testes/10 arquivos; verify content/i18n. Paridade/chaves não vazias, preferência válida/ausente/inválida, getter/leitura/escrita com falhas, PT→EN→PT e html lang/title/description cobertos pelos recursos existentes.                                                                                                   |
+| Builds e navegador                            | Builds raiz/subpath passam. Smoke em 320/390/768/1280/1920 PT/EN nos dois caminhos: 20 medições sem excesso de scrollWidth contra clientWidth ou overflow interno de título/parágrafo; títulos sem “?.” e formulário desabilitado. Dez observações de seleção/reload/metadados, incluindo PT→EN→PT e preferência válida restaurada nos dois previews.                       |
+| Evidências e limites                          | Oito capturas em 390×844 e 1280×900, PT/EN, raiz/subpath, salvas e reabertas visualmente. Títulos e parágrafos completos/legíveis, sem corte ou pontuação duplicada. Scroll estabilizado antes das capturas finais; tentativas de enquadramento inadequadas substituídas, sem modificar aplicação. Não é auditoria completa de acessibilidade ou layout de todas as seções. |
+| Revisão técnica                               | M4-04 **aguardando revisão própria do Work**, novo snapshot e autorização separada para commit/push. Aprovação editorial não é aceite técnico do diff. M4-05/06 não iniciadas.                                                                                                                                                                                              |
+
+### Comandos, evidências e reprodução deste lote
+
+Sequência final com Node direto v22.16.0, PATH somente no processo; nenhuma dependência/configuração global alterada:
+
+```powershell
+$env:Path = 'C:/Program Files/nodejs;' + $env:Path
+npm run format
+npm run typecheck
+npm run lint
+npm test
+npm run verify
+npm run build
+npm run build:subpath
+git diff --check
+node .m2-review/m4-04/audit-scope.mjs
+```
+
+Todos passam. Rodada inicial de typecheck detectou opção exact incompatível com a tipagem de Testing Library; corrigida a consulta por role/name (que já faz correspondência exata com string), preservando a asserção e repetindo toda a sequência. Sem supressão, aumento de timeout ou redução de testes. Falhas de storage foram exercitadas pelos testes/verificador, **não por simulação no navegador nesta rodada**. A auditoria adicional prova a mudança exata no dicionário, campos pendentes, todos os arquivos públicos/PDFs e fontes de currículo byte a byte iguais ao HEAD, README sem diff e staging vazio. Nenhum PDF regenerado.
+
+Previews locais dos builds finais: raiz `http://127.0.0.1:4196/`, subpath `http://127.0.0.1:4197/portfolio-v2/`, pelo Vite preview com --host=127.0.0.1; subpath usa --base=/portfolio-v2/ e --outDir=.m2-review/m2-08/dist-subpath. CSS `index-C57GpDaX.css` preservado; JS final `index-Bj3wdyA-.js`. Sem publicação ou decisão de hospedagem.
+
+| Base / idioma           | Capturas de viewport, ambas inspecionadas                                                                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`, PT-BR              | [390](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-root-390-pt.jpg), [1280](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-root-1280-pt.jpg)       |
+| `/`, EN                 | [390](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-root-390-en.jpg), [1280](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-root-1280-en.jpg)       |
+| `/portfolio-v2/`, PT-BR | [390](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-subpath-390-pt.jpg), [1280](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-subpath-1280-pt.jpg) |
+| `/portfolio-v2/`, EN    | [390](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-subpath-390-en.jpg), [1280](C:/Projects/portfolio-v2/.m2-review/m4-04/contact-subpath-1280-en.jpg) |
+
+Arquivos JPEG retornados pela ferramenta em 375×812 (viewport 390×844) e 1265×889 (1280×900); sem redimensionamento adicional pelo Codex. Medições/capturas em `.m2-review/m4-04/browser.json`; auditoria em scope.json e audit-scope.mjs, todos ignorados pelo Git. Navegador embutido: navegação ao contato por Enter, seleção PT/EN e reload; fontes loaded nas capturas. Os retângulos confirmam legibilidade da copy alterada; no preparo algumas capturas foram reenquadradas após rolagem/carregamento, e um raster transitório inválido foi substituído e reaberto. Nenhum defeito de produção extra inferido de enquadramento de captura. Console sem warnings/errors retornados na sessão. Override de viewport restaurado. Sem revalidação independente de zoom real/reduced motion neste lote; nenhuma aprovação anterior usada como prova nova. Sem CI remota desta árvore.
+
+Arquivos de código: translations.ts, contracts.ts, profile.ts, ContactSection.tsx e tests/contact.test.tsx. Documentos: PROJECT_STATUS.md, este plano único (registro da execução sem alterar sequência/critérios) e anotação de aceite no handoff M4-03. Demais fontes, mídias, currículos, tokens, acessibilidade, base path, dependências, PRD e exports preservados. Contato permanece indisponível, sem envio real/aviso futuro/serviços. Sem staging, commit, push, merge ou deploy.
+
+Conventional Commit sugerido: `fix(i18n): apply approved bilingual editorial corrections`.
+
+## Histórico — aprovação do planejamento e encaminhamento inicial
+
 **PLANEJAMENTO APROVADO EXPLICITAMENTE PELO RESPONSÁVEL EM 26/10/2026**, conforme declaração direta nesta conversa. Aprovação cobre escopo, sequência e critérios do plano; não representa aceite de implementação nem autorização de staging, commit/push, configuração de serviços ou envio de mensagens. Somente M4-01 foi encaminhada nesta solicitação; M4-02 a M4-08 não iniciadas.
 
-## Estado corrente — M4-01 aguardando revisão de fechamento — 27/10/2026
+## Histórico — M4-01 aguardando revisão de fechamento — 27/10/2026
 
 Reconciliação documental preparada no encaminhamento atual do Work, a partir do HEAD `9c157a71f380011e9c222639952181846a7c7d03`, coincidente com referência local origin/docs/m4-01-editorial-validation; staging vazio, README apenas sinalizado por finais de linha e sem diff versionável. Mesma branch dedicada preservada, origin correto, sem consulta remota adicional/CI. Coleta parcial aprovada e commitada em `8dd58d9`; inspeção/decisões aprovadas e commitadas em `9c157a7`, pushes bem-sucedidos registrados nesta conversa. Esses aceites não encerraram a tarefa. Aprovação do plano/registro da proposta em `674ec92` e aprovação explícita posterior do planejamento mantidas como histórico.
 

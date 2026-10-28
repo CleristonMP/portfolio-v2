@@ -31,6 +31,6 @@ export const profile: Profile = {
   ],
   editorial: {
     state: 'pending',
-    pendingFields: ['email', 'linkedin', 'resumeTechnicalReview'],
+    pendingFields: ['email', 'linkedin'],
   },
 };

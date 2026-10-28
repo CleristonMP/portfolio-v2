@@ -1,6 +1,12 @@
 # M4-03 — Mídias locais: preparação e integração
 
-## Currículos públicos PT-BR/EN — implementação aguardando revisão do Work — 28/10/2026
+## Registro posterior de aceite técnico de M4-03 — 28/10/2026
+
+Encaminhamento do Work para M4-04 confirma aceitas as nove mídias de `7f150829af8c12c3c2c300dea310a5f5e6793c91` e os dois currículos/downloads de `731ba237e52a7239a8d397bee501580f329b5fd6`, commitados e enviados com sucesso nas operações desta conversa. Foto opcional ausente não bloqueia a tarefa seguinte. Os registros de espera abaixo permanecem históricos, superados por esses aceites específicos; não são apagadas as limitações de evidências ou validações manuais não observadas independentemente. Currículos/mídias não foram regenerados nesta atualização.
+
+Gate resumeTechnicalReview atendido pelo aceite técnico, removido isoladamente na implementação de M4-04; demais pendências preservadas. Aprovação editorial integral PT/EN e execução das três correções de M4-04 são registradas somente no [plano único M4](MILESTONE_4_PLAN.md), aguardando revisão técnica própria do Work. Não se declara encerramento do milestone, aprovação de CI nova ou autorização de M4-05/06/publicação.
+
+## Histórico — currículos públicos PT-BR/EN — implementação aguardando revisão do Work — 28/10/2026
 
 ### Correção das evidências mobile — 390 px, PT/EN, raiz e subpath
 

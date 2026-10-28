@@ -11,6 +11,13 @@ describe.each(['pt', 'en'] as const)('contact interface %s', (language) => {
     const user = userEvent.setup();
     const text = translations[language];
     render(<ContactSection language={language} text={text} />);
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: text.contact,
+      }),
+    ).toHaveTextContent(text.contact);
+    expect(screen.getByText(text.contactLead, { exact: true })).toBeVisible();
     const form = screen.getByRole('form', { name: text.conversationLabel });
     expect(form).toHaveAccessibleDescription(new RegExp(text.contactNotice));
     expect(within(form).getAllByRole('textbox')).toHaveLength(3);

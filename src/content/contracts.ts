@@ -124,7 +124,6 @@ export interface Translation {
   readonly private: string;
   readonly more: string;
   readonly footer: string;
-  readonly soon: string;
   readonly languageSwitchCode: string;
   readonly heroIntro: string;
   readonly heroAccent: string;
