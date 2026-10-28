@@ -1,6 +1,16 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-02 implementada, aguardando revisão do Work — 27/10/2026
+## Estado corrente — M4-03 em preparação de mídias seguras, aguardando revisão — 28/10/2026
+
+M4-02 aceita pelo Work conforme encaminhamento, commitada em `b4c15e30bc74d846a530576756d54e0e14d2aa83` — `feat(content): implement approved bilingual project cases and profile` — e enviada com sucesso na operação registrada nesta conversa. Entrada local em feat/m4-02-content, HEAD coincidente com referência local origin de mesmo nome; origin correto, staging vazio e nenhum diff versionável. README apenas sinalizado por finais de linha, preservado byte a byte. Criada `chore/m4-03-safe-media-preparation` sem alterar main. Sem nova consulta remota de refs/CI; nenhum resultado de CI desse commit presumido. Estado anterior de espera preservado abaixo como histórico.
+
+**Somente a preparação de versões seguras de M4-03 foi iniciada.** Reaproveitadas fontes da inspeção M4-01, sem editar o repositório antigo ou baixar materiais novos. Produzidas 20 candidatas locais ignoradas (16 capturas e quatro certificados), com recortes/remoção irreversível de identidade e dados operacionais, identificadores de mocks tratados sem afirmar dados reais e linha de CPF removida nos três DevSuperior. Títulos/datas/validação e autoria preservados. Originais e aplicação intactos. Medições: 2774726 → 949746 bytes (65.77% no conjunto selecionado, somando cortes, saneamento, resize e encoding; não ganho medido da aplicação). Manifesto com origem/hashes, comparações e links seguros no [handoff M4-03](docs/M4_03_HANDOFF.md).
+
+Autorizações de uso já recebidas para todos os materiais no escopo permanecem; escolhas de capa/alternativas são propostas técnicas, não seleção reduzida atribuída ao responsável. Laudo impresso de Reports Registry permanece bloqueado nesta proposta pela confidencialidade expressa, sem derivada. Nenhum código/trecho privado, dado confidencial de terceiros ou destinatário privado incluído em candidatos/documentação. Currículo original fora da aplicação; somente proposta precisa de saneamento/atualização para aprovação editorial, sem novo PDF público. Foto não fornecida; apresentação textual preservada.
+
+Rasters, integridade das fontes, formatos/dimensões/bytes e ausência de metadados/camadas reversíveis conferidos; inspeção visual antes/depois e proteção SHA-256 dos demais arquivos realizadas. Formatação documental e diff check passam; não há alteração da aplicação a validar por testes/build nesta unidade. **M4-03 continua em andamento**, com aceite técnico das versões exatas pendente de revisão do Work e integração posterior ainda não executada. Alt PT/EN, dimensões reservadas, carregamento adequado e rede/build em / e /portfolio-v2/ são gates da integração. M4-04 não iniciada; serviços/contato real/publicação não configurados. Somente PROJECT_STATUS.md e docs/M4_03_HANDOFF.md são alterações documentais versionáveis; candidatos e ferramentas em .m2-review/m4-03, fora do Git. Sem staging, commit, push, merge ou deploy.
+
+## Histórico — M4-02 implementada, aguardando revisão do Work — 27/10/2026
 
 M4-01 aceita pelo Work e commitada em `a87dc2126e987a051b6ff810757918a5a034d1f9`. Preparação editorial e registro da aprovação explícita dos cinco blocos PT/EN em `b336e8d46c27c544f2576622ae163267733073ce`; textos aprovados pelo responsável em 27/10/2026. Estados anteriores preservados abaixo como histórico. Aprovação editorial não é aceite desta implementação nem autorização de commit/push.
 
