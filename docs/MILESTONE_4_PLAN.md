@@ -10,6 +10,15 @@ M4-04 foi aceita pelo Work e commitada em `04aa9174e504fe7f4d44cb9420c28beca0bdc
 
 A restrição por domínio usa o referenciador da requisição. A configuração informada deixa essa lista em branco. A compatibilidade efetiva das origens locais nos previews em `/` e `/portfolio-v2/` ainda precisa de validação autorizada. A preparação não define hospedagem definitiva nem acrescenta CAPTCHA, checkbox ou campo. [Proteção antispam](https://help.formspree.io/articles/troubleshooting/how-to-prevent-spam/), [CAPTCHA](https://help.formspree.io/articles/form-and-project-settings/recaptcha-settings) e [restrição por domínio](https://help.formspree.io/articles/form-and-project-settings/restrict-to-domain).
 
+**Origens locais confirmadas em 11/11/2026 pelo responsável.** Os scripts de preview usam o esquema `http` e o host `127.0.0.1`, com portas distintas.
+
+| Preview | Origem | Caminho |
+| --- | --- | --- |
+| `npm run preview` | `http://127.0.0.1:4180` | `/` |
+| `npm run preview:subpath` | `http://127.0.0.1:4181` | `/portfolio-v2/` |
+
+A confirmação define o escopo dos testes locais. A lista de domínios do Formspree foi relatada em branco e nenhum envio foi executado para verificar a compatibilidade dessas origens.
+
 ### Aviso operacional aprovado pelo responsável
 
 Aplicar quando o formulário estiver habilitado, no lote de integração. A redação usa a [Política de Privacidade do Formspree](https://formspree.io/legal/privacy-policy/) como referência.
@@ -24,7 +33,7 @@ Aplicar quando o formulário estiver habilitado, no lote de integração. A reda
 
 ### Pendências para revisão do Work
 
-- **M4-05:** revisar o registro e confirmar as origens de teste com o responsável. A configuração relatada e o aviso aprovado não comprovam o funcionamento do envio.
+- **M4-05:** revisar o registro complementar das origens confirmadas pelo responsável. A confirmação das origens, a configuração relatada e o aviso aprovado não comprovam o funcionamento do envio.
 - **M4-06:** aguardar aceite de M4-05 e encaminhamento próprio para integrar os três campos e os estados localizados de envio, erro e sucesso. A aplicação permanece com envio indisponível nesta entrega.
 - **M4-07:** obter autorização específica para envios sintéticos controlados, verificar o antispam e obter do responsável a confirmação de recebimento. Uma resposta HTTP bem-sucedida não comprova entrega na caixa de entrada.
 - **Contato alternativo funcional:** LinkedIn permanece o perfil público escolhido, com barreira de login observada anteriormente e sem promessa de mensagens abertas. GitHub permanece perfil público. A comprovação funcional ou um ajuste explícito do requisito segue como decisão do responsável e do Work em M4-05/07.

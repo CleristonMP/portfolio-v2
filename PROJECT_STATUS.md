@@ -6,7 +6,9 @@ M4-04 foi aceita pelo Work e registrada no commit `04aa9174e504fe7f4d44cb9420c28
 
 O responsável aprovou o plano Free do Formspree, a integração e o aviso PT-BR/EN. Também confirmou a configuração do formulário no painel. [O plano M4](docs/MILESTONE_4_PLAN.md#estado-corrente--m4-05-documentada-aguardando-revisão-do-work--11112026) registra o endpoint público, as opções antispam, o aviso aprovado e os critérios ainda pendentes.
 
-**M4-05 aguarda revisão do Work.** O formulário da aplicação continua indisponível para envio. M4-06 ainda depende de encaminhamento próprio. Origens de teste, autorização para envio controlado, comprovação de antispam e recebimento e o requisito de contato alternativo funcional continuam pendentes.
+Em 11/11/2026, o responsável confirmou as origens locais previstas para os testes: `http://127.0.0.1:4180` e `http://127.0.0.1:4181`.
+
+**O registro complementar de M4-05 aguarda revisão do Work.** O formulário da aplicação continua indisponível para envio. M4-06 ainda depende de encaminhamento próprio. Autorização para envio controlado, comprovação de antispam e recebimento e o requisito de contato alternativo funcional continuam pendentes.
 
 ## Registro anterior — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
 
