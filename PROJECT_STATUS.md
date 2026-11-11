@@ -1,6 +1,14 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
+## Estado corrente — M4-05 documentada, aguardando revisão do Work — 11/11/2026
+
+M4-04 foi aceita pelo Work e registrada no commit `04aa9174e504fe7f4d44cb9420c28beca0bdcc87`, coincidente com a referência local `origin/fix/m4-04-editorial-equivalence` na conferência inicial.
+
+O responsável aprovou o plano Free do Formspree, a integração e o aviso PT-BR/EN. Também confirmou a configuração do formulário no painel. [O plano M4](docs/MILESTONE_4_PLAN.md#estado-corrente--m4-05-documentada-aguardando-revisão-do-work--11112026) registra o endpoint público, as opções antispam, o aviso aprovado e os critérios ainda pendentes.
+
+**M4-05 aguarda revisão do Work.** O formulário da aplicação continua indisponível para envio. M4-06 ainda depende de encaminhamento próprio. Origens de teste, autorização para envio controlado, comprovação de antispam e recebimento e o requisito de contato alternativo funcional continuam pendentes.
+
+## Registro anterior — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
 
 Aceite técnico de M4-03 confirmado no encaminhamento do Work: nove mídias em `7f150829af8c12c3c2c300dea310a5f5e6793c91` e dois currículos/downloads em `731ba237e52a7239a8d397bee501580f329b5fd6`, ambos commitados/enviados conforme operações nesta conversa. Foto opcional ausente não bloqueia M4-04. Histórico e limites de validações manuais preservados; sem consulta nova de CI.
 

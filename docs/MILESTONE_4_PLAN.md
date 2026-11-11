@@ -1,6 +1,35 @@
 # M4 — Conteúdo e integração — plano aprovado
 
-## Estado corrente — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
+## Estado corrente — M4-05 documentada, aguardando revisão do Work — 11/11/2026
+
+M4-04 foi aceita pelo Work e commitada em `04aa9174e504fe7f4d44cb9420c28beca0bdcc87`. Os registros anteriores de espera abaixo ficam preservados como histórico.
+
+**Decisões e configuração informadas pelo responsável.** Plano Free aprovado, sem contratação de plano pago. A conta foi criada pelo responsável, que confirmou no painel o [endpoint público](https://formspree.io/f/mqpqkean), o destinatário verificado, o Formshield ativo, o CAPTCHA desativado e o campo **Restrict to Domain** em branco. O endereço do destinatário fica reservado ao serviço. A configuração foi registrada por relato do responsável, sem acesso ao painel ou teste de envio nesta unidade.
+
+**Base técnica da preparação.** A consulta de 28/10/2026 identificou suporte a POST assíncrono com resposta JSON via `Accept: application/json`, sem SDK obrigatório. O plano Free indicava 50 envios por mês e 30 dias de histórico de submissões no painel. O limite de frequência documentado é de 20 envios por minuto, com HTTP 429 quando excedido. Submissões além da cota mensal podem ficar retidas como **Over Limit**, sem notificação até reprocessamento. [Integração AJAX](https://formspree.io/blog/formspree-ajax/), [planos](https://formspree.io/plans), [limites](https://help.formspree.io/articles/form-and-project-settings/system-limits) e [submissões acima da cota](https://help.formspree.io/articles/form-and-project-settings/over-limit-submissions).
+
+A restrição por domínio usa o referenciador da requisição. A configuração informada deixa essa lista em branco. A compatibilidade efetiva das origens locais nos previews em `/` e `/portfolio-v2/` ainda precisa de validação autorizada. A preparação não define hospedagem definitiva nem acrescenta CAPTCHA, checkbox ou campo. [Proteção antispam](https://help.formspree.io/articles/troubleshooting/how-to-prevent-spam/), [CAPTCHA](https://help.formspree.io/articles/form-and-project-settings/recaptcha-settings) e [restrição por domínio](https://help.formspree.io/articles/form-and-project-settings/restrict-to-domain).
+
+### Aviso operacional aprovado pelo responsável
+
+Aplicar quando o formulário estiver habilitado, no lote de integração. A redação usa a [Política de Privacidade do Formspree](https://formspree.io/legal/privacy-policy/) como referência.
+
+**PT-BR**
+
+> Seu nome, email e mensagem serão usados para responder ao seu contato e encaminhados ao responsável pelo portfólio pelo Formspree. O serviço pode armazenar esses dados e tratar informações técnicas, como endereço IP, nos Estados Unidos e em outros países onde opera. Consulte a [Política de Privacidade do Formspree](https://formspree.io/legal/privacy-policy/).
+
+**EN**
+
+> Your name, email and message will be used to respond to your inquiry and forwarded to the portfolio owner through Formspree. The service may store this data and process technical information, such as your IP address, in the United States and other countries where it operates. See [Formspree’s Privacy Policy](https://formspree.io/legal/privacy-policy/).
+
+### Pendências para revisão do Work
+
+- **M4-05:** revisar o registro e confirmar as origens de teste com o responsável. A configuração relatada e o aviso aprovado não comprovam o funcionamento do envio.
+- **M4-06:** aguardar aceite de M4-05 e encaminhamento próprio para integrar os três campos e os estados localizados de envio, erro e sucesso. A aplicação permanece com envio indisponível nesta entrega.
+- **M4-07:** obter autorização específica para envios sintéticos controlados, verificar o antispam e obter do responsável a confirmação de recebimento. Uma resposta HTTP bem-sucedida não comprova entrega na caixa de entrada.
+- **Contato alternativo funcional:** LinkedIn permanece o perfil público escolhido, com barreira de login observada anteriormente e sem promessa de mensagens abertas. GitHub permanece perfil público. A comprovação funcional ou um ajuste explícito do requisito segue como decisão do responsável e do Work em M4-05/07.
+
+## Registro anterior — M4-04 implementada, aguardando revisão técnica do Work — 28/10/2026
 
 O encaminhamento do Work confirma o aceite técnico de M4-03 para as nove mídias e os dois currículos: `7f150829af8c12c3c2c300dea310a5f5e6793c91` (mídias) e `731ba237e52a7239a8d397bee501580f329b5fd6` (currículos/downloads), com pushes bem-sucedidos registrados nesta conversa. Foto real permanece opcional e ausente, sem bloquear a dependência de M4-04. Não se presume CI nova nem fechamento do milestone. Preparação em `d2a21d6` e registros anteriores de espera ficam históricos.
 
