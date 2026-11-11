@@ -749,6 +749,26 @@ button {
   font: 600 14px/1.6 var(--font-body);
   cursor: not-allowed;
 }
+.contact-section
+  .contact-form
+  button:not(:disabled):not([aria-disabled='true']) {
+  border-color: transparent;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--color-primary)),
+    rgb(var(--color-primary-container))
+  );
+  color: rgb(var(--color-text-on-cta));
+  cursor: pointer;
+}
+.contact-section .contact-notice a {
+  color: rgb(var(--color-primary));
+  text-decoration: underline;
+}
+.contact-section .contact-submission-status:empty {
+  margin: 0;
+  position: absolute;
+}
 .footer {
   background: rgb(var(--color-surface-footer));
   padding: 48px 0;

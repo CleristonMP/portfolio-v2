@@ -1,10 +1,16 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-05 documentada, aguardando revisão do Work — 11/11/2026
+## Estado corrente — M4-06 implementada, aguardando revisão do Work — 11/11/2026
+
+M4-05 aceita pelo Work, com preparação e avisos registrados em `56677cf` e origens locais confirmadas em `b725040`. M4-06 integra o formulário existente ao endpoint público aprovado e mantém o envio indisponível sem configuração válida. Os resultados, a configuração e os limites de validação estão no [plano M4](docs/MILESTONE_4_PLAN.md).
+
+**M4-06 aguarda revisão verificável do Work.** Autorização para envio controlado, comprovação de antispam e recebimento e contato alternativo funcional seguem pendentes em M4-07.
+
+## Registro anterior — M4-05 documentada, aguardando revisão do Work — 11/11/2026
 
 M4-04 foi aceita pelo Work e registrada no commit `04aa9174e504fe7f4d44cb9420c28beca0bdcc87`, coincidente com a referência local `origin/fix/m4-04-editorial-equivalence` na conferência inicial.
 
-O responsável aprovou o plano Free do Formspree, a integração e o aviso PT-BR/EN. Também confirmou a configuração do formulário no painel. [O plano M4](docs/MILESTONE_4_PLAN.md#estado-corrente--m4-05-documentada-aguardando-revisão-do-work--11112026) registra o endpoint público, as opções antispam, o aviso aprovado e os critérios ainda pendentes.
+O responsável aprovou o plano Free do Formspree, a integração e o aviso PT-BR/EN. Também confirmou a configuração do formulário no painel. [O registro de M4-05](docs/MILESTONE_4_PLAN.md#registro-anterior--m4-05-documentada-aguardando-revisão-do-work--11112026) descreve o endpoint público, as opções antispam, o aviso aprovado e os critérios então pendentes.
 
 Em 11/11/2026, o responsável confirmou as origens locais previstas para os testes: `http://127.0.0.1:4180` e `http://127.0.0.1:4181`.
 

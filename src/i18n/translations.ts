@@ -62,6 +62,24 @@ export const translations: Translations = {
       },
       invalidEmail: 'Informe um email válido.',
       profileLink: 'Acessar perfil no GitHub',
+      submission: {
+        privacy: {
+          beforeLink:
+            'Seu nome, email e mensagem serão usados para responder ao seu contato e encaminhados ao responsável pelo portfólio pelo Formspree. O serviço pode armazenar esses dados e tratar informações técnicas, como endereço IP, nos Estados Unidos e em outros países onde opera. Consulte a',
+          link: 'Política de Privacidade do Formspree',
+        },
+        send: 'Enviar mensagem',
+        sending: 'Enviando mensagem…',
+        accepted: 'O serviço aceitou sua mensagem.',
+        rejected:
+          'O serviço não aceitou o envio. Revise os campos e tente novamente.',
+        network:
+          'Não foi possível confirmar o envio por falha de conexão. Você pode tentar novamente.',
+        timeout:
+          'O serviço demorou para responder. O envio não foi confirmado. Você pode tentar novamente.',
+        limited:
+          'O limite de envios foi atingido. Aguarde antes de tentar novamente.',
+      },
     },
     backToTop: '↑ INÍCIO',
     accessibility: {
@@ -150,6 +168,23 @@ export const translations: Translations = {
       },
       invalidEmail: 'Enter a valid email address.',
       profileLink: 'View GitHub profile',
+      submission: {
+        privacy: {
+          beforeLink:
+            'Your name, email and message will be used to respond to your inquiry and forwarded to the portfolio owner through Formspree. The service may store this data and process technical information, such as your IP address, in the United States and other countries where it operates. See',
+          link: 'Formspree’s Privacy Policy',
+        },
+        send: 'Send message',
+        sending: 'Sending message…',
+        accepted: 'The service accepted your message.',
+        rejected:
+          'The service did not accept the submission. Check the fields and try again.',
+        network:
+          'A connection error prevented confirmation. You can try again.',
+        timeout:
+          'The service took too long to respond. Submission was not confirmed. You can try again.',
+        limited: 'The submission limit was reached. Wait before trying again.',
+      },
     },
     backToTop: '↑ TOP',
     accessibility: {

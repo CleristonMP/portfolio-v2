@@ -1,6 +1,28 @@
 # M4 — Conteúdo e integração — plano aprovado
 
-## Estado corrente — M4-05 documentada, aguardando revisão do Work — 11/11/2026
+## Estado corrente — M4-06 implementada, aguardando revisão do Work — 11/11/2026
+
+M4-05 aceita pelo Work. O commit `56677cf` registra o plano Free, o endpoint público, a configuração relatada e os avisos PT-BR/EN aprovados. O commit `b725040` registra as origens confirmadas e é a base da branch `feat/m4-06-contact-integration`.
+
+### Configuração e comportamento
+
+- O build habilita o formulário somente se `VITE_FORMSPREE_ENDPOINT` corresponder exatamente ao endpoint público registrado em M4-05. Sem esse valor, a interface informa a indisponibilidade e bloqueia o envio.
+- O formulário preserva nome, email e mensagem e exibe o aviso aprovado antes dos campos, com o link de privacidade. Valida antes da requisição e move o foco ao primeiro campo inválido. Durante o envio, impede submissões concorrentes, preserva o foco e anuncia o andamento.
+- O POST envia apenas os três campos. Uma resposta HTTP bem-sucedida com JSON `ok: true` é tratada como aceitação pelo serviço. Rejeição, falha de rede, timeout de 10 segundos e HTTP 429 têm mensagens localizadas. Os campos são preservados em caso de erro e uma nova tentativa depende de ação explícita.
+- Os previews do Vite enviam uma política `connect-src 'self'` para bloquear transporte externo, inclusive quando o build está configurado para exibir o fluxo ativo. O endpoint é público. O destinatário privado e as credenciais permanecem no serviço. O código não persiste nem registra os valores preenchidos.
+
+### Verificações de M4-06
+
+- Passaram `npm run typecheck`, `npm run lint`, `npm run format:check`, `npm run verify`, `npm test` (90 testes após a correção), `npm run build`, `npm run build:subpath` e `git diff --check`.
+- Os testes simulam configuração ausente e inválida, validação, foco, aviso acessível, duplicidade, aceitação, rejeição, rede, timeout, limite e nova tentativa em PT/EN.
+- Correção para nova revisão do Work: o timeout usa `AbortController` e um temporizador de 10 segundos, limpo ao finalizar. A regressão simula `AbortSignal.timeout` indisponível e confirma o encerramento do envio, a preservação dos campos e a nova tentativa explícita nos dois idiomas.
+- HTML, DESIGN.md e capturas Stitch web/mobile consultados. A composição existente conserva o painel desktop, os campos empilhados no mobile, os três labels e as superfícies escuras. O botão habilitado usa o acento ciano dos tokens existentes.
+- Chrome headless antes da correção do timeout, 390 e 1280 px, PT-BR e EN, nos dois previews confirmados (`http://127.0.0.1:4180/` e `http://127.0.0.1:4181/portfolio-v2/`). Oito cenários sem overflow horizontal. Tab e Enter confirmaram acesso aos campos, foco no primeiro campo inválido, foco visível no botão, bloqueio de duplicidade e foco preservado após aceitação simulada. A árvore de acessibilidade expôs a região de status com anúncio `polite`. Não houve teste manual com leitor de tela.
+- Os builds usados no smoke foram gerados com o endpoint público aprovado na variável de ambiente do processo. O Chrome substituiu o transporte por resposta simulada, bloqueou o domínio do Formspree e monitorou a rede. Nenhuma requisição ao Formspree foi observada. Capturas e medições ficaram em `.m2-review/m4-06/`, diretório local ignorado.
+
+M4-07 permanece pendente de autorização para envio sintético controlado, comprovação de antispam e recebimento e verificação ou decisão explícita sobre o contato alternativo funcional. M4-06 segue para revisão verificável do Work.
+
+## Registro anterior — M4-05 documentada, aguardando revisão do Work — 11/11/2026
 
 M4-04 foi aceita pelo Work e commitada em `04aa9174e504fe7f4d44cb9420c28beca0bdcc87`. Os registros anteriores de espera abaixo ficam preservados como histórico.
 
