@@ -26,11 +26,19 @@ export const profile: Profile = {
       },
     },
     { id: 'email', kind: 'email', label: 'Email' },
-    { id: 'linkedin', kind: 'linkedin', label: 'LinkedIn' },
+    {
+      id: 'linkedin',
+      kind: 'linkedin',
+      label: 'LinkedIn',
+      link: {
+        url: 'https://www.linkedin.com/in/cleriston-pereira-a60a471bb',
+        verification: 'confirmed',
+      },
+    },
     { id: 'resume', kind: 'resume', label: 'Curriculum vitae' },
   ],
   editorial: {
     state: 'pending',
-    pendingFields: ['email', 'linkedin'],
+    pendingFields: ['email'],
   },
 };

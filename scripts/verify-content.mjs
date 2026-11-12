@@ -288,6 +288,7 @@ for (const [, href] of markup.matchAll(/<a\b[^>]*href="([^"]*)"/g)) {
   assert(
     sectionIds.some((id) => href === `#${id}`) ||
       href === 'https://github.com/CleristonMP' ||
+      href === 'https://www.linkedin.com/in/cleriston-pereira-a60a471bb' ||
       approvedDestinations.includes(href.replaceAll('&amp;', '&')) ||
       href === '#main-content' ||
       href === '#reports-registry-case' ||

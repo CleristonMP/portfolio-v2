@@ -62,6 +62,9 @@ export const translations: Translations = {
       },
       invalidEmail: 'Informe um email válido.',
       profileLink: 'Acessar perfil no GitHub',
+      linkedInLink: 'Entrar em contato pelo LinkedIn',
+      linkedInLogin:
+        'Para enviar uma mensagem pelo LinkedIn, é preciso fazer login.',
       submission: {
         privacy: {
           beforeLink:
@@ -168,6 +171,8 @@ export const translations: Translations = {
       },
       invalidEmail: 'Enter a valid email address.',
       profileLink: 'View GitHub profile',
+      linkedInLink: 'Get in touch on LinkedIn',
+      linkedInLogin: 'You need to sign in to LinkedIn to send a message.',
       submission: {
         privacy: {
           beforeLink:

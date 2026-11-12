@@ -1,6 +1,12 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-08 aguardando revisão do Work — 12/11/2026
+## Estado corrente — M4-08 com LinkedIn, aguardando revisão do Work — 12/11/2026
+
+A partir da consolidação aprovada em `fd779cf`, a seção de contato passou a oferecer o LinkedIn com aviso de login em PT-BR e EN, inclusive quando o formulário está indisponível. A correção aguarda revisão verificável do Work. [Detalhes no plano M4](docs/MILESTONE_4_PLAN.md).
+
+Os quatro recebimentos de M4-07 foram reaproveitados. A verificação do bloqueio automático pelo Formshield segue pendente para a auditoria pré-publicação. M4 permanece aberta e M5 ainda não foi iniciado.
+
+## Registro anterior — M4-08 aguardando revisão do Work — 12/11/2026
 
 M4-07 foi aprovada pelo Work e registrada em `162c521`. M4-08 consolida os aceites, os checks e o handoff no [plano M4](docs/MILESTONE_4_PLAN.md). Os quatro recebimentos confirmados foram reaproveitados.
 

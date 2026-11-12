@@ -141,6 +141,8 @@ export interface Translation {
     readonly required: Readonly<Record<'name' | 'email' | 'message', string>>;
     readonly invalidEmail: string;
     readonly profileLink: string;
+    readonly linkedInLink: string;
+    readonly linkedInLogin: string;
     readonly submission: {
       readonly privacy: Readonly<Record<'beforeLink' | 'link', string>>;
       readonly send: string;

@@ -667,6 +667,13 @@ button {
 }
 .contact-section .contact-cta {
   margin-top: 32px;
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+}
+.contact-section .contact-cta p {
+  margin-top: 4px;
+  font-size: 14px;
 }
 .contact-section .contact-cta a {
   color: rgb(var(--color-primary));

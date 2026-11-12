@@ -1,6 +1,16 @@
 # M4 — Conteúdo e integração — plano aprovado
 
-## Estado corrente — M4-08 aguardando revisão do Work — 12/11/2026
+## Estado corrente — M4-08 com LinkedIn, aguardando revisão do Work — 12/11/2026
+
+Correção na branch `feat/m4-08-linkedin-contact`, a partir de `fd779cf`. A URL autorizada foi registrada no inventário de contatos e é resolvida por `getVerifiedUrl`. O link na seção de contato permanece disponível independentemente da configuração do formulário. O aviso de login em PT-BR e EN está visível e associado ao link para tecnologias assistivas. GitHub permanece como perfil público e o destinatário privado permanece no Formspree.
+
+O destino renderizado foi comparado com a URL autorizada neste plano. A funcionalidade do canal e a exigência de login vêm da validação do responsável em M4-07. Esta rodada não repetiu mensagens pelo LinkedIn nem os quatro envios confirmados pelo Formspree.
+
+Passaram typecheck, lint, formatação, 94 testes, os verificadores, os builds para `/` e `/portfolio-v2/` e `git diff --check`. Os testes exercitaram o link por Tab nos dois idiomas, com formulário ativo e indisponível. No Chrome headless, os oito cenários (390 e 1280 px, PT-BR e EN, duas bases) confirmaram destino, aviso, foco visível e ausência de overflow horizontal, com formulário ativo e transporte simulado. Evidência local em `.m2-review/m4-08-linkedin/browser.json`. A disponibilidade externa do LinkedIn foi reaproveitada do teste do responsável.
+
+O Work ainda deve revisar a disponibilização do canal antes do fechamento de M4. A verificação de bloqueio automático pelo Formshield permanece na auditoria pré-publicação. M5 ainda não foi iniciado.
+
+## Registro anterior — M4-08 aguardando revisão do Work — 12/11/2026
 
 Consolidação documental na branch `docs/m4-08-consolidation`, a partir de `162c521`. O HEAD e a referência local de origem coincidiam antes da abertura da branch. O README já era sinalizado por finais de linha, sem diff de conteúdo.
 

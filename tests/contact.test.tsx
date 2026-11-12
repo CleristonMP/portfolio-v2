@@ -19,6 +19,41 @@ afterEach(() => {
 });
 
 describe.each(['pt', 'en'] as const)('contact interface %s', (language) => {
+  it.each(['available', 'unavailable'])(
+    'offers a keyboard-accessible LinkedIn alternative when sending is %s',
+    async (availability) => {
+      vi.stubEnv(
+        'VITE_FORMSPREE_ENDPOINT',
+        availability === 'available' ? approvedContactEndpoint : '',
+      );
+      const text = translations[language];
+      render(<ContactSection language={language} text={text} />);
+      const user = userEvent.setup();
+      await user.tab();
+      expect(
+        screen.getByRole('link', { name: text.contactForm.profileLink }),
+      ).toHaveFocus();
+      await user.tab();
+      const link = screen.getByRole('link', {
+        name: text.contactForm.linkedInLink,
+      });
+      expect(link).toHaveFocus();
+      expect(link).toHaveAttribute(
+        'href',
+        'https://www.linkedin.com/in/cleriston-pereira-a60a471bb',
+      );
+      expect(link).toHaveAccessibleDescription(text.contactForm.linkedInLogin);
+      expect(
+        screen.getByRole('button', {
+          name:
+            availability === 'available'
+              ? text.contactForm.submission.send
+              : text.contactStatus,
+        }),
+      ).toHaveProperty('disabled', availability === 'unavailable');
+      expect(fetchMock).not.toHaveBeenCalled();
+    },
+  );
   it('announces unavailability before three labeled fields and blocks submission', async () => {
     const fetchSpy = vi.fn();
     vi.stubGlobal('fetch', fetchSpy);
@@ -179,6 +214,7 @@ describe.each(['pt', 'en'] as const)('active contact %s', (language) => {
       submission.privacy.beforeLink + ' ' + submission.privacy.link + '.',
     );
     const user = userEvent.setup();
+    await user.tab();
     await user.tab();
     await user.tab();
     expect(privacy).toHaveFocus();
