@@ -1,6 +1,37 @@
 # M4 — Conteúdo e integração — plano aprovado
 
-## Estado corrente — M4-07 aguardando revisão do Work — 12/11/2026
+## Estado corrente — M4-08 aguardando revisão do Work — 12/11/2026
+
+Consolidação documental na branch `docs/m4-08-consolidation`, a partir de `162c521`. O HEAD e a referência local de origem coincidiam antes da abertura da branch. O README já era sinalizado por finais de linha, sem diff de conteúdo.
+
+| Tarefa | Aceite e commits | Evidência reaproveitada |
+| --- | --- | --- |
+| M4-01 | Coleta, validação e reconciliação aceitas em `8dd58d9`, `9c157a7` e `a87dc21` | Inventário e decisões editoriais nas seções históricas deste plano |
+| M4-02 | Copy bilíngue aprovada em `b336e8d` e implementação aceita em `b4c15e3` | [Handoff de conteúdo](M4_02_HANDOFF.md) |
+| M4-03 | Preparação em `d2a21d6`, mídias aceitas em `7f15082` e currículos em `731ba23` | [Handoff de mídias e currículos](M4_03_HANDOFF.md) |
+| M4-04 | Revisão editorial e correções aceitas em `04aa917` | Comparação PT/EN e verificações no registro histórico deste plano |
+| M4-05 | Preparação e avisos aprovados em `56677cf`; origens confirmadas em `b725040` | Configuração relatada, avisos aprovados e origens no registro histórico |
+| M4-06 | Integração e timeout corrigido aceitos em `2147e1c` | Testes de transporte simulado e registro histórico do formulário |
+| M4-07 | Recebimento, decisão antispam e canal alternativo registrados em `162c521` | Tabela dos quatro envios abaixo e confirmação do responsável |
+
+### Regressão e evidências
+
+- Passaram typecheck, lint, formatação, `npm test` (90 testes), `npm run verify`, os builds para `/` e `/portfolio-v2/` e `git diff --check`. Os verificadores cobrem IDs únicos e estáveis, paridade PT/EN, links opcionais e privados, cases, inventário de mídia e metadados. As falhas do formulário, timeout, limite e nova tentativa foram exercitados com respostas simuladas nos testes automatizados.
+- Chrome headless em PT/EN, 320, 390, 768, 1280 e 1920 px, nos dois previews aprovados. Nos 20 cenários, a largura de rolagem coincidiu com a largura útil. Tab e Enter verificaram validação, foco no primeiro campo inválido, bloqueio de duplicidade e foco no botão após aceitação simulada. A região de status apareceu com anúncio `polite` na árvore de acessibilidade. Os previews mantiveram `connect-src 'self'` e o navegador bloqueou adicionalmente o domínio do Formspree. Nenhum envio real foi repetido.
+- Evidências locais em `.m2-review/m4-08/`. Capturas anteriores de cases, mídias, currículo e contato continuam nos handoffs correspondentes. Os exports Stitch web/mobile (HTML, DESIGN.md e screen.png) foram consultados como referência de hierarquia, superfícies escuras e composição responsiva. A rodada não repetiu auditoria visual integral, leitor de tela, zoom real 200%, movimento reduzido, transições do menu ou histórico nativo de Voltar. Nenhuma execução remota de CI foi confirmada para esta entrega.
+
+- Nos mesmos 20 cenários, o navegador conferiu os seis IDs na ordem editorial, zero âncoras internas sem destino, nove imagens locais decodificadas com alt e título/descrição presentes. O download localizado respondeu HTTP 200 com tipo PDF em cada base. A conferência de links externos foi de destinos registrados e renderização, sem revalidar disponibilidade externa. Nenhum breakpoint foi alterado neste lote documental.
+
+### Fechamento e passagem para M5
+
+- **Bloqueio de fechamento de M4:** LinkedIn foi validado pelo responsável como canal funcional com login para mensagens. O dado de perfil ainda não contém o link e a interface não oferece acesso ao canal quando o formulário está indisponível. O Work deve encaminhar a exposição do link já autorizado ou registrar decisão explícita sobre o requisito de alternativa funcional do PRD §4.7. Esta consolidação mantém o código intacto.
+- **Opcionais:** demos não informadas e contador de experiência foram omitidos por decisão expressa. Foto segue opcional e não fornecida. Não há email público autorizado. Essas ausências não substituem o requisito obrigatório de contato alternativo.
+- **Auditoria pré-publicação:** verificar bloqueio automático pelo Formshield conforme a decisão expressa de M4-07. Os quatro envios aceitos e recebidos demonstram o caminho legítimo; a configuração ativa não comprova bloqueio. Manter essa pendência explícita enquanto não houver evidência.
+- **M5 após o fechamento de M4:** auditoria WCAG e fluxo completo, performance e Core Web Vitals, SEO e metadados da URL final, segurança e privacidade, revisão de links e permissões, definição de hospedagem/domínio e publicação controlada. Confirmar funcionamento do contato na origem final mediante autorização própria e evidência de CI correspondente quando disponível.
+
+M4-08 aguarda revisão verificável do Work. Commit sugerido: `docs(milestone): consolidate M4 evidence and handoff gates`.
+
+## Registro anterior — M4-07 aguardando revisão do Work — 12/11/2026
 
 M4-06 foi aprovada e registrada em `2147e1c` na branch `feat/m4-06-contact-integration`. Em 11/11/2026, entre 17:44:12 e 17:44:19 (Fortaleza, UTC−03:00), a sessão local autorizada realizou quatro envios sintéticos. O registro local está em `.m2-review/m4-07/results.jsonl`.
 

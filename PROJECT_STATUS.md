@@ -1,6 +1,12 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-07 aguardando revisão do Work — 12/11/2026
+## Estado corrente — M4-08 aguardando revisão do Work — 12/11/2026
+
+M4-07 foi aprovada pelo Work e registrada em `162c521`. M4-08 consolida os aceites, os checks e o handoff no [plano M4](docs/MILESTONE_4_PLAN.md). Os quatro recebimentos confirmados foram reaproveitados.
+
+**M4 segue aberta.** O responsável validou o LinkedIn com login para mensagens, mas o canal ainda não está disponível na interface. O Work precisa encaminhar essa correção ou decidir expressamente sobre o requisito antes do fechamento. A verificação do bloqueio automático pelo Formshield permanece na auditoria pré-publicação por decisão do responsável. M5 ainda não foi iniciado.
+
+## Registro anterior — M4-07 aguardando revisão do Work — 12/11/2026
 
 M4-06 foi aprovada e publicada na branch de integração no commit `2147e1c`. Em M4-07, o Formspree aceitou os quatro envios autorizados (`M407-01`, `M407-02`, `M407-03` e `M407-04`), e o responsável confirmou os quatro IDs na caixa de entrada normal.
 
