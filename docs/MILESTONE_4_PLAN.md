@@ -1,6 +1,23 @@
 # M4 — Conteúdo e integração — plano aprovado
 
-## Estado corrente — M4-06 implementada, aguardando revisão do Work — 11/11/2026
+## Estado corrente — M4-07 aguardando revisão do Work — 12/11/2026
+
+M4-06 foi aprovada e registrada em `2147e1c` na branch `feat/m4-06-contact-integration`. Em 11/11/2026, entre 17:44:12 e 17:44:19 (Fortaleza, UTC−03:00), a sessão local autorizada realizou quatro envios sintéticos. O registro local está em `.m2-review/m4-07/results.jsonl`.
+
+| ID sintético | Cenário | Preview | Aceitação pelo Formspree | Recebimento confirmado pelo responsável |
+| --- | --- | --- | --- | --- |
+| `M407-01` | PT-BR, desktop 1280 px | `http://127.0.0.1:4180/` | HTTP 200, `ok: true` | Caixa de entrada normal |
+| `M407-02` | EN, mobile 390 px | `http://127.0.0.1:4180/` | HTTP 200, `ok: true` | Caixa de entrada normal |
+| `M407-03` | EN, desktop 1280 px | `http://127.0.0.1:4181/portfolio-v2/` | HTTP 200, `ok: true` | Caixa de entrada normal |
+| `M407-04` | PT-BR, mobile 390 px | `http://127.0.0.1:4181/portfolio-v2/` | HTTP 200, `ok: true` | Caixa de entrada normal |
+
+O formulário exibiu a confirmação de aceitação no idioma de cada cenário. O recebimento foi confirmado separadamente pelo responsável para os quatro IDs.
+
+**Antispam.** O responsável aprovou expressamente aceitar o Formshield ativo em M4-07. A verificação do bloqueio automático permanece pendente para a auditoria pré-publicação, pois não foi identificado um procedimento oficial reproduzível na configuração atual. Os quatro envios comprovam o fluxo legítimo. Nenhum envio adicional foi feito para provocar bloqueio.
+
+**Canal alternativo.** O responsável validou o LinkedIn como canal funcional. O envio de mensagens exige login. GitHub permanece como perfil público. A revisão do Work está pendente e M4-08 ainda não foi iniciada.
+
+## Registro anterior — M4-06 implementada, aguardando revisão do Work — 11/11/2026
 
 M4-05 aceita pelo Work. O commit `56677cf` registra o plano Free, o endpoint público, a configuração relatada e os avisos PT-BR/EN aprovados. O commit `b725040` registra as origens confirmadas e é a base da branch `feat/m4-06-contact-integration`.
 

@@ -1,6 +1,12 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4-06 implementada, aguardando revisão do Work — 11/11/2026
+## Estado corrente — M4-07 aguardando revisão do Work — 12/11/2026
+
+M4-06 foi aprovada e publicada na branch de integração no commit `2147e1c`. Em M4-07, o Formspree aceitou os quatro envios autorizados (`M407-01`, `M407-02`, `M407-03` e `M407-04`), e o responsável confirmou os quatro IDs na caixa de entrada normal.
+
+O responsável aprovou expressamente aceitar o Formshield ativo em M4-07 e manter a verificação do bloqueio automático pendente para a auditoria pré-publicação. Também validou o LinkedIn como canal alternativo funcional, com login exigido para enviar mensagens. [Evidências e limites no plano M4](docs/MILESTONE_4_PLAN.md). M4-08 ainda não iniciada.
+
+## Registro anterior — M4-06 implementada, aguardando revisão do Work — 11/11/2026
 
 M4-05 aceita pelo Work, com preparação e avisos registrados em `56677cf` e origens locais confirmadas em `b725040`. M4-06 integra o formulário existente ao endpoint público aprovado e mantém o envio indisponível sem configuração válida. Os resultados, a configuração e os limites de validação estão no [plano M4](docs/MILESTONE_4_PLAN.md).
 
