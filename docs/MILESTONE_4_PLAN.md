@@ -1,6 +1,12 @@
 # M4 — Conteúdo e integração — plano aprovado
 
-## Estado corrente — M4-08 com LinkedIn, aguardando revisão do Work — 12/11/2026
+## Estado corrente — M4 encerrado — 13/11/2026
+
+O Milestone 4 — Conteúdo e integração está encerrado. As tarefas M4-01 a M4-08 foram aceitas. O merge do PR #2 em `1215e462fda6268822e204abacb582f196e8b833` integrou a consolidação de M4-08 (`fd779cf`) e a disponibilização aprovada do LinkedIn (`02a429e`) à `main`. O canal está disponível na seção de contato, inclusive com o formulário indisponível, com aviso de login em PT-BR e EN.
+
+Os quatro recebimentos de M4-07 permanecem registrados. A comprovação do bloqueio automático pelo Formshield segue para a auditoria pré-publicação em M5, conforme decisão expressa do responsável. M5 — Qualidade e lançamento é o próximo milestone e aguarda encaminhamento próprio.
+
+## Registro anterior — M4-08 com LinkedIn, aguardando revisão do Work — 12/11/2026
 
 Correção na branch `feat/m4-08-linkedin-contact`, a partir de `fd779cf`. A URL autorizada foi registrada no inventário de contatos e é resolvida por `getVerifiedUrl`. O link na seção de contato permanece disponível independentemente da configuração do formulário. O aviso de login em PT-BR e EN está visível e associado ao link para tecnologias assistivas. GitHub permanece como perfil público e o destinatário privado permanece no Formspree.
 
