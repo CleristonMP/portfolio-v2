@@ -7,15 +7,16 @@ import { getVerifiedUrl } from '../content/links';
 export function ContactSection({ text }: SectionProps) {
   const github = profile.contacts.find((contact) => contact.kind === 'github');
   const githubUrl = getVerifiedUrl(github?.link);
+  const linkedIn = profile.contacts.find(
+    (contact) => contact.kind === 'linkedin',
+  );
+  const linkedInUrl = getVerifiedUrl(linkedIn?.link);
   return (
     <section id="contact" tabIndex={-1} className="section contact-section">
       <div className="container contact-layout">
         <div>
           <p className="kicker">{text.kickers.contact}</p>
-          <h2>
-            {text.contact}
-            <span className="dot">.</span>
-          </h2>
+          <h2>{text.contact}</h2>
           <p>{text.contactLead}</p>
           <div className="contact-cta">
             {githubUrl && (
@@ -24,6 +25,26 @@ export function ContactSection({ text }: SectionProps) {
                 {text.contactForm.profileLink}
                 <ExternalLink size={14} aria-hidden="true" focusable="false" />
               </a>
+            )}
+            {linkedInUrl && (
+              <div>
+                <a
+                  href={linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-describedby="contact-linkedin-login"
+                >
+                  {text.contactForm.linkedInLink}
+                  <ExternalLink
+                    size={14}
+                    aria-hidden="true"
+                    focusable="false"
+                  />
+                </a>
+                <p id="contact-linkedin-login">
+                  {text.contactForm.linkedInLogin}
+                </p>
+              </div>
             )}
           </div>
         </div>

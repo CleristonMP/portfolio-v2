@@ -25,7 +25,12 @@ export function getProjectUrl(
   project: Project,
   kind: ProjectLinkKind,
 ): string | undefined {
-  if (kind === 'repository' && project.codeVisibility !== 'public')
+  if (
+    (kind === 'repository' ||
+      kind === 'backendRepository' ||
+      kind === 'frontendRepository') &&
+    project.codeVisibility !== 'public'
+  )
     return undefined;
   if (kind === 'store' && project.nature !== 'own-product') return undefined;
   return getVerifiedUrl(project.links?.[kind]);

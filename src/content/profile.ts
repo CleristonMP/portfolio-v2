@@ -4,6 +4,17 @@ export const profile: Profile = {
   name: 'Cleriston Pereira',
   brand: { firstName: 'CLERISTON', lastName: 'PEREIRA' },
   role: 'Full Stack & Mobile Developer',
+  availability: {
+    pt: 'Disponível para freelance; trabalho remoto somente em meio período.',
+    en: 'Available for freelance projects; remote work on a part-time basis only.',
+  },
+  resume: {
+    pt: {
+      src: 'assets/documents/cleriston-pereira-pt-br.pdf',
+      language: 'pt-BR',
+    },
+    en: { src: 'assets/documents/cleriston-pereira-en.pdf', language: 'en' },
+  },
   contacts: [
     {
       id: 'github',
@@ -15,18 +26,19 @@ export const profile: Profile = {
       },
     },
     { id: 'email', kind: 'email', label: 'Email' },
-    { id: 'linkedin', kind: 'linkedin', label: 'LinkedIn' },
+    {
+      id: 'linkedin',
+      kind: 'linkedin',
+      label: 'LinkedIn',
+      link: {
+        url: 'https://www.linkedin.com/in/cleriston-pereira-a60a471bb',
+        verification: 'confirmed',
+      },
+    },
     { id: 'resume', kind: 'resume', label: 'Curriculum vitae' },
   ],
   editorial: {
     state: 'pending',
-    pendingFields: [
-      'biography',
-      'availability',
-      'experienceYears',
-      'email',
-      'linkedin',
-      'resume',
-    ],
+    pendingFields: ['email'],
   },
 };

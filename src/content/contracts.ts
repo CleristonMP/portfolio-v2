@@ -9,11 +9,23 @@ export interface OptionalLink {
   readonly url?: string;
   readonly verification: VerificationState;
 }
+export interface LocalMedia {
+  readonly src: `assets/media/${string}.webp`;
+  readonly width: number;
+  readonly height: number;
+  readonly alt: LocalizedText;
+}
 export type ProjectNature =
   'commercial' | 'own-product' | 'independent' | 'educational';
 export type FunctionalStatus =
   'implemented' | 'published' | 'not-deployed' | 'discontinued';
-export type ProjectLinkKind = 'repository' | 'demo' | 'store' | 'caseStudy';
+export type ProjectLinkKind =
+  | 'repository'
+  | 'backendRepository'
+  | 'frontendRepository'
+  | 'demo'
+  | 'store'
+  | 'caseStudy';
 export interface Project {
   readonly slug: string;
   readonly title: string;
@@ -25,7 +37,7 @@ export interface Project {
   readonly description: LocalizedText;
   readonly stack?: readonly string[];
   readonly platforms?: readonly string[];
-  readonly image: string;
+  readonly image?: LocalMedia;
   readonly links?: Partial<Readonly<Record<ProjectLinkKind, OptionalLink>>>;
 }
 export interface Course {
@@ -33,7 +45,9 @@ export interface Course {
   readonly title: string;
   readonly institution: string;
   readonly completedYear?: number;
+  readonly completionLabel?: LocalizedText;
   readonly credential?: OptionalLink;
+  readonly image?: LocalMedia;
   readonly editorial: EditorialReview;
 }
 export type SkillIcon =
@@ -65,6 +79,15 @@ export interface Profile {
   readonly availability?: LocalizedText;
   readonly experienceYears?: number;
   readonly contacts: readonly Contact[];
+  readonly resume?: Readonly<
+    Record<
+      Language,
+      {
+        readonly src: `assets/documents/${string}.pdf`;
+        readonly language: 'pt-BR' | 'en';
+      }
+    >
+  >;
   readonly editorial: EditorialReview;
 }
 export type SectionId =
@@ -92,10 +115,15 @@ export interface Translation {
   readonly contactLead: string;
   readonly email: string;
   readonly source: string;
+  readonly projectLinks: Readonly<
+    Record<
+      'repository' | 'backendRepository' | 'frontendRepository' | 'store',
+      string
+    >
+  >;
   readonly private: string;
   readonly more: string;
   readonly footer: string;
-  readonly soon: string;
   readonly languageSwitchCode: string;
   readonly heroIntro: string;
   readonly heroAccent: string;
@@ -113,8 +141,21 @@ export interface Translation {
     readonly required: Readonly<Record<'name' | 'email' | 'message', string>>;
     readonly invalidEmail: string;
     readonly profileLink: string;
+    readonly linkedInLink: string;
+    readonly linkedInLogin: string;
+    readonly submission: {
+      readonly privacy: Readonly<Record<'beforeLink' | 'link', string>>;
+      readonly send: string;
+      readonly sending: string;
+      readonly accepted: string;
+      readonly rejected: string;
+      readonly network: string;
+      readonly timeout: string;
+      readonly limited: string;
+    };
   };
   readonly backToTop: string;
+  readonly downloadResume: string;
   readonly accessibility: {
     readonly navigation: string;
     readonly footerNavigation: string;
@@ -124,6 +165,7 @@ export interface Translation {
     readonly closeMenu: string;
   };
   readonly projectImageAlt: string;
+  readonly openOriginalImage: string;
   readonly skillLabels: Readonly<Record<SkillId, string>>;
   readonly metadata: { readonly title: string; readonly description: string };
 }

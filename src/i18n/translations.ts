@@ -1,6 +1,7 @@
 import type { Translations } from '../content/contracts';
 export const translations: Translations = {
   pt: {
+    downloadResume: 'Baixar currículo (PDF, PT-BR)',
     navigation: ['Projetos', 'Tecnologias', 'Sobre', 'Formação', 'Contato'],
     tag: 'DESENVOLVEDOR FULL STACK & MOBILE',
     heading: 'Soluções digitais para problemas reais.',
@@ -14,7 +15,7 @@ export const translations: Translations = {
     skillsLead: 'Tecnologias que utilizo para construir produtos digitais.',
     about: 'Sobre e método de trabalho',
     aboutText:
-      'Acredito que software de qualidade nasce de uma boa compreensão do problema. Meu trabalho combina desenvolvimento web e mobile, atenção à manutenção e decisões técnicas orientadas às necessidades de cada projeto.',
+      'Sou desenvolvedor autodidata. Estudo e desenvolvo aplicativos e sistemas desde 2019, pesquisando e aprendendo continuamente para ampliar meus conhecimentos e me manter atualizado.',
     learning: 'Aprendizado contínuo',
     learningLead:
       'Formações que sustentam e ampliam minha prática profissional.',
@@ -23,10 +24,15 @@ export const translations: Translations = {
       'Tem um projeto web ou mobile em mente? Entre em contato para conversarmos sobre o objetivo e o escopo.',
     email: 'Contato por e-mail',
     source: 'GitHub',
+    projectLinks: {
+      repository: 'GitHub',
+      backendRepository: 'Backend',
+      frontendRepository: 'Frontend',
+      store: 'Google Play',
+    },
     private: 'Estudo de caso • código privado',
     more: 'Ver detalhes',
     footer: 'Desenvolvido com atenção aos detalhes.',
-    soon: 'Links de demonstração e estudos de caso completos serão adicionados após validação.',
     languageSwitchCode: 'EN',
     heroIntro: 'Criando',
     heroAccent: 'soluções digitais.',
@@ -42,7 +48,7 @@ export const translations: Translations = {
     aboutAccent: 'Engenharia com propósito.',
     methodLabel: 'MÉTODO / 01',
     methodText:
-      'Entender o contexto. Projetar com clareza. Construir com cuidado.',
+      'Entender o contexto, estruturar a solução e então desenvolver. Em Reports Registry e Web Matrículas, realizei a análise do sistema e elaborei diagramas UML antes da codificação.',
     conversationLabel: 'INICIE UMA CONVERSA',
     contactNotice:
       'O envio pelo formulário está indisponível. Os campos permitem apenas validação local; nenhuma mensagem será enviada.',
@@ -56,6 +62,27 @@ export const translations: Translations = {
       },
       invalidEmail: 'Informe um email válido.',
       profileLink: 'Acessar perfil no GitHub',
+      linkedInLink: 'Entrar em contato pelo LinkedIn',
+      linkedInLogin:
+        'Para enviar uma mensagem pelo LinkedIn, é preciso fazer login.',
+      submission: {
+        privacy: {
+          beforeLink:
+            'Seu nome, email e mensagem serão usados para responder ao seu contato e encaminhados ao responsável pelo portfólio pelo Formspree. O serviço pode armazenar esses dados e tratar informações técnicas, como endereço IP, nos Estados Unidos e em outros países onde opera. Consulte a',
+          link: 'Política de Privacidade do Formspree',
+        },
+        send: 'Enviar mensagem',
+        sending: 'Enviando mensagem…',
+        accepted: 'O serviço aceitou sua mensagem.',
+        rejected:
+          'O serviço não aceitou o envio. Revise os campos e tente novamente.',
+        network:
+          'Não foi possível confirmar o envio por falha de conexão. Você pode tentar novamente.',
+        timeout:
+          'O serviço demorou para responder. O envio não foi confirmado. Você pode tentar novamente.',
+        limited:
+          'O limite de envios foi atingido. Aguarde antes de tentar novamente.',
+      },
     },
     backToTop: '↑ INÍCIO',
     accessibility: {
@@ -67,6 +94,7 @@ export const translations: Translations = {
       closeMenu: 'Fechar menu',
     },
     projectImageAlt: 'Interface do projeto {project}',
+    openOriginalImage: 'Abrir imagem em tamanho original',
     skillLabels: {
       'java-spring': 'Java & Spring Boot',
       'react-typescript': 'React & TypeScript',
@@ -82,6 +110,7 @@ export const translations: Translations = {
     },
   },
   en: {
+    downloadResume: 'Download résumé (PDF, EN)',
     navigation: ['Projects', 'Skills', 'About', 'Learning', 'Contact'],
     tag: 'FULL STACK & MOBILE DEVELOPER',
     heading: 'Digital solutions for real problems.',
@@ -95,19 +124,24 @@ export const translations: Translations = {
     skillsLead: 'Technologies I use to build digital products.',
     about: 'About & approach',
     aboutText:
-      'I believe great software starts with understanding the problem. My approach brings together web and mobile development, maintainability and technical decisions driven by each project’s needs.',
+      'I am a self-taught developer. I have been studying and developing applications and systems since 2019, continually researching and learning to expand my knowledge and stay up to date.',
     learning: 'Continuous learning',
     learningLead:
       'Education and training that reinforce my engineering practice.',
     contact: 'Let’s build something together?',
     contactLead:
-      'Have a web or mobile project? Get in touch and tell me about your goals.',
+      'Have a web or mobile project in mind? Get in touch so we can discuss your goals and scope.',
     email: 'Contact by email',
     source: 'GitHub',
+    projectLinks: {
+      repository: 'GitHub',
+      backendRepository: 'Backend',
+      frontendRepository: 'Frontend',
+      store: 'Google Play',
+    },
     private: 'Case study • private code',
     more: 'View details',
     footer: 'Crafted with attention to detail.',
-    soon: 'Demo links and complete case studies will be added after verification.',
     languageSwitchCode: 'PT',
     heroIntro: 'Building',
     heroAccent: 'digital solutions.',
@@ -122,7 +156,8 @@ export const translations: Translations = {
     },
     aboutAccent: 'Engineering with purpose.',
     methodLabel: 'METHOD / 01',
-    methodText: 'Understand the context. Design with clarity. Build with care.',
+    methodText:
+      'Understand the context, structure the solution, then develop it. For Reports Registry and Web Matrículas, I analyzed the systems and created UML diagrams before coding.',
     conversationLabel: 'START A CONVERSATION',
     contactNotice:
       'Form submission is unavailable. These fields only provide local validation; no message will be sent.',
@@ -136,6 +171,25 @@ export const translations: Translations = {
       },
       invalidEmail: 'Enter a valid email address.',
       profileLink: 'View GitHub profile',
+      linkedInLink: 'Get in touch on LinkedIn',
+      linkedInLogin: 'You need to sign in to LinkedIn to send a message.',
+      submission: {
+        privacy: {
+          beforeLink:
+            'Your name, email and message will be used to respond to your inquiry and forwarded to the portfolio owner through Formspree. The service may store this data and process technical information, such as your IP address, in the United States and other countries where it operates. See',
+          link: 'Formspree’s Privacy Policy',
+        },
+        send: 'Send message',
+        sending: 'Sending message…',
+        accepted: 'The service accepted your message.',
+        rejected:
+          'The service did not accept the submission. Check the fields and try again.',
+        network:
+          'A connection error prevented confirmation. You can try again.',
+        timeout:
+          'The service took too long to respond. Submission was not confirmed. You can try again.',
+        limited: 'The submission limit was reached. Wait before trying again.',
+      },
     },
     backToTop: '↑ TOP',
     accessibility: {
@@ -147,6 +201,7 @@ export const translations: Translations = {
       closeMenu: 'Close menu',
     },
     projectImageAlt: '{project} interface',
+    openOriginalImage: 'Open image at original size',
     skillLabels: {
       'java-spring': 'Java & Spring Boot',
       'react-typescript': 'React & TypeScript',

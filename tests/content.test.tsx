@@ -8,6 +8,35 @@ import { ContactSection } from '../src/sections/ContactSection';
 import { profile } from '../src/content/profile';
 
 describe('editorial link boundaries', () => {
+  it.each(['backendRepository', 'frontendRepository'] as const)(
+    'protects %s with the same private/optional boundary as repository',
+    (kind) => {
+      const fixture: Project = {
+        ...projects[3],
+        links: {
+          [kind]: {
+            verification: 'confirmed',
+            url: 'https://example.com/code',
+          },
+        },
+      };
+      expect(getProjectUrl(fixture, kind)).toBe('https://example.com/code');
+      for (const codeVisibility of ['private', 'unknown'] as const) {
+        expect(
+          getProjectUrl({ ...fixture, codeVisibility }, kind),
+        ).toBeUndefined();
+      }
+      for (const link of [
+        undefined,
+        { verification: 'pending' as const, url: 'https://example.com/code' },
+        { verification: 'confirmed' as const, url: 'javascript:alert(1)' },
+      ]) {
+        expect(
+          getProjectUrl({ ...fixture, links: { [kind]: link } }, kind),
+        ).toBeUndefined();
+      }
+    },
+  );
   it.each([
     undefined,
     { verification: 'pending', url: 'https://example.com' },

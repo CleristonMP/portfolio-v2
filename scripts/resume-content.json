@@ -1,0 +1,95 @@
+{
+  "pt": {
+    "role": "Desenvolvedor Full Stack & Mobile",
+    "profileHeading": "Perfil",
+    "profile": [
+      "Sou desenvolvedor autodidata. Estudo e desenvolvo aplicativos e sistemas desde 2019, pesquisando e aprendendo continuamente para ampliar meus conhecimentos e me manter atualizado.",
+      "Meu método começa por entender o contexto e estruturar a solução antes de desenvolver. Em Reports Registry e Web Matrículas, realizei a análise do sistema e elaborei diagramas UML antes da codificação.",
+      "Disponível para freelance; trabalho remoto somente em meio período."
+    ],
+    "skillsHeading": "Competências técnicas",
+    "skills": "Java e Spring Boot; React, JavaScript e TypeScript; desenvolvimento Android nativo com Kotlin; PostgreSQL e SQL, incluindo tabelas, relacionamentos e consultas; análise de sistemas e modelagem UML. Experiência de estudo com backend Node.js em projeto acompanhado de curso, sem projeto próprio nessa tecnologia.",
+    "projectsHeading": "Projetos selecionados",
+    "projects": [
+      {
+        "title": "Reports Registry — Projeto comercial · Código privado",
+        "paragraphs": [
+          "Desenvolvi individualmente um sistema para uma empresa de engenharia elétrica registrar laudos de equipamentos e permitir aos clientes consultar validade e datas de inspeção. Tecnologias: Java, Spring Boot, React, JavaScript, Apache POI e Heroku.",
+          "Utilizei Apache POI para ler planilhas Excel e importar registros de laudos. Também corrigi erros na atualização de usuários e tratei casos de borda nas buscas, incluindo buscas vazias. Essas experiências ampliaram meu aprendizado em importação de dados e tratamento de erros. Código-fonte, trechos de código, identificação da empresa, dados de clientes e documentos não são disponibilizados."
+        ]
+      },
+      {
+        "title": "Audience-Counter — Aplicativo próprio · Publicado na Google Play",
+        "paragraphs": [
+          "Aplicativo Android para contagem de público, com modos de contagem direta e por fileiras. Desenvolvi o aplicativo individualmente em Kotlin, com assistência parcial do Gemini. Foi uma experiência de aprendizado em desenvolvimento Android nativo."
+        ]
+      },
+      {
+        "title": "Web Matrículas — Sistema independente · Não implantado",
+        "paragraphs": [
+          "Sistema de gestão de matrículas, alunos, classes e turmas escolares, desenvolvido individualmente, sem assistência de IA. Realizei a análise do sistema e elaborei diagramas UML antes da codificação. Tecnologias: Java, Spring Boot, React, JavaScript, TypeScript e PostgreSQL. O sistema foi implementado, mas não entrou em operação na escola."
+        ]
+      },
+      {
+        "title": "DS Commerce — Projeto educacional · DevSuperior",
+        "paragraphs": [
+          "Projeto de comércio eletrônico desenvolvido seguindo integralmente a Formação Desenvolvedor Moderno, sem adaptações próprias. A execução proporcionou aprendizado na construção de um sistema do início ao fim. Tecnologias: Java, Spring Boot, React, JavaScript, TypeScript e PostgreSQL. Integração de pagamentos não implementada."
+        ]
+      }
+    ],
+    "coursesHeading": "Formações concluídas"
+  },
+  "en": {
+    "role": "Full Stack & Mobile Developer",
+    "profileHeading": "Profile",
+    "profile": [
+      "I am a self-taught developer. I have been studying and developing applications and systems since 2019, continuously researching and learning to expand my knowledge and stay up to date.",
+      "My approach starts with understanding the context and structuring the solution before development. For Reports Registry and Web Matrículas, I analyzed the systems and created UML diagrams before coding.",
+      "Available for freelance projects; remote work on a part-time basis only."
+    ],
+    "skillsHeading": "Technical skills",
+    "skills": "Java and Spring Boot; React, JavaScript and TypeScript; native Android development with Kotlin; PostgreSQL and SQL, including tables, relationships and queries; systems analysis and UML modeling. Course-based backend experience with Node.js, without an independently developed project using that technology.",
+    "projectsHeading": "Selected projects",
+    "projects": [
+      {
+        "title": "Reports Registry — Commercial project · Private source code",
+        "paragraphs": [
+          "I independently developed a system for an electrical engineering company to record equipment inspection reports and let clients check validity and inspection dates. Technologies: Java, Spring Boot, React, JavaScript, Apache POI and Heroku.",
+          "I used Apache POI to read Excel spreadsheets and import inspection report records. I also fixed user update errors and handled search edge cases, including empty searches. These experiences strengthened my understanding of data imports and error handling. Source code, code excerpts, company identity, client data and documents are not disclosed."
+        ]
+      },
+      {
+        "title": "Audience-Counter — Own application · Published on Google Play",
+        "paragraphs": [
+          "An Android audience-counting app with direct and row-based counting modes. I developed the app individually in Kotlin, with partial assistance from Gemini. It was a learning experience in native Android development."
+        ]
+      },
+      {
+        "title": "Web Matrículas — Independent project · Not deployed",
+        "paragraphs": [
+          "A school enrollment management system for students, classes and groups, developed individually without AI assistance. I analyzed the system and created UML diagrams before coding. Technologies: Java, Spring Boot, React, JavaScript, TypeScript and PostgreSQL. The system was implemented but was not put into operation at the school."
+        ]
+      },
+      {
+        "title": "DS Commerce — Educational project · DevSuperior",
+        "paragraphs": [
+          "An e-commerce project developed by following Formação Desenvolvedor Moderno in full, without my own adaptations. Working through the project provided experience in building a system from start to finish. Technologies: Java, Spring Boot, React, JavaScript, TypeScript and PostgreSQL. Payment integration was not implemented."
+        ]
+      }
+    ],
+    "coursesHeading": "Completed courses"
+  },
+  "courses": [
+    "Formação Desenvolvedor Moderno — DevSuperior · 2023",
+    "Bootcamp React — DevSuperior · 2022",
+    "Bootcamp Spring — DevSuperior · 2021",
+    "Desenvolvimento com React Native — Udemy · 2023"
+  ],
+  "contacts": [
+    { "label": "GitHub", "url": "https://github.com/CleristonMP" },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/cleriston-pereira-a60a471bb"
+    }
+  ]
+}

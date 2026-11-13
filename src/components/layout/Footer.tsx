@@ -1,10 +1,11 @@
-import type { Translation } from '../../content/contracts';
+import type { SectionProps } from '../../content/contracts';
 import { profile } from '../../content/profile';
 import { getVerifiedUrl } from '../../content/links';
 
-export function Footer({ text }: { readonly text: Translation }) {
+export function Footer({ language, text }: SectionProps) {
   const github = profile.contacts.find((contact) => contact.kind === 'github');
   const githubUrl = getVerifiedUrl(github?.link);
+  const resume = profile.resume?.[language];
 
   return (
     <footer className="footer">
@@ -28,6 +29,16 @@ export function Footer({ text }: { readonly text: Translation }) {
           {githubUrl && (
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
               {text.contactForm.profileLink}
+            </a>
+          )}
+          {resume && (
+            <a
+              href={resume.src}
+              download
+              hrefLang={resume.language}
+              type="application/pdf"
+            >
+              {text.downloadResume}
             </a>
           )}
           <a className="footer-top" href="#home">

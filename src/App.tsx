@@ -37,7 +37,7 @@ export default function App() {
         <LearningSection language={language} text={text} />
         <ContactSection language={language} text={text} />
       </main>
-      <Footer text={text} />
+      <Footer language={language} text={text} />
     </>
   );
 }
