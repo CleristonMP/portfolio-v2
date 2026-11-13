@@ -12,18 +12,20 @@ export function LearningSection({ text }: SectionProps) {
           title={text.learning}
           lead={text.learningLead}
         />
-        <div className="learning-grid">
+        <ol className="learning-grid" aria-label={text.learning}>
           {courses.map((course, index) => (
-            <div className="course" key={course.id}>
-              <span className="course-index">0{index + 1}</span>
+            <li className="course" key={course.id}>
+              <span className="course-index" aria-hidden="true">
+                0{index + 1}
+              </span>
               <div>
                 <h3>{course.title}</h3>
                 <p>{course.institution}</p>
               </div>
-              <BookOpen size={22} />
-            </div>
+              <BookOpen size={22} aria-hidden="true" focusable="false" />
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

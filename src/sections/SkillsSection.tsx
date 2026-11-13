@@ -22,27 +22,32 @@ const skillIcons: Record<SkillIcon, LucideIcon> = {
 
 export function SkillsSection({ text }: SectionProps) {
   return (
-    <section id="skills" tabIndex={-1} className="section">
+    <section id="skills" tabIndex={-1} className="section skills-section">
       <div className="container">
         <div className="center-heading">
           <p className="kicker">{text.kickers.skills}</p>
-          <h2>
+          <h2 id="skills-title">
             {text.skills}
             <span className="dot">.</span>
           </h2>
           <p>{text.skillsLead}</p>
         </div>
-        <div className="skills-grid">
+        <ul className="skills-grid" role="list" aria-labelledby="skills-title">
           {skills.map(({ id, icon }) => {
             const Icon = skillIcons[icon];
             return (
-              <div className="skill" key={id}>
-                <Icon size={27} strokeWidth={1.5} />
+              <li className="skill" key={id}>
+                <Icon
+                  size={32}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  focusable="false"
+                />
                 <span>{text.skillLabels[id]}</span>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

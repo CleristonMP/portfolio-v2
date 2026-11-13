@@ -1,5 +1,6 @@
 import type { SectionProps } from '../content/contracts';
-import { Github, Mail, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
+import { ContactForm } from '../components/ContactForm';
 import { profile } from '../content/profile';
 import { getVerifiedUrl } from '../content/links';
 
@@ -19,17 +20,14 @@ export function ContactSection({ text }: SectionProps) {
           <div className="contact-cta">
             {githubUrl && (
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github size={19} /> {github?.label} <ExternalLink size={14} />
+                <Github size={19} aria-hidden="true" focusable="false" />
+                {text.contactForm.profileLink}
+                <ExternalLink size={14} aria-hidden="true" focusable="false" />
               </a>
             )}
           </div>
         </div>
-        <div className="contact-panel">
-          <span className="small-label">{text.conversationLabel}</span>
-          <Mail size={32} />
-          <p>{text.contactNotice}</p>
-          <span className="coming-soon">{text.contactStatus}</span>
-        </div>
+        <ContactForm text={text} />
       </div>
     </section>
   );

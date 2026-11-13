@@ -13,7 +13,7 @@ const {
   syncDocumentLanguage,
   LANGUAGE_STORAGE_KEY,
 } = await load('src/i18n/language.ts');
-const { projects } = await load('src/content/projects.ts');
+const { projects, reportsRegistryCase } = await load('src/content/projects.ts');
 const { skills } = await load('src/content/skills.ts');
 const { courses } = await load('src/content/courses.ts');
 
@@ -184,12 +184,28 @@ for (const language of ['pt', 'en']) {
     ...Object.values(text.kickers),
   ])
     assert(markup.includes(value), `Missing localized text: ${value}`);
+  const projectMarkup = renderToStaticMarkup(
+    createElement(sections[names.indexOf('ProjectsSection')], {
+      language,
+      text,
+    }),
+  );
+  assert(
+    !projectMarkup.includes('<img'),
+    'Project presentation must not render unapproved media',
+  );
+  for (const field of ['category', 'context', 'disclosure'])
+    assert(markup.includes(reportsRegistryCase[field][language]));
+  assert(markup.includes('href="#reports-registry-case"'));
+  assert(markup.includes('id="reports-registry-case" tabindex="-1"'));
   for (const project of projects) {
     assert(markup.includes(project.title));
-    assert(
-      markup.includes(
-        `alt="${text.projectImageAlt.replace('{project}', project.title)}"`,
-      ),
+    assert(markup.includes(project.description[language]));
+  }
+  for (const field of ['category', 'context', 'disclosure']) {
+    assertTranslationParity(
+      reportsRegistryCase[field].pt,
+      reportsRegistryCase[field].en,
     );
   }
   for (const course of courses) {
@@ -223,5 +239,5 @@ for (const language of ['pt', 'en']) {
   }
 }
 stdout.write(
-  'PASS: PT/EN parity/nonempty, localized sections/labels/alts, official names, valid/invalid preference, storage getter/read/write failures, metadata PT/EN/PT and static fallback.\n',
+  'PASS: PT/EN parity/nonempty, localized sections/labels and image-free project presentation, official names, valid/invalid preference, storage getter/read/write failures, metadata PT/EN/PT and static fallback.\n',
 );

@@ -1,5 +1,125 @@
 # Estado do projeto — Portfolio v2
 
+## Estado corrente — M3 fechado; formalização documental aguardando revisão
+
+Em 21/10/2026, M3 — Interface está fechado no escopo aprovado: M3-01 a M3-08 revisadas e aprovadas pelo Work, implementações commitadas e enviadas. O responsável informou nesta solicitação que o Work verificou a CI **39650878951 concluída com sucesso** para `bdc62e0bfa5045db02db12a1efa98f01eb01062b`. [Execução de CI](https://github.com/CleristonMP/portfolio-v2/actions/runs/39650878951). Esse resultado remoto é evidência fornecida pelo Work, sem nova consulta remota pelo Codex nesta formalização.
+
+Conferido localmente: origin `https://github.com/CleristonMP/portfolio-v2.git`; entrada na branch `feat/m3-08-footer`, HEAD e referência local `origin/feat/m3-08-footer` iguais ao commit final acima; staging vazio e nenhum diff versionável. README apenas sinalizado por finais de linha, com diff vazio, preservado sem edição. Criada branch documental `docs/m3-interface-closure` a partir desse estado, sem alterar main. A coincidência da referência local não equivale a nova consulta ao remoto. O push bem-sucedido do commit final já está registrado nesta conversa.
+
+Entregas, aceites e commits das oito tarefas estão consolidados em [MILESTONE_3_PLAN.md](docs/MILESTONE_3_PLAN.md#fechamento-de-m3--21102026), com referência aos handoffs originais, preservados sem edição. A consolidação final registra 64 testes, checks de qualidade, builds/previews em `/` e `/portfolio-v2/`, 52 combinações de largura/idioma/caminho e evidências visuais/funcionais de M3-08. São resultados históricos da implementação, não uma nova execução nesta entrega exclusivamente documental nem auditoria final de M5.
+
+Zoom real 200% e reduced motion ativo constam como aprovados manualmente pelo responsável em cada handoff. Codex não executou nem observou independentemente essas validações; navegador, larguras, idiomas, passos e capturas adicionais não informados não são presumidos. Limites e diagnósticos anteriores permanecem no histórico. O aceite integral de M3 foi informado pelo Work; não é autoaprovação desta formalização.
+
+**M4 — Conteúdo e integração é o próximo milestone, não iniciado e sem plano detalhado aprovado.** Permanecem pendentes conteúdo final e cases completos; tradução editorial final; mídias, otimização e permissões; títulos oficiais, datas e credenciais; biografia/foto e demais fatos não confirmados; integração real Formspree, destinatário privado configurado somente no serviço, antispam, erros/sucesso reais e comprovação de recebimento; aprovação editorial do aviso de finalidade/processamento. O formulário segue indisponível para envio e GitHub é somente acesso ao perfil. M5 mantém auditorias finais de acessibilidade, performance, SEO, segurança, links/fluxos e publicação controlada. Fechar M3 não autoriza lançamento nem resolve esses gates.
+
+**Esta formalização documental aguarda revisão própria do Work.** Somente PROJECT_STATUS.md e docs/MILESTONE_3_PLAN.md alterados; sem staging, commit, push, merge ou deploy, sem início de M4. Aprovações das implementações não autorizam automaticamente o commit deste diff documental. Os registros abaixo refletem os estados de cada entrega à época e são superados somente quanto ao estado corrente pelo fechamento acima.
+
+## Histórico — M3-08 aguardando revisão em 21/10/2026
+
+M3-07 — Contato aceita pelo Work e commitada em `6c5f6069e59dc76ff221d9e0d3617836adf0cd3c` — `feat(contact): add localized unavailable form with local validation`. Aprovação verificável dos nove arquivos e push bem-sucedido para origin/feat/m3-07-contact registrados nesta conversa; estado anterior preservado abaixo como histórico.
+
+Entrada local M3-08: branch `feat/m3-07-contact`, mesmo HEAD, coincidente com referência local origin/feat/m3-07-contact. Staging vazio e nenhum diff versionável; README sinalizado somente por finais de linha, diff vazio. Origin correto `https://github.com/CleristonMP/portfolio-v2.git`, sem fetch ou consulta remota de refs/CI. Criada `feat/m3-08-footer`, sem alterar main ou sobrescrever arquivos.
+
+**M3-08 — Footer implementada e composição completa em revisão, aguardando parecer próprio do Work.** Marca/ano automático e texto localizado preservados; navegação essencial de projetos, contato, perfil GitHub verificado e retorno nativo #home. Sem email privado, LinkedIn/currículo desconhecidos ou âncoras vazias. Estilos delimitados ao rodapé, sem refatoração das seções aprovadas. Critérios/evidências e distinção entre verificações repetidas e reaproveitadas em `docs/M3_08_HANDOFF.md`.
+
+Typecheck, lint, formato, 64 testes, verify e builds/previews de / e /portfolio-v2/ passaram. Matriz atual 52/52 sem overflow/cortes medidos, seis IDs e datasets preservados; oito capturas de footer e quatro panoramas completos, teclado/foco/idioma/metadados/histórico verificados com limites no handoff. Zoom real 200% e reduced motion ativo aprovados manualmente pelo responsável para M3-08 em 21/10/2026, conforme declaração nesta conversa, sem observação independente pelo Codex. Método, navegador, larguras, idiomas e capturas não foram informados nesta confirmação; não são presumidos. Registro inicial de pendência preservado no handoff como histórico; aprovações anteriores não reutilizadas. M3 **não concluído**: depende de revisão própria, snapshot verificável, commit/push autorizado e CI correspondente. Nenhuma CI remota executada nesta entrega. Sem staging, commit, push, merge ou deploy; M4 não iniciada.
+
+Integração Formspree, antispam, recebimento, aviso futuro de finalidade/processamento, conteúdo editorial final, mídias/permissões e demais gates de M4/M5 permanecem pendentes. GitHub é acesso ao perfil, sem promessa de mensagens privadas ou inbox para orçamento/recrutamento.
+
+## Histórico — M3-07 aguardando revisão em 20/10/2026
+
+M3-06 — Aprendizado aceita pelo Work e commitada em `c61a2359b66cd42bd5bf7226e4f3d36d74286306` — `style(learning): refine responsive formation cards and hierarchy`. Aprovação verificável dos cinco arquivos e push bem-sucedido para origin/feat/m3-06-learning registrados nesta conversa; estado anterior preservado como histórico.
+
+Entrada local M3-07: branch `feat/m3-06-learning`, mesmo HEAD; README sinalizado apenas por finais de linha com diff vazio, staging vazio. Origin `https://github.com/CleristonMP/portfolio-v2.git`; sem consulta remota adicional. Criada branch dedicada `feat/m3-07-contact`, sem alterar main ou sobrescrever arquivos.
+
+**M3-07 — Contato implementada, aguardando revisão própria do Work.** Decisões aprovadas registradas no plano único: três campos PT/EN, Formspree, GitHub como perfil, destinatário privado reservado ao serviço em M4 e nunca gravado nesta entrega. Interface responsiva, labels, erros associados e validação local; aviso anterior ao preenchimento, envio desabilitado e cancelamento de submissão implícita. Nenhuma conta, endpoint, transporte, sucesso fictício, antispam ou recebimento configurados. Aviso futuro de finalidade/processamento proposto no handoff, pendente de aprovação editorial.
+
+Typecheck, lint, formato, 59 testes, verify, build e diff check passaram; 52 cenários de navegador (vazio/erros, PT/EN) sem overflow medido. Evidências e critérios em `docs/M3_07_HANDOFF.md`. Zoom real 200% e reduced motion com preferência ativa realizados manualmente e aprovados pelo responsável para M3-07, conforme declaração direta nesta conversa em 21/10/2026. Codex não observou a execução; navegador, larguras, idiomas, procedimento e capturas adicionais não foram informados e não são inferidos. A confirmação supera a pendência inicial preservada no handoff, sem reutilizar aprovações anteriores nem substituir a revisão integral do Work. Nova revisão/snapshot próprios necessários. Sem staging, commit ou push. M3 não concluído, M3-08 não iniciada. Integração real de contato e demais gates editoriais/mídias/permissões/segurança/publicação permanecem M4/M5.
+
+## Histórico — M3-06 aguardando revisão em 20/10/2026
+
+M3-05 — Perfil aceita pelo Work e commitada em `f2ea78f917021d46fa15aaa750c130911dad2e1c` — `style(profile): refine textual layout and method presentation`. Aprovação verificável dos três arquivos e push bem-sucedido para origin/feat/m3-05-profile registrados nesta conversa; estados anteriores preservados como histórico.
+
+Entrada M3-06 observada localmente: branch `feat/m3-05-profile`, mesmo HEAD, coincidente com referência local origin/feat/m3-05-profile; nenhum diff versionável/staging. README sinalizado apenas por finais de linha, diff vazio. Origin correto; sem consulta remota adicional. Criada branch dedicada `feat/m3-06-learning`, sem alterar main ou realizar merge.
+
+**M3-06 — Aprendizado implementada, aguardando revisão própria do Work.** Refinados hierarquia, cards informativos, ícones e espaços somente da seção. Fonte única, quatro formações/instituições, ordem, copy PT/EN, contratos e #learning entre perfil/contato preservados. Lista ordenada nomeada, números e ícones decorativos fora da árvore acessível; sem links, imagens, datas ou credenciais novas. Adaptação derivada da linguagem Stitch: a seção não existe nos exports.
+
+Typecheck, lint, formato, 54 testes, verify, build e diff check passaram. Matriz de navegador 26/26 sem excesso contra clientWidth, cortes ou sobreposição medida nos cards; capturas antes/depois 390/1280 PT/EN e smoke próprio em `docs/M3_06_HANDOFF.md`. Zoom real 200% e reduced motion com preferência ativa realizados manualmente e aprovados pelo responsável para M3-06, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou a execução; navegador, larguras, idiomas, procedimento e capturas adicionais não foram informados e não são inferidos. A confirmação supera a pendência inicial preservada no handoff, sem reutilizar aprovações anteriores nem substituir a revisão integral do Work. Sem staging, commit ou push; nova revisão e snapshot próprios obrigatórios.
+
+M3 não concluído; M3-07 e posteriores não iniciadas. Pendências editoriais M4 de títulos oficiais, datas e credenciais permanecem, assim como mídia/permissões, contatos, segurança e publicação.
+
+## Histórico — M3-05 aguardando revisão em 20/10/2026
+
+M3-04 — Competências aceita pelo Work e commitada em `2cb21a48b05cf0f66dd10456594136110fe6b881` — `style(skills): refine responsive informational skill cards`. Aprovação verificável dos cinco arquivos e push bem-sucedido para origin/feat/m3-04-skills registrados nesta conversa; registros anteriores de espera preservados como histórico.
+
+Entrada M3-05 observada localmente: branch `feat/m3-04-skills`, mesmo HEAD, coincidente com referência local origin/feat/m3-04-skills; nenhum diff versionável ou staging. README apenas sinalizado por finais de linha, com diff vazio. Origin `https://github.com/CleristonMP/portfolio-v2.git`, sem consulta remota adicional. Criada branch dedicada `feat/m3-05-profile`, sem alterar main ou realizar merge.
+
+**M3-05 — Perfil implementada, aguardando revisão própria do Work.** Ajustes somente no CSS delimitado a AboutSection: hierarquia, leitura, composição textual e superfície do método. Componente, copy PT/EN, contratos, tokens, #about e foco original preservados. Sem imagem, espaço reservado, importação de mídia, anos de experiência, disponibilidade ou alegações novas. Nenhuma pendência editorial declarada resolvida.
+
+Matriz real de navegador de 26 combinações sem overflow/cortes/sobreposição; copy integral e dimensões das demais seções preservadas nos pontos comparados. Capturas antes/depois 390/1280 PT/EN, comandos, critérios e limites em `docs/M3_05_HANDOFF.md`. Zoom real 200% e preferência reduced motion ativa realizados manualmente e aprovados pelo responsável para M3-05, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou a execução; navegador, larguras, idiomas, procedimento e capturas adicionais não foram informados e não são inferidos. Essa confirmação supera a pendência anterior preservada no handoff, sem reutilizar aprovações de outras tarefas nem substituir a revisão integral do Work. Sem staging, commit ou push; nova revisão e aprovação verificável próprias obrigatórias.
+
+M3 em andamento, não concluído; M3-06 e posteriores não iniciadas. Gates editoriais de M4 (biografia final, experiência demonstrável, foto/permissões), mídias, contato, segurança e publicação preservados.
+
+## Histórico — M3-04 aguardando revisão em 20/10/2026
+
+M3-03 — Projetos aceita pelo Work e commitada em `5afdf3f205f9575176daa0fd7409359477c5ab0a` — `feat(projects): add curated text cards and inline private case study`. Aprovação verificável dos dez arquivos e push bem-sucedido registrados nesta conversa; registros anteriores de espera permanecem históricos.
+
+Entrada M3-04 observada localmente: branch `feat/m3-03-projects`, mesmo HEAD e referência local origin/feat/m3-03-projects coincidente, nenhum diff versionável/staging; README apenas sinalizado por finais de linha com diff vazio. Origin correto `https://github.com/CleristonMP/portfolio-v2.git`, sem consulta remota adicional. Criada branch dedicada `feat/m3-04-skills`, sem alterar main/merge.
+
+**M3-04 — Competências implementada, aguardando revisão própria do Work.** Refinados grade, hierarquia, ícones, espaços e superfícies, com seis itens informativos em lista nomeada pelo título; ícones decorativos ocultos da árvore acessível. Sem novos dados, agrupamentos, tecnologias, percentuais ou alegações. Inventário, ordem, rótulos PT/EN, contratos e pendências editoriais preservados. Estilos delimitados à seção; header, hero e projetos mantidos.
+
+Evidências, comandos, critérios individuais e limitações em `docs/M3_04_HANDOFF.md`. Matriz de 26 larguras/idiomas sem overflow/cortes; capturas antes/depois em 390/1280 PT/EN. **Zoom real 200% e preferência reduced motion ativa realizados manualmente e aprovados pelo responsável para M3-04**, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou essa execução; navegador, larguras, idiomas, passos e capturas adicionais não foram informados e não são inferidos. A confirmação supera a pendência anterior preservada no handoff, sem reutilizar aprovações de outras tarefas ou substituir a revisão integral do Work. Sem staging, commit ou push; nova aprovação e snapshot próprios necessários após revisão do Work.
+
+M3 não concluído; M3-05 e posteriores não iniciadas. As seis competências continuam com revisão de evidências de proficiência pendente para M4; não declaradas resolvidas por refinamento visual. Demais gates editoriais, mídia, contatos, segurança e publicação preservados.
+
+## Histórico — M3-03 aguardando revisão em 20/10/2026
+
+M3-02 — Hero revisada/aprovada pelo Work e commitada em `5908473c238019b1e599fbae982f68c7fe14c49b` — `style(hero): refine responsive typography and ambient composition`. Aprovação verificável, commit e push bem-sucedido para origin/feat/m3-02-hero registrados nesta conversa. Handoff e estados anteriores preservados como histórico anterior ao parecer.
+
+Entrada local de M3-03: branch `feat/m3-02-hero`, mesmo HEAD, nenhum diff versionável ou staging; README sinalizado somente por finais de linha, com diff vazio. Criada branch dedicada `feat/m3-03-projects`, sem alterar main/merge. Origin permanece `https://github.com/CleristonMP/portfolio-v2.git`; sem verificação remota adicional.
+
+Decisões explicitamente aprovadas pelo responsável: três prioritários Reports Registry → Audience-Counter → Web Matrículas; DS Commerce secundário educacional; case textual mínimo na mesma página por âncora; copy PT/EN fornecida; cards temporariamente sem imagens; sem links externos novos. Registradas no plano M3, preservando decisões originais como histórico. Imagens, autorização específica e migração/otimização continuam M4; caminhos públicos não equivalem a permissão.
+
+**M3-03 implementada, aguardando revisão própria do Work**, sem staging/commit/push. Dataset e contratos preservados; grupos derivados dos registros existentes e case localizado tipado. Cards sem áreas vazias de imagem, CTA nativo #reports-registry-case, destino focalizável; header/hero/tokens preservados. Matriz de 26 combinações PT/EN sem excesso contra clientWidth; 50 testes e checks passaram. Critérios/evidências/limitações em `docs/M3_03_HANDOFF.md`. **Zoom real 200% e preferência reduced motion ativa realizados manualmente e aprovados pelo responsável para M3-03**, conforme declaração direta nesta conversa em 20/10/2026. Codex não observou a execução; navegador, larguras, idiomas e passos não foram detalhados e não são inferidos. A confirmação supera a pendência anterior, preservada no handoff como histórico, sem reutilizar aprovações de outras tarefas nem substituir a revisão integral do Work.
+
+M3 não concluído. M3-04 e posteriores não iniciadas. Gates de conteúdo final/cases completos, mídias/permissões, contato, segurança e publicação continuam pendentes. Nova revisão e snapshot próprios obrigatórios antes de qualquer commit/push.
+
+## Histórico — M3-02 aguardando revisão em 19/10/2026
+
+M3-01 — Header **revisada, aprovada pelo Work e commitada** em `34743627415ffa4476de92cc64fba59bb9200df6` — `style(header): refine responsive glass navigation`. Aprovação verificável dos três arquivos, commit e push bem-sucedido para origin/feat/m3-01-header registrados nesta conversa; registro transitório consumido/removido. O handoff original e os estados anteriores abaixo permanecem como histórico anterior ao parecer.
+
+Entrada M3-02 observada localmente: branch `feat/m3-01-header`, mesmo HEAD, origin `https://github.com/CleristonMP/portfolio-v2.git`, nenhum diff versionável ou staging; README sinalizado apenas por finais de linha, com diff vazio. Criada branch dedicada `feat/m3-02-hero` a partir desse estado, sem modificar main ou realizar merge. Plano aprovado vigente: `docs/MILESTONE_3_PLAN.md`, commit `6f7a8bc`.
+
+**M3-02 — Hero implementada e aguardando revisão própria do Work.** Alterações de composição restritas ao hero; copy, componente, header aprovado, tokens, fontes, dados e navegação preservados. Evidências e critérios em `docs/M3_02_HANDOFF.md`. Matriz real de navegador de 24 combinações PT/EN sem overflow/cortes/sobreposições, incluindo limites de breakpoint e header 700–768 px. CTAs por teclado, foco, idioma/reload/metadados conferidos. Typecheck, lint, formato, 48 testes, verify, build e diff check passaram.
+
+**Zoom real de 200% e reduced motion com preferência ativa realizados manualmente e aprovados pelo responsável para M3-02**, conforme declaração direta nesta conversa em 20/10/2026. A confirmação supera a pendência da tentativa automatizada impedida, preservada como histórico no handoff. Codex não observou a execução manual; navegador, larguras, idiomas, passos e capturas adicionais não foram informados, portanto não são inferidos. Nova revisão do Work e snapshot próprio continuam obrigatórios; a confirmação desses critérios não equivale à aprovação integral da entrega nem autoriza staging, commit ou push.
+
+M2 fechado; M3 em andamento, não concluído. M3-03 e posteriores continuam pendentes e não iniciadas. Pendências editoriais, cases, contatos, mídias/permissões, segurança e publicação permanecem nos gates previstos.
+
+## Histórico — M3-01 aguardando revisão em 19/10/2026
+
+Plano M3 aprovado pelo responsável e registrado no commit `6f7a8bc82437835f4ffb1df4410a763ebec348cc`, observado localmente na branch `docs/m3-interface-plan`. Entrada limpa, origin `https://github.com/CleristonMP/portfolio-v2.git`; sem consulta remota adicional. A seção anterior ao início da implementação permanece abaixo como histórico.
+
+Criada a branch dedicada `feat/m3-01-header` a partir desse HEAD. **M3-01 — Header implementada, aguardando revisão própria do Work**, sem staging, commit ou push. Refinamento restrito ao CSS do header: composição, glass, alinhamento e controles; lógica aprovada de M2 preservada. Evidências e critérios individuais em `docs/M3_01_HANDOFF.md`.
+
+Matriz de navegador 320/390/768/1280/1920 px em PT/EN sem overflow ou controles cortados; capturas antes/depois em 390/1280 px. Checks locais e 48 testes passaram. **Zoom real de 200% e reduced motion com preferência ativa foram realizados manualmente e aprovados pelo responsável para M3-01**, conforme declaração direta nesta conversa em 19/10/2026. Essa confirmação supera a pendência da tentativa automatizada impedida no Edge, preservada no handoff como histórico. Codex não observou a execução manual; navegador, larguras, idiomas e procedimento não foram detalhados, portanto não são inferidos. Não se trata de reutilização da aprovação de M2 nem de aprovação integral da entrega pelo Work.
+
+Correção posterior da transição responsiva: overflow reproduzido em 701×844 PT-BR (clientWidth 686, scrollWidth 701), não coberto pela matriz inicial. Ajustados somente padding/gaps do header entre 701 e 767 px, sem alterar fontes, controles, breakpoint de 700 px ou lógica de foco. Nova matriz de 16 combinações (320/390/700/701/720/768/1280/1920 px, PT/EN) passou sem overflow, sobreposição ou cortes; smoke de teclado e transições 700↔701/720/768 nos dois idiomas passou. Evidências posteriores em `.m2-review/m3-01/transition/`; diagnóstico anterior preservado no handoff. Entrega continua aguardando nova revisão obrigatória do Work.
+
+M2 continua fechado; M3-02 a M3-08 permanecem pendentes, sem autorização para avançar antes da revisão desta entrega. M3 não concluído. Pendências editoriais, mídias/permissões, contatos, segurança e publicação preservadas. Nova aprovação verificável e snapshot próprio serão necessários antes de qualquer commit/push.
+
+## Histórico — plano M3 aprovado em 19/10/2026
+
+M2 **fechado tecnicamente e com formalização documental aprovada/commitada**, esta última em `669f7bc5b7f56d0fd46003a4de90630963ea5522`, já confirmado no remoto pelo Work. Os registros de formalização aguardando revisão abaixo descrevem o momento anterior à aprovação posterior.
+
+M3 — Interface: **plano aprovado pelo responsável em 19/10/2026**, por declaração direta nesta conversa. Plano único: `docs/MILESTONE_3_PLAN.md`; sequência editorial e critérios aprovados, decisões abertas preservadas. M3-01 a M3-08 continuam pendentes de implementação e aceite; nenhuma tarefa foi implementada ou aceita por essa aprovação do planejamento.
+
+Entrada local desta proposta: árvore limpa em main no commit `669f7bc`. Criada a branch documental `docs/m3-interface-plan` antes de editar; main e código preservados. Apenas este status e o novo plano são alterados, sem staging, commit ou push. Esta entrega requer revisão documental própria antes de qualquer autorização operacional.
+
+Próxima ação: revisar o diff documental que registra a aprovação e formalizá-lo conforme o workflow; depois encaminhar somente **M3-01 — Header**, primeira tarefa da sequência aprovada. Não iniciar implementação por inferência desta atualização. A aprovação do plano não autoriza commit/push deste diff nem resolve decisões editoriais abertas. Conteúdo, mídias/permissões, contatos, segurança e qualidade final permanecem pendentes conforme os gates registrados. Sem publicação, merge ou deploy.
+
+Para o estado corrente, prevalece esta seção; as seções seguintes são histórico preservado das entregas anteriores.
+
 ## Fechamento técnico do M2 — avaliação Work em 15/10/2026
 
 M2 — Technical Foundation **tecnicamente concluído**: M2-01 a M2-08 implementadas, validadas e aprovadas pelo Work em suas revisões próprias. M2-08, incluindo a correção autorizada de overflow, foi registrada no commit `c337da4ff5c27817ccb42d9001853397b82b1163`. A árvore estava limpa na avaliação posterior; a referência local da branch remota de desenvolvimento aponta para esse commit.

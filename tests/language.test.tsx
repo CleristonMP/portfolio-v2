@@ -25,11 +25,7 @@ function expectLanguage(language: 'pt' | 'en') {
   expect(
     screen.getByRole('link', { name: text.accessibility.skipToContent }),
   ).toBeInTheDocument();
-  expect(
-    screen.getByRole('img', {
-      name: text.projectImageAlt.replace('{project}', 'Reports Registry'),
-    }),
-  ).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: text.private })).toBeInTheDocument();
 }
 
 describe('language selection in the real application', () => {

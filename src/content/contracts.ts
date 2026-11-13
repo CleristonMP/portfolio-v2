@@ -108,9 +108,16 @@ export interface Translation {
   readonly conversationLabel: string;
   readonly contactNotice: string;
   readonly contactStatus: string;
+  readonly contactForm: {
+    readonly labels: Readonly<Record<'name' | 'email' | 'message', string>>;
+    readonly required: Readonly<Record<'name' | 'email' | 'message', string>>;
+    readonly invalidEmail: string;
+    readonly profileLink: string;
+  };
   readonly backToTop: string;
   readonly accessibility: {
     readonly navigation: string;
+    readonly footerNavigation: string;
     readonly skipToContent: string;
     readonly changeLanguage: string;
     readonly openMenu: string;
