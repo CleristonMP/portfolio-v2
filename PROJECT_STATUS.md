@@ -1,6 +1,10 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4 encerrado — 13/11/2026
+## Estado corrente — Plano M5 aprovado pelo responsável — 13/11/2026
+
+O responsável aprovou a sequência de M5 — Qualidade e lançamento. O [plano M5](docs/MILESTONE_5_PLAN.md) está documentado na branch única `milestone/m5-quality-launch`, a partir de `2c04d4d`, e aguarda revisão verificável do Work. M5-01 — Auditoria de acessibilidade, visual e fluxos é a primeira tarefa prevista e aguarda encaminhamento.
+
+## Registro anterior — M4 encerrado — 13/11/2026
 
 O Milestone 4 — Conteúdo e integração está encerrado. As tarefas M4-01 a M4-08 foram aceitas. O merge do PR #2 em `1215e462fda6268822e204abacb582f196e8b833` integrou a consolidação de M4-08 (`fd779cf`) e a disponibilização aprovada do LinkedIn (`02a429e`) à `main`. O canal está disponível na seção de contato, inclusive com o formulário indisponível, com aviso de login em PT-BR e EN.
 
