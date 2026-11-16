@@ -48,8 +48,17 @@ Depende do aceite das tarefas anteriores e das decisões sobre pendências de pu
 - **Aceite.** Identificar o commit e o artefato aprovados, conferir a CI correspondente e preparar a troca de versão e a reversão. Após autorização específica de publicação, executar smoke na URL pública.
 - **Evidências.** Commit e artefato, resultado da CI, autorização, resultado do smoke e referência utilizável para rollback.
 
+## Decisão de origem final — M5-03
+
+O responsável aprovou GitHub Pages padrão no repositório `CleristonMP/portfolio-v2`, canonical `https://cleristonmp.github.io/portfolio-v2/` e manutenção da URL anterior `https://cleristonmp.github.io/portfolio/`. O artefato candidato é o de `npm run build:subpath`, com base `/portfolio-v2/`. O build raiz continua disponível para validação local.
+
+O HTML inicial entrega canonical absoluto e Open Graph em PT-BR, com `og:url` igual ao canonical. A imagem social reutiliza a captura autorizada do Reports Registry, com URL absoluta, dimensões e texto alternativo. A sincronização existente mantém `lang`, título e descrição em PT-BR e EN no navegador. A página tem uma URL indexável e uma prévia social estática em PT-BR. Sitemap, robots.txt e dados `Person` ficam fora desta entrega.
+
+Após autorização de publicação de um candidato, verificar certificado TLS e conteúdo misto, registrar a cadeia HTTP para HTTPS e a variante sem barra final, e abrir diretamente CSS, JavaScript, WebP e PDFs para conferir status e MIME. Conferir o portfólio anterior no caminho original e validar a imagem no consumidor de Open Graph. O smoke local não comprova HTTPS, redirecionamentos ou indexação na origem pública.
+
+Em 16/11/2026, passaram `npm run verify` e os builds de raiz e subpath. Os dois previews locais serviram o HTML com canonical e `og:url` iguais e a CSP `connect-src 'self'`. JS, CSS, WebP e os dois PDFs retornaram HTTP 200 com MIME esperado em cada base. Evidência local em `.m2-review/m5-03/http.json`. A entrega aguarda revisão verificável do Work.
+
 ## Decisões em aberto
 
-- **Domínio e hospedagem.** Escolher provedor, URL canônica, raiz ou subpath e destino da URL antiga. A decisão pode ocorrer em paralelo com M5-01 e M5-02.
 - **Formshield.** A comprovação do bloqueio automático permanece na auditoria pré-publicação. Se não houver procedimento suportado, o Work e o responsável decidem expressamente o efeito da pendência sobre o lançamento.
 - **Contato real.** Autorizar origem, janela, quantidade e identificadores sintéticos. O responsável confirma o recebimento pelo destinatário já configurado.

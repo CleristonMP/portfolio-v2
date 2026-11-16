@@ -1,6 +1,12 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M5-02 aguardando revisão do Work — 16/11/2026
+## Estado corrente — M5-03 preparada para revisão do Work — 16/11/2026
+
+O responsável aprovou GitHub Pages padrão, base `/portfolio-v2/` e canonical `https://cleristonmp.github.io/portfolio-v2/`, com o portfólio anterior em `https://cleristonmp.github.io/portfolio/`. M5-03 acrescenta canonical e Open Graph ao HTML inicial e reaproveita o build de subpath. [Decisão e validação de M5-03](docs/MILESTONE_5_PLAN.md)
+
+A preparação segue para revisão verificável do Work. HTTPS e redirecionamentos na origem final dependem de um candidato publicado com autorização. A investigação de LCP mobile continua em aberto.
+
+## Registro anterior — M5-02 aguardando revisão do Work — 16/11/2026
 
 O registro de M5-01 foi aceito pelo Work e incorporado em `4d73367`. M5-02 corrige o contraste das bordas dos campos de contato e reúne medições de performance e triagem de segurança. Os resultados finais atendem aos orçamentos de transferência acordados. O LCP mobile ainda exige medição adicional para orientar a correção. [Relatório M5-02](docs/M5_02_HANDOFF.md)
 
