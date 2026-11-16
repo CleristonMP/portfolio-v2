@@ -1,6 +1,10 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M5-01 aguardando revisão do Work — 16/11/2026
+## Estado corrente — M5-02 aguardando revisão do Work — 16/11/2026
+
+O registro de M5-01 foi aceito pelo Work e incorporado em `4d73367`. M5-02 corrige o contraste das bordas dos campos de contato e reúne medições de performance e triagem de segurança. Os resultados finais atendem aos orçamentos de transferência acordados. O LCP mobile ainda exige medição adicional para orientar a correção. [Relatório M5-02](docs/M5_02_HANDOFF.md)
+
+## Registro anterior — M5-01 aguardando revisão do Work — 16/11/2026
 
 O plano de M5 foi aceito e registrado em `1c0e691` na branch `milestone/m5-quality-launch`. O [relatório M5-01](docs/M5_01_HANDOFF.md) reúne a auditoria de acessibilidade, visual e fluxos, as evidências locais e os pontos ainda pendentes de verificação. Os achados seguem para revisão do Work antes de encaminhar correções.
 
