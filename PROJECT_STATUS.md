@@ -1,6 +1,28 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M4 encerrado — 13/11/2026
+## Estado corrente — M5-03 preparada para revisão do Work — 16/11/2026
+
+O responsável aprovou GitHub Pages padrão, base `/portfolio-v2/` e canonical `https://cleristonmp.github.io/portfolio-v2/`, com o portfólio anterior em `https://cleristonmp.github.io/portfolio/`. M5-03 acrescenta canonical e Open Graph ao HTML inicial e reaproveita o build de subpath. [Decisão e validação de M5-03](docs/MILESTONE_5_PLAN.md)
+
+A preparação segue para revisão verificável do Work. HTTPS e redirecionamentos na origem final dependem de um candidato publicado com autorização. A investigação de LCP mobile continua em aberto.
+
+## Registro anterior — M5-02 aguardando revisão do Work — 16/11/2026
+
+O registro de M5-01 foi aceito pelo Work e incorporado em `4d73367`. M5-02 corrige o contraste das bordas dos campos de contato e reúne medições de performance e triagem de segurança. Os resultados finais atendem aos orçamentos de transferência acordados. O LCP mobile ainda exige medição adicional para orientar a correção. [Relatório M5-02](docs/M5_02_HANDOFF.md)
+
+## Registro anterior — M5-01 aguardando revisão do Work — 16/11/2026
+
+O plano de M5 foi aceito e registrado em `1c0e691` na branch `milestone/m5-quality-launch`. O [relatório M5-01](docs/M5_01_HANDOFF.md) reúne a auditoria de acessibilidade, visual e fluxos, as evidências locais e os pontos ainda pendentes de verificação. Os achados seguem para revisão do Work antes de encaminhar correções.
+
+O complemento de M5-01 registrou skip link, transições do menu, foco no contato e histórico de Voltar em PT-BR e EN nas duas bases, além dos panoramas desktop e mobile. O relatório contém os passos para concluir zoom nativo de 200%, leitor de tela e a cobertura manual restante. O contraste das bordas do formulário segue para a etapa de correções.
+
+Em confirmação posterior, o responsável aprovou os testes manuais de zoom de 200%, link para o perfil no LinkedIn, contraste e leitor de tela. O relatório registra o aceite e os limites do relato. M5-01 segue aguardando revisão verificável do Work.
+
+## Registro anterior — Plano M5 aprovado pelo responsável — 13/11/2026
+
+O responsável aprovou a sequência de M5 — Qualidade e lançamento. O [plano M5](docs/MILESTONE_5_PLAN.md) está documentado na branch única `milestone/m5-quality-launch`, a partir de `2c04d4d`, e aguarda revisão verificável do Work. M5-01 — Auditoria de acessibilidade, visual e fluxos é a primeira tarefa prevista e aguarda encaminhamento.
+
+## Registro anterior — M4 encerrado — 13/11/2026
 
 O Milestone 4 — Conteúdo e integração está encerrado. As tarefas M4-01 a M4-08 foram aceitas. O merge do PR #2 em `1215e462fda6268822e204abacb582f196e8b833` integrou a consolidação de M4-08 (`fd779cf`) e a disponibilização aprovada do LinkedIn (`02a429e`) à `main`. O canal está disponível na seção de contato, inclusive com o formulário indisponível, com aviso de login em PT-BR e EN.
 

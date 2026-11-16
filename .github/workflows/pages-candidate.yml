@@ -1,0 +1,43 @@
+name: Build Pages candidate M5-03
+
+# Publication requires a separate workflow dispatched manually on the default
+# branch. Its deploy job must target the github-pages environment. Before adding
+# it, confirm that Pages uses GitHub Actions and that environment rules allow
+# the publishing ref. The dispatch must identify the approved SHA and the
+# successful build run, and verify that the selected artifact matches both.
+
+on:
+  push:
+    branches:
+      - milestone/m5-quality-launch
+    paths:
+      - .github/workflows/pages-candidate.yml
+
+permissions:
+  contents: read
+
+env:
+  CANDIDATE_SHA: 43c5bc48485ddd3dfd554f3a8b7de53e278cdafe
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.CANDIDATE_SHA }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+      - name: Verify candidate revision
+        run: |
+          test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
+          printf 'Candidate commit: `%s`\nBuild run: `%s`\n' "$CANDIDATE_SHA" "$GITHUB_RUN_ID" >> "$GITHUB_STEP_SUMMARY"
+      - run: npm ci
+      - run: npm run build:subpath
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .m2-review/m2-08/dist-subpath
