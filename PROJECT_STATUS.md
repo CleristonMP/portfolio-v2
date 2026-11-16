@@ -1,6 +1,14 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — Plano M5 aprovado pelo responsável — 13/11/2026
+## Estado corrente — M5-01 aguardando revisão do Work — 16/11/2026
+
+O plano de M5 foi aceito e registrado em `1c0e691` na branch `milestone/m5-quality-launch`. O [relatório M5-01](docs/M5_01_HANDOFF.md) reúne a auditoria de acessibilidade, visual e fluxos, as evidências locais e os pontos ainda pendentes de verificação. Os achados seguem para revisão do Work antes de encaminhar correções.
+
+O complemento de M5-01 registrou skip link, transições do menu, foco no contato e histórico de Voltar em PT-BR e EN nas duas bases, além dos panoramas desktop e mobile. O relatório contém os passos para concluir zoom nativo de 200%, leitor de tela e a cobertura manual restante. O contraste das bordas do formulário segue para a etapa de correções.
+
+Em confirmação posterior, o responsável aprovou os testes manuais de zoom de 200%, link para o perfil no LinkedIn, contraste e leitor de tela. O relatório registra o aceite e os limites do relato. M5-01 segue aguardando revisão verificável do Work.
+
+## Registro anterior — Plano M5 aprovado pelo responsável — 13/11/2026
 
 O responsável aprovou a sequência de M5 — Qualidade e lançamento. O [plano M5](docs/MILESTONE_5_PLAN.md) está documentado na branch única `milestone/m5-quality-launch`, a partir de `2c04d4d`, e aguarda revisão verificável do Work. M5-01 — Auditoria de acessibilidade, visual e fluxos é a primeira tarefa prevista e aguarda encaminhamento.
 
