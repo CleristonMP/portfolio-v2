@@ -1,0 +1,100 @@
+name: Publish Pages candidate M5-03
+
+# GitHub requires this workflow on the default branch for manual dispatch.
+# Confirm Pages uses GitHub Actions and github-pages permits that branch
+# before enabling publication.
+on:
+  workflow_dispatch:
+    inputs:
+      build_run_id:
+        description: Verified candidate build run ID
+        required: true
+        type: string
+      artifact_id:
+        description: Verified github-pages artifact ID
+        required: true
+        type: string
+      artifact_digest:
+        description: Verified archive digest, including the sha256 prefix
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+env:
+  CANDIDATE_SHA: 43c5bc48485ddd3dfd554f3a8b7de53e278cdafe
+  BUILD_WORKFLOW_SHA: 80bd94260c58a6122936dcd4ff93374e04ce4ae5
+
+jobs:
+  prepare:
+    if: github.ref_name == github.event.repository.default_branch && github.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+    steps:
+      - name: Verify and recover the approved artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUILD_RUN_ID: ${{ inputs.build_run_id }}
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ inputs.artifact_digest }}
+        run: |
+          [[ "$BUILD_RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$ARTIFACT_ID" =~ ^[0-9]+$ ]]
+          [[ "$ARTIFACT_DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]
+
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$BUILD_RUN_ID" |
+            jq -e --arg sha "$BUILD_WORKFLOW_SHA" '
+              .head_sha == $sha and
+              .head_branch == "milestone/m5-quality-launch" and
+              .path == ".github/workflows/pages-candidate.yml" and
+              .event == "push" and .status == "completed" and .conclusion == "success"
+            '
+
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID" |
+            jq -e --arg run "$BUILD_RUN_ID" --arg sha "$BUILD_WORKFLOW_SHA" --arg digest "$ARTIFACT_DIGEST" '
+              (.workflow_run.id | tostring) == $run and
+              .workflow_run.head_sha == $sha and
+              .name == "github-pages" and .expired == false and .digest == $digest
+            '
+
+          # The pinned build workflow checks out and verifies CANDIDATE_SHA
+          # before producing the only github-pages artifact in its run.
+          archive="$RUNNER_TEMP/pages-candidate.zip"
+          mkdir "$RUNNER_TEMP/pages-candidate"
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip" > "$archive"
+          printf '%s  %s\n' "${ARTIFACT_DIGEST#sha256:}" "$archive" | sha256sum --check
+          unzip -p "$archive" artifact.tar > "$RUNNER_TEMP/pages-candidate/artifact.tar"
+          tar -tf "$RUNNER_TEMP/pages-candidate/artifact.tar" > /dev/null
+
+          printf 'Candidate SHA: `%s`\nBuild workflow SHA: `%s`\nBuild run: `%s`\nSource artifact: `%s`\nSource digest: `%s`\n' \
+            "$CANDIDATE_SHA" "$BUILD_WORKFLOW_SHA" "$BUILD_RUN_ID" "$ARTIFACT_ID" "$ARTIFACT_DIGEST" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload verified Pages archive to this run
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/pages-candidate/artifact.tar
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
+
+  deploy:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy verified candidate
+        id: deployment
+        uses: actions/deploy-pages@v4
