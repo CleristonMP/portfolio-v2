@@ -27,7 +27,7 @@ concurrency:
 
 env:
   CANDIDATE_SHA: 43c5bc48485ddd3dfd554f3a8b7de53e278cdafe
-  BUILD_WORKFLOW_SHA: 80bd94260c58a6122936dcd4ff93374e04ce4ae5
+  BUILD_WORKFLOW_SHA: d7c61a3c5ba10c67741aeff43e0ef8a8349c1528
 
 jobs:
   prepare:
