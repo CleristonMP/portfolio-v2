@@ -1,4 +1,4 @@
-name: Build Pages candidate M5-03
+name: Build Pages candidate M5-04
 
 # Publication requires a separate workflow dispatched manually on the default
 # branch. Its deploy job must target the github-pages environment. Before adding
@@ -37,7 +37,10 @@ jobs:
           test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
           printf 'Candidate commit: `%s`\nBuild run: `%s`\n' "$CANDIDATE_SHA" "$GITHUB_RUN_ID" >> "$GITHUB_STEP_SUMMARY"
       - run: npm ci
-      - run: npm run build:subpath
+      - name: Build candidate with contact enabled
+        run: npm run build:subpath
+        env:
+          VITE_FORMSPREE_ENDPOINT: https://formspree.io/f/mqpqkean
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .m2-review/m2-08/dist-subpath
