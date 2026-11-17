@@ -1,6 +1,12 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M5-05 formalizada, aguardando revisão do Work — 17/11/2026
+## Estado corrente — fechamento documental de M5 aguardando revisão do Work — 17/11/2026
+
+M5-01 a M5-05 foram aceitas pelo Work e registradas em `4d73367`, `d98db99`, `43c5bc4`, `80bd942`, `0c295df`, `d7c61a3`, `3120679`, `82af7fa` e `eb5cb57`, conforme a [consolidação de aceites, CI, lançamento e reversão no plano M5](docs/MILESTONE_5_PLAN.md). O lançamento autorizado formalizou a versão já pública, sem novo deploy, com smoke final e recebimentos `M504-01` e `M504-02` confirmados. Os estados de espera abaixo são históricos anteriores aos aceites. Esta formalização de fechamento exige revisão própria do Work.
+
+A investigação de LCP mobile e os encaminhamentos da triagem de dependências permanecem em acompanhamento. O Formshield segue ativo, com classificação automática não verificada e decisão expressa de não bloquear o lançamento. Acompanhamento de entrada/spam e eventual reavaliação continuam previstos. As validações manuais relatadas pelo responsável conservam os limites registrados em M5-01.
+
+## Registro anterior — M5-05 formalizada, aceita e commitada em `eb5cb57` — 17/11/2026
 
 Em 17/11/2026, o responsável autorizou formalizar o lançamento da versão já pública, sem novo deploy, e executar o smoke final sem envios reais. A versão formalizada é a candidata `43c5bc48485ddd3dfd554f3a8b7de53e278cdafe`, do build `d7c61a3c5ba10c67741aeff43e0ef8a8349c1528`, execução `43980146644`, artefato `14282062874` (SHA-256 `cee6662dfa0402fdbf97b1ab0b7229d8ca03c2eb56c2decf1c14eb63816bfe94`). A publicação `44146209728` concluiu o deployment `7862146951`. A revisão prévia confirmou hashes idênticos para o HTML e o JavaScript principal do artefato e da origem pública. A CI da candidata, do build, do merge do PR #5 e do registro de M5-04 em `82af7fa` passou. [Build](https://github.com/CleristonMP/portfolio-v2/actions/runs/43980146644) · [Publicação](https://github.com/CleristonMP/portfolio-v2/actions/runs/44146209728) · [CI da candidata](https://github.com/CleristonMP/portfolio-v2/actions/runs/43949877514) · [CI do build](https://github.com/CleristonMP/portfolio-v2/actions/runs/43980146418) · [CI do merge](https://github.com/CleristonMP/portfolio-v2/actions/runs/44145810678) · [CI do registro](https://github.com/CleristonMP/portfolio-v2/actions/runs/44151333977)
 
