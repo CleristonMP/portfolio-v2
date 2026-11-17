@@ -1,6 +1,35 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M5-03 preparada para revisão do Work — 16/11/2026
+## Estado corrente — fechamento documental de M5 aguardando revisão do Work — 17/11/2026
+
+M5-01 a M5-05 foram aceitas pelo Work e registradas em `4d73367`, `d98db99`, `43c5bc4`, `80bd942`, `0c295df`, `d7c61a3`, `3120679`, `82af7fa` e `eb5cb57`, conforme a [consolidação de aceites, CI, lançamento e reversão no plano M5](docs/MILESTONE_5_PLAN.md). O lançamento autorizado formalizou a versão já pública, sem novo deploy, com smoke final e recebimentos `M504-01` e `M504-02` confirmados. Os estados de espera abaixo são históricos anteriores aos aceites. Esta formalização de fechamento exige revisão própria do Work.
+
+A investigação de LCP mobile e os encaminhamentos da triagem de dependências permanecem em acompanhamento. O Formshield segue ativo, com classificação automática não verificada e decisão expressa de não bloquear o lançamento. Acompanhamento de entrada/spam e eventual reavaliação continuam previstos. As validações manuais relatadas pelo responsável conservam os limites registrados em M5-01.
+
+## Registro anterior — M5-05 formalizada, aceita e commitada em `eb5cb57` — 17/11/2026
+
+Em 17/11/2026, o responsável autorizou formalizar o lançamento da versão já pública, sem novo deploy, e executar o smoke final sem envios reais. A versão formalizada é a candidata `43c5bc48485ddd3dfd554f3a8b7de53e278cdafe`, do build `d7c61a3c5ba10c67741aeff43e0ef8a8349c1528`, execução `43980146644`, artefato `14282062874` (SHA-256 `cee6662dfa0402fdbf97b1ab0b7229d8ca03c2eb56c2decf1c14eb63816bfe94`). A publicação `44146209728` concluiu o deployment `7862146951`. A revisão prévia confirmou hashes idênticos para o HTML e o JavaScript principal do artefato e da origem pública. A CI da candidata, do build, do merge do PR #5 e do registro de M5-04 em `82af7fa` passou. [Build](https://github.com/CleristonMP/portfolio-v2/actions/runs/43980146644) · [Publicação](https://github.com/CleristonMP/portfolio-v2/actions/runs/44146209728) · [CI da candidata](https://github.com/CleristonMP/portfolio-v2/actions/runs/43949877514) · [CI do build](https://github.com/CleristonMP/portfolio-v2/actions/runs/43980146418) · [CI do merge](https://github.com/CleristonMP/portfolio-v2/actions/runs/44145810678) · [CI do registro](https://github.com/CleristonMP/portfolio-v2/actions/runs/44151333977)
+
+No [smoke público](https://cleristonmp.github.io/portfolio-v2/#contact), o desktop de 1280 px em PT-BR e o mobile de 390 px em EN exibiram o formulário habilitado, o aviso e o link da política de privacidade, o LinkedIn com indicação de login e o link do currículo no idioma selecionado, sem overflow horizontal. `lang`, título e descrição acompanharam a troca de idioma. Canonical e `og:url` mantiveram a URL aprovada. O Tab moveu o foco de Nome para Email no desktop. No mobile, Enter abriu o menu e Escape o fechou, conforme `aria-expanded`. Os redirecionamentos para HTTPS e para a URL com barra final retornaram 301. HTML, JavaScript, CSS, a imagem WebP do case e os dois PDFs retornaram 200 com os tipos esperados. O portfólio anterior retornou 200 no endereço original. Nenhum envio real foi repetido. Os recebimentos `M504-01` e `M504-02` seguem como evidência de entrega.
+
+Para reversão, a referência é o [artefato anterior `14268827928`](https://github.com/CleristonMP/portfolio-v2/actions/runs/43954024000/artifacts/14268827928), build `80bd942`, com expiração informada para 17/11/2026 às 17h52 de Fortaleza. O workflow vigente está vinculado ao build atual e requer um ajuste aprovado para publicar a versão anterior. Se o artefato expirar, reproduzir `43c5bc4` com Node 22.16.0, `npm ci` e `npm run build:subpath`, sem `VITE_FORMSPREE_ENDPOINT`, e verificar o novo SHA de build, a execução, o artefato e o digest antes da publicação autorizada. A reversão deixa o formulário indisponível e preserva o LinkedIn como alternativa com login.
+
+A investigação de LCP mobile permanece aberta. O Formshield segue ativo, com classificação automática não verificada e sem bloqueio de lançamento por decisão do responsável. A formalização e o smoke aguardam revisão verificável do Work.
+
+## Registro anterior — M5-04 validada na origem final — 17/11/2026
+
+O [PR #5](https://github.com/CleristonMP/portfolio-v2/pull/5) integrou o build com formulário habilitado e o vínculo do workflow manual. A [publicação autorizada 44146209728](https://github.com/CleristonMP/portfolio-v2/actions/runs/44146209728) verificou e publicou o artefato `14282062874` em [cleristonmp.github.io/portfolio-v2/](https://cleristonmp.github.io/portfolio-v2/).
+
+Em 17/11/2026, o formulário publicado confirmou a aceitação pelo Formspree dos dois envios sintéticos autorizados, sem reenvios. O responsável confirmou que ambos chegaram à caixa de entrada.
+
+| ID        | Cenário                 | Horário de Fortaleza |
+| --------- | ----------------------- | -------------------- |
+| `M504-01` | Desktop, PT-BR, 1280 px | 15h21min29s          |
+| `M504-02` | Mobile, EN, 390 px      | 15h21min44s          |
+
+Em 17/11/2026, o responsável aceitou a recomendação do Work de manter o Formshield ativo e aprovou que a falta de comprovação da classificação automática deixe de bloquear o lançamento. A classificação automática permanece não verificada. Após o lançamento, acompanhar a caixa de entrada e a pasta de spam do Formspree e reavaliar a proteção se houver spam recorrente ou mensagens legítimas classificadas como spam. O registro atualizado de M5-04 aguarda revisão do Work. A autorização de lançamento segue em M5-05.
+
+## Registro anterior — M5-03 preparada para revisão do Work — 16/11/2026
 
 O responsável aprovou GitHub Pages padrão, base `/portfolio-v2/` e canonical `https://cleristonmp.github.io/portfolio-v2/`, com o portfólio anterior em `https://cleristonmp.github.io/portfolio/`. M5-03 acrescenta canonical e Open Graph ao HTML inicial e reaproveita o build de subpath. [Decisão e validação de M5-03](docs/MILESTONE_5_PLAN.md)
 
