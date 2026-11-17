@@ -1,6 +1,19 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — M5-03 preparada para revisão do Work — 16/11/2026
+## Estado corrente — M5-04 validada na origem final, aguardando revisão do Work — 17/11/2026
+
+O [PR #5](https://github.com/CleristonMP/portfolio-v2/pull/5) integrou o build com formulário habilitado e o vínculo do workflow manual. A [publicação autorizada 44146209728](https://github.com/CleristonMP/portfolio-v2/actions/runs/44146209728) verificou e publicou o artefato `14282062874` em [cleristonmp.github.io/portfolio-v2/](https://cleristonmp.github.io/portfolio-v2/).
+
+Em 17/11/2026, o formulário publicado confirmou a aceitação pelo Formspree dos dois envios sintéticos autorizados, sem reenvios. O responsável confirmou que ambos chegaram à caixa de entrada.
+
+| ID        | Cenário                 | Horário de Fortaleza |
+| --------- | ----------------------- | -------------------- |
+| `M504-01` | Desktop, PT-BR, 1280 px | 15h21min29s          |
+| `M504-02` | Mobile, EN, 390 px      | 15h21min44s          |
+
+Em 17/11/2026, o responsável aceitou a recomendação do Work de manter o Formshield ativo e aprovou que a falta de comprovação da classificação automática deixe de bloquear o lançamento. A classificação automática permanece não verificada. Após o lançamento, acompanhar a caixa de entrada e a pasta de spam do Formspree e reavaliar a proteção se houver spam recorrente ou mensagens legítimas classificadas como spam. O registro atualizado de M5-04 aguarda revisão do Work. A autorização de lançamento segue em M5-05.
+
+## Registro anterior — M5-03 preparada para revisão do Work — 16/11/2026
 
 O responsável aprovou GitHub Pages padrão, base `/portfolio-v2/` e canonical `https://cleristonmp.github.io/portfolio-v2/`, com o portfólio anterior em `https://cleristonmp.github.io/portfolio/`. M5-03 acrescenta canonical e Open Graph ao HTML inicial e reaproveita o build de subpath. [Decisão e validação de M5-03](docs/MILESTONE_5_PLAN.md)
 

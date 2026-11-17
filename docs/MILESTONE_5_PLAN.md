@@ -58,7 +58,10 @@ Após autorização de publicação de um candidato, verificar certificado TLS e
 
 Em 16/11/2026, passaram `npm run verify` e os builds de raiz e subpath. Os dois previews locais serviram o HTML com canonical e `og:url` iguais e a CSP `connect-src 'self'`. JS, CSS, WebP e os dois PDFs retornaram HTTP 200 com MIME esperado em cada base. Evidência local em `.m2-review/m5-03/http.json`. A entrega aguarda revisão verificável do Work.
 
+## Decisão sobre Formshield — M5-04
+
+Em 17/11/2026, o responsável aceitou a recomendação do Work de manter o Formshield ativo na configuração atual. A classificação automática de spam permanece não verificada e a falta dessa evidência deixa de bloquear o lançamento. Os testes de M5-04 confirmaram a entrega de mensagens legítimas. Após o lançamento, acompanhar a caixa de entrada e a pasta de spam do Formspree e reavaliar a proteção se houver spam recorrente ou mensagens legítimas classificadas como spam. A publicação final segue sujeita ao aceite e à autorização de M5-05.
+
 ## Decisões em aberto
 
-- **Formshield.** A comprovação do bloqueio automático permanece na auditoria pré-publicação. Se não houver procedimento suportado, o Work e o responsável decidem expressamente o efeito da pendência sobre o lançamento.
 - **Contato real.** Autorizar origem, janela, quantidade e identificadores sintéticos. O responsável confirma o recebimento pelo destinatário já configurado.
