@@ -74,6 +74,8 @@ export const translations: Translations = {
         send: 'Enviar mensagem',
         sending: 'Enviando mensagem…',
         accepted: 'O serviço aceitou sua mensagem.',
+        confirmationTitle: 'Mensagem aceita pelo serviço',
+        closeConfirmation: 'Fechar confirmação',
         rejected:
           'O serviço não aceitou o envio. Revise os campos e tente novamente.',
         network:
@@ -199,6 +201,8 @@ export const translations: Translations = {
         send: 'Send message',
         sending: 'Sending message…',
         accepted: 'The service accepted your message.',
+        confirmationTitle: 'Message accepted by the service',
+        closeConfirmation: 'Close confirmation',
         rejected:
           'The service did not accept the submission. Check the fields and try again.',
         network:

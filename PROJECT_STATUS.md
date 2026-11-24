@@ -1,6 +1,12 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — EV-02 implementada, aguardando revisão do Work — 24/11/2026
+## Estado corrente — EV-03 implementada, aguardando revisão do Work — 24/11/2026
+
+EV-02 foi revisada, aprovada pelo Work e commitada em `7a45e9bcf862c5b9b02d898530d158de8bc87f0c`, coincidente com a referência local de origem na branch `evolution/media-motion-feedback`. Sua espera documental abaixo é histórica. EV-03 preserva o transporte e os erros existentes, mantém andamento junto ao botão e acrescenta confirmação modal PT/EN somente após accepted. O fundamento modal da galeria foi compartilhado com foco inicial, contenção, isolamento, bloqueio de rolagem e retorno ao formulário. Respostas durante uma galeria aberta aguardam sua saída, sem acumular diálogos. Idioma não reabre a confirmação fechada.
+
+Typecheck, lint, 110 testes, verificadores e builds raiz/subpath passaram. Smoke com transporte exclusivamente simulado: oito combinações de aceitação (390/1280 × PT/EN × duas bases), 16 de falha, regressão de galeria/vídeo/certificado e retorno visível após confirmação enfileirada. Evidências, critérios individuais, comparação Stitch e procedimento no [registro EV-03 do plano único](docs/POST_MVP_IMPROVEMENTS_PLAN.md). Sem nova validação audível, zoom nativo de 200% ou preferência ativa de movimento reduzido; não se reutiliza o aceite manual de EV-02 para anúncios novos. README preservado byte a byte, sem dependências novas, envios reais ou publicação. EV-04/05 não iniciadas. A entrega permanece não commitada e exige revisão/snapshot próprios do Work.
+
+## Registro anterior — EV-02 implementada, aguardando revisão do Work — 24/11/2026
 
 EV-01 foi revisada e aceita pelo Work, com seleção, ordem, legendas PT/EN, hashes de imagens/vídeo/poster e orçamentos registrados em `0987b364e10d9159dc10602dfc835a38744c21e8`. A confirmação visual contínua do vídeo foi recebida do responsável. Na branch `evolution/media-motion-feedback`, EV-02 implementa visualização modal dos quatro projetos, acesso pelo case Reports Registry e ampliação dos quatro certificados. As capas e os destinos independentes de loja/repositórios foram preservados.
 

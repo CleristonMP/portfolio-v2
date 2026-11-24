@@ -171,6 +171,8 @@ export interface Translation {
       readonly send: string;
       readonly sending: string;
       readonly accepted: string;
+      readonly confirmationTitle: string;
+      readonly closeConfirmation: string;
       readonly rejected: string;
       readonly network: string;
       readonly timeout: string;

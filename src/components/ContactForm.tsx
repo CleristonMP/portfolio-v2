@@ -5,6 +5,7 @@ import {
   getContactEndpoint,
   submitContact,
 } from '../content/contactSubmission';
+import { ContactConfirmation } from './ContactConfirmation';
 import type { SubmissionResult } from '../content/contactSubmission';
 
 const fieldNames = ['name', 'email', 'message'] as const;
@@ -46,6 +47,8 @@ export function ContactForm({ text }: { readonly text: Translation }) {
   const [invalidControl, setInvalidControl] = useState<HTMLElement | null>(
     null,
   );
+  const [confirmationOpen, setConfirmationOpen] = useState(false);
+  const submitRef = useRef<HTMLButtonElement>(null);
   const inFlight = useRef(false);
   const endpoint = getContactEndpoint(import.meta.env?.VITE_FORMSPREE_ENDPOINT);
   const sending = status === 'sending';
@@ -66,6 +69,8 @@ export function ContactForm({ text }: { readonly text: Translation }) {
       | FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
     visited: boolean,
   ) {
+    // Moving focus into the confirmation must not validate the cleared form.
+    if (event.type === 'blur' && status === 'accepted') return;
     const { value, validity } = event.currentTarget;
     if (event.type === 'change' && status === 'accepted') setStatus('idle');
     const typeMismatch = validity.typeMismatch;
@@ -120,7 +125,10 @@ export function ContactForm({ text }: { readonly text: Translation }) {
         email: validated.email.value,
         message: validated.message.value,
       });
-      if (result === 'accepted') setFields(emptyFields);
+      if (result === 'accepted') {
+        setFields(emptyFields);
+        setConfirmationOpen(true);
+      }
       setStatus(result);
     } catch {
       setStatus('network');
@@ -196,12 +204,17 @@ export function ContactForm({ text }: { readonly text: Translation }) {
         );
       })}
       <button
+        ref={submitRef}
         type="submit"
         disabled={!endpoint}
         aria-disabled={sending || undefined}
         aria-describedby={endpoint ? undefined : 'contact-notice'}
       >
-        {endpoint ? submission.send : text.contactStatus}
+        {endpoint
+          ? sending
+            ? submission.sending
+            : submission.send
+          : text.contactStatus}
       </button>
       {endpoint && (
         <p
@@ -211,6 +224,13 @@ export function ContactForm({ text }: { readonly text: Translation }) {
         >
           {status === 'idle' ? '' : submission[status]}
         </p>
+      )}
+      {confirmationOpen && (
+        <ContactConfirmation
+          text={submission}
+          returnFocus={submitRef}
+          onClose={() => setConfirmationOpen(false)}
+        />
       )}
     </form>
   );

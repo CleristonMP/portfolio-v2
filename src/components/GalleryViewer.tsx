@@ -1,5 +1,5 @@
 import { useId, useLayoutEffect, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
+import { ModalDialog } from './ModalDialog';
 import type {
   GalleryCollection,
   GalleryItem,
@@ -80,7 +80,6 @@ export function GalleryViewer({
 }: GalleryViewerProps) {
   const [index, setIndex] = useState(initialIndex);
   const [enlarged, setEnlarged] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
@@ -92,31 +91,6 @@ export function GalleryViewer({
     .replace('{current}', String(index + 1))
     .replace('{total}', String(collection.items.length));
 
-  useLayoutEffect(() => {
-    const dialog = dialogRef.current!;
-    const trigger = document.activeElement;
-    const { scrollX, scrollY } = window;
-    const overflow = document.body.style.overflow;
-    const paddingRight = document.body.style.paddingRight;
-    const scrollbar = window.innerWidth - document.documentElement.clientWidth;
-    if (scrollbar > 0) {
-      document.body.style.paddingRight = `${parseFloat(getComputedStyle(document.body).paddingRight) + scrollbar}px`;
-    }
-    document.body.style.overflow = 'hidden';
-    // showModal supplies native focus containment and makes the background inert.
-    dialog.showModal();
-    closeRef.current?.focus({ preventScroll: true });
-    return () => {
-      dialog.close();
-      document.body.style.overflow = overflow;
-      document.body.style.paddingRight = paddingRight;
-      if (trigger instanceof HTMLElement && trigger.isConnected) {
-        trigger.focus({ preventScroll: true });
-      }
-      window.scrollTo({ left: scrollX, top: scrollY, behavior: 'instant' });
-    };
-  }, []);
-
   function choose(nextIndex: number) {
     setIndex(nextIndex);
     setEnlarged(false);
@@ -127,33 +101,13 @@ export function GalleryViewer({
     }
   }
 
-  return createPortal(
-    <dialog
+  return (
+    <ModalDialog
       className="gallery-dialog"
-      ref={dialogRef}
-      aria-labelledby={titleId}
-      aria-describedby={descriptionId}
-      onKeyDown={(event) => {
-        if (event.key !== 'Tab') return;
-        const controls = Array.from(
-          event.currentTarget.querySelectorAll<HTMLElement>(
-            'button:not(:disabled), video[controls], [tabindex="0"]',
-          ),
-        ).filter((control) => control.getClientRects().length > 0);
-        const first = controls[0];
-        const last = controls[controls.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last?.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first?.focus();
-        }
-      }}
-      onCancel={(event) => {
-        event.preventDefault();
-        onClose();
-      }}
+      titleId={titleId}
+      descriptionId={descriptionId}
+      initialFocus={closeRef}
+      onClose={onClose}
     >
       <header className="gallery-header">
         <h2 id={titleId}>{collection.title}</h2>
@@ -244,7 +198,6 @@ export function GalleryViewer({
           </button>
         ))}
       </div>
-    </dialog>,
-    document.body,
+    </ModalDialog>
   );
 }
