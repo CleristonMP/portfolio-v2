@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { Project, SectionProps } from '../content/contracts';
 import { ArrowUpRight } from 'lucide-react';
 import {
@@ -8,12 +9,15 @@ import {
 import { getProjectUrl } from '../content/links';
 import { SectionHeading } from '../components/SectionHeading';
 import { ContentImage, MediaFigure } from '../components/ContentImage';
+import { GalleryViewer } from '../components/GalleryViewer';
+import { projectGalleries } from '../content/galleries';
 
 interface ProjectCardProps extends SectionProps {
   readonly project: Project;
+  readonly onExplore: () => void;
 }
 
-function ProjectCard({ project, language, text }: ProjectCardProps) {
+function ProjectCard({ project, language, text, onExplore }: ProjectCardProps) {
   const technologies = [...(project.stack ?? []), ...(project.platforms ?? [])];
   return (
     <article className="project-card" aria-labelledby={`${project.slug}-title`}>
@@ -33,6 +37,15 @@ function ProjectCard({ project, language, text }: ProjectCardProps) {
         </div>
       )}
       <div className="project-links">
+        <button
+          type="button"
+          className="project-case-link gallery-trigger"
+          aria-label={`${text.gallery.explore} — ${project.title}`}
+          onClick={onExplore}
+        >
+          {text.gallery.explore}
+          <ArrowUpRight size={16} aria-hidden="true" />
+        </button>
         {(
           [
             'repository',
@@ -66,6 +79,9 @@ function ProjectCard({ project, language, text }: ProjectCardProps) {
 }
 
 export function ProjectsSection({ language, text }: SectionProps) {
+  const [viewer, setViewer] = useState<{ slug: string; index: number } | null>(
+    null,
+  );
   return (
     <section id="projects" tabIndex={-1} className="section projects-section">
       <div className="container">
@@ -81,6 +97,7 @@ export function ProjectsSection({ language, text }: SectionProps) {
               project={project}
               language={language}
               text={text}
+              onExplore={() => setViewer({ slug: project.slug, index: 0 })}
             />
           ))}
         </div>
@@ -101,7 +118,8 @@ export function ProjectsSection({ language, text }: SectionProps) {
           <MediaFigure
             image={reportsRegistryCase.image}
             language={language}
-            originalLabel={text.openOriginalImage}
+            actionLabel={text.gallery.explore}
+            onOpen={() => setViewer({ slug: 'reports-registry', index: 2 })}
           />
         </article>
         <div className="projects-secondary">
@@ -111,10 +129,20 @@ export function ProjectsSection({ language, text }: SectionProps) {
               project={project}
               language={language}
               text={text}
+              onExplore={() => setViewer({ slug: project.slug, index: 0 })}
             />
           ))}
         </div>
       </div>
+      {viewer && (
+        <GalleryViewer
+          collection={projectGalleries[viewer.slug]}
+          initialIndex={viewer.index}
+          language={language}
+          text={text.gallery}
+          onClose={() => setViewer(null)}
+        />
+      )}
     </section>
   );
 }

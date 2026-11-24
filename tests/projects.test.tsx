@@ -77,7 +77,7 @@ describe.each(['pt', 'en'] as const)(
       const link = screen.getByRole('link', {
         name: translations[language].private,
       });
-      expect(screen.getAllByRole('link')).toHaveLength(7);
+      expect(screen.getAllByRole('link')).toHaveLength(6);
       for (const [name, href] of [
         [
           'GitHub — Audience-Counter',
@@ -102,11 +102,11 @@ describe.each(['pt', 'en'] as const)(
           href,
         );
       }
-      const originalImageName = `${translations[language].openOriginalImage}: ${media.reportsImport.alt[language]}`;
-      expect(within(cards[3]).getAllByRole('link')).toHaveLength(1);
+      const originalImageName = `${translations[language].gallery.explore}: ${media.reportsImport.alt[language]}`;
+      expect(within(cards[3]).queryByRole('link')).not.toBeInTheDocument();
       expect(
-        within(cards[3]).getByRole('link', { name: originalImageName }),
-      ).toHaveAttribute('href', media.reportsImport.src);
+        within(cards[3]).getByRole('button', { name: originalImageName }),
+      ).not.toHaveAttribute('href');
       expect(link).toHaveAttribute('href', '#reports-registry-case');
       const destination = container.querySelector('#reports-registry-case');
       expect(destination).toHaveAttribute('tabindex', '-1');
@@ -126,18 +126,24 @@ describe.each(['pt', 'en'] as const)(
         ),
       ).toBeVisible();
       const user = userEvent.setup();
-      await user.tab();
-      expect(link).toHaveFocus();
       for (const name of [
+        `${translations[language].gallery.explore} — Reports Registry`,
+        translations[language].private,
+        `${translations[language].gallery.explore} — Audience-Counter`,
         'GitHub — Audience-Counter',
         'Google Play — Audience-Counter',
+        `${translations[language].gallery.explore} — Web Matrículas`,
         'GitHub — Web Matrículas',
         originalImageName,
+        `${translations[language].gallery.explore} — DS Commerce`,
         'Backend — DS Commerce',
         'Frontend — DS Commerce',
       ]) {
         await user.tab();
-        expect(screen.getByRole('link', { name })).toHaveFocus();
+        const control =
+          screen.queryByRole('link', { name }) ??
+          screen.getByRole('button', { name });
+        expect(control).toHaveFocus();
       }
       expect(
         new Set(

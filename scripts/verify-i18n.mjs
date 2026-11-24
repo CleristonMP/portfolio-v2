@@ -17,6 +17,11 @@ const { projects, reportsRegistryCase } = await load('src/content/projects.ts');
 const { skills } = await load('src/content/skills.ts');
 const { courses } = await load('src/content/courses.ts');
 const { media } = await load('src/content/media.ts');
+const { allGalleries } = await load('src/content/galleries.ts');
+for (const gallery of allGalleries) {
+  for (const item of gallery.items)
+    assertTranslationParity(item.caption.pt, item.caption.en);
+}
 for (const image of Object.values(media))
   assertTranslationParity(image.alt.pt, image.alt.en);
 
@@ -208,7 +213,8 @@ for (const language of ['pt', 'en']) {
     (markup.match(/loading="lazy" decoding="async"/g) ?? []).length,
     9,
   );
-  assert(markup.includes(text.openOriginalImage));
+  assert(markup.includes(text.gallery.explore));
+  assert(markup.includes(text.gallery.viewImage));
   for (const field of [
     'category',
     'context',

@@ -1,10 +1,14 @@
 import type { SectionProps } from '../content/contracts';
+import { useState } from 'react';
 import { BookOpen } from 'lucide-react';
 import { courses } from '../content/courses';
 import { SectionHeading } from '../components/SectionHeading';
 import { MediaFigure } from '../components/ContentImage';
+import { GalleryViewer } from '../components/GalleryViewer';
+import { certificateGalleries } from '../content/galleries';
 
 export function LearningSection({ language, text }: SectionProps) {
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   return (
     <section id="learning" tabIndex={-1} className="section learning-section">
       <div className="container">
@@ -36,13 +40,22 @@ export function LearningSection({ language, text }: SectionProps) {
                 <MediaFigure
                   image={course.image}
                   language={language}
-                  originalLabel={text.openOriginalImage}
+                  actionLabel={text.gallery.viewImage}
+                  onOpen={() => setViewerIndex(index)}
                 />
               )}
             </li>
           ))}
         </ol>
       </div>
+      {viewerIndex !== null && (
+        <GalleryViewer
+          collection={certificateGalleries[viewerIndex]}
+          language={language}
+          text={text.gallery}
+          onClose={() => setViewerIndex(null)}
+        />
+      )}
     </section>
   );
 }

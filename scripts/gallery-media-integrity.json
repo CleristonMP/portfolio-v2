@@ -1,0 +1,211 @@
+{
+  "files": {
+    "assets/media/audience-counter/ac-direct-demo-poster.webp": "06d632dddc8131ca09948b2fab92be91eac84dd86a8d0142caa5fa01e55597da",
+    "assets/media/audience-counter/ac-direct-demo.mp4": "5e0fbdebf9a1403e638e1b0be703901f199c587ab016c006a28a446426f98041",
+    "assets/media/audience-counter/ac-direct.webp": "16104576fd9787fa6a69caaab8c7d04d59e04b743f862248e711e6f09a86396e",
+    "assets/media/audience-counter/ac-landscape.webp": "33f2349ad13f2b4200c878f8c7e4686494ce43d261f3844d87bb178f9aa3b202",
+    "assets/media/audience-counter/ac-rows.webp": "5fcf2eaae65ab9946e883af6ab7e9f2af1ff91a57748c5aadffa56a8327a68e5",
+    "assets/media/certificates/cert-modern.webp": "b31d84cb2ebd9cc229176f435b42fe9cd982616b3071147ce49162c177eb0ba4",
+    "assets/media/certificates/cert-native.webp": "6654381a23441ecb7cd7341da4f83cc07e1c6598acea2b03c4a100bbb827f466",
+    "assets/media/certificates/cert-react.webp": "9ee404f262032d38b9edc11a31d759eaa5a4378ef87e3f53bf35fdae28b1f362",
+    "assets/media/certificates/cert-spring.webp": "28e4d933b7076a250c66f54d7efee48e4676dd199b50dfcd58ff5a1a6f77994a",
+    "assets/media/dscommerce/ds-cart.webp": "416f934e3730a47f0f8f382f80d83311d8981f44d9ab93b726c5dcda33a0f145",
+    "assets/media/dscommerce/ds-catalog.webp": "2693887e33dfc3ce56537f6509b6228f992b9cb82adc7f9dbc3e6782901da5c7",
+    "assets/media/dscommerce/ds-product.webp": "7d83d47ca8c8e0a1f85675613c344577230b42755a8388193880f46de75a7b74",
+    "assets/media/reports-registry/rr-admin.webp": "e1b5e68ba83bc6e8cd9d210dfab3504e8417d6a28b2a39a433828b6c6b1fe0c3",
+    "assets/media/reports-registry/rr-import.webp": "d3809295dfc387004f8bc45c7694640b3c3fa05b9f24c42787fa1d4fece18e3a",
+    "assets/media/reports-registry/rr-search.webp": "45f49435c739313a194eee70cb1cf8f98aa1258c7844002d8cf232f9ae6601c2",
+    "assets/media/thumbnails/ac-direct-demo.webp": "b1311be3d2a5876e233965cc7d374ab756e80dd485a4f9e39e64344c61392d8f",
+    "assets/media/thumbnails/ac-direct.webp": "f53118ffdb77e0c01d9783129eb7908059e025aa523f86f84736e55e1e105a94",
+    "assets/media/thumbnails/ac-landscape.webp": "021152446d9aa861142bb1529e88a83e95aa20227e20fd6c9a1c4bf82e31823b",
+    "assets/media/thumbnails/ac-rows.webp": "bb157196fd820a8fbd9939e42777bb7418f699de592ed879e646d7029f12af92",
+    "assets/media/thumbnails/cert-modern.webp": "2ba39f847721951931bdb7a0882f7491e577cbfc2fa1f1498f7a4ff3280bc413",
+    "assets/media/thumbnails/cert-native.webp": "11ad2e21c7361610fab5ac339df91143996e8c68104deb87e5f4931a73d306e4",
+    "assets/media/thumbnails/cert-react.webp": "a8c2ce2b20d82e4b00c4a26ead5258c02e01f030e8d7c295363ba9f1539d7f06",
+    "assets/media/thumbnails/cert-spring.webp": "7d4725f1e8ee6c110a1dc5386a04d868f2263f5a3d2ff61bca90e357466b0cce",
+    "assets/media/thumbnails/ds-cart.webp": "e34ca61777ac9425f1382954b4310adca060bda495a402da10817fc70eb11656",
+    "assets/media/thumbnails/ds-catalog.webp": "cfc6178a6afef5613e5793c03c48e2b6d6bee854f891b511bdc67ff6a1a3ea15",
+    "assets/media/thumbnails/ds-product.webp": "6e1c2c0af32e8d76fdd1451921396c8f5de25939aba1e206cfb0d29aeb36c2aa",
+    "assets/media/thumbnails/rr-admin.webp": "766b8b9ed1d40ac8701f35fb24ea40747191c144ba682247a9da9ffb0baa0630",
+    "assets/media/thumbnails/rr-import.webp": "ebdb43cf7ec9241a4cd5f96d0bb441a7659f2e1bdb92c96bf634154509fcd482",
+    "assets/media/thumbnails/rr-search.webp": "38529719883e7b5c5613aab1feadd7a49e01972e9c8b8973ab52896ef950e24e",
+    "assets/media/thumbnails/wm-admin.webp": "aaccc38acdbb28417c61ca3140bbb9e3cdfac07c3cb691da1b91d6083c3ea49a",
+    "assets/media/thumbnails/wm-classes.webp": "bed9d1735f3d856b111b7931dd2f5389fadbe7d550169b571bab41ca9bb289e0",
+    "assets/media/thumbnails/wm-students.webp": "06c884df7ec4e0ef3c4506d4a65bb60e456a859cad9b118ddcb5057e2d46dabf",
+    "assets/media/webmatriculas/wm-admin.webp": "ac13362c35ca28ea0882e57d62ac765da1d6e783bc24e91fac7eee77c3c108a6",
+    "assets/media/webmatriculas/wm-classes.webp": "aa0d40054ab6f08cdc0046e8ab483e3d415b14ae109a0e2e244a5ebaf58f3293",
+    "assets/media/webmatriculas/wm-students.webp": "a0a0065e7d13694ebd453a05737e6bb136e0293990e0c941b71898445ba24799"
+  },
+  "derivatives": [
+    {
+      "id": "rr-search",
+      "source": "assets/media/reports-registry/rr-search.webp",
+      "source_sha256": "45f49435c739313a194eee70cb1cf8f98aa1258c7844002d8cf232f9ae6601c2",
+      "thumbnail": "assets/media/thumbnails/rr-search.webp",
+      "width": 240,
+      "height": 150,
+      "bytes": 1900,
+      "sha256": "38529719883e7b5c5613aab1feadd7a49e01972e9c8b8973ab52896ef950e24e"
+    },
+    {
+      "id": "rr-admin",
+      "source": "assets/media/reports-registry/rr-admin.webp",
+      "source_sha256": "e1b5e68ba83bc6e8cd9d210dfab3504e8417d6a28b2a39a433828b6c6b1fe0c3",
+      "thumbnail": "assets/media/thumbnails/rr-admin.webp",
+      "width": 240,
+      "height": 125,
+      "bytes": 2366,
+      "sha256": "766b8b9ed1d40ac8701f35fb24ea40747191c144ba682247a9da9ffb0baa0630"
+    },
+    {
+      "id": "rr-import",
+      "source": "assets/media/reports-registry/rr-import.webp",
+      "source_sha256": "d3809295dfc387004f8bc45c7694640b3c3fa05b9f24c42787fa1d4fece18e3a",
+      "thumbnail": "assets/media/thumbnails/rr-import.webp",
+      "width": 240,
+      "height": 27,
+      "bytes": 468,
+      "sha256": "ebdb43cf7ec9241a4cd5f96d0bb441a7659f2e1bdb92c96bf634154509fcd482"
+    },
+    {
+      "id": "ac-landscape",
+      "source": "assets/media/audience-counter/ac-landscape.webp",
+      "source_sha256": "33f2349ad13f2b4200c878f8c7e4686494ce43d261f3844d87bb178f9aa3b202",
+      "thumbnail": "assets/media/thumbnails/ac-landscape.webp",
+      "width": 240,
+      "height": 94,
+      "bytes": 1142,
+      "sha256": "021152446d9aa861142bb1529e88a83e95aa20227e20fd6c9a1c4bf82e31823b"
+    },
+    {
+      "id": "ac-direct",
+      "source": "assets/media/audience-counter/ac-direct.webp",
+      "source_sha256": "16104576fd9787fa6a69caaab8c7d04d59e04b743f862248e711e6f09a86396e",
+      "thumbnail": "assets/media/thumbnails/ac-direct.webp",
+      "width": 81,
+      "height": 160,
+      "bytes": 1410,
+      "sha256": "f53118ffdb77e0c01d9783129eb7908059e025aa523f86f84736e55e1e105a94"
+    },
+    {
+      "id": "ac-rows",
+      "source": "assets/media/audience-counter/ac-rows.webp",
+      "source_sha256": "5fcf2eaae65ab9946e883af6ab7e9f2af1ff91a57748c5aadffa56a8327a68e5",
+      "thumbnail": "assets/media/thumbnails/ac-rows.webp",
+      "width": 81,
+      "height": 160,
+      "bytes": 1602,
+      "sha256": "bb157196fd820a8fbd9939e42777bb7418f699de592ed879e646d7029f12af92"
+    },
+    {
+      "id": "wm-admin",
+      "source": "assets/media/webmatriculas/wm-admin.webp",
+      "source_sha256": "ac13362c35ca28ea0882e57d62ac765da1d6e783bc24e91fac7eee77c3c108a6",
+      "thumbnail": "assets/media/thumbnails/wm-admin.webp",
+      "width": 240,
+      "height": 160,
+      "bytes": 618,
+      "sha256": "aaccc38acdbb28417c61ca3140bbb9e3cdfac07c3cb691da1b91d6083c3ea49a"
+    },
+    {
+      "id": "wm-classes",
+      "source": "assets/media/webmatriculas/wm-classes.webp",
+      "source_sha256": "aa0d40054ab6f08cdc0046e8ab483e3d415b14ae109a0e2e244a5ebaf58f3293",
+      "thumbnail": "assets/media/thumbnails/wm-classes.webp",
+      "width": 240,
+      "height": 135,
+      "bytes": 1154,
+      "sha256": "bed9d1735f3d856b111b7931dd2f5389fadbe7d550169b571bab41ca9bb289e0"
+    },
+    {
+      "id": "wm-students",
+      "source": "assets/media/webmatriculas/wm-students.webp",
+      "source_sha256": "a0a0065e7d13694ebd453a05737e6bb136e0293990e0c941b71898445ba24799",
+      "thumbnail": "assets/media/thumbnails/wm-students.webp",
+      "width": 240,
+      "height": 135,
+      "bytes": 2408,
+      "sha256": "06c884df7ec4e0ef3c4506d4a65bb60e456a859cad9b118ddcb5057e2d46dabf"
+    },
+    {
+      "id": "ds-catalog",
+      "source": "assets/media/dscommerce/ds-catalog.webp",
+      "source_sha256": "2693887e33dfc3ce56537f6509b6228f992b9cb82adc7f9dbc3e6782901da5c7",
+      "thumbnail": "assets/media/thumbnails/ds-catalog.webp",
+      "width": 240,
+      "height": 150,
+      "bytes": 3770,
+      "sha256": "cfc6178a6afef5613e5793c03c48e2b6d6bee854f891b511bdc67ff6a1a3ea15"
+    },
+    {
+      "id": "ds-product",
+      "source": "assets/media/dscommerce/ds-product.webp",
+      "source_sha256": "7d83d47ca8c8e0a1f85675613c344577230b42755a8388193880f46de75a7b74",
+      "thumbnail": "assets/media/thumbnails/ds-product.webp",
+      "width": 240,
+      "height": 136,
+      "bytes": 1758,
+      "sha256": "6e1c2c0af32e8d76fdd1451921396c8f5de25939aba1e206cfb0d29aeb36c2aa"
+    },
+    {
+      "id": "ds-cart",
+      "source": "assets/media/dscommerce/ds-cart.webp",
+      "source_sha256": "416f934e3730a47f0f8f382f80d83311d8981f44d9ab93b726c5dcda33a0f145",
+      "thumbnail": "assets/media/thumbnails/ds-cart.webp",
+      "width": 240,
+      "height": 83,
+      "bytes": 906,
+      "sha256": "e34ca61777ac9425f1382954b4310adca060bda495a402da10817fc70eb11656"
+    },
+    {
+      "id": "cert-modern",
+      "source": "assets/media/certificates/cert-modern.webp",
+      "source_sha256": "b31d84cb2ebd9cc229176f435b42fe9cd982616b3071147ce49162c177eb0ba4",
+      "thumbnail": "assets/media/thumbnails/cert-modern.webp",
+      "width": 226,
+      "height": 160,
+      "bytes": 4022,
+      "sha256": "2ba39f847721951931bdb7a0882f7491e577cbfc2fa1f1498f7a4ff3280bc413"
+    },
+    {
+      "id": "cert-react",
+      "source": "assets/media/certificates/cert-react.webp",
+      "source_sha256": "9ee404f262032d38b9edc11a31d759eaa5a4378ef87e3f53bf35fdae28b1f362",
+      "thumbnail": "assets/media/thumbnails/cert-react.webp",
+      "width": 226,
+      "height": 160,
+      "bytes": 3714,
+      "sha256": "a8c2ce2b20d82e4b00c4a26ead5258c02e01f030e8d7c295363ba9f1539d7f06"
+    },
+    {
+      "id": "cert-spring",
+      "source": "assets/media/certificates/cert-spring.webp",
+      "source_sha256": "28e4d933b7076a250c66f54d7efee48e4676dd199b50dfcd58ff5a1a6f77994a",
+      "thumbnail": "assets/media/thumbnails/cert-spring.webp",
+      "width": 226,
+      "height": 160,
+      "bytes": 3778,
+      "sha256": "7d4725f1e8ee6c110a1dc5386a04d868f2263f5a3d2ff61bca90e357466b0cce"
+    },
+    {
+      "id": "cert-native",
+      "source": "assets/media/certificates/cert-native.webp",
+      "source_sha256": "6654381a23441ecb7cd7341da4f83cc07e1c6598acea2b03c4a100bbb827f466",
+      "thumbnail": "assets/media/thumbnails/cert-native.webp",
+      "width": 215,
+      "height": 160,
+      "bytes": 3200,
+      "sha256": "11ad2e21c7361610fab5ac339df91143996e8c68104deb87e5f4931a73d306e4"
+    },
+    {
+      "id": "ac-direct-demo",
+      "source": "assets/media/audience-counter/ac-direct-demo-poster.webp",
+      "source_sha256": "06d632dddc8131ca09948b2fab92be91eac84dd86a8d0142caa5fa01e55597da",
+      "thumbnail": "assets/media/thumbnails/ac-direct-demo.webp",
+      "width": 240,
+      "height": 111,
+      "bytes": 1552,
+      "sha256": "b1311be3d2a5876e233965cc7d374ab756e80dd485a4f9e39e64344c61392d8f"
+    }
+  ]
+}

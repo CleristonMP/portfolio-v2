@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
 import { ContentImage, MediaFigure } from '../src/components/ContentImage';
 import { projects } from '../src/content/projects';
 import { media } from '../src/content/media';
@@ -7,13 +8,15 @@ import { translations } from '../src/i18n/translations';
 import { ProjectsSection } from '../src/sections/ProjectsSection';
 
 describe.each(['pt', 'en'] as const)('local media %s', (language) => {
-  it('localizes the image alternative and distinguishes the original raster from credential validation', () => {
+  it('localizes the image alternative and offers a viewer action without a credential link', async () => {
     const image = media.modernCertificate;
+    const onOpen = vi.fn();
     render(
       <MediaFigure
         image={image}
         language={language}
-        originalLabel={translations[language].openOriginalImage}
+        actionLabel={translations[language].gallery.viewImage}
+        onOpen={onOpen}
       />,
     );
     const picture = screen.getByRole('img', { name: image.alt[language] });
@@ -21,11 +24,13 @@ describe.each(['pt', 'en'] as const)('local media %s', (language) => {
     expect(picture).toHaveAttribute('height', '1653');
     expect(picture).toHaveAttribute('loading', 'lazy');
     expect(picture).toHaveAttribute('decoding', 'async');
-    const link = screen.getByRole('link', {
-      name: `${translations[language].openOriginalImage}: ${image.alt[language]}`,
+    const button = screen.getByRole('button', {
+      name: `${translations[language].gallery.viewImage}: ${image.alt[language]}`,
     });
-    expect(link).toHaveAttribute('href', image.src);
-    expect(link).not.toHaveAttribute('target');
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+    const user = userEvent.setup();
+    await user.click(button);
+    expect(onOpen).toHaveBeenCalledOnce();
   });
   it('keeps an image without creating an interactive control for card covers', () => {
     render(<ContentImage image={media.audienceCover} language={language} />);

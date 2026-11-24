@@ -20,26 +20,28 @@ export function ContentImage({ image, language }: ContentImageProps) {
 }
 
 interface MediaFigureProps extends ContentImageProps {
-  readonly originalLabel: string;
+  readonly actionLabel: string;
+  readonly onOpen: () => void;
 }
 
-// A native image URL provides readable originals without a gallery or app route.
 export function MediaFigure({
   image,
   language,
-  originalLabel,
+  actionLabel,
+  onOpen,
 }: MediaFigureProps) {
   return (
     <figure className="media-figure">
       <ContentImage image={image} language={language} />
       <figcaption>
-        <a
+        <button
+          type="button"
           className="media-original-link"
-          href={image.src}
-          aria-label={`${originalLabel}: ${image.alt[language]}`}
+          onClick={onOpen}
+          aria-label={`${actionLabel}: ${image.alt[language]}`}
         >
-          {originalLabel}
-        </a>
+          {actionLabel}
+        </button>
       </figcaption>
     </figure>
   );

@@ -12,8 +12,11 @@ import {
   moduleUrl,
 } from './lib/load-project-module.mjs';
 
-const { projects, reportsRegistryCase } = await load('src/content/projects.ts');
+const { projects } = await load('src/content/projects.ts');
 const { media } = await load('src/content/media.ts');
+const { allGalleries, projectGalleries } = await load(
+  'src/content/galleries.ts',
+);
 const { courses } = await load('src/content/courses.ts');
 const { skills } = await load('src/content/skills.ts');
 const { profile } = await load('src/content/profile.ts');
@@ -136,15 +139,88 @@ const acceptedMediaHashes = {
   'assets/media/certificates/cert-native.webp':
     '6654381a23441ecb7cd7341da4f83cc07e1c6598acea2b03c4a100bbb827f466',
 };
-const publicMedia = Object.values(media);
-assert.equal(publicMedia.length, 9);
-assert.equal(new Set(publicMedia.map((image) => image.src)).size, 9);
+const galleryIntegrity = JSON.parse(
+  fs.readFileSync('scripts/gallery-media-integrity.json', 'utf8'),
+);
+const reviewedHashes = { ...galleryIntegrity.files, ...acceptedMediaHashes };
+const initialMedia = Object.values(media);
+const publicMedia = [
+  ...new Map(
+    [
+      ...initialMedia,
+      ...allGalleries.flatMap((gallery) =>
+        gallery.items.flatMap((item) => [
+          item.thumbnail,
+          item.kind === 'image' ? item.image : item.poster,
+        ]),
+      ),
+    ].map((image) => [image.src, image]),
+  ).values(),
+];
+assert.equal(publicMedia.length, 34);
+assert.deepEqual(
+  Object.values(projectGalleries).map((gallery) =>
+    gallery.items.map((item) => item.id),
+  ),
+  [
+    ['rr-search', 'rr-admin', 'rr-import'],
+    ['ac-landscape', 'ac-direct', 'ac-rows', 'ac-direct-demo'],
+    ['wm-admin', 'wm-classes', 'wm-students'],
+    ['ds-catalog', 'ds-product', 'ds-cart'],
+  ],
+);
+for (const gallery of allGalleries) {
+  assert(gallery.title.trim());
+  assert.equal(
+    new Set(gallery.items.map((item) => item.id)).size,
+    gallery.items.length,
+  );
+  for (const item of gallery.items) {
+    assert(item.caption.pt.trim() && item.caption.en.trim());
+    assert(
+      fs.statSync(path.join('public', item.thumbnail.src)).size <= 16 * 1024,
+    );
+    if (item.kind === 'video') {
+      assert.equal(
+        item.src,
+        'assets/media/audience-counter/ac-direct-demo.mp4',
+      );
+      assert(
+        fs.statSync(path.join('public', item.src)).size <= 3 * 1024 * 1024,
+      );
+    } else
+      assert(
+        fs.statSync(path.join('public', item.image.src)).size <= 200 * 1024,
+      );
+  }
+}
+for (const [filename, hash] of Object.entries(reviewedHashes)) {
+  assert.equal(
+    createHash('sha256')
+      .update(fs.readFileSync(path.join('public', filename)))
+      .digest('hex'),
+    hash,
+  );
+}
+for (const entry of galleryIntegrity.derivatives) {
+  assert.equal(reviewedHashes[entry.source], entry.source_sha256);
+  assert.equal(reviewedHashes[entry.thumbnail], entry.sha256);
+  assert.equal(
+    fs.statSync(path.join('public', entry.thumbnail)).size,
+    entry.bytes,
+  );
+}
+const allBytes = Object.keys(reviewedHashes).reduce(
+  (total, filename) => total + fs.statSync(path.join('public', filename)).size,
+  0,
+);
+assert(allBytes <= 5 * 1024 * 1024);
 for (const image of publicMedia) {
   assert.match(image.src, /^assets\/media\/[a-z-]+\/[a-z-]+\.webp$/);
   const bytes = fs.readFileSync(path.join('public', image.src));
   assert.equal(
     createHash('sha256').update(bytes).digest('hex'),
-    acceptedMediaHashes[image.src],
+    reviewedHashes[image.src],
   );
   assert.equal(bytes.toString('ascii', 0, 4), 'RIFF');
   assert.equal(bytes.toString('ascii', 8, 12), 'WEBP');
@@ -185,14 +261,10 @@ function mediaFiles(directory) {
 }
 assert.deepEqual(
   mediaFiles('public/assets/media').sort(),
-  Object.keys(acceptedMediaHashes)
+  Object.keys(reviewedHashes)
     .map((filename) => 'public/' + filename)
     .sort(),
 );
-const originalImageLinks = [
-  reportsRegistryCase.image,
-  ...courses.map((course) => course.image),
-].map((image) => image.src);
 
 const confirmed = (url) => ({ url, verification: 'confirmed' });
 for (const url of [
@@ -292,10 +364,7 @@ for (const [, href] of markup.matchAll(/<a\b[^>]*href="([^"]*)"/g)) {
       approvedDestinations.includes(href.replaceAll('&amp;', '&')) ||
       href === '#main-content' ||
       href === '#reports-registry-case' ||
-      Object.values(profile.resume ?? {}).some(
-        (resume) => resume.src === href,
-      ) ||
-      originalImageLinks.includes(href),
+      Object.values(profile.resume ?? {}).some((resume) => resume.src === href),
   );
 }
 const renderedSources = [...markup.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(
@@ -303,13 +372,15 @@ const renderedSources = [...markup.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map(
 );
 assert.deepEqual(
   renderedSources.sort(),
-  publicMedia.map((image) => image.src).sort(),
+  initialMedia.map((image) => image.src).sort(),
 );
 assert(!markup.includes('raw.githubusercontent.com'));
 assert(!markup.includes('lh3.googleusercontent.com'));
-for (const image of publicMedia) {
+for (const image of initialMedia) {
   assert(markup.includes(`width="${image.width}" height="${image.height}"`));
 }
+assert(!/<a\b[^>]*href="assets\/media\//.test(markup));
+assert(!markup.includes('<video'));
 assert(markup.includes('id="reports-registry-case" tabindex="-1"'));
 assert(markup.includes('<main id="main-content" tabindex="-1">'));
 assert(markup.indexOf('class="skip-link"') < markup.indexOf('<header'));

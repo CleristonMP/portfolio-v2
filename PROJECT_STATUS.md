@@ -1,5 +1,17 @@
 # Estado do projeto — Portfolio v2
 
+## Estado corrente — EV-02 implementada, aguardando revisão do Work — 24/11/2026
+
+EV-01 foi revisada e aceita pelo Work, com seleção, ordem, legendas PT/EN, hashes de imagens/vídeo/poster e orçamentos registrados em `0987b364e10d9159dc10602dfc835a38744c21e8`. A confirmação visual contínua do vídeo foi recebida do responsável. Na branch `evolution/media-motion-feedback`, EV-02 implementa visualização modal dos quatro projetos, acesso pelo case Reports Registry e ampliação dos quatro certificados. As capas e os destinos independentes de loja/repositórios foram preservados.
+
+A entrega usa diálogo nativo, foco inicial no fechamento, contenção de Tab/Shift+Tab, fundo inerte e restauração de foco/posição de leitura. Inclui navegação sem retorno circular, miniaturas, legendas e ampliação por rolagem. O vídeo aprovado tem controles nativos, sem autoplay, e entra no player somente após seleção explícita. Os verificadores conferem o inventário e a integridade das mídias. Detalhes, critérios individuais e evidências estão na [execução EV-02 do plano único](docs/POST_MVP_IMPROVEMENTS_PLAN.md).
+
+Passaram typecheck, lint, 106 testes, verificadores de conteúdo/i18n e builds raiz/subpath. O smoke registrou 28 cenários de largura/idioma/caminho sem overflow e com restauração de foco/rolagem. Foram verificadas todas as mídias e certificados nos dois idiomas/caminhos, além de erros simulados de imagem/vídeo. Em 24/11/2026, o responsável confirmou a aprovação manual da validação audível por leitor de tela, atendendo à pendência de execução manual. Leitor, navegador, anúncios e resultados por cenário não foram discriminados no relato; a execução não foi observada independentemente pelo Codex. Esta implementação exige revisão própria do Work. EV-03/04 não iniciadas. Nenhum envio real ou publicação nesta entrega.
+
+## Registro anterior — fechamento documental de M5 integrado em `b728674` — 17/11/2026
+
+O fechamento documental foi aceito e commitado em `890a35a`, integrado pelo PR #6 em `b728674ffbe793429375a7822a683b7864115fac`. Os estados de espera abaixo são preservados como histórico anterior ao aceite.
+
 ## Estado corrente — fechamento documental de M5 aguardando revisão do Work — 17/11/2026
 
 M5-01 a M5-05 foram aceitas pelo Work e registradas em `4d73367`, `d98db99`, `43c5bc4`, `80bd942`, `0c295df`, `d7c61a3`, `3120679`, `82af7fa` e `eb5cb57`, conforme a [consolidação de aceites, CI, lançamento e reversão no plano M5](docs/MILESTONE_5_PLAN.md). O lançamento autorizado formalizou a versão já pública, sem novo deploy, com smoke final e recebimentos `M504-01` e `M504-02` confirmados. Os estados de espera abaixo são históricos anteriores aos aceites. Esta formalização de fechamento exige revisão própria do Work.

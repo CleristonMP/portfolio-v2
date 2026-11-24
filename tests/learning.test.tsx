@@ -43,13 +43,13 @@ describe.each(['pt', 'en'] as const)('learning %s', (language) => {
         within(item).getByRole('img', { name: image.alt[language] }),
       ).toHaveAttribute('src', image.src);
       expect(
-        within(item).getByRole('link', {
-          name: `${translations[language].openOriginalImage}: ${image.alt[language]}`,
+        within(item).getByRole('button', {
+          name: `${translations[language].gallery.viewImage}: ${image.alt[language]}`,
         }),
-      ).toHaveAttribute('href', image.src);
+      ).not.toHaveAttribute('href');
     }
-    expect(within(list).getAllByRole('link')).toHaveLength(4);
-    expect(within(list).queryByRole('button')).not.toBeInTheDocument();
+    expect(within(list).queryByRole('link')).not.toBeInTheDocument();
+    expect(within(list).getAllByRole('button')).toHaveLength(4);
     expect(within(list).getAllByRole('img')).toHaveLength(4);
   });
 });

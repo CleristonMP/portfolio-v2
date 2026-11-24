@@ -95,6 +95,23 @@ export const translations: Translations = {
     },
     projectImageAlt: 'Interface do projeto {project}',
     openOriginalImage: 'Abrir imagem em tamanho original',
+    gallery: {
+      explore: 'Explorar projeto',
+      viewImage: 'Ampliar imagem',
+      close: 'Fechar visualizador',
+      previous: 'Mídia anterior',
+      next: 'Próxima mídia',
+      position: 'Mídia {current} de {total}',
+      choose: 'Mostrar mídia {number}: {caption}',
+      zoom: 'Ampliar',
+      resetZoom: 'Voltar à apresentação normal',
+      zoomHelp:
+        'Use a rolagem horizontal e vertical para explorar a imagem ampliada.',
+      error:
+        'Não foi possível carregar esta mídia. Você pode escolher outra mídia ou fechar o visualizador.',
+      video: 'Vídeo',
+      thumbnails: 'Escolher mídia',
+    },
     skillLabels: {
       'java-spring': 'Java & Spring Boot',
       'react-typescript': 'React & TypeScript',
@@ -202,6 +219,23 @@ export const translations: Translations = {
     },
     projectImageAlt: '{project} interface',
     openOriginalImage: 'Open image at original size',
+    gallery: {
+      explore: 'Explore project',
+      viewImage: 'Enlarge image',
+      close: 'Close viewer',
+      previous: 'Previous media',
+      next: 'Next media',
+      position: 'Media {current} of {total}',
+      choose: 'Show media {number}: {caption}',
+      zoom: 'Enlarge',
+      resetZoom: 'Return to normal view',
+      zoomHelp:
+        'Scroll horizontally and vertically to explore the enlarged image.',
+      error:
+        'This media could not be loaded. You can choose another media or close the viewer.',
+      video: 'Video',
+      thumbnails: 'Choose media',
+    },
     skillLabels: {
       'java-spring': 'Java & Spring Boot',
       'react-typescript': 'React & TypeScript',

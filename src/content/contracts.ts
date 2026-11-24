@@ -15,6 +15,29 @@ export interface LocalMedia {
   readonly height: number;
   readonly alt: LocalizedText;
 }
+export interface GalleryImage {
+  readonly id: string;
+  readonly kind: 'image';
+  readonly image: LocalMedia;
+  readonly thumbnail: LocalMedia;
+  readonly caption: LocalizedText;
+}
+export interface GalleryVideo {
+  readonly id: string;
+  readonly kind: 'video';
+  readonly src: `assets/media/${string}.mp4`;
+  readonly poster: LocalMedia;
+  readonly thumbnail: LocalMedia;
+  readonly caption: LocalizedText;
+}
+export type GalleryItem = GalleryImage | GalleryVideo;
+export interface GalleryCollection {
+  readonly id: string;
+  readonly title: string;
+  readonly category?: LocalizedText;
+  readonly description: LocalizedText;
+  readonly items: readonly GalleryItem[];
+}
 export type ProjectNature =
   'commercial' | 'own-product' | 'independent' | 'educational';
 export type FunctionalStatus =
@@ -166,6 +189,21 @@ export interface Translation {
   };
   readonly projectImageAlt: string;
   readonly openOriginalImage: string;
+  readonly gallery: {
+    readonly explore: string;
+    readonly viewImage: string;
+    readonly close: string;
+    readonly previous: string;
+    readonly next: string;
+    readonly position: string;
+    readonly choose: string;
+    readonly zoom: string;
+    readonly resetZoom: string;
+    readonly zoomHelp: string;
+    readonly error: string;
+    readonly video: string;
+    readonly thumbnails: string;
+  };
   readonly skillLabels: Readonly<Record<SkillId, string>>;
   readonly metadata: { readonly title: string; readonly description: string };
 }
