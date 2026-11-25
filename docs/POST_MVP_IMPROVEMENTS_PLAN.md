@@ -4,7 +4,7 @@
 
 Este plano traduz a avaliação do responsável após o encerramento de M1–M5. O responsável aprovou expressamente este plano em 18/11/2026, pela declaração “Aprovado”. A aprovação abrange o escopo, a sequência EV-01 a EV-05 e seus critérios. Cada implementação terá encaminhamento e revisão próprios.
 
-Registro posterior de 25/11/2026: EV-01 aceita pelo Work e commitada em `0987b36`; EV-02 revisada, aprovada e commitada em `7a45e9bcf862c5b9b02d898530d158de8bc87f0c`, coincidente com a referência local `origin/evolution/media-motion-feedback`. A espera de EV-02 registrada abaixo é histórica. EV-03 revisada e aprovada pelo Work, commitada em `7fb2ea44e29dd9bf4b556470a617b2331e79dde6`. A espera documental de EV-03 abaixo é histórica. EV-04 implementada com checks automáticos e smoke normal/reduzido executados localmente; correção demonstrada de Escape repetido e evidências no registro de execução. A troca da preferência durante uma animação permanece sem reprodução temporal no navegador. Revisão verificável e aceite visual ainda necessários. EV-05 não iniciada. A validação audível manual relatada em EV-02 mantém seus limites e não comprova os novos anúncios de EV-03.
+Registro corrente de 25/11/2026: EV-01 aceita pelo Work e commitada em `0987b36`; EV-02 em `7a45e9bcf862c5b9b02d898530d158de8bc87f0c`; EV-03 em `7fb2ea44e29dd9bf4b556470a617b2331e79dde6`; EV-04 em `a0d32899c8add6d0f8d7628cdc8cdf4d3313fece`, com valores de movimento aprovados pelo Work conforme o encaminhamento recebido. As esperas documentais abaixo são históricas. A troca da preferência durante uma animação conserva somente evidência de testes DOM, sem reprodução temporal no navegador. EV-05 reúne regressão, comparação de performance e artefato local, **aguardando revisão do Work; complemento de movimento reduzido em 320/768 px executado nas oito combinações**. A validação audível manual relatada em EV-02 mantém seus limites e não comprova os novos anúncios de EV-03.
 
 Base observada: `b728674`, merge do fechamento de M5. Usar uma única branch, `evolution/media-motion-feedback`, para todas as tarefas desta evolução. Work planeja e revisa; Codex implementa e testa sem commit/push; commit/push dependem de snapshot verificável do Work. Publicação depende de autorização específica.
 
@@ -111,7 +111,7 @@ Aceite:
 - Registrar LCP, CLS e TBT de laboratório e os limites da comparação. Não declarar INP ou resultados de campo sem medição correspondente. Avaliar qualquer regressão antes da aprovação.
 - Apresentar commit, artefato e procedimento de reversão para publicação. A versão pública só muda após revisão e autorização do responsável.
 
-## Decisões ainda abertas
+## Decisões abertas na aprovação inicial — histórico
 
 - Seleção exata de imagens/vídeos, ordem, legendas e necessidade de legendagem ou saneamento adicional em EV-01.
 - Comportamento e limites da ampliação no mobile, a validar com os formatos selecionados em EV-02. Não pressupor necessidade de uma biblioteca de zoom.
@@ -124,7 +124,7 @@ Código limpo, nomes claros e componentização com responsabilidade definida co
 
 A investigação de LCP mobile, a triagem de dependências e o acompanhamento do Formshield de M5 continuam rastreados. Esta evolução deve considerar seus efeitos sobre performance e segurança e não declara esses itens resolvidos.
 
-Nenhuma tarefa deste plano foi implementada ou aceita. EV-01 é a primeira tarefa autorizada para encaminhamento ao Codex.
+Na aprovação inicial, nenhuma tarefa deste plano havia sido implementada ou aceita; EV-01 era a primeira autorizada para encaminhamento ao Codex. Os registros de execução e o estado corrente acima reconciliam os aceites posteriores, sem substituir o histórico.
 
 ## Execução EV-01 — curadoria proposta, aguardando revisão editorial e técnica — 18/11/2026
 
@@ -452,3 +452,163 @@ Typecheck e lint passaram. Vitest completo: 120 testes/12 arquivos em `retry/tes
 Passaram também `npm run verify` (conteúdo/i18n), `npm run format:check`, Prettier explícito deste plano com `--ignore-path .gitignore` (docs é ignorado pelo check global) e `git diff --check`. Somente os documentos e os dois arquivos da correção foram alvos de formatação; README não foi reescrito. Os HTMLs dos builds foram restaurados pelo helper `--restore`, sem script de simulação, e os previews encerrados. Diff completo incluindo arquivos novos em `.m2-review/ev-04/review.diff`; inventário de hashes locais em `files.json`, destinado à revisão, sem produzir ou modificar aprovação do Work.
 
 EV-04 permanece **aguardando revisão verificável do Work**, com o limite temporal e o aceite visual explicitamente pendentes. Sem início de EV-05, nova dependência, alteração editorial ou mídia. README preservado; nenhum staging, commit, push, merge, deploy ou envio real. Os acompanhamentos de LCP mobile, dependências e Formshield de M5 permanecem abertos.
+
+## Execução EV-05 — regressão e preparação de publicação, aguardando revisão do Work — 25/11/2026
+
+### Origem, aceites e limites desta unidade
+
+Branch existente `evolution/media-motion-feedback`, HEAD e referência local de origem `a0d32899c8add6d0f8d7628cdc8cdf4d3313fece`, conforme o encaminhamento. Antes de agir, o diff versionável e o índice estavam vazios; as sinalizações anteriores de finais de linha foram preservadas. Não havia aprovação transitória aguardando consumo. Nenhuma branch nova, checkout de main ou alteração no portfólio antigo. EV-01/02/03 aceitas nos commits registrados no estado corrente; EV-04 e seus valores de movimento aceitos pelo Work em `a0d3289`. Os registros anteriores de espera conservam seu valor histórico.
+
+Esta entrega altera somente este plano e PROJECT_STATUS.md. Código, dados, traduções, fontes, mídias, PDFs, workflows e configurações permanecem iguais à versão aceita. Nenhum defeito de produção novo foi demonstrado que exigisse correção. A troca de preferência durante uma animação continua coberta somente por testes DOM; não se declara reprodução temporal no navegador nem se amplia sua duração para facilitar o teste.
+
+### Inventário, integridade e privacidade
+
+`inventory.json` confere os 35 arquivos de `scripts/gallery-media-integrity.json` por SHA-256, dimensões e bytes, além dos dois PDFs contra os hashes previamente aceitos em M5-02. `ffprobe` das ferramentas existentes inspecionou dimensões, duração, áudio e chaves de metadados. Não reapareceram chaves de autoria, localização ou comentários restritos. O MP4 conserva metadados técnicos de contêiner/encoder. Não foram editados ou regenerados pixels; a inspeção visual de saneamento e a autorização das versões exatas de EV-01/M4-03 são reaproveitadas, sem alegar nova inspeção dos originais.
+
+| Recorte                                                                                                | Medição                          | Teto aprovado | Resultado |
+| ------------------------------------------------------------------------------------------------------ | -------------------------------- | ------------- | --------- |
+| Cada imagem de conteúdo/certificado                                                                    | Todas até 200 KiB                | 200 KiB       | Atendido  |
+| Poster                                                                                                 | 67.612 B                         | 80 KiB        | Atendido  |
+| 17 miniaturas                                                                                          | 35.768 B no total; maior 4.022 B | 16 KiB cada   | Atendido  |
+| Vídeo                                                                                                  | 236.686 B; 20,292 s; sem áudio   | 3 MiB / 30 s  | Atendido  |
+| Imagens/poster/miniaturas dos projetos, incluindo miniaturas de certificados neste recorte conservador | 669.048 B                        | 1 MiB         | Atendido  |
+| Projetos, poster, vídeo e todas as miniaturas                                                          | 905.734 B                        | 4 MiB         | Atendido  |
+| Inventário completo, incluindo certificados/PDFs                                                       | 1.346.765 B                      | 5 MiB         | Atendido  |
+
+Inventário: 34 WebP, um MP4 e dois PDFs, sem originais ou alternativas não aprovadas. Hash do vídeo `5e0fbdebf9a1403e638e1b0be703901f199c587ab016c006a28a446426f98041`; poster `06d632dddc8131ca09948b2fab92be91eac84dd86a8d0142caa5fa01e55597da`. Demais hashes em `inventory.json` e no manifesto versionado existente. Nenhum dado de formulário foi persistido ou registrado, nenhum destinatário privado foi incorporado. A proteção de código privado/terceiros é preservada pela integridade das versões saneadas e pelos verificadores existentes.
+
+### Checks e recursos nos dois caminhos
+
+Node 22.16.0 direto, PATH ajustado somente no processo; npm/lockfile existentes. Passaram `npm run typecheck`, `npm run lint`, `npm run format:check`, Vitest completo (120 testes/12 arquivos, `tests.json`), `npm run verify`, `npm run build` e `npm run build:subpath`. O endpoint público aprovado foi definido no ambiente do processo de build, sem destinatário ou credenciais. Não houve instalação de dependência ou alteração de teste para enfraquecer uma asserção. Os verificadores continuam conferindo IDs, inventário real, hashes, contratos, traduções e regras de links privados/opcionais.
+
+Raiz em `dist`, subpath em `.m2-review/m2-08/dist-subpath`. JS `index-BKdLfqem.js`, 279.314 B / 86.709 B gzip, SHA-256 `166dbb7ec8678d5c0787b0c9cb17958fc98cea4907a323eed41d787b4061177a`; CSS `index-_cmeKoNo.css`, 30.172 B / 6.478 B gzip, SHA-256 `9ec6cf144a9b672a34976add1193fb87d5480156fc11404baa1796cd1ff7a9db`. Esses hashes são iguais aos da evidência final EV-04, condição para o reaproveitamento descrito abaixo.
+
+`http-assets.json`: 37 assets × duas bases = 74 respostas 200, SHA-256 e MIME corretos (WebP, MP4, PDF). Os testes HTTP usaram GET, sem POST. Os arquivos do build não contêm fixture de teste, sourcemap ou material original. A instrumentação do smoke foi servida somente em memória pelo servidor local, sem modificar os builds em disco ou o pacote de revisão. A política `connect-src 'self'` permaneceu nos previews; nenhuma liberação de conexão Formspree foi realizada.
+
+### Matriz de navegador e evidências reaproveitadas
+
+Smoke novo no navegador integrado: `http://127.0.0.1:4180/` e `http://127.0.0.1:4181/portfolio-v2/`, altura 844 px, parâmetros locais `?simulation=accepted&language=pt` ou `language=en`. `smoke-server.mjs` intercepta o transporte antes da aplicação; só retorna respostas simuladas e registra cenário/contagem, sem payload. Requisições POST ao servidor são bloqueadas. A navegação inicial não abre diálogo nem cria vídeo.
+
+| Largura | PT-BR raiz | EN raiz   | PT-BR subpath | EN subpath | Redução ativa                             |
+| ------- | ---------- | --------- | ------------- | ---------- | ----------------------------------------- |
+| 320     | Executado  | Executado | Executado     | Executado  | Complemento executado; quatro combinações |
+| 390     | Executado  | Executado | Executado     | Executado  | Reaproveitada EV-04, quatro combinações   |
+| 768     | Executado  | Executado | Executado     | Executado  | Complemento executado; quatro combinações |
+| 1280    | Executado  | Executado | Executado     | Executado  | Reaproveitada EV-04, quatro combinações   |
+
+`smoke-normal.json`: em cada uma das 16 células, conferir seis IDs/ordem, idioma/metadados, abrir os quatro projetos, Tab/Shift+Tab, ampliar/retornar, avançar e escolher a última miniatura, confirmar limite sem retorno circular, fechar com Escape repetido e esperar o diálogo ser removido. Um certificado por célula, distribuído para cobrir os quatro títulos em cada idioma/base. Confirmar envio simulado, andamento, segunda tecla Enter sem duplicidade, foco inicial/contenção da confirmação, Escape e retorno ao formulário. Resultado: um modal por vez, foco dentro enquanto aberto, body bloqueado e liberado ao fechar, foco exato no acionador, posição de rolagem restituída com tolerância de 1 px. Vídeo somente após seleção, pausado, sem autoplay e preload=none.
+
+Página com scrollbar: scrollWidth=clientWidth em 305/375/753/1265 px; modal aberto: igualdade em 320/390/768/1280 px. Nenhum overflow da página ou controles inacessíveis foi observado. As miniaturas mantêm rolagem horizontal interna intencional; a imagem panorâmica usa contain e ampliação com rolagem para leitura, sem corte dos pixels. O diálogo permite rolagem vertical e mantém o fechamento visível; uma captura após avançar pode mostrar somente parte da introdução já rolada, sem perda de conteúdo.
+
+Foram salvos 32 PNGs `{base}-{idioma}-{largura}-{gallery|confirmation}.png`. Inspeção visual nova de oito arquivos representativos: root-pt-320-gallery, root-en-390-gallery, subpath-pt-768-gallery, root-pt-1280-gallery, subpath-en-768-gallery, root-pt-390-confirmation, subpath-en-320-confirmation e subpath-en-1280-confirmation. Texto/foco/fechamento e proporções disponíveis. Os demais arquivos ficam para revisão do Work; sua existência não é declarada como inspeção visual individual. As superfícies dark, ciano/violeta, Manrope/Inter e hierarquia permanecem as aprovadas em M3/EV-04. Reaproveitada a comparação com HTML, DESIGN.md e screen.png dos dois exports descrita em EV-04; os exports não possuem a galeria/confirmação desta evolução. Nenhum refinamento visual ou movimento novo em EV-05.
+
+`smoke-errors.json`: 16 casos — rejeição, rede, limite e timeout × raiz PT 320/EN 768 e subpath PT 768/EN 320. Cada caso manteve os três valores, anunciou a mensagem localizada pelo status, encerrou o andamento e reabilitou tentativa explícita, sem sucesso modal e sem overflow. Timeout efetivo de 10 s no transporte existente. Uma chamada por caso, nenhuma repetição automática. A tentativa posterior explícita e falhas de storage continuam cobertas pelos testes existentes e pelas evidências EV-03, sem se atribuir uma nova matriz de navegador não executada.
+
+`media-errors.json`: quatro falhas de imagem (PT 320/EN 768, ambas as bases) e quatro de vídeo (768, PT/EN, ambas as bases), por 404 local deliberado. Acionar Play nativo no vídeo provocou a requisição; a falha anunciou mensagem localizada e permitiu selecionar a mídia anterior/seguinte. Imagem recuperada, alerta removido, fechamento/foco disponíveis. A leitura da recuperação raiz EN foi repetida com seletor correto em viewport restaurado de 1280 px; o JSON distingue esse reteste da falha original em 768. Não houve falha real no asset aprovado. Capturas de erros de imagem, vídeo e rede acompanham os registros.
+
+Reaproveitamento explícito do mesmo JS/CSS final, sem contar como nova execução:
+
+- `.m2-review/ev-04/retry/rapid-final-matrix.json`, `exit-focus-matrix.json` e `queued-final-matrix.json`: oito combinações 390/1280 × PT/EN × duas bases, Escape imediato/repetido, foco/isolamento durante saída e confirmação accepted enfileirada, sem empilhar diálogos. Os três ciclos por combinação preservaram modalidade nativa e body bloqueado até a remoção.
+- `reduced-final-matrix.json` e `reduced-confirm.json`, no mesmo diretório: Chrome 157.0.8103.79, DevTools Rendering com preferência efetiva reduce; matches=true, zero novas chamadas de animate, transitionDuration=0s, galeria/confirmação com foco e isolamento em 390/1280 (alturas 824/876). Toque emulado, sem aparelho físico. Não substitui a extensão em 320/768.
+- `video-playback.json`: reprodução nativa explícita e pausa durante a saída no subpath EN 1280. Integridade do MP4 e confirmação manual de reprodução contínua EV-01 permanecem válidas. `once-matrix.json`, `fallback-matrix.json`, `hover-focus.json`: hero imediato, entradas únicas, inicialização ausente/com falha, hover/foco/toque, já aceitos em EV-04. A regressão DOM completa foi repetida em EV-05.
+
+#### Impedimento inicial e roteiro reduzido — histórico, superado no complemento abaixo
+
+O navegador integrado oferece viewport/visibility, sem emulação de preferência de mídia. Tentou-se usar DevTools no Chrome nativo para complementar 320/768. Ao abrir uma guia temporária, a ferramenta informou detecção de entrada manual do usuário na janela e interrompeu o controle. Nenhum resultado reduzido novo foi produzido. O controle nativo não foi retomado, contornado por outro canal ou substituído por matchMedia falso. Não foram salvas capturas da conta/nova guia como evidência. A sessão do usuário foi preservada.
+
+Para concluir quando houver sessão manual disponível: iniciar `node .m2-review/ev-05/smoke-server.mjs`; abrir ambas as URLs com os parâmetros de idioma; DevTools Rendering → prefers-reduced-motion:reduce; comprovar `matchMedia('(prefers-reduced-motion: reduce)').matches === true`; em 320 e 768 px, executar galeria/certificado, teclado, fechar imediatamente/repetir, ampliar/retornar, selecionar vídeo e fechar, confirmação accepted e fila durante galeria. Registrar um único :modal, foco, body bloqueado/liberado e scrollWidth/clientWidth, sem transições novas. Repetir PT/EN × duas bases, capturar estados e restaurar emulação. Transporte permanece simulado. Essa extensão e sua revisão **impedem declarar o smoke integral/EV-05 aceito** nesta unidade. Trocar preferência no meio da animação continua com limite DOM já aceito/documentado em EV-04, sem nova alegação de navegador. Sem novo teste audível ou zoom nativo nesta rodada.
+
+### Performance comparável e transferência inicial observada
+
+Baseline isolada: `git archive` de `b728674ffbe793429375a7822a683b7864115fac` em `.m2-review/ev-05/baseline/`, sem worktree, troca de branch ou modificação da árvore atual. package.json/lockfile são idênticos entre baseline e candidata; ferramentas instaladas foram reaproveitadas. Builds tsc/Vite com o mesmo endpoint público habilitado, mesmos recursos de fonte e base raiz/subpath. Os 14 arquivos da baseline subpath são byte a byte idênticos à cópia local do artefato publicado de M5-04 em `.m2-review/m5-04/dist/`.
+
+Lighthouse 12.8.2 já disponível no cache local; Node 22.16.0, Vite 6.4.4, Chrome 157.0.8103.79 no Windows x64 (headless reporta 157.0.0.0). `measure.mjs` inicia quatro previews Vite: candidata 4180/4181 e baseline 4182/4183, todos com connect-src 'self'. Executa serialmente baseline/candidata alternadas, três rodadas por base/perfil, total 24. PT-BR inicial, perfis Chrome novos, cache frio/reset padrão do Lighthouse, sem service worker/cache reaproveitado. Sem atividade de smoke paralela às medições. Fonts Google usam a rede externa existente, não uma cópia ou fonte substituta.
+
+Procedimento: `node .m2-review/ev-05/measure.mjs`, CLI Lighthouse com `--only-categories=performance --output=json --save-assets --chrome-flags="--headless=new --no-first-run --disable-extensions" --quiet`; desktop acrescenta `--preset=desktop`. Mobile 412×823 DPR 1,75, RTT 150 ms/1.638,4 kbit/s/CPU 4×; desktop 1350×940 DPR 1, RTT 40 ms/10.240 kbit/s/CPU 1×. Throttling simulado pelo Lighthouse, não rede física nesses valores. Os JSONs preservam a configuração completa e horários. `summarize.mjs` calcula medianas, compara requests/devtoolslog e grava `comparison.json`.
+
+| Base / perfil     | LCP baseline → candidata, ms (mediana de 3) | CLS baseline → candidata | TBT baseline → candidata, ms |
+| ----------------- | ------------------------------------------- | ------------------------ | ---------------------------- |
+| Raiz / mobile     | 2.847,1 → 2.675,8                           | 0 → 0                    | 0 → 0                        |
+| Raiz / desktop    | 1.053,5 → 1.028,8                           | 0,00927 → 0,00927        | 0 → 0                        |
+| Subpath / mobile  | 2.919,8 → 2.928,0                           | 0 → 0                    | 0 → 0                        |
+| Subpath / desktop | 1.043,9 → 1.045,3                           | 0,00927 → 0,00927        | 0 → 0                        |
+
+Nenhum warning/runtimeError do Lighthouse. TBT pontual máximo 11,5 ms na baseline e 6 ms na candidata; não se ocultam esses valores pela mediana zero. LCP mobile candidato variou 2.038,3–3.039,1 ms na raiz e 2.113,7–2.928,8 ms no subpath. Benchmark de CPU variou 594–3.169 entre execuções; cache frio e parâmetros iguais não eliminam variação do host/rede. Os deltas de +8,3 ms mobile subpath/+1,3 ms desktop subpath não sustentam regressão relevante nem causalidade. A redução na raiz também não comprova otimização. O LCP mobile **continua acima da referência de 2,5 s nas medianas**, mantendo o acompanhamento de M5 e a necessidade de investigação controlada. Nenhuma correção de performance fora do escopo foi aplicada.
+
+Elemento LCP em todos os relatórios: h1 do hero (`div#root > main#main-content > section#home > h1`), não mídia da galeria. Os dados apontam render delay dominante e CSS externo de fontes/CSS local como recursos bloqueantes; por exemplo, candidata raiz mobile 1: TTFB 457,6 ms e render delay 2.218,2 ms (~83%). Não isolam causa suficiente para atribuir o atraso às galerias ou a uma única fonte. São **métricas de laboratório**. INP **não medido**; TBT é identificado separadamente. Não existem novos dados de campo nesta entrega.
+
+| Recurso inicial | Máximo baseline        | Máximo candidata       | Teto    | Resultado |
+| --------------- | ---------------------- | ---------------------- | ------- | --------- |
+| Fontes          | 73.546 B / 71,82 KiB   | 73.546 B / 71,82 KiB   | 80 KiB  | Atendido  |
+| Imagens         | 191.189 B / 186,71 KiB | 191.189 B / 186,71 KiB | 200 KiB | Atendido  |
+| JavaScript      | 82.770 B / 80,83 KiB   | 87.185 B / 85,14 KiB   | 90 KiB  | Atendido  |
+
+São somas **observadas em network-requests.transferSize**, incluindo overhead HTTP, confirmadas pelos logs de rede; não se usa gzip de arquivo isolado como prova. JS/CSS/HTML responderam gzip; WOFF2/WebP sem compressão de transporte adicional. CacheEvents=0, fromDiskCache=false e sem service worker nos registros. Vite comprime localmente; GitHub Pages pode ter outra negociação/cache, portanto isso não certifica transferência futura na origem pública. O aumento JS é 4.415 B transferidos. Mobile candidato somou 103.406 B de imagens; desktop 191.189 B. Lazy loading e tempo da coleta explicam quais capas/certificados entram; não se interpreta a diferença variável de imagens da baseline como economia implementada.
+
+Nas 24 navegações: zero pedidos iniciais para vídeo, poster, miniaturas, PDFs ou as sete imagens exclusivas de ampliação. Capas e rr-import já usados na página podem ser baixados por seus usos existentes, mesmo que também pertençam à galeria. Nenhuma requisição de transporte ao Formspree. O 404 de favicon.ico existe tanto na baseline quanto na candidata, já registrado em EV-04; não é erro de mídia do inventário nem foi ampliado o escopo para alterá-lo.
+
+### Candidata, artefato e reversão
+
+- Código de origem: `a0d32899c8add6d0f8d7628cdc8cdf4d3313fece`; as alterações EV-05 ainda não commitadas são somente documentais. Não existe SHA futuro atribuído a elas.
+- Pacote **local**, não CI: `.m2-review/ev-05/portfolio-v2-ev05-a0d3289-subpath.tar`, 40 arquivos, 1.695.744 B; SHA-256 `88e8e79574e65c60cf5190a3d75b95b21056314c5951f732fbf77bf16b962af3`. `artifact.json` registra hashes de cada arquivo, versão/configuração e comparação com rollback. Build `/portfolio-v2/`, endpoint público habilitado, sem mock/fixture no pacote. `package-review.mjs` documenta o empacotamento local e a conferência HTTP. Abrir/extrair somente em área de revisão, servir com bloqueio de conexão externa se exercitar contato e nunca enviar sem autorização.
+- Referência publicada anterior, conforme evidência histórica M5: candidata `43c5bc48485ddd3dfd554f3a8b7de53e278cdafe`, build `d7c61a3c5ba10c67741aeff43e0ef8a8349c1528`, [execução 43980146644](https://github.com/CleristonMP/portfolio-v2/actions/runs/43980146644), artefato CI `14282062874`, digest `sha256:cee6662dfa0402fdbf97b1ab0b7229d8ca03c2eb56c2decf1c14eb63816bfe94`; [publicação 44146209728](https://github.com/CleristonMP/portfolio-v2/actions/runs/44146209728). Esses são identificadores históricos, não hash do tar local. Não foi reconsultada disponibilidade/expiração do artefato remoto ou nova CI nesta rodada.
+- Reversão futura autorizada: preferir o artefato anterior se disponível, verificando run/SHA/digest e vínculo de publicação. A cópia local conferida contém 14 arquivos; reproduzi-la isoladamente a partir de `43c5bc4`, Node 22.16.0, `npm ci`, endpoint público aprovado no ambiente e `npm run build:subpath`, caso necessário. A reprodução em `b728674`, cujo código de aplicação é idêntico a `43c5bc4`, já resultou em igualdade byte a byte com essa cópia. Validar novamente hashes/configuração antes de promover um novo artefato CI.
+- Após essa reversão, o formulário do MVP continua habilitado (endpoint presente), com aceitação inline e sem nova confirmação modal; LinkedIn com indicação de login permanece. Galerias e movimento da evolução desaparecem, mantendo o conteúdo/mídias do MVP. Não confundir com o artefato ainda mais antigo sem endpoint mencionado no histórico de M5.
+- Workflows atuais continuam presos aos SHAs/build do MVP e publicação exclusivamente manual na branch padrão. Não publicam esta candidata automaticamente. A eventual promoção da evolução exige aprovação verificável, commit/push autorizado, build CI do SHA exato, conferência de execução/artefato/digest, ajuste revisado do vínculo manual e autorização de publicação. Nada disso foi disparado em EV-05.
+
+### Situação individual e entrega
+
+| Critério EV-05                                                      | Situação                            | Evidência / limite                                                                            |
+| ------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------- |
+| Contratos, hashes, privacidade e tetos                              | Executado                           | inventory.json, manifesto existente e verificadores; saneamento visual aprovado reaproveitado |
+| Checks e dois builds                                                | Passaram                            | 120 testes, typecheck/lint/formato/verify/builds e diff check                                 |
+| Smoke normal 16 células, teclado, certificados, vídeo e confirmação | Executado                           | smoke-normal.json, capturas e regressões EV-04 identificadas                                  |
+| Erros de envio e mídia simulados                                    | Executado                           | 16 transportes e oito falhas de mídia; nenhum envio real                                      |
+| Movimento reduzido ativo na matriz                                  | Executado, aguardando revisão       | EV-04 390/1280 reaproveitada; oito combinações 320/768 executadas no complemento abaixo       |
+| Medianas antes/depois e orçamentos iniciais                         | Executado, dentro dos tetos         | 24 relatórios/logs; variação do host/rede e LCP mobile remanescente                           |
+| Download sob demanda                                                | Executado                           | Zero pedido inicial de vídeo/mídia exclusiva de galeria/miniaturas/PDF nas 24 coletas         |
+| Artefato local e reversão identificados                             | Executado                           | artifact.json, tar e baseline idêntica à cópia local publicada; CI nova não executada         |
+| Aceite / publicação                                                 | **Aguardando Work; sem publicação** | Revisão do diff/evidências/artefato e autorização posterior                                   |
+
+Evidências locais ignoradas em `.m2-review/ev-05/`: `inventory.json`, `http-assets.json`, `tests.json`, `smoke-normal.json`, `smoke-errors.json`, `media-errors.json`, PNGs, `comparison.json`, `lighthouse-runs.json`, pasta `lighthouse/` com 24 relatórios e logs/traces, scripts reprodutíveis, `artifact.json` e tar. Evidências EV-04 são referenciadas por nome e versão, sem duplicar o relatório ou atribuir execução nova. Somente dois documentos versionáveis; diff local para revisão em `review.diff`. README SHA-256 preservado: `7c1e98ebfacda6e8350212c0211638172b661a4a1d8057ee0c4a1a8ddc1917f9`.
+
+LCP mobile, encaminhamentos da triagem de dependências e acompanhamento Formshield permanecem abertos. A decisão de manter Formshield ativo sem comprovar classificação automática não foi alterada. Recebimentos M504-01/M504-02 são evidência histórica; nenhum envio foi repetido. EV-05 **aguarda revisão verificável do Work**, com complemento reduzido executado e descrito abaixo, sem aceite automático. Nenhum staging, commit, push, merge, deploy ou alteração em main/portfólio antigo/versão pública.
+
+Conventional Commit sugerido, derivado do diff documental: `docs(evolution): record EV-05 regression and publication readiness`.
+
+### Complemento EV-05 — movimento reduzido efetivamente ativo em 320/768 — 25/11/2026
+
+Retomada restrita à cobertura antes interrompida. Branch e HEAD permanecem `evolution/media-motion-feedback` / `a0d32899c8add6d0f8d7628cdc8cdf4d3313fece`; índice vazio, mesmos dois documentos pendentes de revisão. Nenhuma aprovação foi criada ou atualizada. Inventário, Lighthouse, builds e artefato anteriores foram reaproveitados; não houve repetição de performance ou alteração de produção.
+
+#### Método e comprovação da preferência
+
+O Chrome não estava aberto; uma sessão de teste foi iniciada pela API de controle. Não houve nova interrupção por uso manual. DevTools confirmou reduce=true em 320 px, mas a matriz final usou o navegador integrado para permitir controle dos fluxos. Como esse navegador não expõe emulação de mídia, foi usada a preferência real do Windows: Configurações → Acessibilidade → Efeitos visuais → Efeitos de animação, originalmente Ativado, temporariamente Desativado. `matchMedia('(prefers-reduced-motion: reduce)').matches` retornou true no navegador integrado, sem substituir a função ou fabricar seu resultado. Todas as oito cargas iniciais e leituras subsequentes registram essa preferência. Ao terminar, a opção original Ativado foi restaurada e a leitura no mesmo navegador retornou false. `reduced-method.json` registra método/restauração; não foram salvas telas da conta/configurações como evidência pública.
+
+Previews: raiz `http://127.0.0.1:4180/`, subpath `http://127.0.0.1:4181/portfolio-v2/`. Mesmo JS/CSS e altura 844 px. Helper ignorado `smoke-reduced-server.mjs`, derivado do servidor anterior, injeta em memória somente simulação de transporte e auditoria. A CSP connect-src 'self' permanece e POST é bloqueado; fetch simulado nunca encaminha mensagens. A auditoria delega Element.animate e HTMLMediaElement.pause às implementações nativas sem mudar argumentos, tempos ou resultado, registrando apenas contagem/estado e dados do player, sem payload dos campos. Eventos de pause podem ser descartados quando o próprio cleanup remove src e chama load; por isso a evidência final registra o resultado síncrono da chamada nativa pause, não depende somente da propagação do evento após remoção.
+
+#### Matriz final executada
+
+| Base           | Idioma | Viewport | Página: scrollWidth/clientWidth | Documento com modal: scrollWidth/clientWidth | Preferência / animação                | Resultado |
+| -------------- | ------ | -------- | ------------------------------- | -------------------------------------------- | ------------------------------------- | --------- |
+| /              | PT-BR  | 320×844  | 305/305                         | 320/320                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /              | EN     | 320×844  | 305/305                         | 320/320                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /              | PT-BR  | 768×844  | 753/753                         | 768/768                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /              | EN     | 768×844  | 753/753                         | 768/768                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /portfolio-v2/ | PT-BR  | 320×844  | 305/305                         | 320/320                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /portfolio-v2/ | EN     | 320×844  | 305/305                         | 320/320                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /portfolio-v2/ | PT-BR  | 768×844  | 753/753                         | 768/768                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+| /portfolio-v2/ | EN     | 768×844  | 753/753                         | 768/768                                      | reduce=true; 0 chamadas; transição 0s | Passou    |
+
+Em cada célula: abrir Reports Registry por Enter; Tab e Shift+Tab; ampliar/retornar; Escape duas vezes; esperar a remoção e conferir foco no acionador e rolagem restituída (tolerância 1 px). Abrir um certificado por Enter, fechar pelo botão e conferir foco no acionador. Distribuição: PT 320 Formação Desenvolvedor Moderno, PT 768 Bootcamp React, EN 320 Bootcamp Spring e EN 768 React Native, repetida nas duas bases; os títulos próprios foram preservados. Um único modal por vez, foco dentro, body hidden enquanto aberto, liberado após fechar, sem overflow da página ou do diálogo. Rolagem interna da imagem/miniaturas continua intencional; textos e controles permanecem acessíveis.
+
+Audience-Counter: selecionar explicitamente a quarta mídia, conferir controles nativos, preload=none, paused=true e ausência de autoplay; acionar Play nativo. Os oito registros contêm play/playing e pause-call com paused=true e reduce=true. Em 320, trocar para a mídia anterior pausa o vídeo; em 768, Escape fecha diretamente durante reprodução, pausando antes da remoção. Tempos da pausa observada: 0,0616–0,2123 s após o início, não o fim natural do clipe. Foco retorna a Explorar projeto/Explore project — Audience-Counter, sem vídeo ou bloqueio de rolagem remanescente.
+
+Formulário: preencher apenas dados sintéticos, enviar pelo teclado para o mock accepted (1.800 ms) e abrir Reports Registry durante a espera. Esperar a conclusão do andamento: a galeria permanece como único modal e a confirmação aguarda. Escape na galeria libera uma única confirmação localizada; Tab/Shift+Tab permanecem dentro; Escape repetido fecha e devolve foco a Enviar mensagem/Send message, com body liberado. Uma chamada simulada por carga final, sem envio externo. As tentativas preliminares para ajustar a leitura do helper não entram nas oito linhas finais; nenhuma delas fez envio real. Um seletor de propriedade preload não exposto pela leitura DOM foi substituído pela leitura do atributo, sem mudança da aplicação. `reduced-attempt.json` conserva uma coleta preliminar; `reduced-complement.json` é a matriz final.
+
+#### Evidências, formato e limites preservados
+
+Oito linhas completas em `.m2-review/ev-05/reduced-complement.json`, método/restauração em `reduced-method.json` e 32 PNGs `reduced-{base}-{idioma}-{largura}-{certificate|video|queued|confirmation}.png`. Foram abertos e inspecionados oito representativos, cobrindo as oito combinações: root-pt-320-certificate, root-en-320-confirmation, root-pt-768-certificate, root-en-768-confirmation, subpath-pt-320-certificate, subpath-en-320-video, subpath-pt-768-queued e subpath-en-768-confirmation. Fechamento, foco visível, proporções e texto disponíveis. Não se declara inspeção individual dos demais PNGs. Console do navegador integrado sem erros/avisos ao final; avisos de unload/content.js observados no Chrome pertencem à extensão, sem atribuí-los à aplicação.
+
+Não houve correção de produto nem alteração de código, dados, mídias ou PDFs. Artefato local e README conservam os hashes anteriores; os relatórios de performance e inventário não foram regenerados. Repetidos somente Prettier dos dois documentos e git diff --check; passaram. Os demais checks anteriores continuam aplicáveis porque suas entradas não mudaram. Viewport restaurado, guias de teste e previews encerrados. O sistema teve a preferência original restaurada e comprovada no navegador.
+
+O complemento elimina a pendência de cobertura estática reduzida em 320/768 para revisão, mas não é autoaceite de EV-05. Trocar a preferência no meio de uma animação permanece limitado aos testes DOM já registrados em EV-04. Sem nova validação audível, zoom nativo ou aparelho físico. Evidências reduzidas 390/1280 continuam as reaproveitadas de EV-04. LCP mobile, dependências e Formshield conservam seus acompanhamentos. Somente PROJECT_STATUS.md e este plano têm diff versionável, aguardando nova revisão verificável do Work; sem staging, commit, push, merge, deploy ou envios reais.
