@@ -1,6 +1,7 @@
 @import './styles/tokens.css';
 @import './styles/gallery.css';
 @import './styles/contact-confirmation.css';
+@import './styles/motion.css';
 
 @tailwind base;
 @tailwind components;

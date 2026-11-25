@@ -1,0 +1,54 @@
+/* Proposed EV-04 timings; static styles remain the fallback. */
+.project-links a:focus-visible,
+.project-links button:focus-visible,
+.contact-cta a:focus-visible,
+.footer a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+@media (hover: hover) {
+  .project-links a:hover,
+  .project-links button:hover,
+  .contact-cta a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .projects-section .project-card,
+  .learning-section .course {
+    transition:
+      transform 180ms cubic-bezier(0.2, 0, 0, 1),
+      background-color 180ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .projects-section .project-card:focus-within,
+  .learning-section .course:focus-within {
+    transform: translateY(-2px);
+    background-color: rgb(var(--color-surface-card-hover));
+  }
+  .project-links a,
+  .project-links button,
+  .contact-cta a,
+  .footer a {
+    transition: color 180ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .project-links a:focus-visible,
+  .project-links button:focus-visible,
+  .contact-cta a:focus-visible,
+  .footer a:focus-visible {
+    color: rgb(var(--color-primary));
+  }
+  @media (hover: hover) {
+    .projects-section .project-card:hover,
+    .learning-section .course:hover {
+      transform: translateY(-2px);
+      background-color: rgb(var(--color-surface-card-hover));
+    }
+    .project-links a:hover,
+    .project-links button:hover,
+    .contact-cta a:hover,
+    .footer a:hover {
+      color: rgb(var(--color-primary));
+    }
+  }
+}

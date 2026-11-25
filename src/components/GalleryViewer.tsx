@@ -1,5 +1,6 @@
 import { useId, useLayoutEffect, useRef, useState } from 'react';
 import { ModalDialog } from './ModalDialog';
+import { animateSafely, motion } from '../motion/motion';
 import type {
   GalleryCollection,
   GalleryItem,
@@ -28,9 +29,15 @@ function GalleryMedia({
 }) {
   const [failed, setFailed] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
   useLayoutEffect(() => {
     const video = videoRef.current;
+    const element = video ?? imageRef.current;
+    const animation =
+      element &&
+      animateSafely(element, [{ opacity: 0.7 }, { opacity: 1 }], motion.media);
     return () => {
+      animation?.cancel();
       if (video) {
         video.pause();
         video.removeAttribute('src');
@@ -60,6 +67,7 @@ function GalleryMedia({
   }
   return (
     <img
+      ref={imageRef}
       src={item.image.src}
       width={item.image.width}
       height={item.image.height}
@@ -111,7 +119,7 @@ export function GalleryViewer({
     >
       <header className="gallery-header">
         <h2 id={titleId}>{collection.title}</h2>
-        <button ref={closeRef} type="button" onClick={onClose}>
+        <button ref={closeRef} type="button" data-dialog-close>
           {text.close}
         </button>
       </header>

@@ -1,6 +1,20 @@
 # Estado do projeto — Portfolio v2
 
-## Estado corrente — EV-03 implementada, aguardando revisão do Work — 24/11/2026
+## Estado corrente — EV-04 com smoke e correção de Escape, aguardando revisão do Work — 25/11/2026
+
+Na mesma branch `evolution/media-motion-feedback`, HEAD `7fb2ea44e29dd9bf4b556470a617b2331e79dde6`, foi retomado o roteiro de EV-04. O impedimento inicial abaixo é histórico. Smoke com movimento normal no navegador integrado e redução de movimento efetivamente ativa nos DevTools do Chrome cobriu PT/EN, raiz/subpath e 390/1280 px. Galeria e confirmação simulada mantiveram conteúdo, controles, foco e ausência de overflow. Entradas únicas nas cinco seções, hero imediato e 24 cenários de falha/ausência de inicialização foram verificados. Reprodução explícita do vídeo confirmou pausa antes da remoção do modal.
+
+Escape repetido revelou perda prematura da modalidade nativa durante a saída. A correção mínima consome Escape no keydown do diálogo, preservando o cancel como fallback. Teste de regressão e três ciclos rápidos em cada uma das oito combinações normais passaram; registros quadro a quadro mantiveram :modal e bloqueio de rolagem até o final. Tab durante a saída permaneceu dentro do diálogo. A confirmação accepted continuou enfileirada, sem empilhar modais. Transporte exclusivamente simulado; nenhuma mensagem real.
+
+Passaram typecheck, lint, 120 testes/12 arquivos, verificadores, builds raiz/subpath e os checks de formato/diff registrados no [registro EV-04 do plano único](docs/POST_MVP_IMPROVEMENTS_PLAN.md). Evidências locais ignoradas em `.m2-review/ev-04/retry/`, com capturas, medições DOM e amostras reais de animação. A troca da preferência durante os 140–280 ms de uma animação permanece coberta por testes DOM, sem reprodução temporal no navegador; roteiro manual e limite da ferramenta registrados. Sem nova validação audível ou zoom nativo. Durações e intensidade continuam propostas para aceite visual do Work/responsável. README preservado byte a byte. EV-04 não aceita/concluída; EV-05 não iniciada. Acompanhamentos de LCP, dependências e Formshield preservados. Sem staging, commit, push, merge ou deploy.
+
+## Registro anterior — EV-04 implementada, smoke pendente e aguardando revisão do Work — 24/11/2026
+
+EV-03 foi revisada e aprovada pelo Work, commitada em `7fb2ea44e29dd9bf4b556470a617b2331e79dde6`, coincidente com a referência local de origem na branch existente `evolution/media-motion-feedback`. A espera documental abaixo é histórica. EV-04 acrescenta entradas opcionais por seção (hero imediato), respostas de cards/links e transições no fundamento modal compartilhado e nas mídias. Foco, isolamento e bloqueio de rolagem permanecem durante a saída; fechamento imediato/repetido, fallback e preferência reduzida têm proteção de limpeza.
+
+Passaram typecheck, lint, 120 testes/12 arquivos, verificadores e builds raiz/subpath. Durações/deslocamentos/easing são propostas sem aprovação visual definitiva. O controle de navegador foi encerrado por impossibilidade de confirmar a URL atual do Chrome com segurança; smoke real PT/EN, raiz/subpath, desktop/mobile, teclado e preferência reduzida ativa **permanecem pendentes**. Testes DOM não substituem essas evidências. Critérios, resultados, medidas estáticas de bundle e roteiro de continuidade estão no [registro EV-04 do plano único](docs/POST_MVP_IMPROVEMENTS_PLAN.md). README preservado byte a byte. M5 mantém acompanhamentos de LCP, dependências e Formshield. EV-04 não aceita/concluída; EV-05 não iniciada. Sem envios reais ou publicação, staging, commit ou push nesta entrega.
+
+## Registro anterior — EV-03 implementada, aguardando revisão do Work — 24/11/2026
 
 EV-02 foi revisada, aprovada pelo Work e commitada em `7a45e9bcf862c5b9b02d898530d158de8bc87f0c`, coincidente com a referência local de origem na branch `evolution/media-motion-feedback`. Sua espera documental abaixo é histórica. EV-03 preserva o transporte e os erros existentes, mantém andamento junto ao botão e acrescenta confirmação modal PT/EN somente após accepted. O fundamento modal da galeria foi compartilhado com foco inicial, contenção, isolamento, bloqueio de rolagem e retorno ao formulário. Respostas durante uma galeria aberta aguardam sua saída, sem acumular diálogos. Idioma não reabre a confirmação fechada.
 

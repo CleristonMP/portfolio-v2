@@ -26,7 +26,7 @@ export function ContactConfirmation({
     >
       <h2 id={titleId}>{text.confirmationTitle}</h2>
       <p id={descriptionId}>{text.accepted}</p>
-      <button ref={closeRef} type="button" onClick={onClose}>
+      <button ref={closeRef} type="button" data-dialog-close>
         {text.closeConfirmation}
       </button>
     </ModalDialog>

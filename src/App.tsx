@@ -8,7 +8,9 @@ import { SkillsSection } from './sections/SkillsSection';
 import { AboutSection } from './sections/AboutSection';
 import { LearningSection } from './sections/LearningSection';
 import { ContactSection } from './sections/ContactSection';
+import { useSectionEntrances } from './motion/useSectionEntrances';
 export default function App() {
+  const mainRef = useSectionEntrances();
   const { language, text, toggleLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -29,7 +31,7 @@ export default function App() {
         onToggleMenu={() => setMenuOpen(!menuOpen)}
         onCloseMenu={closeMenu}
       />
-      <main id="main-content" tabIndex={-1}>
+      <main ref={mainRef} id="main-content" tabIndex={-1}>
         <HeroSection language={language} text={text} />
         <ProjectsSection language={language} text={text} />
         <SkillsSection language={language} text={text} />

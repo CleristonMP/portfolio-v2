@@ -1,6 +1,11 @@
 import { useLayoutEffect, useRef } from 'react';
 import type { ReactNode, RefObject } from 'react';
 import { createPortal } from 'react-dom';
+import {
+  animateSafely,
+  motion,
+  reducedMotionPreference,
+} from '../motion/motion';
 
 interface ModalDialogProps {
   readonly children: ReactNode;
@@ -22,9 +27,55 @@ export function ModalDialog({
   onClose,
 }: ModalDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const animationRef = useRef<Animation | undefined>(undefined);
+  const closingRef = useRef(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(
+    undefined,
+  );
+  const finishCloseRef = useRef<(() => void) | undefined>(undefined);
+
+  function requestClose() {
+    const dialog = dialogRef.current;
+    if (!dialog?.open || closingRef.current) return;
+    closingRef.current = true;
+    dialog.querySelectorAll('video').forEach((video) => video.pause());
+    const { opacity, transform } = getComputedStyle(dialog);
+    animationRef.current?.cancel();
+    const animation = animateSafely(
+      dialog,
+      [
+        { opacity, transform },
+        { opacity: 0, transform: 'translateY(6px)' },
+      ],
+      motion.close,
+    );
+    const finish = () => {
+      if (!closingRef.current) return;
+      closingRef.current = false;
+      clearTimeout(closeTimerRef.current);
+      finishCloseRef.current = undefined;
+      onClose();
+    };
+    finishCloseRef.current = finish;
+    animationRef.current = animation;
+    if (!animation) {
+      finish();
+      return;
+    }
+    void animation.finished.then(finish, finish);
+    // A canceled/stalled animation must never strand the native modal.
+    closeTimerRef.current = setTimeout(finish, motion.close + 100);
+  }
 
   useLayoutEffect(() => {
     const dialog = dialogRef.current!;
+    const preference = reducedMotionPreference();
+    const reduceMotion = () => {
+      if (!preference?.matches) return;
+      animationRef.current?.cancel();
+      finishCloseRef.current?.();
+    };
+    preference?.addEventListener('change', reduceMotion);
     let restore: (() => void) | undefined;
 
     function openWhenAvailable() {
@@ -43,6 +94,14 @@ export function ModalDialog({
       // The native top layer makes the background inert.
       dialog.showModal();
       initialFocus.current?.focus({ preventScroll: true });
+      animationRef.current = animateSafely(
+        dialog,
+        [
+          { opacity: 0, transform: 'translateY(6px)' },
+          { opacity: 1, transform: 'none' },
+        ],
+        motion.open,
+      );
       restore = () => {
         dialog.close();
         document.body.style.overflow = overflow;
@@ -76,6 +135,11 @@ export function ModalDialog({
     openWhenAvailable();
     return () => {
       observer.disconnect();
+      preference?.removeEventListener('change', reduceMotion);
+      closingRef.current = false;
+      finishCloseRef.current = undefined;
+      clearTimeout(closeTimerRef.current);
+      animationRef.current?.cancel();
       restore?.();
     };
   }, [initialFocus, returnFocus]);
@@ -88,9 +152,25 @@ export function ModalDialog({
       aria-describedby={descriptionId}
       onCancel={(event) => {
         event.preventDefault();
-        onClose();
+        requestClose();
+      }}
+      onClickCapture={(event) => {
+        // Close controls opt into the shared lifecycle; other gallery actions
+        // keep their existing behavior while the native modal remains open.
+        if ((event.target as Element).closest('[data-dialog-close]')) {
+          event.preventDefault();
+          event.stopPropagation();
+          requestClose();
+        }
       }}
       onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          // Consume repeated Escape presses before the browser's close watcher
+          // can remove the native modal while its exit is still running.
+          event.preventDefault();
+          requestClose();
+          return;
+        }
         if (event.key !== 'Tab') return;
         const controls = Array.from(
           event.currentTarget.querySelectorAll<HTMLElement>(
